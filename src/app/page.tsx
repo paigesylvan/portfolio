@@ -1,7 +1,7 @@
 import Image from "next/image";
-import CaseStudies from "../../components/CaseStudyHomePage";
-import SkillsHomePage from "../../components/SkillsHomePage";
-import Hero from "../../components/SplashHomePage";
+import CaseStudies from "../../components/Homepage/CaseStudy";
+import SkillsHomePage from "../../components/Homepage/Skills";
+import Hero from "../../components/Homepage/Splash";
 
 export default function Home() {
   return (

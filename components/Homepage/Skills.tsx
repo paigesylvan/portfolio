@@ -45,7 +45,7 @@ export default function Skills() {
       </h2>
 
       {/* content container: 70% on md+, full on mobile */}
-      <div className="mx-auto w-full md:w-[70%] px-6 md:px-0 lg:pl-56">
+      <div className="mx-auto w-full md:w-[70%] px-6 md:px-0 lg:pl-[10.5%]">
   <div className="grid gap-10 md:grid-cols-3 text-center md:text-left">
     {skills.map((s, i) => (
       <motion.div
@@ -60,7 +60,7 @@ export default function Skills() {
         }}
       >
         {/* GIF */}
-        <div className="mb-6 flex justify-center md:justify-start">
+        <div className="mb-6 flex justify-center md:justify-start lg:pl-12">
           <Image
             src={s.gif}
             alt={s.alt}

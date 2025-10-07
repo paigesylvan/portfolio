@@ -2,35 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hide cursor everywhere */
+/* Cursor (deduped) */
+* { cursor: none !important; }
+input, textarea { cursor: text !important; }
+a, button, [role="button"], [data-nextjs-dialog], [data-nextjs-toast] { cursor: none !important; }
 
-/* Hide system cursor everywhere */
-* {
-    cursor: none !important;
-  }
-  
-  /* Optional: show text beam in fields */
-  input, textarea {
-    cursor: text !important;
-  }
-   
-html, body, * {
-    cursor: none !important;
-  }
-  
-  /* Allow text I-beam where it makes sense */
-  input, textarea {
-    cursor: text !important;
-  }
-  
-  /* If you want pointer hand on clickable things, remove this.
-     If you want bubble only, keep this */
-  a, button, [role="button"] {
-    cursor: none !important;
-  }
-
-  [data-nextjs-dialog],
-[data-nextjs-toast] {
-  cursor: none !important;
+/* Allow normal scrolling sitewide */
+html, body { 
+  min-height: 100%;
+  overflow-y: auto;   /* <-- was hidden */
 }
-  
+
+/* Optional: only for pages that use snap (apply the class on that page’s <main>) */
+.snap-page {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+.snap-section { scroll-snap-align: start; }
+
+/* Single fadeInUp keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================
+   Accent Color System — Per Project
+   ===================================== */
+
+/* DOG GROOMER (blue theme) */
+.project-blue .accent-text {
+  @apply text-[#7FB2FF];
+}
+
+.project-blue .accent-bg {
+  @apply bg-[#7FB2FF];
+}
+
+.project-blue .accent-ring {
+  @apply ring-[#7FB2FF]/30;
+}
+
+/* CAMPING (green theme) */
+.project-green .accent-text {
+  @apply text-[#00C67C];
+}
+
+.project-green .accent-bg {
+  @apply bg-[#00C67C];
+}
+
+.project-green .accent-ring {
+  @apply ring-[#00C67C]/30;
+}
+
+.project-amber .accent-text { @apply text-[#D6A75E]; }
+.project-amber .accent-bg   { @apply bg-[#D6A75E]; }
+.project-amber .accent-ring { @apply ring-[#D6A75E]/30; }
