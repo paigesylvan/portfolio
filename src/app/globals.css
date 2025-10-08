@@ -62,3 +62,7 @@ html, body {
 .project-amber .accent-text { @apply text-[#D6A75E]; }
 .project-amber .accent-bg   { @apply bg-[#D6A75E]; }
 .project-amber .accent-ring { @apply ring-[#D6A75E]/30; }
+
+.project-yellow .accent-text { @apply text-[#FACC15]; }     /* amber-400 */
+.project-yellow .accent-bg   { @apply bg-[#FACC15]; }
+.project-yellow .accent-ring { @apply ring-[#FACC15]/30; }
