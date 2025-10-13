@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import SectionHeader from "../sectionheader";
+import SectionHeader from "../SectionHeader";
 
 export default function IA() {
   return (
@@ -15,14 +15,14 @@ export default function IA() {
         />
 
         {/* Intro text */}
-        <p className="mx-auto mt-4 max-w-3xl text-center text-white/80">
+        <p className="mx-auto mt-4 max-w-3xl text-center text-white/80 text-xs lg:text-2xl">
           The site map helps ensure that the structure of the app addresses user needs
           uncovered in research. My focus was to make information easily accessible, 
           with clear navigation for effortless booking and browsing.
         </p>
 
         {/* IA image */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-12 flex justify-center mb-36 ">
           <div className="w-full p-2">
             <Image
               src="/images/project1-images/ia.png"  

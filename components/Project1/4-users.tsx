@@ -9,7 +9,7 @@ export default function UsersSection() {
     <div className="mx-auto w-[92%] md:w-[70%]">
       <SectionHeader
         kicker="USER PERSONAS"
-        title="Who We’re Designing For"
+        title="Who's Behind the Experience"
         align="center"
       />
         <p className="mx-auto mt-4 max-w-3xl text-center text-white/80">

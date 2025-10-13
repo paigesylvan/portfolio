@@ -10,7 +10,7 @@ export default function HighlightsDryCleaner() {
           {/* LEFT – phone mock */}
           <div className="md:col-span-5">
             <div className="mx-auto max-w-[420px]">
-              <div className="rounded-[34px] ring-1 ring-white/10 bg-white/[0.03] p-3 shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+              <div className="rounded-[34px]  bg-white/[0.03] p-3 shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/images/project3-images/phone-hero.png" // ← your phone mock image
                   alt="Quick Cleaners mobile hero"

@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function FinalDesign() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36">
       <div className="max-w-[1100px] w-full mx-auto text-center md:text-left">
         {/* Header */}
         <SectionHeader kicker="PROJECT OUTCOME" title="Final Design" align="center" />
@@ -15,7 +15,7 @@ export default function FinalDesign() {
         <div className="mt-12 grid md:grid-cols-2 gap-12 items-center">
           {/* Text column */}
           <div>
-            <p className="text-white/85 leading-relaxed text-[16px] md:text-[17px] max-w-[480px] mx-auto md:mx-0">
+            <p className="text-white/85 leading-tight text-sm lg:text-[16px] md:text-[17px] max-w-[480px] mx-auto md:mx-0">
               The biggest challenge was balancing simplicity with trust—early versions felt
               either too bare or too cluttered. Iterative testing helped refine booking flows,
               add multi-dog support, and build credibility with groomer bios and status updates.

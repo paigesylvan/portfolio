@@ -18,7 +18,7 @@ export default function SectionHeader({
       <p className="accent-text text-[11px] tracking-[0.22em] uppercase">
         {kicker}
       </p>
-      <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-white leading-tight">
+      <h2 className="mt-2 text-xl md:text-3xl md:text-4xl font-semibold text-white leading-tight">
         {title}
       </h2>
     </div>

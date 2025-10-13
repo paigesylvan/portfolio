@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
@@ -15,6 +14,18 @@ type DonutProps = {
   delay?: number;            // seconds
   duration?: number;         // seconds
 };
+
+/* Responsive helper: treat < md as "small" */
+function useIsSmallScreen() {
+  const [isSmall, setIsSmall] = React.useState(false);
+  React.useEffect(() => {
+    const check = () => setIsSmall(window.innerWidth < 768); // Tailwind md breakpoint
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isSmall;
+}
 
 function Donut({
   percent,
@@ -93,51 +104,51 @@ function Donut({
         </text>
       </svg>
 
-      <p className="mt-5 text-[12px] tracking-[0.17em] text-white/70">
-        {captionTop}
-      </p>
-      <p className=" text-[12px] tracking-[0.17em] text-white/70">
-        {label}
-      </p>
+      <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight max-w-[90px]">
+  {captionTop}
+</p>
+<p className=" text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight max-w-[90px]">
+  {label}
+</p>
     </div>
   );
 }
 
 export default function ResearchInsights() {
+  const isSmall = useIsSmallScreen();
+  const donutSize = isSmall ? 56 : 112;   // 👈 tweak these to taste
+  const donutStroke = isSmall ? 8 : 10;
+
   return (
-    <div className="mx-auto w-[90%] max-w-[1200px]">
+    <div className="mx-auto lg:w-[90%] max-w-[1200px] mt-8">
       <SectionHeader
-        kicker="MARTKET RESEARCH"
+        kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"
         align="center"
       />
 
-      <div className="mt-24 grid gap-12 md:grid-cols-12 items-start">
+      <div className="mt-8 lg:mt-24 grid gap-2 lg:gap-12 md:grid-cols-12 items-start">
         {/* LEFT: Insight card (matches homepage card styling) */}
-        <div className="md:col-span-8">
-          <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-8 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-            <h3 className="text-xl md:text-4xl text-white mb-4">
+        <div className="md:col-span-8 px-12 py-6 ">
+          <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-4 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+            <h3 className="text-xl md:text-4xl text-white mb-2 lg:mb-4">
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-2xl ">
+            <p className="text-white/80 text-xs lg:text-2xl ">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.
             </p>
 
-            <ul className="mt-6 space-y-5 text-white/70  text-xl ">
+            <ul className="mt-2 lg:mt-6 space-y-1 lg:space-y-5 text-white/70 text-xs lg:text-2xl">
               <li>• There’s a gap in user-friendly grooming apps overall.</li>
-              <li>
-                • Many groomers still rely on outdated sites and phone calls to book appointments.
-              </li>
-              <li>
-                • First-time users seek reassurance their dog will be treated with care.
-              </li>
+              <li>• Many groomers still rely on outdated sites and phone calls to book appointments.</li>
+              <li>• First-time users seek reassurance their dog will be treated with care.</li>
               <li>• Users worry about timing, delays, and unexpected changes.</li>
             </ul>
 
-            <p className="mt-24 text-white/90 leading-relaxed text-2xl ">
+            <p className="mt-4 lg:mt-12 lg:mt-24 text-white/90 leading-relaxed text-xs lg:text-2xl">
               <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
               Trust, transparency, and clear communication matter as much as convenience—especially
               for first-time users.
@@ -146,24 +157,30 @@ export default function ResearchInsights() {
         </div>
 
         {/* RIGHT: Animated donuts with subtle stagger */}
-        <div className="md:col-span-4 flex md:flex-col justify-center gap-10 md:gap-12">
+        <div className="md:col-span-4 flex md:flex-col justify-center gap-4 lg:gap-12 mt-3">
           <Donut
             percent={67}
             captionTop="of U.S. households"
             label={"own at least one dog"}
             delay={0.0}
+            size={donutSize}
+            stroke={donutStroke}
           />
           <Donut
             percent={73}
             captionTop="of pet owners prefer"
             label={"scheduling appointments\nonline"}
             delay={0.12}
+            size={donutSize}
+            stroke={donutStroke}
           />
           <Donut
             percent={45}
             captionTop="of pet owners find it"
             label={"challenging to schedule\ngrooming services"}
             delay={0.24}
+            size={donutSize}
+            stroke={donutStroke}
           />
         </div>
       </div>

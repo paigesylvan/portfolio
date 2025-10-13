@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function Testing() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white py-8 mt-24">
       <div className="max-w-[1200px] w-full text-center mx-auto">
         {/* Header */}
         <SectionHeader
@@ -15,12 +15,12 @@ export default function Testing() {
         />
 
         {/* Subtitle */}
-        <h3 className="mt-6 text-lg md:text-xl font-medium text-white">
+        <h3 className="mt-1 lg:mt-6 text-xs lg:text-lg md:text-xl font-medium text-white px-6">
           Moderated User Testing informed iterations and guided my final design decisions
         </h3>
 
         {/* Description */}
-        <p className="mx-auto mt-4 max-w-3xl text-white/85 leading-relaxed">
+        <p className="text-xs lg:text-2xl mx-auto mt-4 max-w-3xl text-white/85 leading-snug">
           Through a moderated usability study of one user, they navigated through the app
           while I noted comments and areas of refinement. Feedback was positive about the
           user flow of the booking process and ability to schedule for more than one dog.
@@ -45,7 +45,7 @@ export default function Testing() {
             <p className="mt-4 text-sm font-semibold text-[#7FB2FF]">
               Wireframe
             </p>
-            <p className="mt-1 text-sm text-white/70">
+            <p className="mt-1 text-xs lg:text-sm text-white/70">
               Testing structure & navigation
             </p>
           </div>
