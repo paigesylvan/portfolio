@@ -21,7 +21,7 @@ export default function Project3Part3() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-0">
       <div className="w-full max-w-[1400px] mx-auto">
 
         {/* Top: two cards */}
@@ -105,7 +105,7 @@ export default function Project3Part3() {
               alt="PLC ladder logic for recipe process"
               width={2000}
               height={1200}
-              className="w-[600px] h-[500px] rounded-xl"
+              className="w-[600px] h-[250px] rounded-xl"
               priority
             />
           </motion.div>
@@ -120,7 +120,7 @@ export default function Project3Part3() {
               alt="HMI Plate Recipe Edit"
               width={1600}
               height={1200}
-              className="w-w-[600px] h-[500px] rounded-xl"
+              className="w-w-[600px] h-[250px] rounded-xl"
             />
           </motion.div>
         </motion.div>

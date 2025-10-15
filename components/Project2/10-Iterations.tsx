@@ -45,37 +45,43 @@ export default function Iterations() {
             <p className="accent-text text-[12px] tracking-[0.22em]">HOMEPAGE</p>
             <h3 className="mt-2 text-2xl font-semibold">Added grid to Collections</h3>
             <p className="mt-2 text-white/80">
-              Quicker scanning and variety at a glance for beginners.
+              Added grid to Collections for quicker scanning and variety at a glance.
             </p>
 
-            <div className="mt-6 grid gap-6">
-              {/* Before */}
-              <div>
-                <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2">
+            {/* Side-by-side BEFORE / AFTER (stack on mobile) */}
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+              {/* Before — image flush to top */}
+              <figure className="flex flex-col">
+                <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] overflow-hidden">
                   <Image
                     src="/images/project2-images/home-before.png"
                     alt="Homepage before usability study"
                     width={1400}
                     height={900}
-                    className="w-full h-auto rounded-lg"
+                    className="block w-full h-auto align-top"
+                    priority
                   />
                 </div>
-                <p className="mt-2 text-xs text-white/65">Before Usability Study</p>
-              </div>
+                <figcaption className="mt-2 text-xs text-white/65 text-center">
+                  Before Usability Study
+                </figcaption>
+              </figure>
 
-              {/* After */}
-              <div>
-                <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2">
+              {/* After — match structure */}
+              <figure className="flex flex-col">
+                <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] overflow-hidden">
                   <Image
                     src="/images/project2-images/home-after.png"
                     alt="Homepage after usability study with collections grid"
                     width={1400}
                     height={900}
-                    className="w-full h-auto rounded-lg"
+                    className="block w-full h-auto align-top"
                   />
                 </div>
-                <p className="mt-2 text-xs text-white/65">After Usability Study</p>
-              </div>
+                <figcaption className="mt-2 text-xs text-white/65 text-center">
+                  After Usability Study
+                </figcaption>
+              </figure>
             </div>
           </motion.article>
 
@@ -87,7 +93,7 @@ export default function Iterations() {
             <p className="accent-text text-[12px] tracking-[0.22em]">CHECK OUT SCREEN</p>
             <h3 className="mt-2 text-2xl font-semibold">Reduced hesitation with clearer details</h3>
             <p className="mt-2 text-white/80">
-              Quantity adjuster, return policy, tax/shipping info to reinforce trust.
+              Added quantity adjuster, return policy, tax/shipping info to reduce hesitation and reinforce trust.
             </p>
 
             <div className="mt-6 grid gap-6">

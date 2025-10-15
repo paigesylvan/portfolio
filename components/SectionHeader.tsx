@@ -1,26 +1,38 @@
 "use client";
 
+import React from "react";
+
 export default function SectionHeader({
   kicker,
   title,
   align = "left",
+  titleClassName = "",
+  kickerClassName = "",
 }: {
-  kicker: string;
+  kicker?: string;
   title: string;
-  align?: "left" | "center";
+  align?: "left" | "center" | "right";
+  titleClassName?: string;
+  kickerClassName?: string;
 }) {
   return (
-    <div
-      className={`flex flex-col ${
-        align === "center" ? "items-center text-center" : ""
-      }`}
-    >
-      <p className="accent-text text-[11px] tracking-[0.22em] uppercase">
-        {kicker}
-      </p>
-      <h2 className="mt-2 text-xl md:text-3xl md:text-4xl font-semibold text-white leading-tight">
+    <header className={`text-${align}`}>
+      {kicker && (
+        <p
+          className={`accent-text uppercase tracking-[0.12em] ${
+            kickerClassName || "text-[10px] lg:text-[13px]"
+          }`}
+        >
+          {kicker}
+        </p>
+      )}
+      <h2
+        className={`font-semibold leading-tight lg:mt-2 text-white ${
+          titleClassName || "text-xl md:text-4xl"
+        }`}
+      >
         {title}
       </h2>
-    </div>
+    </header>
   );
 }

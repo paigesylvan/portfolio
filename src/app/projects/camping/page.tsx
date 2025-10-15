@@ -2,7 +2,6 @@
 import Section from "../../../../components/section";
 
 import Hero from "../../../../components/Project2/1-Hero";
-import Overview from "../../../../components/Project2/2-Overview";
 import Userflow from "../../../../components/Project2/3-Userflow";
 import Mindmap from "../../../../components/Project2/4-Mindmap";
 import Insight from "../../../../components/Project2/5-Insight";
@@ -11,6 +10,10 @@ import Prototype from "../../../../components/Project2/7-Prototype";
 import BeginnerFlow from "../../../../components/Project2/8-BeginnerFlow";
 import TestingIterationCamping from "../../../../components/Project2/9-Testing";
 import Iterations from "../../../../components/Project2/10-Iterations";
+import FinalDesign from "../../../../components/Project2/11-FinalDesign";
+import ChallengesOutcomes from "../../../../components/Project2/12-Outcome";
+import NextStepsCamping from "../../../../components/Project2/13-NextSteps";
+
 
 
 export default function DogGroomingPage() {
@@ -25,7 +28,6 @@ export default function DogGroomingPage() {
       bg-black text-white
     ">
   <Section id="hero"><Hero /></Section>
-  <Section id="overview"><Overview /></Section>
   <Section id="userflow"><Userflow /></Section>
   <Section id="Mindmap"><Mindmap /></Section>
   <Section id="Insight"><Insight/></Section>
@@ -33,7 +35,10 @@ export default function DogGroomingPage() {
   <Section id="prototypes"> <Prototype /></Section>
   <Section id="beginnerflow"> <BeginnerFlow /></Section>
   <Section id="testing"> <TestingIterationCamping /></Section>
-  <Section id="iterations"> <Iterations /></Section>
+  <Section id="iterations"> <Iterations /></Section>  
+  <Section id="final"> <FinalDesign /></Section>
+  <Section id="outcome"> <ChallengesOutcomes /></Section>
+  <Section id="nextsteps"> <NextStepsCamping /></Section>
 </main>
 
   );

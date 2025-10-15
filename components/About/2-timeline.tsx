@@ -14,14 +14,12 @@ type TimelineItem = {
   images: string[];
   imageAlt: string;
   heading: string;
-  subheading?: string; 
+  subheading?: string;
   body: string;
   cycleMs?: number;
 };
 
-const ACTIVE_BAND_PX = 120; // how close to viewport center triggers image slideshow
-
-// helper to constrain values
+const ACTIVE_BAND_PX = 120;
 const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(v, max));
 
@@ -35,7 +33,6 @@ export default function TimelineAbout() {
   const [segmentTop, setSegmentTop] = useState(0);
   const [segmentLen, setSegmentLen] = useState(0);
 
-  // Measure container
   useLayoutEffect(() => {
     const update = () => {
       if (!containerRef.current) return;
@@ -49,29 +46,25 @@ export default function TimelineAbout() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  // Scroll-based fill segment logic
   useMotionValueEvent(scrollY, "change", (y) => {
     if (!containerRef.current) return;
-
     const viewportCenter = window.innerHeight / 2;
     const progressPx = y + viewportCenter - containerTopAbs;
-    const maxLen = containerHeight * 0.4; // 40% fixed target
+    const maxLen = containerHeight * 0.4;
     let nextTop = 0;
     let nextLen = 0;
 
-    // Grow from 0 → 40% while progress < 40%; then slide with fixed 40%
     if (progressPx <= 0) {
       nextTop = 0;
       nextLen = 0;
     } else if (progressPx < maxLen) {
       nextTop = 220;
-      nextLen = progressPx; // grow phase
+      nextLen = progressPx;
     } else {
-      nextTop = progressPx - maxLen; // slide phase
+      nextTop = progressPx - maxLen;
       nextLen = maxLen;
     }
 
-    // Keep segment within timeline bounds
     nextTop = clamp(nextTop, 0, Math.max(0, containerHeight - nextLen));
 
     setSegmentTop(nextTop);
@@ -80,79 +73,44 @@ export default function TimelineAbout() {
 
   const items: TimelineItem[] = [
     {
-      images: [
-        "/images/about-images/2019-1.png",
-        "/images/about-images/2019-2.png",
-        "/images/about-images/2019-3.png",
-        "/images/about-images/2019-4.png",
-        "/images/about-images/2019-5.png",
-        "/images/about-images/2019-6.png",
-        "/images/about-images/2019-7.png",
-      ],
+      images: ["/images/about-images/2019-1.png"],
       imageAlt: "2019",
       heading: "2019",
       subheading: "CI Design & Milwaukee Magazine",
       body:
-        "Shadowed at CI Design and Milwaukee Magazine, where I gained my first hands-on exposure to layout, branding, and editorial design. My capstone project was a full magazine I designed from scratch, combining photography, writing, and visual storytelling.",
+        "Shadowed at CI Design and Milwaukee Magazine, where I gained my first hands-on exposure to layout, branding, and editorial design.",
     },
     {
-      images: [
-        "/images/about-images/2020-1.png",
-        "/images/about-images/2020-2.png",
-        "/images/about-images/2020-3.png",
-      ],
+      images: ["/images/about-images/2020-1.png"],
       imageAlt: "2020",
       heading: "2020",
       subheading: "Branding & Communication Design",
       body:
-        "As PR Chairman, I managed our chapter’s public image by creating branded Instagram graphics and event promotions. This role gave me early experience in digital design, building consistency across social content, and communicating with a large audience through visuals.",
+        "As PR Chairman, I managed our chapter’s public image by creating branded Instagram graphics and event promotions.",
     },
     {
-      images: [
-        "/images/about-images/2021-1.png",
-        "/images/about-images/2021-2.png",
-        "/images/about-images/2021-3.png",
-        "/images/about-images/2021-4.png",
-      ],
+      images: ["/images/about-images/2021-1.png"],
       imageAlt: "2021",
       heading: "2021",
       subheading: "Graphic Design & Business Impact",
       body:
-        "Designed product catalogs, seasonal flyers, and sales materials while also handling product photography. Here I learned how design impacts business outcomes and how to balance creativity with brand consistency.",
+        "Designed product catalogs, flyers, and marketing materials while also handling product photography and digital content.",
     },
     {
-      images: [
-        "/images/about-images/2022-1.png",
-        "/images/about-images/2022-2.png",
-        "/images/about-images/2022-3.png",
-        "/images/about-images/2022-4.png",
-      ],
+      images: ["/images/about-images/2022-1.png"],
       imageAlt: "2022",
       heading: "2022",
       subheading: "Technical Foundations & Web Development",
       body:
-        "Completed a full-stack coding bootcamp, where I built my first websites from scratch. This gave me a solid technical foundation, helping me understand the development side of digital products and how design choices translate into code.",
+        "Completed a full-stack bootcamp, building interactive websites from scratch and learning how design choices affect functionality.",
     },
     {
-      images: [
-        "/images/about-images/2024-1.png",
-        "/images/about-images/2024-2.png",
-        "/images/about-images/2024-3.png",
-        "/images/about-images/2024-4.png",
-      ],
+      images: ["/images/about-images/2024-1.png"],
       imageAlt: "2024",
       heading: "2024",
       subheading: "UI Design in Complex Systems",
       body:
-        "As a Software Engineer Intern, I designed and built HMI applications for industrial automation. I collaborated with engineers, worked with PLC logic, and followed a company-wide design system. This was where I realized how much I loved designing interfaces and simplifying complex systems.",
-    },
-    {
-      images: ["/images/about/today-1.png"],
-      imageAlt: "Today",
-      heading: "Today",
-      subheading: "Strengthening UX/UX Design",
-      body:
-        "Each step reinforced my passion for design. From magazines to automation cells, I’ve always been drawn to making information clear and usable. My internship showed me the bridge between design and development, inspiring me to focus and complete the foundation of UX/UI course",
+        "As a Software Engineer Intern, I designed and built HMI applications for industrial automation — combining design and logic.",
     },
   ];
 
@@ -167,12 +125,18 @@ export default function TimelineAbout() {
           <h2 className="mt-2 text-3xl md:text-5xl font-bold">My Journey</h2>
         </div>
 
-        {/* Spine base */}
-        <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-white/15 rounded-full" />
-
-        {/* Sliding 0–40% fill */}
+        {/* ===== Timeline Spine(s) ===== */}
+        {/* Mobile: LEFT-ALIGNED spine */}
+        <div className="pointer-events-none absolute left-3 w-[3px] h-full bg-white/15 rounded-full md:hidden" />
         <div
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white"
+          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white md:hidden"
+          style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
+        />
+
+        {/* Desktop: CENTER spine */}
+        <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-white/15 rounded-full hidden md:block" />
+        <div
+          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block"
           style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
         />
 
@@ -195,7 +159,7 @@ export default function TimelineAbout() {
   );
 }
 
-/* ------------------------- TIMELINE ROW COMPONENT ------------------------- */
+/* ------------------------- TIMELINE ROW ------------------------- */
 function TimelineRow({
   item,
   prefersReduced,
@@ -216,24 +180,20 @@ function TimelineRow({
   const [idx, setIdx] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
-  // Detect when row is near viewport center
   useEffect(() => {
     let raf = 0;
     const el = rowRef.current;
     if (!el) return;
-
     const calc = () => {
       const rect = el.getBoundingClientRect();
       const rowCenter = rect.top + rect.height / 2;
       const vpCenter = window.innerHeight / 2;
       setIsActive(Math.abs(rowCenter - vpCenter) <= ACTIVE_BAND_PX);
     };
-
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(calc);
     };
-
     calc();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
@@ -244,7 +204,6 @@ function TimelineRow({
     };
   }, []);
 
-  // Slideshow while active
   useEffect(() => {
     if (prefersReduced || !isActive || (item.images?.length ?? 0) < 2) return;
     const t = setInterval(
@@ -254,11 +213,9 @@ function TimelineRow({
     return () => clearInterval(t);
   }, [prefersReduced, isActive, item.images, item.cycleMs]);
 
-  // Fill dots only while segment overlaps
   useLayoutEffect(() => {
     const el = rowRef.current;
     if (!el) return;
-
     const update = () => {
       const rect = el.getBoundingClientRect();
       const rowCenterAbs = window.scrollY + rect.top + rect.height / 2;
@@ -266,7 +223,6 @@ function TimelineRow({
       const segBotAbs = segTopAbs + segmentLen;
       setDotFilled(rowCenterAbs >= segTopAbs && rowCenterAbs <= segBotAbs);
     };
-
     update();
     window.addEventListener("resize", update, { passive: true });
     window.addEventListener("scroll", update, { passive: true });
@@ -286,14 +242,25 @@ function TimelineRow({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: prefersReduced ? 0 : 0.6, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.25 }}
-      className="relative grid items-center gap-8 md:grid-cols-12"
+      className="relative grid items-center gap-6 md:gap-8 md:grid-cols-12 pl-8 md:pl-0"
     >
-      {/* Dot */}
+      {/* ===== Dots ===== */}
+      {/* Mobile: slightly right of the line */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 
-          -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full 
-          bg-black/70 ring-1 ring-white/25 z-20 flex items-center justify-center"
+        className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-20 md:hidden flex items-center justify-center"
+      >
+        <div
+          className={`h-3.5 w-3.5 rounded-full ${
+            dotFilled ? "bg-white" : "bg-transparent"
+          }`}
+        />
+      </div>
+
+      {/* Desktop: centered dot */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-20 hidden md:flex items-center justify-center"
       >
         <div
           className={`h-3.5 w-3.5 rounded-full ${
@@ -304,7 +271,7 @@ function TimelineRow({
 
       {/* Image */}
       <div className="md:col-span-5">
-        <div className="relative w-[600px] h-[300px] md:h-[420px] overflow-hidden rounded-xl">
+        <div className="relative w-full h-[220px] sm:h-[260px] md:h-[420px] overflow-hidden rounded-xl">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={currentSrc}
@@ -312,17 +279,16 @@ function TimelineRow({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{
-                duration: prefersReduced ? 0 : 0.9, // smoother, slower fade
-                ease: [0.4, 0, 0.2, 1], // custom cubic-bezier for faster ease-in and gentle ease-out
+                duration: prefersReduced ? 0 : 0.9,
+                ease: [0.4, 0, 0.2, 1],
               }}
-              
               className="absolute inset-0"
             >
               <Image
                 src={currentSrc}
                 alt={item.imageAlt}
                 fill
-                sizes="(min-width: 768px) 600px, 90vw"
+                sizes="(min-width: 768px) 600px, 100vw"
                 className="object-cover"
                 priority={priority}
               />
@@ -331,18 +297,17 @@ function TimelineRow({
         </div>
       </div>
 
-      {/* Spacer */}
+      {/* Spacer for desktop */}
       <div className="hidden md:block md:col-span-2" />
 
       {/* Text */}
       <div className="md:col-span-5">
         <h3 className="text-2xl md:text-3xl font-semibold">{item.heading}</h3>
         {item.subheading && (
-            <p className="text-white/60 text-sm md:text-base mt-1 mb-2 italic">
+          <p className="text-white/60 text-sm md:text-base mt-1 mb-2 italic">
             {item.subheading}
-            </p>
+          </p>
         )}
-
         <p className="mt-3 text-white/80 leading-relaxed">{item.body}</p>
       </div>
     </motion.div>

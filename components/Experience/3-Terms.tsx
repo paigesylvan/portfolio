@@ -79,35 +79,45 @@ export default function Terms() {
               className="
                 rounded-3xl bg-white/[0.06] backdrop-blur-md
                 ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)]
-                px-6 py-8 flex flex-col items-center text-center
+                px-4 py-4 sm:px-6 sm:py-8
+                flex flex-col text-left sm:text-center
               "
             >
-              <h3
-                className={`text-xl font-semibold ${
-                  t.title === "Automation Cell" ? "pb-7" : ""
-                }`}
-              >
-                {t.title}
-              </h3>
-
-              {t.subtitle ? (
-                <p className="mt-1 text-sm text-white/70">{t.subtitle}</p>
-              ) : null}
-
-              <div className="mt-6 w-full">
-                <div className="mx-auto max-w-[360px] p-2">
+              {/* Mobile: horizontal bubble (image left, text right)
+                  Desktop: vertical stack (title -> image -> body) */}
+              <div className="flex items-start gap-3 sm:block">
+                {/* Image: fixed small on mobile, large on desktop */}
+                <div className="flex-none">
                   <Image
                     src={t.image}
                     alt={t.alt}
-                    width={500}
-                    height={600}
-                    className="w-[350px] h-[280px] rounded-lg"
+                    width={96}
+                    height={96}
+                    className="w-20 h-20 sm:w-[350px] sm:h-[280px] rounded-lg object-cover"
                     priority
                   />
                 </div>
+
+                {/* Right text column (mobile), top text (desktop) */}
+                <div className="flex-1 sm:mt-4 sm:mx-auto sm:max-w-[360px]">
+                  <h3 className="text-base sm:text-xl font-semibold">{t.title}</h3>
+                  {t.subtitle ? (
+                    <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-white/70">
+                      {t.subtitle}
+                    </p>
+                  ) : null}
+
+                  {/* Body for mobile (inline with title on the right) */}
+                  <p className="mt-1.5 text-[13px] text-white/80 leading-tight sm:hidden">
+                    {t.body}
+                  </p>
+                </div>
               </div>
 
-              <p className="mt-6 text-white/80 leading-relaxed">{t.body}</p>
+              {/* Body for desktop (under the image) */}
+              <p className="hidden sm:block lg:mt-6 text-white/80 leading-relaxed">
+                {t.body}
+              </p>
             </motion.article>
           ))}
         </motion.div>

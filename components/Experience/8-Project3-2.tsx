@@ -21,7 +21,7 @@ export default function Project3Part2() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-0">
       <div className="w-full max-w-[1400px] mx-auto">
         {/* GRID LAYOUT */}
         <motion.div
@@ -44,8 +44,8 @@ export default function Project3Part2() {
               src="/images/experience-images/control-screen.png"  // UPDATE path
               alt="Interchange / control HMI screen"
               width={1800}
-              height={1200}
-              className="w-[600px] h-[450px] rounded-xl"
+              height={900}
+              className="w-[600px] h-[250px] rounded-xl"
               priority
             />
           </motion.div>
@@ -145,7 +145,7 @@ export default function Project3Part2() {
               alt="Conveyors control HMI"
               width={1800}
               height={1200}
-              className="w-[560px] h-[450px] rounded-xl"
+              className="w-[560px] h-[250px] rounded-xl"
             />
           </motion.div>
         </motion.div>

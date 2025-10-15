@@ -22,7 +22,7 @@ export default function Outcome() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-24 lg:mt-0 pb-12">
       <div className="w-full max-w-[1200px] mx-auto">
         {/* Reduce default spacing under the header */}
         <div className="mb-6">

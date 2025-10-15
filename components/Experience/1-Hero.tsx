@@ -7,16 +7,18 @@ export default function ExperienceHero() {
     <section className="min-h-[100svh] flex items-center justify-center px-6">
       <div className="w-full max-w-[1200px] mx-auto text-center">
         {/* Heading */}
-        <p className="text-[12px] tracking-[0.22em] text-white/70">
+        <p className="text-[12px] tracking-[0.22em] text-amber-400">
           EXPERIENCE
         </p>
-        <h1 className="mt-2 text-3xl md:text-5xl font-semibold">
-          Software Engineer Internship
-        </h1>
 
-        <p className="mt-6 text-lg md:text-xl text-white/85">
+        <h1 className="mt-2 text-xl lg:text-5xl">Software Engineer Internship</h1>
+
+        {/* Company + Date (always stacked) */}
+        <p className="mt-6 text-sm lg:text-4xl text-white/85 leading-relaxed">
           Midwest Engineered Systems
-          <br className="hidden md:block" /> August 2024 – January 2025
+        </p>
+        <p className="mt-1 text-xs lg:text-xl text-white/85 leading-relaxed">
+        August 2024 – January 2025
         </p>
 
         {/* Radial glow behind image */}
@@ -26,7 +28,7 @@ export default function ExperienceHero() {
           {/* Image Panel */}
           <div className="mx-auto w-full md:w-[90%] rounded-3xl bg-white/[0.03] ring-1 ring-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.55)] overflow-hidden">
             <Image
-              src="/images/experience-images/mwes-hero.png" /* <- your combined strip image */
+              src="/images/experience-images/mwes-hero.png"
               alt="Midwest Engineered Systems — facility and robotics"
               width={2400}
               height={1200}

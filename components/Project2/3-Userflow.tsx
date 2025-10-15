@@ -12,7 +12,7 @@ export default function UserFlow() {
         title="User Flow"
         align="center"
       />
-        <p className="mx-auto mt-4 max-w-3xl text-center text-white/80">
+        <p className="text-xs mx-auto mt-4 max-w-3xl text-center text-white/80 leading-tight pb-6">
         To better understand the camper’s decision-making process, I created a user journey map.
           This helped identify moments of confusion and stress across the shopping experience, as
           well as opportunities to simplify decision-making with clear guidance.

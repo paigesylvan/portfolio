@@ -10,10 +10,10 @@ export default function BeginnerFlow() {
       <div className="w-full max-w-[1200px] mx-auto">
         {/* Title & copy (left-aligned like your mock) */}
         <div className="mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-4xl font-bold leading-tight">
+          <h2 className="lg:text-2xl font-bold leading-snug lg:leading-tight">
             Turning complexity into clarity with a beginner-friendly shopping flow.
           </h2>
-          <p className="mt-4 max-w-4xl text-white/85 leading-relaxed">
+          <p className="mt-4 max-w-4xl text-white/85 leading-tight lg:leading-relaxed">
             After my user research, my goal was simplifying the layout, curating gear selections,
             and clearly communicating value. Every design choice—from the streamlined bundle
             presentation to the guided add-on options—was made to reduce decision fatigue and build
