@@ -5,22 +5,22 @@ import SectionHeader from "../SectionHeader";
 
 export default function Testing() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white py-8 mt-24 md:mt-0">
-      <div className="max-w-[900px] w-full text-center mx-auto">
-        {/* Header */}
+    <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-8 md:py-10 mt-20 md:mt-0">
+      <div className="max-w-[760px] w-full text-center mx-auto">
+        {/* ---------- HEADER ---------- */}
         <SectionHeader
           kicker="TESTING USABILITY"
           title="Design Evolution Through Iteration"
           align="center"
         />
 
-        {/* Subtitle */}
-        <h3 className="mt-1 md:mt-4 text-xs md:text-sm lg:text-base font-medium text-white/90 px-4">
+        {/* ---------- SUBTITLE ---------- */}
+        <h3 className="mt-1 md:mt-3 text-[10px] md:text-[11px] lg:text-[12px] font-medium text-white/85 px-3 leading-snug">
           Moderated usability testing informed iterations and guided my final design decisions.
         </h3>
 
-        {/* Description */}
-        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-5xl text-white/80 leading-snug md:leading-normal">
+        {/* ---------- DESCRIPTION ---------- */}
+        <p className="text-[10px] md:text-[11px] lg:text-[12px] mx-auto mt-3 max-w-[620px] text-white/75 leading-snug md:leading-snug">
           Through a moderated usability study of one user, they navigated through the app
           while I noted comments and areas for refinement. Feedback was positive about the
           booking process and ability to schedule for more than one dog. To bring more
@@ -30,8 +30,8 @@ export default function Testing() {
           menu to support both new and repeating users.
         </p>
 
-        {/* Evolution Images */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 justify-items-center">
+        {/* ---------- EVOLUTION IMAGES ---------- */}
+        <div className="mt-8 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
           {[
             {
               src: "/images/project1-images/evolution-1.png",
@@ -56,25 +56,25 @@ export default function Testing() {
           ].map((card, i) => (
             <div
               key={i}
-              className="flex flex-col items-center w-full max-w-[160px] sm:max-w-[200px] md:max-w-[180px]"
+              className="flex flex-col items-center w-full max-w-[130px] sm:max-w-[150px] md:max-w-[140px]"
             >
               {/* Image container */}
-              <div className="w-full aspect-[9/18] overflow-hidden rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+              <div className="w-full aspect-[9/18] overflow-hidden rounded-xl shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
                 <Image
                   src={card.src}
                   alt={card.title}
-                  width={280}
-                  height={560}
+                  width={240}
+                  height={480}
                   className="w-full h-full object-cover"
                   priority={i === 0}
                 />
               </div>
 
               {/* Captions */}
-              <p className="mt-3 text-[11px] md:text-sm font-semibold text-[#7FB2FF] uppercase tracking-wide">
+              <p className="mt-2 text-[9px] md:text-[10px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
                 {card.title}
               </p>
-              <p className="mt-1 text-[10px] md:text-xs text-white/70 text-center max-w-[180px] leading-tight">
+              <p className="mt-1 text-[8px] md:text-[9px] text-white/70 text-center max-w-[140px] leading-tight">
                 {card.desc}
               </p>
             </div>

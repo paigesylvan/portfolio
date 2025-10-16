@@ -22,7 +22,7 @@ export default function HeroOverviewDog() {
 
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[900px] px-4 md:px-6">
+      <div className="mx-auto w-full max-w-[1000px] px-4 md:px-6">
         {/* ---------- HEADER ---------- */}
         <div className="text-center">
           <SectionHeader
@@ -130,7 +130,7 @@ export default function HeroOverviewDog() {
         {/* ---------- OVERVIEW ---------- */}
         <div className="mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
           {/* LEFT — Project & Role */}
-          <div>
+          <div className='ml-24'>
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
             <p className="mt-1 text-white/90">
               Design a mobile-first app for a local dog grooming service.
