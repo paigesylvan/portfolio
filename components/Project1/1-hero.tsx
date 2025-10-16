@@ -1,4 +1,3 @@
-// components/Project1/HeroOverviewDog.tsx
 "use client";
 
 import Image from "next/image";
@@ -14,7 +13,7 @@ export default function HeroOverviewDog() {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: prefersReduced ? 0 : 0.8, ease: "easeOut" },
+      transition: { duration: prefersReduced ? 0 : 0.7, ease: "easeOut" },
     },
   };
 
@@ -22,8 +21,8 @@ export default function HeroOverviewDog() {
   const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE DESIGN"];
 
   return (
-    <section className="w-screen min-h-screen bg-black text-white flex flex-col justify-center">
-      <div className="mx-auto w-full max-w-[1200px] px-6 pt-20 pb-24 mt-12">
+    <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16">
+      <div className="mx-auto w-full max-w-[900px] px-4 md:px-6">
         {/* ---------- HEADER ---------- */}
         <div className="text-center">
           <SectionHeader
@@ -31,19 +30,19 @@ export default function HeroOverviewDog() {
             title="How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming"
             align="center"
             accent="dog"
-            kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
-            titleClassName="text-md md:text-5xl max-w-[1000px] ml-12 mt-2"
+            kickerClassName="text-[7px] md:text-xs text-[#9DC0FF]"
+            titleClassName="text-sm md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
           />
         </div>
 
         {/* ---------- HERO IMAGE (PHONES) ---------- */}
-        <div className="relative mt-10 lg:mt-14 flex items-end justify-center gap-6 md:gap-10">
+        <div className="relative mt-6 md:mt-10 flex items-end justify-center gap-4 md:gap-6">
           {/* blue radial glow */}
-          <div className="pointer-events-none absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-[1200px] max-w-[95vw] aspect-[2/1] rounded-full
-                          bg-[radial-gradient(circle_at_center,rgba(157,192,255,0.25),rgba(0,0,0,0)_70%)] blur-[120px]" />
+          <div className="pointer-events-none absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-[900px] max-w-[95vw] aspect-[2/1] rounded-full
+                          bg-[radial-gradient(circle_at_center,rgba(157,192,255,0.25),rgba(0,0,0,0)_70%)] blur-[100px]" />
 
           {/* pedestal shadow */}
-          <div className="pointer-events-none absolute left-1/2 bottom-2 -translate-x-1/2 w-[700px] max-w-[92vw] h-[90px] rounded-full bg-black/80 blur-[90px] opacity-70" />
+          <div className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 w-[420px] max-w-[85vw] h-[60px] rounded-full bg-black/80 blur-[60px] opacity-70" />
 
           {/* left phone */}
           <motion.div
@@ -52,14 +51,14 @@ export default function HeroOverviewDog() {
             viewport={{ once: true, amount: 0.25 }}
             variants={phoneVariants}
             transition={{ delay: prefersReduced ? 0 : 0.05 }}
-            className="relative"
+            className="relative scale-[0.9]"
           >
             <Image
               src="/images/homepage-images/phone-1.png"
               alt="Login screen"
-              width={420}
-              height={860}
-              className="relative z-10 w-[220px] h-auto"
+              width={360}
+              height={740}
+              className="relative z-10 w-[160px] h-auto"
               priority
             />
           </motion.div>
@@ -70,15 +69,15 @@ export default function HeroOverviewDog() {
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
             variants={phoneVariants}
-            transition={{ delay: prefersReduced ? 0 : 0.18 }}
-            className="relative scale-[1.06]"
+            transition={{ delay: prefersReduced ? 0 : 0.15 }}
+            className="relative scale-[1]"
           >
             <Image
               src="/images/homepage-images/phone-2.png"
               alt="Home dashboard"
-              width={420}
-              height={860}
-              className="relative z-10 w-[240px] h-auto"
+              width={360}
+              height={740}
+              className="relative z-10 w-[180px] h-auto"
               priority
             />
           </motion.div>
@@ -89,63 +88,61 @@ export default function HeroOverviewDog() {
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
             variants={phoneVariants}
-            transition={{ delay: prefersReduced ? 0 : 0.3 }}
-            className="relative scale-[0.94]"
+            transition={{ delay: prefersReduced ? 0 : 0.25 }}
+            className="relative scale-[0.88]"
           >
             <Image
               src="/images/homepage-images/phone-3.png"
               alt="Service selection"
-              width={420}
-              height={860}
-              className="relative z-10 w-[220px] h-auto"
+              width={360}
+              height={740}
+              className="relative z-10 w-[160px] h-auto"
               priority
             />
           </motion.div>
         </div>
 
         {/* ---------- OVERVIEW ---------- */}
-        <div className="mt-16 grid md:grid-cols-2 md:gap-12 md:items-start">
+        <div className="mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
           {/* LEFT — Project & Role */}
           <div>
-            <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+            <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
+            <p className="mt-1 text-white/90">
               Design a mobile-first app for a local dog grooming service.
             </p>
 
-            <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+            <p className="mt-3 text-[9px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
+            <p className="mt-1 text-white/90">
               UX/UI Designer, Researcher, Visual Designer, Usability Tester
             </p>
           </div>
 
           {/* RIGHT — Duration & Skills */}
-          <div className="mt-4 md:mt-0">
-            <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
-              July 2025 – August 2025
-            </p>
+          <div className="mt-6 md:mt-0">
+            <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
+            <p className="mt-1 text-white/90">July 2025 – August 2025</p>
 
-            <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">
+            <p className="mt-3 text-[9px] tracking-[0.22em] text-[#9DC0FF]">
               UX/UI SKILLSETS LEVERAGED
             </p>
 
             {/* Skills chips */}
-            <div className="mt-4 space-y-3">
-              <div className="flex flex-wrap gap-2 lg:gap-3">
+            <div className="mt-2 space-y-2">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {skillsRow1.map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-1 lg:px-4 lg:py-2 text-[8px] lg:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10 shadow-sm"
+                    className="rounded-lg border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-2 lg:gap-3">
+              <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {skillsRow2.map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-1 lg:px-4 lg:py-2 text-[8px] lg:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10 shadow-sm"
+                    className="rounded-lg border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
                   >
                     {t}
                   </span>
