@@ -81,26 +81,26 @@ export default function Goals() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="mt-16 md:mt-36 flex flex-col items-center justify-center px-3 md:px-6 text-white lg:pb-12">
-      <div className="w-full max-w-[1200px] mx-auto">
+    <section className="mt-12 md:mt-24 flex flex-col items-center justify-center px-3 md:px-6 text-white pb-8 md:pb-16">
+      <div className="w-full max-w-[900px] mx-auto">
         <SectionHeader
           kicker="THE WHY BEHIND THE DESIGN"
           title="6 UX Findings and Design Goals"
           align="center"
         />
 
-        {/* Hide blurb on small screens to fit layout */}
-        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-4 max-w-3xl text-center text-white/80">
-          From my research, I identified six key focus areas from users needs to guide my UI design decisions.
-          These findings inform a clear need for a digital experience that builds trust, simplifies decisions
+        {/* Intro blurb */}
+        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-2xl text-center text-white/80">
+          From my research, I identified six key focus areas from user needs to guide my UI design decisions.
+          These findings highlight the need for a digital experience that builds trust, simplifies decisions,
           and streamlines the booking process.
         </p>
 
         <motion.div
           className="
-            mt-8 md:mt-12
-            grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3
-            gap-2 sm:gap-4 md:gap-6
+            mt-8 md:mt-10
+            grid grid-cols-2 md:grid-cols-3
+            gap-2 sm:gap-4 md:gap-5
           "
           variants={parent()}
           initial="hidden"
@@ -113,34 +113,35 @@ export default function Goals() {
               variants={item(prefersReduced)}
               className="
                 group flex flex-col items-center justify-between
-                rounded-xl sm:rounded-2xl bg-white/5 p-2 sm:p-3 md:p-5
+                rounded-xl bg-white/5 p-2 sm:p-3 md:p-4
                 ring-1 ring-white/10 backdrop-blur-md
                 transition-all hover:bg-white/10
               "
             >
-              {/* image */}
-              <div className="w-full flex justify-center mb-1 sm:mb-2 md:mb-4">
+              {/* Image */}
+              <div className="w-full flex justify-center mb-2 md:mb-3">
                 <Image
                   src={g.image}
                   alt={g.imageAlt}
-                  width={250}
-                  height={250}
-                  className="h-14 sm:h-20 md:h-32 w-auto object-contain group-hover:hidden"
+                  width={200}
+                  height={200}
+                  className="h-12 sm:h-16 md:h-20 w-auto object-contain group-hover:hidden"
                 />
                 <Image
                   src={g.gif}
                   alt={g.imageAlt}
-                  width={250}
-                  height={250}
+                  width={200}
+                  height={200}
                   unoptimized
-                  className="h-14 sm:h-20 md:h-32 w-auto object-contain hidden group-hover:block"
+                  className="h-12 sm:h-16 md:h-20 w-auto object-contain hidden group-hover:block"
                 />
               </div>
 
-              <h3 className="text-[#7FB2FF] text-[9px] sm:text-[11px] md:text-[13px] font-semibold leading-snug tracking-[0.12em] text-center">
+              {/* Text */}
+              <h3 className="text-[#7FB2FF] text-[8px] sm:text-[10px] md:text-[12px] font-semibold tracking-[0.12em] text-center leading-snug">
                 {g.title}
               </h3>
-              <p className="mt-1 sm:mt-2 text-center text-white text-[9px] sm:text-[11px] md:text-[14px] leading-snug">
+              <p className="mt-1 text-center text-white text-[8px] sm:text-[10px] md:text-[12px] leading-snug max-w-[250px]">
                 {g.goal}
               </p>
             </motion.div>

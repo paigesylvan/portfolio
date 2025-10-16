@@ -6,58 +6,62 @@ import SectionHeader from "../SectionHeader";
 
 export default function Prototype() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-12">
-      <div className="max-w-[1200px] w-full text-center">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white mt-24 md:mt-0">
+      <div className="max-w-[900px] w-full text-center mx-auto">
         <SectionHeader
           kicker="LOW FIDELITY TESTING"
           title="Prototypes"
           align="center"
         />
 
-        <p className="text-xs lg:text-lg mx-auto mt-3 max-w-3xl text-white/85 leading-snug">
+        <p className="text-xs md:text-sm lg:text-base mx-auto mt-3 max-w-2xl text-white/85 leading-snug md:leading-normal">
           I refined my wireframes into low-fidelity prototypes to validate navigation,
           booking flows, and onboarding interactions before moving into high-fidelity
           UI design.
         </p>
 
-        {/* Two prototypes (Booking left, Onboarding right) */}
-        <div className="lg:mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-
-
-          {/* Onboarding Flow — 1/3 width (right) */}
-          <div className="md:col-span-1 flex flex-col items-center">
-            <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] lg:w-full">
-              <Image
-                src="/images/project1-images/prototype-1.png"
-                alt="Low fidelity onboarding prototype flow"
-                width={200}
-                height={100}
-                className="lg:w-full h-20px lg:h-[460px] lg:object-cover rounded-xl"
-              />
+        {/* Two prototypes (Onboarding & Booking) */}
+        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+          {/* Onboarding Flow */}
+          <div className="flex flex-col items-center">
+            <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
+              {/* Fixed-height frame so both cards feel equal on desktop */}
+              <div className="relative w-full h-[260px] sm:h-[320px] md:h-[340px] overflow-hidden rounded-xl">
+                <Image
+                  src="/images/project1-images/prototype-1.png"
+                  alt="Low fidelity onboarding prototype flow"
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 1024px) 420px, 90vw"
+                  priority
+                />
+              </div>
             </div>
-            <p className="mt-2 lg:mt-4 text-[12px] tracking-[0.18em] text-[#7FB2FF] uppercase">
+            <p className="mt-3 text-[11px] tracking-[0.18em] text-[#7FB2FF] uppercase">
               ONBOARDING FLOW
             </p>
-            <p className="mt-1 text-xs lg:text-sm text-white/70 max-w-sm">
+            <p className="mt-1 text-xs md:text-sm text-white/70 max-w-sm">
               Tested new-user introduction, account setup, and pet profile creation.
             </p>
           </div>
 
-                    {/* Booking Flow — 2/3 width (left) */}
-                    <div className="md:col-span-2 flex flex-col items-center">
+          {/* Booking Flow */}
+          <div className="flex flex-col items-center">
             <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
-              <Image
-                src="/images/project1-images/prototype-2.png"
-                alt="Low fidelity booking prototype flow"
-                width={2000}
-                height={1000}
-                className="w-full lg:h-[460px] object-contain rounded-xl"
-              />
+              <div className="relative w-full h-[260px] sm:h-[320px] md:h-[340px] overflow-hidden rounded-xl">
+                <Image
+                  src="/images/project1-images/prototype-2.png"
+                  alt="Low fidelity booking prototype flow"
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 1024px) 420px, 90vw"
+                />
+              </div>
             </div>
-            <p className="mt-4 text-[12px] tracking-[0.18em] text-[#7FB2FF] uppercase">
+            <p className="mt-3 text-[11px] tracking-[0.18em] text-[#7FB2FF] uppercase">
               BOOKING APPOINTMENT FLOW
             </p>
-            <p className="mt-1 text-xs lg:text-sm text-white/70 max-w-sm">
+            <p className="mt-1 text-xs md:text-sm text-white/70 max-w-sm">
               Validated service selection, scheduling, and confirmation steps.
             </p>
           </div>

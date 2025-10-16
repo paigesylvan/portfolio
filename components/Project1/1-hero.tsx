@@ -32,7 +32,7 @@ export default function HeroOverviewDog() {
             align="center"
             accent="dog"
             kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
-            titleClassName="text-md md:text-3xl max-w-[800px] ml-24 mt-2"
+            titleClassName="text-md md:text-3xl max-w-3xl mx-auto text-center mt-2"
           />
         </div>
 
@@ -63,7 +63,7 @@ export default function HeroOverviewDog() {
               alt="Login screen"
               width={420}
               height={860}
-              className="relative z-10 w-[200px] h-auto"
+              className="relative z-10 w-[190px] h-auto"
               priority
             />
           </motion.div>
@@ -82,7 +82,7 @@ export default function HeroOverviewDog() {
               alt="Home dashboard"
               width={420}
               height={860}
-              className="relative z-10 w-[220px] h-auto"
+              className="relative z-10 w-[210px] h-auto"
               priority
             />
           </motion.div>
@@ -101,7 +101,7 @@ export default function HeroOverviewDog() {
               alt="Service selection"
               width={420}
               height={860}
-              className="relative z-10 w-[200px] h-auto"
+              className="relative z-10 w-[190px] h-auto"
               priority
             />
           </motion.div>
@@ -110,7 +110,7 @@ export default function HeroOverviewDog() {
         {/* ---------- OVERVIEW ---------- */}
         <div className="mt-16 grid md:grid-cols-2 md:gap-12 md:items-start">
           {/* LEFT — Project & Role */}
-          <div>
+          <div className="ml-36">
             <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
             <p className="mt-1 lg:mt-2 text-xs md:text-[13px] text-white/95">
               Design a mobile-first app for a local dog grooming service.

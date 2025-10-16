@@ -104,10 +104,10 @@ function Donut({
         </text>
       </svg>
 
-      <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight max-w-[90px]">
+      <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight mx-auto">
   {captionTop}
 </p>
-<p className=" text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight max-w-[90px]">
+<p className=" text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight mx-auto">
   {label}
 </p>
     </div>
@@ -128,7 +128,7 @@ const donutStroke = isSmall ? 8 : 9;
         align="center"
       />
 
-      <div className="mt-8 lg:mt-24 grid gap-2 lg:gap-12 md:grid-cols-12 items-start">
+      <div className="mt-8 lg:mt-24 grid gap-2 lg:gap-8 md:grid-cols-12 items-start">
         {/* LEFT: Insight card (matches homepage card styling) */}
         <div className="md:col-span-8 px-12 py-6 ">
           <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-4 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
@@ -136,7 +136,7 @@ const donutStroke = isSmall ? 8 : 9;
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-xs lg:text-lg ">
+            <p className="text-white/80 text-xs lg:text-lg leading-tight">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.
@@ -158,7 +158,7 @@ const donutStroke = isSmall ? 8 : 9;
         </div>
 
         {/* RIGHT: Animated donuts with subtle stagger */}
-        <div className="md:col-span-4 flex md:flex-col justify-center gap-4 lg:gap-12 mt-3">
+        <div className="md:col-span-4 flex md:flex-col justify-center gap-4 lg:gap-8 mt-12">
           <Donut
             percent={67}
             captionTop="of U.S. households"
