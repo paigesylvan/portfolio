@@ -32,7 +32,7 @@ export default function HeroOverviewDog() {
             align="center"
             accent="dog"
             kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
-            titleClassName="text-md md:text-3xl max-w-[800px] ml-12 mt-2"
+            titleClassName="text-md md:text-3xl max-w-[800px] ml-24 mt-2"
           />
         </div>
 
@@ -139,7 +139,7 @@ export default function HeroOverviewDog() {
                 {skillsRow1.map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-1 lg:px-4 lg:py-2 text-[8px] lg:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10 shadow-sm"
+                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-1 lg:px-3 lg:py-1 text-[8px] lg:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10 shadow-sm"
                   >
                     {t}
                   </span>
