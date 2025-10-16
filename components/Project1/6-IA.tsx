@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function IA() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white">
+    <section className="flex flex-col items-center justify-center px-4 md:px-6 text-white">
       <div className="w-full max-w-[900px] mx-auto">
         {/* Header using shared component */}
         <SectionHeader
