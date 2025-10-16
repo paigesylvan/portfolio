@@ -81,7 +81,7 @@ export default function Goals() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="mt-16 md:mt-36 flex flex-col items-center justify-center px-3 md:px-6 text-white">
+    <section className="mt-16 md:mt-36 flex flex-col items-center justify-center px-3 md:px-6 text-white lg:pb-12">
       <div className="w-full max-w-[1200px] mx-auto">
         <SectionHeader
           kicker="THE WHY BEHIND THE DESIGN"
@@ -137,10 +137,10 @@ export default function Goals() {
                 />
               </div>
 
-              <h3 className="text-[#7FB2FF] text-[9px] sm:text-[11px] md:text-[13px] font-semibold leading-tight tracking-[0.12em] text-center">
+              <h3 className="text-[#7FB2FF] text-[9px] sm:text-[11px] md:text-[13px] font-semibold leading-snug tracking-[0.12em] text-center">
                 {g.title}
               </h3>
-              <p className="mt-1 sm:mt-2 text-center text-white text-[9px] sm:text-[11px] md:text-[14px] leading-tight">
+              <p className="mt-1 sm:mt-2 text-center text-white text-[9px] sm:text-[11px] md:text-[14px] leading-snug">
                 {g.goal}
               </p>
             </motion.div>

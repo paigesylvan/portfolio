@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function Prototype() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-12">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-12">
       <div className="max-w-[1200px] w-full text-center">
         <SectionHeader
           kicker="LOW FIDELITY TESTING"
@@ -14,7 +14,7 @@ export default function Prototype() {
           align="center"
         />
 
-        <p className="text-xs lg:text-2xl mx-auto mt-3 max-w-3xl text-white/85 leading-relaxed">
+        <p className="text-xs lg:text-lg mx-auto mt-3 max-w-3xl text-white/85 leading-snug">
           I refined my wireframes into low-fidelity prototypes to validate navigation,
           booking flows, and onboarding interactions before moving into high-fidelity
           UI design.

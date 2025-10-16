@@ -25,6 +25,15 @@ export default function UsersSection() {
           className="max-w-[90%] md:max-w-[85%] h-auto rounded-3xl shadow-2xl object-contain"
           priority
         />
+
+        <a
+  href="/images/project1-images/users-large.png"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block md:hidden mt-3 inline-block rounded-xl border border-white/10 bg-white/10 px-5 py-2 text-xs md:text-sm text-white hover:bg-white/20 transition-all duration-200"
+>
+  View Full Image
+</a>
       </div>
     </div>
   );

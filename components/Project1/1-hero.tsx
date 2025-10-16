@@ -1,9 +1,11 @@
+// components/Project1/HeroOverviewDog.tsx
 "use client";
 
 import Image from "next/image";
+import SectionHeader from "../SectionHeader";
 import { motion, useReducedMotion } from "framer-motion";
 
-export default function HeroOverview() {
+export default function HeroOverviewDog() {
   const prefersReduced = useReducedMotion();
 
   const phoneVariants = {
@@ -17,27 +19,37 @@ export default function HeroOverview() {
   };
 
   const skillsRow1 = ["UX RESEARCH", "UI CREATION", "USER FLOWS", "USABILITY STUDY"];
-  const skillsRow2 = ["WIRE FRAMING", "PROTOTYPING", "RESPONSIVE DESIGN"];
+  const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE DESIGN"];
 
   return (
-    <section className="min-h-screen w-screen bg-[#5684BF] flex flex-col justify-start">
-      {/* More top spacing */}
-      <div className="mt-36 lg:mt-60" />
+    <section className="w-screen min-h-screen bg-black text-white flex flex-col justify-center">
+      <div className="mx-auto w-full max-w-[1200px] px-6 pt-20 pb-24 mt-12">
+        {/* ---------- HEADER ---------- */}
+        <div className="text-center">
+          <SectionHeader
+            kicker="MOBILE APPLICATION"
+            title="How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming"
+            align="center"
+            accent="dog"
+            kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
+            titleClassName="text-md md:text-5xl max-w-[1000px] ml-12 mt-2"
+          />
+        </div>
 
-      {/* --- HERO TOP --- */}
-      <div className="mx-auto w-full max-w-[1200px] px-6 pb-8 text-center">
-        <h1 className="text-white text-md md:text-5xl leading-tight font-semibold">
-          How Emotionally Intelligent Design
-          <br className="hidden md:block" />
-          Improves Booking Confidence for Dog Grooming
-        </h1>
+        {/* ---------- HERO IMAGE (PHONES) ---------- */}
+        <div className="relative mt-10 lg:mt-14 flex items-end justify-center gap-6 md:gap-10">
+          {/* blue radial glow */}
+          <div
+  className="pointer-events-none absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2
+  w-[2200px] max-w-[180vw] aspect-[2.6/1] rounded-full
+  bg-[radial-gradient(circle_at_center,rgba(157,192,255,0.55)_0%,rgba(50,90,180,0.25)_40%,rgba(0,0,0,0)_90%)]
+  blur-[420px] opacity-95"
+/>
 
-        {/* iPhones */}
-        <div className="relative mt-12 flex items-end justify-center gap-6 md:gap-10">
-          {/* Glow */}
-          <div className="pointer-events-none absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[900px] max-w-[95vw] aspect-[2.1/1] rounded-full bg-[radial-gradient(circle_at_center,rgba(170,190,230,0.30),rgba(0,0,0,0)_62%)] blur-[70px]" />
+          {/* pedestal shadow */}
+          <div className="pointer-events-none absolute left-1/2 bottom-2 -translate-x-1/2 w-[700px] max-w-[92vw] h-[90px] rounded-full bg-black/80 blur-[90px] opacity-70" />
 
-          {/* LEFT */}
+          {/* left phone */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -46,9 +58,8 @@ export default function HeroOverview() {
             transition={{ delay: prefersReduced ? 0 : 0.05 }}
             className="relative"
           >
-            <div className="pointer-events-none absolute left-1/2 bottom-4 -translate-x-1/2 w-[200px] h-[50px] bg-black/80 blur-[45px] rounded-full opacity-70" />
             <Image
-              src="/images/phone-1.png"
+              src="/images/homepage-images/phone-1.png"
               alt="Login screen"
               width={420}
               height={860}
@@ -57,7 +68,7 @@ export default function HeroOverview() {
             />
           </motion.div>
 
-          {/* CENTER */}
+          {/* center phone */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -66,9 +77,8 @@ export default function HeroOverview() {
             transition={{ delay: prefersReduced ? 0 : 0.18 }}
             className="relative scale-[1.06]"
           >
-            <div className="pointer-events-none absolute left-1/2 bottom-4 -translate-x-1/2 w-[230px] h-[55px] bg-black/80 blur-[50px] rounded-full opacity-80" />
             <Image
-              src="/images/phone-2.png"
+              src="/images/homepage-images/phone-2.png"
               alt="Home dashboard"
               width={420}
               height={860}
@@ -77,7 +87,7 @@ export default function HeroOverview() {
             />
           </motion.div>
 
-          {/* RIGHT */}
+          {/* right phone */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -86,9 +96,8 @@ export default function HeroOverview() {
             transition={{ delay: prefersReduced ? 0 : 0.3 }}
             className="relative scale-[0.94]"
           >
-            <div className="pointer-events-none absolute left-1/2 bottom-4 -translate-x-1/2 w-[190px] h-[45px] bg-black/80 blur-[45px] rounded-full opacity-70" />
             <Image
-              src="/images/phone-3.png"
+              src="/images/homepage-images/phone-3.png"
               alt="Service selection"
               width={420}
               height={860}
@@ -97,57 +106,56 @@ export default function HeroOverview() {
             />
           </motion.div>
         </div>
-      </div>
 
-      {/* --- OVERVIEW --- */}
-      <div className="mx-auto w-full max-w-[1600px] px-6 pt-8 lg:mt-24">
-        <div className="grid md:grid-cols-2 md:gap-20 md:items-start">
-          {/* LEFT */}
-          <div className="text-white lg:ml-[200px]">
-            <p className="text-[11px] tracking-[0.22em] text-[#E6F0FF] pb-1">PROJECT</p>
-            <p className="lg:mt-2 text-xs md:text-lg text-white/95">
-              Design a Mobile-First App for a Local Dog Grooming Service
+        {/* ---------- OVERVIEW ---------- */}
+        <div className="mt-16 lg:mt-24 grid md:grid-cols-2 md:gap-12 md:items-start">
+          {/* LEFT — Project & Role */}
+          <div>
+            <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
+            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+              Design a mobile-first app for a local dog grooming service.
             </p>
 
-            <p className="mt-3 lg:mt-10 text-[11px] tracking-[0.22em] text-[#E6F0FF] pb-1">ROLE</p>
-            <p className="lg:mt-2 text-xs md:text-lg text-white/95">
+            <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
+            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
               UX/UI Designer, Researcher, Visual Designer, Usability Tester
             </p>
           </div>
 
-          {/* RIGHT */}
-          <div className="text-white md:pl-12 mt-3 lg:mt-12 md:mt-0">
-            <p className="text-[11px] tracking-[0.22em] text-[#E6F0FF]">DURATION</p>
-            <p className="mt-1 text-xs md:text-lg text-white/95">July 2025 – August 2025</p>
-
-            {/* SKILLS SECTION */}
-            <p className="mt-3 lg:mt-10 text-[11px] tracking-[0.22em] text-[#E6F0FF]">
-            UX/UI SKILLSET’S LEVERAGED
+          {/* RIGHT — Duration & Skills */}
+          <div className="mt-4 md:mt-0">
+            <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
+            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+              July 2025 – August 2025
             </p>
 
-            {/* Wrapper changes with screen size */}
-            <div className="mt-2 lg:mt-4 flex flex-wrap gap-3 
-                max-w-[460px] sm:max-w-[500px] md:max-w-[600px] 
-                justify-start">
-                {[
-                  "UX RESEARCH",
-                  "UI CREATION",
-                  "USER FLOWS",
-                  "USABILITY STUDY",
-                  "WIRE FRAMING",
-                  "PROTOTYPING",
-                  "RESPONSIVE DESIGN",
-            ].map((tag) => (
-            <span
-              key={tag}
-                  className="rounded-xl border border-white/10 bg-white/10 px-2 py-1 lg:px-4 lg:py-2 
-                 text-xs md:text-[13px] 
-                 tracking-wide text-white/95 ring-1 ring-inset ring-white/10 whitespace-nowrap"
-              >
-              {tag}
-              </span>
-              ))}
-          </div>
+            <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">
+              UX/UI SKILLSETS LEVERAGED
+            </p>
+
+            {/* Skills chips */}
+            <div className="mt-4 space-y-3">
+              <div className="flex flex-wrap gap-2 lg:gap-3">
+                {skillsRow1.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-1 lg:px-4 lg:py-2 text-[8px] lg:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10 shadow-sm"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-2 lg:gap-3">
+                {skillsRow2.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-1 lg:px-4 lg:py-2 text-[8px] lg:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10 shadow-sm"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

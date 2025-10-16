@@ -116,11 +116,12 @@ function Donut({
 
 export default function ResearchInsights() {
   const isSmall = useIsSmallScreen();
-  const donutSize = isSmall ? 56 : 112;   // 👈 tweak these to taste
-  const donutStroke = isSmall ? 8 : 10;
+  const donutSize = isSmall ? 56 : 90;   
+const donutStroke = isSmall ? 8 : 9;   
+
 
   return (
-    <div className="mx-auto lg:w-[90%] max-w-[1200px] mt-8">
+    <div className="mx-auto lg:w-[90%] max-w-[1200px]  mt-24 lg:mt-8">
       <SectionHeader
         kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"
@@ -135,20 +136,20 @@ export default function ResearchInsights() {
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-xs lg:text-2xl ">
+            <p className="text-white/80 text-xs lg:text-lg ">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.
             </p>
 
-            <ul className="mt-2 lg:mt-6 space-y-1 lg:space-y-5 text-white/70 text-xs lg:text-2xl">
+            <ul className="mt-2 lg:mt-6 space-y-1 text-white/70 text-xs lg:text-lg">
               <li>• There’s a gap in user-friendly grooming apps overall.</li>
               <li>• Many groomers still rely on outdated sites and phone calls to book appointments.</li>
               <li>• First-time users seek reassurance their dog will be treated with care.</li>
               <li>• Users worry about timing, delays, and unexpected changes.</li>
             </ul>
 
-            <p className="mt-4 lg:mt-12 lg:mt-24 text-white/90 leading-relaxed text-xs lg:text-2xl">
+            <p className="mt-4 lg:mt-12 lg:mt-24 text-white/90 leading-relaxed text-xs lg:text-lg">
               <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
               Trust, transparency, and clear communication matter as much as convenience—especially
               for first-time users.

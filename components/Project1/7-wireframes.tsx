@@ -47,14 +47,8 @@ export default function Wireframes() {
           align="center"
         />
 
-        <p className="text-xs lg:text-lg leading-snug pb-8  mx-auto mt-4 max-w-3xl text-center text-white/80">
-          I began sketching early concepts of the pages. These quick sketches
-          allowed me to explore layouts and content hierarchy. I explored
-          different navigation bar options during sketching to evaluate whether
-          including one would enhance usability and identified which navigation
-          items were most essential to feature. Wireframing allowed for early
-          structure for core flows—appointment creation, groomer discovery, and
-          status visibility.
+        <p className="text-xs lg:text-lg pb-8 leading-snug mx-auto mt-4 max-w-3xl text-center text-white/80">
+          I began sketching early concepts of the pages. These quick sketches allowed me to explore layouts and content hierarchy. I explored different navigation bar options during sketching to evaluate whether including one would enhance usability and identified which navigation items were most essential to feature. Wireframing allowed for early structure for core flows—appointment creation, groomer discovery, and status visibility.
         </p>
 
         {/* Wireframes grid */}
