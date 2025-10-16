@@ -20,7 +20,7 @@ export default function SectionHeader({
       {kicker && (
         <p
           className={`accent-text uppercase tracking-[0.12em] ${
-            kickerClassName || "text-[10px] lg:text-[13px]"
+            kickerClassName || "text-[10px] lg:text-xs"
           }`}
         >
           {kicker}
