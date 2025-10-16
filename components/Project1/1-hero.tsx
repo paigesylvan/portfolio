@@ -32,7 +32,7 @@ export default function HeroOverviewDog() {
             align="center"
             accent="dog"
             kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
-            titleClassName="text-md md:text-2xl max-w-[1000px] ml-12 mt-2"
+            titleClassName="text-md md:text-3xl max-w-[1000px] ml-12 mt-2"
           />
         </div>
 
@@ -108,16 +108,16 @@ export default function HeroOverviewDog() {
         </div>
 
         {/* ---------- OVERVIEW ---------- */}
-        <div className="mt-16 lg:mt-24 grid md:grid-cols-2 md:gap-12 md:items-start">
+        <div className="mt-16 grid md:grid-cols-2 md:gap-12 md:items-start">
           {/* LEFT — Project & Role */}
           <div>
             <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+            <p className="mt-1 lg:mt-2 text-xs md:text-[13px] text-white/95">
               Design a mobile-first app for a local dog grooming service.
             </p>
 
-            <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-lg text-white/95">
+            <p className="mt-4 lg:mt-6 text-[11px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
+            <p className="mt-1 lg:mt-2 text-xs md:text-[13px] text-white/95">
               UX/UI Designer, Researcher, Visual Designer, Usability Tester
             </p>
           </div>
@@ -125,11 +125,11 @@ export default function HeroOverviewDog() {
           {/* RIGHT — Duration & Skills */}
           <div className="mt-4 md:mt-0">
             <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-lg text-white/95">
+            <p className="mt-1 lg:mt-2 text-xs md:text-[13px] text-white/95">
               July 2025 – August 2025
             </p>
 
-            <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">
+            <p className="mt-4 lg:mt-6 text-[11px] tracking-[0.22em] text-[#9DC0FF]">
               UX/UI SKILLSETS LEVERAGED
             </p>
 
