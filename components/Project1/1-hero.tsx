@@ -32,7 +32,7 @@ export default function HeroOverviewDog() {
             align="center"
             accent="dog"
             kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
-            titleClassName="text-md md:text-xl max-w-[1000px] ml-12 mt-2"
+            titleClassName="text-md md:text-2xl max-w-[1000px] ml-12 mt-2"
           />
         </div>
 
@@ -63,7 +63,7 @@ export default function HeroOverviewDog() {
               alt="Login screen"
               width={420}
               height={860}
-              className="relative z-10 w-[220px] h-auto"
+              className="relative z-10 w-[200px] h-auto"
               priority
             />
           </motion.div>
@@ -82,7 +82,7 @@ export default function HeroOverviewDog() {
               alt="Home dashboard"
               width={420}
               height={860}
-              className="relative z-10 w-[240px] h-auto"
+              className="relative z-10 w-[220px] h-auto"
               priority
             />
           </motion.div>
@@ -101,7 +101,7 @@ export default function HeroOverviewDog() {
               alt="Service selection"
               width={420}
               height={860}
-              className="relative z-10 w-[220px] h-auto"
+              className="relative z-10 w-[200px] h-auto"
               priority
             />
           </motion.div>
@@ -117,7 +117,7 @@ export default function HeroOverviewDog() {
             </p>
 
             <p className="mt-4 lg:mt-10 text-[11px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+            <p className="mt-1 lg:mt-2 text-xs md:text-lg text-white/95">
               UX/UI Designer, Researcher, Visual Designer, Usability Tester
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function HeroOverviewDog() {
           {/* RIGHT — Duration & Skills */}
           <div className="mt-4 md:mt-0">
             <p className="text-[11px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
-            <p className="mt-1 lg:mt-2 text-xs md:text-xl text-white/95">
+            <p className="mt-1 lg:mt-2 text-xs md:text-lg text-white/95">
               July 2025 – August 2025
             </p>
 
