@@ -21,12 +21,12 @@ export default function Header() {
       <div className="mx-auto w-[92%] md:w-[85%]">
         <div className="flex items-center justify-between rounded-full bg-black/10 backdrop-blur-md  px-5 py-3 lg:py-6 lg:px-12">
           {/* Brand */}
-          <Link href="/" className="text-white font-semibold tracking-wide lg:text-4xl ">
+          <Link href="/" className="text-white font-semibold tracking-wide lg:text-xl ">
             P.S.
           </Link>
 
           {/* Desktop nav (optional) */}
-          <nav className="hidden md:flex items-center gap-8 text-sm lg:text-xl text-white/90">
+          <nav className="hidden md:flex items-center gap-8 text-sm lg:text-md text-white/90">
             <Link href="#case-studies" className="uppercase tracking-[0.18em]">Case Studies</Link>
             <Link href="/experience" className="uppercase tracking-[0.18em]">Experience</Link>
             <Link href="/about" className="uppercase tracking-[0.18em]">About Me</Link>
