@@ -24,7 +24,7 @@ const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(v, max));
 
 export default function TimelineAbout() {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = useReducedMotion() ?? false; 
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollY } = useScroll();
