@@ -136,7 +136,7 @@ const donutStroke = isSmall ? 8 : 9;
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-xs lg:text-lg leading-tight">
+            <p className="text-white/80 text-xs lg:text-lg ">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.

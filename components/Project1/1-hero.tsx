@@ -37,9 +37,34 @@ export default function HeroOverviewDog() {
 
         {/* ---------- HERO IMAGE (PHONES) ---------- */}
         <div className="relative mt-6 md:mt-10 flex items-end justify-center gap-4 md:gap-6">
-          {/* blue radial glow */}
-          <div className="pointer-events-none absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 w-[900px] max-w-[95vw] aspect-[2/1] rounded-full
-                          bg-[radial-gradient(circle_at_center,rgba(157,192,255,0.25),rgba(0,0,0,0)_70%)] blur-[100px]" />
+          {/* ===== BIG LAYERED BLUE RADIAL (behind phones) ===== */}
+          {/* Core glow */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10
+                       -translate-x-1/2 -translate-y-1/2
+                       w-[2600px] max-w-[220vw] aspect-[2.4/1] rounded-full
+                       bg-[radial-gradient(circle_at_center,rgba(157,192,255,0.75)_0%,rgba(50,90,180,0.45)_45%,rgba(0,0,0,0)_90%)]
+                       blur-[420px] opacity-95"
+            aria-hidden
+          />
+          {/* Mid halo */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10
+                       -translate-x-1/2 -translate-y-1/2
+                       w-[2200px] max-w-[200vw] aspect-[2.8/1] rounded-full
+                       bg-[radial-gradient(circle_at_center,rgba(120,160,255,0.35)_0%,rgba(40,70,160,0.25)_40%,rgba(0,0,0,0)_92%)]
+                       blur-[360px] opacity-90"
+            aria-hidden
+          />
+          {/* Outer tint to extend field */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10
+                       -translate-x-1/2 -translate-y-1/2
+                       w-[3400px] max-w-[280vw] aspect-[3.2/1] rounded-full
+                       bg-[radial-gradient(circle_at_center,rgba(90,130,230,0.25)_0%,rgba(0,0,0,0)_85%)]
+                       blur-[520px] opacity-80"
+            aria-hidden
+          />
 
           {/* pedestal shadow */}
           <div className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 w-[420px] max-w-[85vw] h-[60px] rounded-full bg-black/80 blur-[60px] opacity-70" />
@@ -70,7 +95,7 @@ export default function HeroOverviewDog() {
             viewport={{ once: true, amount: 0.25 }}
             variants={phoneVariants}
             transition={{ delay: prefersReduced ? 0 : 0.15 }}
-            className="relative scale-[1]"
+            className="relative"
           >
             <Image
               src="/images/homepage-images/phone-2.png"
