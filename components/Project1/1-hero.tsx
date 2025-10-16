@@ -32,7 +32,7 @@ export default function HeroOverviewDog() {
             align="center"
             accent="dog"
             kickerClassName="text-[8px] md:text-sm text-[#9DC0FF]"
-            titleClassName="text-md md:text-5xl max-w-[1000px] ml-12 mt-2"
+            titleClassName="text-md md:text-xl max-w-[1000px] ml-12 mt-2"
           />
         </div>
 
