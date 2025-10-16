@@ -22,7 +22,7 @@ const studies: Study[] = [
     subtitle:
       "A responsive, mobile-first grooming app designed to ease booking anxiety for pet parents through emotionally intelligent UX, soft visual cues and empathetic microcopy.",
     tags: ["UX RESEARCH", "UI CREATION", "PROTOTYPING"],
-    image: "/images/dog-phone.png",
+    image: "/images/homepage-images/dog-phone.png",
     imageAlt: "Dog grooming app on phone",
     cta: "View Case Study",
   },
@@ -33,7 +33,7 @@ const studies: Study[] = [
     subtitle:
       "A Responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear.",
     tags: ["UX-UI", "USER FLOW", "USABILITY TESTING"],
-    image: "/images/camping-laptop.png",
+    image: "/images/homepage-images/camping-laptop.png",
     imageAlt: "Camping site on laptop",
     cta: "View Case Study",
   },
@@ -43,7 +43,7 @@ const studies: Study[] = [
     subtitle:
       "Designed and coded a responsive homepage that simplifies service discovery and builds confidence for a local dry cleaning business.",
     tags: ["VS CODE", "REACT", "RESPONSIVE DESIGN"],
-    image: "/images/cleaners-desktop.png",
+    image: "/images/homepage-images/cleaners-desktop.png",
     imageAlt: "Dry cleaner site on desktop",
     cta: "View Case Study",
   },
