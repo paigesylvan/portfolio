@@ -1,3 +1,4 @@
+// components/Project2/UserFlow.tsx
 "use client";
 
 import Image from "next/image";
@@ -5,29 +6,42 @@ import SectionHeader from "../SectionHeader";
 
 export default function UserFlow() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-start px-4 md:px-10 text-white pt-32 md:pt-40">
-        <div className="mx-auto w-[92%] md:w-[70%]">
-      <SectionHeader
-        kicker="GETTING TO KNOW THE USER"
-        title="User Flow"
-        align="center"
-      />
-        <p className="text-xs mx-auto mt-4 max-w-3xl text-center text-white/80 leading-tight pb-6">
-        To better understand the camper’s decision-making process, I created a user journey map.
+    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white mt-24 md:mt-0">
+      <div className="mx-auto w-full max-w-[900px]">
+        <SectionHeader
+          kicker="GETTING TO KNOW THE USER"
+          title="User Flow"
+          align="center"
+        />
+
+        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-2xl text-center text-white/80 leading-snug md:leading-normal pb-6">
+          To better understand the camper’s decision-making process, I created a user journey map.
           This helped identify moments of confusion and stress across the shopping experience, as
           well as opportunities to simplify decision-making with clear guidance.
         </p>
 
+        {/* Image */}
         <div className="flex items-center justify-center">
-        <Image
-          src="/images/project2-images/userflow.png"
-          alt="User flow journey map"
-          width={2800}
-          height={1100}
-          className="max-w-[90%] h-auto rounded-3xl shadow-2xl object-contain"
-          priority
-        />
-      </div>
+          <Image
+            src="/images/project2-images/userflow.png"
+            alt="User flow journey map"
+            width={2800}
+            height={1100}
+            priority
+            sizes="(min-width: 1024px) 55vw, 92vw"
+            className="w-full h-auto rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,0.45)] object-contain"
+          />
+        </div>
+
+        {/* Mobile-only: view full image */}
+        <a
+          href="/images/project2-images/userflow.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block md:hidden mt-3 mx-auto w-fit rounded-xl border border-white/10 bg-white/10 px-5 py-2 text-xs text-white hover:bg-white/20 transition-all duration-200"
+        >
+          View Full Image
+        </a>
       </div>
     </section>
   );

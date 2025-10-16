@@ -20,7 +20,7 @@ export default function Testing() {
         </h3>
 
         {/* Description */}
-        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-2xl text-white/80 leading-snug md:leading-normal">
+        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-5xl text-white/80 leading-snug md:leading-normal">
           Through a moderated usability study of one user, they navigated through the app
           while I noted comments and areas for refinement. Feedback was positive about the
           booking process and ability to schedule for more than one dog. To bring more

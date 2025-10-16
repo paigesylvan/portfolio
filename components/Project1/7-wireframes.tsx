@@ -39,7 +39,7 @@ export default function Wireframes() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white mt-24 lg:mt-0 pb-12">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white mt-24 lg:mt-0">
       <div className="w-full max-w-[900px] mx-auto">
         <SectionHeader
           kicker="LOW-FI EXPLORATION"

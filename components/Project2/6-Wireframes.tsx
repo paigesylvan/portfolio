@@ -1,4 +1,3 @@
-// components/Project1/8-wireframes.tsx
 "use client";
 
 import Image from "next/image";
@@ -34,21 +33,23 @@ export default function Wireframes() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 sm:px-6 text-white mt-36 lg:mt-0 pb-8 lg:pb-0">
-      <div className="w-full max-w-[1200px] mx-auto">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 sm:px-4 text-white mt-20 lg:mt-0 pb-6">
+      <div className="w-full max-w-[800px] mx-auto">
         <SectionHeader
           kicker="LOW-FI EXPLORATION"
           title="Key Wireframes"
           align="center"
         />
 
-        <p className="mx-auto mt-4 max-w-3xl text-center text-white/80 text-xs">
-          I began with low-fidelity wireframes to explore layouts that reduce overwhelm and guide users quickly toward the right gear. Since research showed beginners feel unsure where to start, I focused on surfacing curated bundles and trust-building elements early in the flow. Each frame experimented with ways to balance product discovery and clarity without clutter.
+        <p className="mx-auto mt-3 max-w-2xl text-center text-white/80 text-[10px] sm:text-xs leading-snug">
+          I began with low-fidelity wireframes to explore layouts that reduce overwhelm and guide users quickly toward the right gear. 
+          Since research showed beginners feel unsure where to start, I focused on surfacing curated bundles and trust-building elements 
+          early in the flow. Each frame experimented with ways to balance product discovery and clarity without clutter.
         </p>
 
-        {/* Responsive grid: mobile=2 cols (3 rows), laptop+=3 cols (2 rows) */}
+        {/* Grid: smaller scale, 3 cols on desktop */}
         <motion.div
-          className="mt-12 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6"
+          className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 justify-items-center"
           variants={parent()}
           initial="hidden"
           whileInView="show"
@@ -58,19 +59,19 @@ export default function Wireframes() {
             <motion.figure
               key={wf.src}
               variants={item(prefersReduced)}
-              className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur-md p-2 sm:p-4 hover:bg-white/10 transition"
+              className="rounded-xl bg-white/5 ring-1 ring-white/10 backdrop-blur-md p-2 md:p-3 hover:bg-white/10 transition"
             >
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-xl ring-1 ring-white/10">
+              <div className="relative mx-auto aspect-[4/5] w-[120px] sm:w-[160px] md:w-[180px] overflow-hidden rounded-lg ring-1 ring-white/10">
                 <Image
                   src={wf.src}
                   alt={wf.alt}
                   fill
-                  className="object-contain p-2 sm:p-4"
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 50vw"
+                  className="object-contain p-2 sm:p-3"
+                  sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 48vw"
                 />
               </div>
               {wf.label && (
-                <figcaption className="mt-3 text-center text-sm text-white/80">
+                <figcaption className="mt-2 text-center text-[10px] sm:text-xs text-white/75">
                   {wf.label}
                 </figcaption>
               )}

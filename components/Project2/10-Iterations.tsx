@@ -10,11 +10,11 @@ const parent = (stagger = 0.12) => ({
 });
 
 const item = (reduced: boolean) => ({
-  hidden: { opacity: 0, y: reduced ? 0 : 26 },
+  hidden: { opacity: 0, y: reduced ? 0 : 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.6, ease: "easeOut" },
+    transition: { duration: reduced ? 0 : 0.5, ease: "easeOut" },
   },
 });
 
@@ -22,8 +22,8 @@ export default function Iterations() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
-      <div className="mx-auto w-full max-w-[1200px]">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white mt-24 lg:mt-0 pb-12">
+      <div className="mx-auto w-full max-w-[900px]">
         <SectionHeader
           kicker="FINDINGS → REFINEMENTS"
           title="Iterations Based on Insights"
@@ -31,26 +31,29 @@ export default function Iterations() {
         />
 
         <motion.div
-          className="mt-12 grid gap-8 md:grid-cols-2"
+          className="mt-8 md:mt-10 grid gap-6 md:grid-cols-2"
           variants={parent()}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
         >
-          {/* LEFT: Homepage */}
+          {/* ---------- HOMEPAGE CARD ---------- */}
           <motion.article
             variants={item(prefersReduced)}
-            className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-7 md:p-9 shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
+            className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
           >
-            <p className="accent-text text-[12px] tracking-[0.22em]">HOMEPAGE</p>
-            <h3 className="mt-2 text-2xl font-semibold">Added grid to Collections</h3>
-            <p className="mt-2 text-white/80">
+            <p className="accent-text text-[10px] tracking-[0.22em] text-emerald-400 font-semibold">
+              HOMEPAGE
+            </p>
+            <h3 className="mt-2 text-lg md:text-xl font-semibold">
+              Added grid to Collections
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-white/80 leading-snug">
               Added grid to Collections for quicker scanning and variety at a glance.
             </p>
 
-            {/* Side-by-side BEFORE / AFTER (stack on mobile) */}
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-              {/* Before — image flush to top */}
+            {/* Side-by-side BEFORE / AFTER */}
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
               <figure className="flex flex-col">
                 <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] overflow-hidden">
                   <Image
@@ -62,12 +65,11 @@ export default function Iterations() {
                     priority
                   />
                 </div>
-                <figcaption className="mt-2 text-xs text-white/65 text-center">
+                <figcaption className="mt-2 text-[10px] text-white/65 text-center">
                   Before Usability Study
                 </figcaption>
               </figure>
 
-              {/* After — match structure */}
               <figure className="flex flex-col">
                 <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] overflow-hidden">
                   <Image
@@ -78,26 +80,29 @@ export default function Iterations() {
                     className="block w-full h-auto align-top"
                   />
                 </div>
-                <figcaption className="mt-2 text-xs text-white/65 text-center">
+                <figcaption className="mt-2 text-[10px] text-white/65 text-center">
                   After Usability Study
                 </figcaption>
               </figure>
             </div>
           </motion.article>
 
-          {/* RIGHT: Check Out */}
+          {/* ---------- CHECKOUT CARD ---------- */}
           <motion.article
             variants={item(prefersReduced)}
-            className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-7 md:p-9 shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
+            className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
           >
-            <p className="accent-text text-[12px] tracking-[0.22em]">CHECK OUT SCREEN</p>
-            <h3 className="mt-2 text-2xl font-semibold">Reduced hesitation with clearer details</h3>
-            <p className="mt-2 text-white/80">
-              Added quantity adjuster, return policy, tax/shipping info to reduce hesitation and reinforce trust.
+            <p className="accent-text text-[10px] tracking-[0.22em] text-emerald-400 font-semibold">
+              CHECKOUT SCREEN
+            </p>
+            <h3 className="mt-2 text-lg md:text-xl font-semibold">
+              Reduced hesitation with clearer details
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-white/80 leading-snug">
+              Added quantity adjuster, return policy, and tax/shipping info to reduce hesitation and reinforce trust.
             </p>
 
-            <div className="mt-6 grid gap-6">
-              {/* Before */}
+            <div className="mt-4 grid gap-4">
               <div>
                 <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2">
                   <Image
@@ -108,10 +113,11 @@ export default function Iterations() {
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <p className="mt-2 text-xs text-white/65">Before Usability Study</p>
+                <p className="mt-2 text-[10px] text-white/65">
+                  Before Usability Study
+                </p>
               </div>
 
-              {/* After */}
               <div>
                 <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2">
                   <Image
@@ -122,7 +128,9 @@ export default function Iterations() {
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-                <p className="mt-2 text-xs text-white/65">After Usability Study</p>
+                <p className="mt-2 text-[10px] text-white/65">
+                  After Usability Study
+                </p>
               </div>
             </div>
           </motion.article>
