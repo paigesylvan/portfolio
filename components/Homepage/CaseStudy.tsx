@@ -85,11 +85,11 @@ export default function CaseStudies() {
             border border-white/15
             bg-white/6
             backdrop-blur-md
-            ring-1 ring-inset ring-white/10
+            ring-[2px] ring-inset ring-white/10
             shadow-[0_8px_30px_rgba(0,0,0,0.35)]
             px-4 py-6 md:px-5 md:py-7
             transition-all
-            hover:bg-white/8 hover:ring-white/15 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
+            hover:bg-white/7 hover:ring-white/15 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
           >
             <div className="grid items-center gap-8 md:grid-cols-12">
 
