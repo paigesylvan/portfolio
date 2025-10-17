@@ -64,7 +64,7 @@ export default function CaseStudies() {
           backgroundImage: "url('/images/homepage-images/case-study-bg.png')", // update this path
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed", // optional: creates a parallax feel
+          backgroundAttachment: "fixed",
           opacity: 0.65,
         }}
       />
@@ -138,11 +138,47 @@ export default function CaseStudies() {
                   {s.subtitle}
                 </p>
 
+                {/* Modern pill button */}
                 <Link
                   href={s.slug}
-                  className="mt-6 inline-block rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black shadow-[0_6px_0_rgba(0,0,0,0.45)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_0_rgba(0,0,0,0.4)] active:translate-y-0"
+                  className="
+                    group relative mt-8 inline-flex items-center gap-3
+                    rounded-full px-6 py-3 font-medium text-white
+                    bg-white/[0.06] backdrop-blur-md
+                    shadow-[0_4px_12px_rgba(0,0,0,0.3)]
+                    border border-white/10
+                    transition-all duration-300
+                    hover:bg-white/[0.15] hover:shadow-[0_6px_20px_rgba(0,0,0,0.45)]
+                    focus-visible:ring-2 focus-visible:ring-white/40
+                  "
                 >
-                  {s.cta ?? "View Case Study"}
+                  <span className="text-sm tracking-wide">
+                    {s.cta ?? "View Case Study"}
+                  </span>
+                  <span
+                    className="
+                      flex items-center justify-center
+                      w-7 h-7 rounded-full
+                      bg-white/10
+                      transition-all duration-300
+                      group-hover:bg-white/30
+                      group-hover:translate-x-1
+                    "
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </span>
                 </Link>
               </div>
             </div>
