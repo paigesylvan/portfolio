@@ -14,7 +14,7 @@ export default function Prototype() {
           align="center"
         />
 
-        <p className="text-xs md:text-sm lg:text-base mx-auto mt-3 max-w-2xl text-white/85 leading-snug md:leading-normal">
+        <p className="text-xs md:text-base mx-auto mt-3 max-w-2xl text-white/85 leading-snug md:leading-normal">
           I refined my wireframes into low-fidelity prototypes to validate navigation,
           booking flows, and onboarding interactions before moving into high-fidelity
           UI design.

@@ -45,10 +45,10 @@ export default function Iterations() {
             <p className="text-[9px] tracking-[0.22em] text-emerald-400 font-semibold">
               HOMEPAGE
             </p>
-            <h3 className="mt-2 text-base md:text-lg font-semibold leading-snug">
+            <h3 className="mt-2 text-base md:text-base font-semibold leading-snug">
               Added grid to Collections
             </h3>
-            <p className="mt-2 text-[10px] md:text-[11px] text-white/80 leading-snug">
+            <p className="mt-2 text-[10px] md:text-base text-white/80 leading-snug">
               Added grid to Collections for quicker scanning and variety at a glance.
             </p>
 

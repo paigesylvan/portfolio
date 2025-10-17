@@ -15,7 +15,7 @@ export default function IA() {
         />
 
         {/* ---------- INTRO TEXT ---------- */}
-        <p className="mx-auto mt-3 max-w-[620px] text-center text-white/75 text-[10px] md:text-[11px] lg:text-[12px] leading-snug md:leading-snug">
+        <p className="mx-auto mt-3 max-w-[620px] text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
           The site map helps ensure that the structure of the app addresses user needs
           uncovered in research. My focus was to make information easily accessible,
           with clear navigation for effortless booking and browsing.

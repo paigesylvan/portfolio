@@ -99,7 +99,7 @@ export default function CaseStudies() {
               </div>
 
               {/* text */}
-              <div className="md:col-span-7 lg:pl-16 pl-8">
+              <div className="md:col-span-7 lg:pl-16 pl-6">
                 <div className="mb-4 flex flex-wrap gap-1 lg:gap-4">
                   {s.tags.map((t) => (
                     <span
@@ -111,7 +111,7 @@ export default function CaseStudies() {
                   ))}
                 </div>
 
-                <h3 className="w-[70%] py-1 lg:py-6 font-bold leading-tight text-lg md:text-[36px] lg:text-2xl ">
+                <h3 className=" lg:w-[70%] py-1 lg:py-6 font-bold leading-tight text-lg md:text-[36px] lg:text-2xl ">
                   {s.title}
                 </h3>
                 <p className="mt-3 max-w-prose text-md text-white/70 md:text-base leading-tight">

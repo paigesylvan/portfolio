@@ -128,7 +128,7 @@ const donutStroke = isSmall ? 8 : 9;
         align="center"
       />
 
-      <div className="mt-8 lg:mt-24 grid gap-2 lg:gap-8 md:grid-cols-12 items-start">
+      <div className="mt-8 lg:mt-24 grid lg:gap-8 md:grid-cols-12 items-start">
         {/* LEFT: Insight card (matches homepage card styling) */}
         <div className="md:col-span-8 px-12 py-6 ">
           <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-4 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
@@ -136,20 +136,20 @@ const donutStroke = isSmall ? 8 : 9;
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-xs lg:text-lg ">
+            <p className="text-white/80 text-xs lg:text-md ">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.
             </p>
 
-            <ul className="mt-2 lg:mt-6 space-y-1 text-white/70 text-xs lg:text-lg">
+            <ul className="mt-2 lg:mt-6 space-y-1 text-white/70 text-xs lg:text-md">
               <li>• There’s a gap in user-friendly grooming apps overall.</li>
               <li>• Many groomers still rely on outdated sites and phone calls to book appointments.</li>
               <li>• First-time users seek reassurance their dog will be treated with care.</li>
               <li>• Users worry about timing, delays, and unexpected changes.</li>
             </ul>
 
-            <p className="mt-4 lg:mt-12 lg:mt-24 text-white/90 leading-relaxed text-xs lg:text-lg">
+            <p className="mt-4 lg:mt-24 text-white/90 leading-relaxed text-xs lg:text-md">
               <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
               Trust, transparency, and clear communication matter as much as convenience—especially
               for first-time users.
@@ -158,7 +158,7 @@ const donutStroke = isSmall ? 8 : 9;
         </div>
 
         {/* RIGHT: Animated donuts with subtle stagger */}
-        <div className="md:col-span-4 flex md:flex-col justify-center gap-4 lg:gap-8 mt-12">
+        <div className="md:col-span-4 flex md:flex-col justify-center gap-4 mt-12">
           <Donut
             percent={67}
             captionTop="of U.S. households"

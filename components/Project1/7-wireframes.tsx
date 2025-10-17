@@ -44,7 +44,7 @@ export default function Wireframes() {
           align="center"
         />
 
-        <p className="mx-auto mt-3 max-w-[620px] text-center text-white/75 text-[10px] md:text-[11px] lg:text-[12px] leading-snug md:leading-snug">
+        <p className="mx-auto mt-3 max-w-[620px] text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
           I began sketching early concepts of the pages. These quick sketches allowed me to explore layouts and content hierarchy. I tested different navigation bar options to see which would enhance usability and identified which items were most essential to feature. Wireframing helped establish early structure for core flows—appointment creation, groomer discovery, and status visibility.
         </p>
 

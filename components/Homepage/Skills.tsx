@@ -15,7 +15,7 @@ const skills: Skill[] = [
   {
     title: "Simplify the Complex",
     body:
-      "I thrive on making things clearer and easier to use—decluttering workflows and untangling overloaded interfaces.",
+      "I thrive on making things clearer and easier to use, decluttering workflows and untangling overloaded interfaces.",
     gif: "/gifs/wireframes.gif",
     alt: "Wireframes animation",
   },
@@ -67,7 +67,7 @@ export default function Skills() {
             width={100}
             height={100}
             unoptimized
-            className="h-16 w-16 md:h-20 md:w-20 object-contain opacity-90"
+            className="h-16 w-20 md:h-20 object-contain opacity-90"
           />
         </div>
 

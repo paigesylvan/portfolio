@@ -90,7 +90,7 @@ export default function Goals() {
         />
 
         {/* Intro blurb */}
-        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-2xl text-center text-white/80">
+        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-2xl text-center text-white/80 leading-tight">
           From my research, I identified six key focus areas from user needs to guide my UI design decisions.
           These findings highlight the need for a digital experience that builds trust, simplifies decisions,
           and streamlines the booking process.
