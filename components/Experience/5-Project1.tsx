@@ -83,13 +83,13 @@ export default function Project1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-20 mb-0">
-      <div className="w-full max-w-[1100px] mx-auto text-sm md:text-base">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-20 mb-0">
+      <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
 
         {/* ---------- HMI Screenshot ---------- */}
-        <div className="mt-6 flex flex-col items-center">
-          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)] w-full md:w-[78%]">
+        <div className="lg:mt-12 flex flex-col items-center">
+          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)] w-full md:w-[80%]">
             <Image
               src="/images/experience-images/meter-room-hmi.png"
               alt="HMI status screen"
