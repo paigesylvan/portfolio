@@ -17,26 +17,32 @@ export default function HeroDots({
   const [reduced, setReduced] = useState(false);
 
   // ===== TUNING =====
-  const DOT_GAP = 22;          // tighter grid (was 26)
-  const DOT_SIZE = 1.6;        // smaller dots (was ~2.2)
-  const DRIFT_AMPL_X = 0.5;    // subtle random float
-  const DRIFT_AMPL_Y = 0.8;
-  const DRIFT_SPEED = 0.0007;
-
-  // Wave motion (clean, coherent motion across the field)
-  const WAVE_AMPL = 14;                         // vertical wave amplitude (px)
-  const WAVE_WAVELENGTH = 120;                 // px between crests
-  const WAVE_SPEED = 0.003;                   // time speed
-  const WAVE2_AMPL = 4;                        // optional secondary cross-wave (x shift)
-  const WAVE2_WAVELENGTH = 220;
-  const WAVE2_SPEED = 0.0011;
-
-  // Hover fade
-  const HIDE_RADIUS = 100;
-  const HIDE_SOFTNESS = 130;
-  const RETURN_EASE = 0.1;
+  // Appearance
+  const DOT_GAP = 22;       // tighter grid
+  const DOT_SIZE = 1.6;     // smaller dots
   const COLOR = "#FFFFFF";
 
+  // Diagonal wave (primary motion)
+  const WAVE_DIR_DEG = 45;                    // direction in degrees (45° = top-left -> bottom-right)
+  const WAVE_AMPL = 8;                        // px amplitude (vertical offset relative to wave)
+  const WAVE_WAVELENGTH = 160;                // px between crests
+  const WAVE_SPEED = 0.002;                   // time speed
+
+  // Cross-sway (secondary motion for organic feel)
+  const SWAY_AMPL = 3;                        // px
+  const SWAY_WAVELENGTH = 220;                // px
+  const SWAY_SPEED = 0.0012;                  // time speed
+
+  // Tiny per-dot drift (micro jitter so it’s not mechanical)
+  const DRIFT_AMPL = 0.6;                     // px
+  const DRIFT_SPEED = 0.0009;
+
+  // Hover fade “hole”
+  const HIDE_RADIUS = 100;                    // px full fade
+  const HIDE_SOFTNESS = 130;                  // px feather
+  const RETURN_EASE = 0.1;                    // opacity ease
+
+  // ===== CANVAS SETUP =====
   const fitCanvas = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -74,11 +80,9 @@ export default function HeroDots({
     if (!ctx) return;
 
     type Dot = {
-      x: number; y: number;        // base grid position
+      x: number; y: number;                 // base grid position
       opacity: number; targetOpacity: number;
-      driftPX: number; driftPY: number; // random drift phase
-      speedJitter: number;
-      rowPhase: number; colPhase: number; // stable offsets for coherent waves
+      jitter: number;                       // per-dot drift phase
     };
 
     let dots: Dot[] = [];
@@ -90,7 +94,7 @@ export default function HeroDots({
 
       const cols = Math.ceil(width / DOT_GAP) + 2;
       const rows = Math.ceil(height / DOT_GAP) + 2;
-      const xOffset = ((width % DOT_GAP) / 2) - DOT_GAP;
+      const xOffset = ((width % DOT_GAP) / 2) - DOT_GAP; // center grid
       const yOffset = ((height % DOT_GAP) / 2) - DOT_GAP;
 
       for (let r = 0; r < rows; r++) {
@@ -101,11 +105,7 @@ export default function HeroDots({
             x, y,
             opacity: 1,
             targetOpacity: 1,
-            driftPX: Math.random() * Math.PI * 2,
-            driftPY: Math.random() * Math.PI * 2,
-            speedJitter: 0.7 + Math.random() * 0.6, // 0.7..1.3
-            rowPhase: (r / rows) * Math.PI * 2,
-            colPhase: (c / cols) * Math.PI * 2,
+            jitter: Math.random() * Math.PI * 2,
           });
         }
       }
@@ -118,16 +118,17 @@ export default function HeroDots({
     });
     canvas.parentElement && ro.observe(canvas.parentElement);
 
+    // Coordinate helpers
     const toLocal = (clientX: number, clientY: number) => {
       const rect = canvas.getBoundingClientRect();
       return { x: clientX - rect.left, y: clientY - rect.top, rect };
     };
 
+    // Listen on window so content never blocks interaction
     const onPointerMove = (e: PointerEvent | MouseEvent | TouchEvent) => {
       let cx = 0, cy = 0;
       if ("touches" in e) {
-        const t = e.touches[0];
-        if (!t) return;
+        const t = e.touches[0]; if (!t) return;
         cx = t.clientX; cy = t.clientY;
       } else {
         const me = e as MouseEvent;
@@ -136,10 +137,7 @@ export default function HeroDots({
       const { x, y, rect } = toLocal(cx, cy);
       const inside = cx >= rect.left && cx <= rect.right && cy >= rect.top && cy <= rect.bottom;
       pointerRef.current.active = inside;
-      if (inside) {
-        pointerRef.current.x = x;
-        pointerRef.current.y = y;
-      }
+      if (inside) { pointerRef.current.x = x; pointerRef.current.y = y; }
     };
     const onPointerLeaveWindow = () => { pointerRef.current.active = false; };
 
@@ -148,45 +146,60 @@ export default function HeroDots({
     window.addEventListener("pointerleave", onPointerLeaveWindow);
     window.addEventListener("blur", onPointerLeaveWindow);
 
-    let t0 = performance.now();
+    // Precompute wave direction vectors
+    const dirRad = (WAVE_DIR_DEG * Math.PI) / 180;
+    const ux = Math.cos(dirRad);  // unit vector along wave direction
+    const uy = Math.sin(dirRad);
+    // perpendicular unit (for vertical displacement relative to wave)
+    const px = -uy;
+    const py = ux;
+
+    const TWO_PI = Math.PI * 2;
 
     const draw = (t: number) => {
       const parent = canvas.parentElement!;
       const rect = parent.getBoundingClientRect();
 
       ctx.clearRect(0, 0, rect.width, rect.height);
-
-      const TWO_PI = Math.PI * 2;
-      const pointer = pointerRef.current;
-
       ctx.save();
       ctx.fillStyle = COLOR;
 
       for (const d of dots) {
-        // ----- motion -----
-        // coherent wave: vertical sinusoid based on x position (plus per-row offset)
-        let wx = 0, wy = 0;
+        // ===== Motion calculation =====
+        let offX = 0, offY = 0;
+
         if (!reduced) {
-          const wavePhase = (d.x / WAVE_WAVELENGTH) * TWO_PI + t * WAVE_SPEED + d.rowPhase * 0.25;
-          wy = Math.sin(wavePhase) * WAVE_AMPL;
+          // Project point onto wave direction (distance along diagonal)
+          const s = d.x * ux + d.y * uy; // scalar along direction
 
-          // optional second wave to add a gentle horizontal sway
-          const wave2Phase = (d.y / WAVE2_WAVELENGTH) * TWO_PI + t * WAVE2_SPEED + d.colPhase * 0.25;
-          wx = Math.sin(wave2Phase) * WAVE2_AMPL;
+          // Primary wave: sine over the along-direction, moving over time
+          const phase = (s / WAVE_WAVELENGTH) * TWO_PI + t * WAVE_SPEED;
+          const wave = Math.sin(phase) * WAVE_AMPL;
 
-          // tiny random drift so it doesn't look perfectly mechanical
-          const ts = t * DRIFT_SPEED * d.speedJitter;
-          wx += Math.sin(d.driftPX + ts) * DRIFT_AMPL_X;
-          wy += Math.cos(d.driftPY + ts * 1.1) * DRIFT_AMPL_Y;
+          // Apply displacement along the perpendicular to the wave direction
+          offX += px * wave;
+          offY += py * wave;
+
+          // Secondary cross-sway (orthogonal wave for shimmer)
+          const s2 = d.x * px + d.y * py;
+          const phase2 = (s2 / SWAY_WAVELENGTH) * TWO_PI + t * SWAY_SPEED;
+          const sway = Math.sin(phase2) * SWAY_AMPL;
+          offX += ux * sway * 0.6;
+          offY += uy * sway * 0.6;
+
+          // Tiny per-dot random drift
+          const drift = Math.sin(d.jitter + t * DRIFT_SPEED) * DRIFT_AMPL;
+          offX += drift * 0.6;
+          offY += drift * 0.6;
         }
 
-        const px = d.x + wx;
-        const py = d.y + wy;
+        const pxWorld = d.x + offX;
+        const pyWorld = d.y + offY;
 
-        // ----- hover fade -----
-        if (pointer.active) {
-          const dx = px - pointer.x;
-          const dy = py - pointer.y;
+        // ===== Hover fade =====
+        if (pointerRef.current.active) {
+          const dx = pxWorld - pointerRef.current.x;
+          const dy = pyWorld - pointerRef.current.y;
           const dist = Math.hypot(dx, dy);
           const inner = HIDE_RADIUS;
           const outer = HIDE_RADIUS + HIDE_SOFTNESS;
@@ -198,14 +211,14 @@ export default function HeroDots({
           d.targetOpacity = 1;
         }
 
-        // ease opacity
+        // Ease opacity toward target
         d.opacity += (d.targetOpacity - d.opacity) * RETURN_EASE;
 
-        // draw
+        // Draw
         if (d.opacity > 0.02) {
           ctx.globalAlpha = d.opacity;
           ctx.beginPath();
-          ctx.arc(px, py, DOT_SIZE, 0, TWO_PI);
+          ctx.arc(pxWorld, pyWorld, DOT_SIZE, 0, TWO_PI);
           ctx.fill();
         }
       }
@@ -226,27 +239,27 @@ export default function HeroDots({
     };
   }, [
     DOT_GAP, DOT_SIZE,
-    DRIFT_AMPL_X, DRIFT_AMPL_Y, DRIFT_SPEED,
-    WAVE_AMPL, WAVE_WAVELENGTH, WAVE_SPEED,
-    WAVE2_AMPL, WAVE2_WAVELENGTH, WAVE2_SPEED,
+    WAVE_DIR_DEG, WAVE_AMPL, WAVE_WAVELENGTH, WAVE_SPEED,
+    SWAY_AMPL, SWAY_WAVELENGTH, SWAY_SPEED,
+    DRIFT_AMPL, DRIFT_SPEED,
     HIDE_RADIUS, HIDE_SOFTNESS, RETURN_EASE,
     fitCanvas, reduced,
   ]);
 
   return (
     <section className="relative w-full min-h-screen bg-black text-white overflow-hidden">
-      {/* canvas behind content; let clicks pass through */}
+      {/* Canvas draws dots behind content; let clicks pass through */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
         aria-hidden
       />
 
-      {/* content */}
+      {/* Content */}
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 min-h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-[10px] tracking-[0.22em] text-white/60">{kicker}</p>
-          <h1 className="mt-2 text-2xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+        <h1 className="mt-2 text-2xl md:text-4xl lg:text-5xl font-semibold leading-tight">
             {title}
           </h1>
           <p className="mt-3 text-white/80 text-sm md:text-base max-w-[680px] mx-auto">
