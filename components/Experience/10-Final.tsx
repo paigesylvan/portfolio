@@ -71,7 +71,7 @@ export default function Outcome() {
           {/* Right image */}
           <motion.div
             variants={item(prefersReduced)}
-            className="flex justify-center md:justify-end self-center"
+            className="flex justify-center md:justify-center self-center"
           >
             <Image
               src="/images/experience-images/mwes-badge.png"
