@@ -4,15 +4,14 @@ import Image from "next/image";
 import SectionHeader from "../SectionHeader";
 import { motion, useReducedMotion } from "framer-motion";
 
-type Block =
-  | {
-      key: string;
-      title: string;
-      icon: string;
-      alt: string;
-      body?: string;
-      bullets?: string[];
-    };
+type Block = {
+  key: string;
+  title: string;
+  icon: string;
+  alt: string;
+  body?: string;
+  bullets?: string[];
+};
 
 const blocks: Block[] = [
   {
@@ -72,11 +71,11 @@ const parent = (stagger = 0.12) => ({
 });
 
 const item = (reduced: boolean) => ({
-  hidden: { opacity: 0, y: reduced ? 0 : 28 },
+  hidden: { opacity: 0, y: reduced ? 0 : 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.7, ease: "easeOut" },
+    transition: { duration: reduced ? 0 : 0.6, ease: "easeOut" },
   },
 });
 
@@ -84,23 +83,23 @@ export default function Project1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-24 mb-0">
-      <div className="w-full max-w-[1400px] mx-auto">
+    <section className="flex flex-col items-center justify-center px-4 text-white mt-20 mb-0">
+      <div className="w-full max-w-[1100px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
 
         {/* ---------- HMI Screenshot ---------- */}
         <div className="mt-6 flex flex-col items-center">
-          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)] w-full md:w-[82%]">
+          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)] w-full md:w-[78%]">
             <Image
               src="/images/experience-images/meter-room-hmi.png"
               alt="HMI status screen"
               width={1820}
               height={900}
-              className="w-[450px] h-[300px] rounded-xl mx-auto"
+              className="w-full h-auto rounded-xl mx-auto"
               priority
             />
           </div>
-          <p className="mt-2 text-[11px] text-white/60 italic text-center">
+          <p className="mt-2 text-[10px] text-white/60 italic text-center">
             Image of DP Machine Status Screen —{" "}
             <span className="opacity-80">(red shown due to app being disconnected when saved)</span>
           </p>
@@ -112,31 +111,31 @@ export default function Project1() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+          className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3"
         >
           {blocks.map((b) => (
             <motion.article
               key={b.key}
               variants={item(prefersReduced)}
-              className="rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] px-4 py-8 flex flex-col transition-colors hover:bg-white/[0.10]"
+              className="rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_16px_60px_rgba(0,0,0,0.45)] px-3 py-6 flex flex-col transition-colors hover:bg-white/[0.10]"
             >
               <div className="flex flex-col items-center text-center">
                 <Image
                   src={b.icon}
                   alt={b.alt}
-                  width={96}
-                  height={96}
-                  className="h-16 w-16 object-contain"
+                  width={80}
+                  height={80}
+                  className="h-12 w-12 object-contain"
                 />
-                <h3 className="mt-4 font-semibold">{b.title}</h3>
+                <h3 className="mt-3 font-semibold text-base">{b.title}</h3>
               </div>
 
               {b.body && (
-                <p className="mt-4 text-white/80 leading-tight">{b.body}</p>
+                <p className="mt-3 text-white/80 leading-snug">{b.body}</p>
               )}
 
               {b.bullets && (
-                <ul className="mt-4 space-y-2 text-white/80 list-disc pl-[5px] leading-tight">
+                <ul className="mt-3 space-y-1.5 text-white/80 list-disc pl-[5px] leading-snug">
                   {b.bullets.map((li, i) => (
                     <li key={i}>{li}</li>
                   ))}
