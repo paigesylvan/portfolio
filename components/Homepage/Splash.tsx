@@ -24,9 +24,9 @@ export default function HeroDots({
   const DRIFT_SPEED = 0.0007;
 
   // Wave motion (clean, coherent motion across the field)
-  const WAVE_AMPL = 8;                         // vertical wave amplitude (px)
-  const WAVE_WAVELENGTH = 160;                 // px between crests
-  const WAVE_SPEED = 0.0015;                   // time speed
+  const WAVE_AMPL = 14;                         // vertical wave amplitude (px)
+  const WAVE_WAVELENGTH = 120;                 // px between crests
+  const WAVE_SPEED = 0.003;                   // time speed
   const WAVE2_AMPL = 4;                        // optional secondary cross-wave (x shift)
   const WAVE2_WAVELENGTH = 220;
   const WAVE2_SPEED = 0.0011;
