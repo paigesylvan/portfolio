@@ -8,7 +8,7 @@ type Props = {
   kicker?: string;
   /** If provided, sets a fixed height (px). Otherwise the hero fills the screen. */
   height?: number;
-  /** Video background source, e.g. "/videos/hero.mp4" */
+  /** Video background source, e.g. "/videos/hero-loop.mp4" */
   videoSrc?: string;
   /** Optional poster image for the video */
   posterSrc?: string;
