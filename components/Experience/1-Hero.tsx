@@ -26,7 +26,7 @@ export default function ExperienceHero() {
           <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[70vw] w-[70vw] max-h-[520px] max-w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.18),rgba(0,0,0,0)_65%)] blur-2xl" />
 
           {/* Image Panel */}
-          <div className="mx-auto w-full md:w-[90%] rounded-3xl bg-white/[0.03] ring-1 ring-white/10 shadow-[0_40px_140px_rgba(0,0,0,0.55)] overflow-hidden">
+          <div className="mx-auto w-full md:w-[90%] overflow-hidden">
             <Image
               src="/images/experience-images/mwes-hero.png"
               alt="Midwest Engineered Systems — facility and robotics"
