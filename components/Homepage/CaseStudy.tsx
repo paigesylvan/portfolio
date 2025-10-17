@@ -78,7 +78,7 @@ export default function CaseStudies() {
               },
             }}
             className="w-[90%] lg:w-[70%] mx-auto rounded-3xl bg-white/10 backdrop-blur-md
-            backdrop-blur-md border border-[0.5px] lg:px-6 lg:py-12 pb-8 pt-4"
+            backdrop-blur-md  lg:px-6 lg:py-12 pb-8 pt-4"
           >
             <div className="grid items-center gap-8 md:grid-cols-12">
 

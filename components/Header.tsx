@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  // Lock body scroll when menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -19,17 +19,36 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-4 lg:top-10 z-50">
       <div className="mx-auto w-[92%] md:w-[85%]">
-        <div className="flex items-center justify-between rounded-full bg-black/10 backdrop-blur-md  px-5 py-3 lg:py-6 lg:px-12">
+        <div className="flex items-center justify-between rounded-full bg-black/10 backdrop-blur-sm px-5 py-3 lg:py-6 lg:px-12">
           {/* Brand */}
-          <Link href="/" className="text-white font-semibold tracking-wide lg:text-xl ">
+          <Link
+            href="/"
+            className="text-white font-semibold tracking-wide lg:text-xl"
+          >
             P.S.
           </Link>
 
-          {/* Desktop nav (optional) */}
+          {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-8 text-sm lg:text-md text-white/90">
-            <Link href="#case-studies" className="uppercase tracking-[0.18em]">Case Studies</Link>
-            <Link href="/experience" className="uppercase tracking-[0.18em]">Experience</Link>
-            <Link href="/about" className="uppercase tracking-[0.18em]">About Me</Link>
+            {/* ✅ This now navigates properly to the homepage & scrolls */}
+            <Link
+              href="/#case-studies"
+              className="uppercase tracking-[0.18em]"
+            >
+              Case Studies
+            </Link>
+            <Link
+              href="/experience"
+              className="uppercase tracking-[0.18em]"
+            >
+              Experience
+            </Link>
+            <Link
+              href="/about"
+              className="uppercase tracking-[0.18em]"
+            >
+              About Me
+            </Link>
           </nav>
 
           {/* Mobile hamburger */}
@@ -41,19 +60,23 @@ export default function Header() {
             className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-white/30 text-white"
           >
             <span className="sr-only">Open menu</span>
-            {/* Hamburger icon */}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
             </svg>
           </button>
         </div>
       </div>
 
-      {/* Slide-in panel */}
+      {/* Slide-in mobile menu */}
       <AnimatePresence>
         {open && (
           <>
-            {/* Optional dim backdrop (tap to close). Remove if you want only white panel visible */}
+            {/* Backdrop (click to close) */}
             <motion.button
               aria-label="Close menu"
               className="fixed inset-0 z-40 md:hidden bg-black/30"
@@ -73,7 +96,7 @@ export default function Header() {
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.35, ease: "easeOut" }}
             >
-              {/* Close row */}
+              {/* Close header */}
               <div className="flex items-center justify-between px-6 py-5">
                 <span className="text-sm font-semibold tracking-wide">MENU</span>
                 <button
@@ -82,16 +105,22 @@ export default function Header() {
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-black/10"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path
+                      d="M6 6l12 12M18 6L6 18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
                   </svg>
                 </button>
               </div>
 
+              {/* Mobile nav links */}
               <nav className="mt-3 px-6">
                 <ul className="space-y-6">
                   <li>
                     <Link
-                      href="#case-studies"
+                      href="/#case-studies"
                       onClick={() => setOpen(false)}
                       className="block py-2 text-xl font-semibold uppercase tracking-[0.25em]"
                     >
@@ -119,7 +148,7 @@ export default function Header() {
                 </ul>
               </nav>
 
-              {/* (Optional) Footer links or socials */}
+              {/* Footer */}
               <div className="mt-auto px-6 pb-8 text-xs text-black/60">
                 © {new Date().getFullYear()} Paige Sylvan
               </div>
