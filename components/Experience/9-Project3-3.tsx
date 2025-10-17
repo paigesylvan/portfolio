@@ -108,8 +108,8 @@ export default function Project3Part3() {
             <Image
               src="/images/experience-images/plc-ladder.png"
               alt="PLC ladder logic for recipe process"
-              width={2000}
-              height={1200}
+              width={1600}
+              height={1400}
               className="w-full h-full object-contain rounded-xl"
               priority
             />
