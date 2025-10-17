@@ -1,4 +1,3 @@
-// components/Experience/9-Project3Part3.tsx
 "use client";
 
 import Image from "next/image";
@@ -22,9 +21,9 @@ export default function Project3Part3() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-18 pb-8 lg:pb-0 lg:mt-36 scale-[0.85] md:scale-[0.83] lg:scale-[0.8] origin-top">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-20 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-        {/* Top: two cards (equal height) */}
+        {/* ---------- Top: Two Cards ---------- */}
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -35,8 +34,8 @@ export default function Project3Part3() {
           {/* Problem Solving */}
           <motion.article
             variants={item(prefersReduced)}
-            className="h-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
-                       shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
+            className="h-full rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
+                       shadow-[0_16px_60px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-start gap-4">
@@ -65,8 +64,8 @@ export default function Project3Part3() {
           {/* Learning Experience */}
           <motion.article
             variants={item(prefersReduced)}
-            className="h-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
-                       shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
+            className="h-full rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
+                       shadow-[0_16px_60px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-start gap-4">
@@ -93,7 +92,7 @@ export default function Project3Part3() {
           </motion.article>
         </motion.div>
 
-        {/* Bottom: two equal-height images */}
+        {/* ---------- Bottom: Two Images ---------- */}
         <motion.div
           variants={parent(0.1)}
           initial="hidden"
@@ -101,10 +100,10 @@ export default function Project3Part3() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2"
         >
-          {/* Left: PLC ladder */}
+          {/* Left: PLC Ladder */}
           <motion.div
             variants={item(prefersReduced)}
-            className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/5 ring-1 ring-white/10"
+            className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/[0.05] ring-1 ring-white/10"
           >
             <Image
               src="/images/experience-images/plc-ladder.png"
@@ -116,10 +115,10 @@ export default function Project3Part3() {
             />
           </motion.div>
 
-          {/* Right: HMI recipe edit */}
+          {/* Right: HMI Recipe Edit */}
           <motion.div
             variants={item(prefersReduced)}
-            className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/5 ring-1 ring-white/10"
+            className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/[0.05] ring-1 ring-white/10"
           >
             <Image
               src="/images/experience-images/recipe-edit.png"

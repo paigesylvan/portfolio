@@ -83,7 +83,7 @@ export default function Project1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-6 text-white mt-20 mb-0">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-36 mb-0">
       <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
 

@@ -81,8 +81,8 @@ export default function Project2() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-20 mb-0">
-      <div className="w-full max-w-[1100px] mx-auto text-sm md:text-base">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-36 mb-0">
+      <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 2" title="ASRS Project" align="left" />
 
         {/* ---------- IMAGES ---------- */}
