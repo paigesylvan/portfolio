@@ -1,3 +1,4 @@
+// components/Experience/Outcome.tsx
 "use client";
 
 import Image from "next/image";
@@ -24,8 +25,8 @@ export default function Outcome() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-24 lg:mt-0 pb-12">
       <div className="w-full max-w-[1200px] mx-auto">
-        {/* Reduce default spacing under the header */}
-        <div className="mb-6">
+        {/* Tighten space under the header */}
+        <div className="mb-2 !mt-0">
           <SectionHeader
             kicker="OUTCOME"
             title="Bridging Design and Development"
@@ -38,8 +39,7 @@ export default function Outcome() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          /* Center columns vertically so the image isn't sitting low */
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
         >
           {/* Left copy */}
           <motion.div
@@ -72,7 +72,7 @@ export default function Outcome() {
           {/* Right image */}
           <motion.div
             variants={item(prefersReduced)}
-            className="flex justify-center md:justify-end self-center "
+            className="flex justify-center md:justify-end self-center"
           >
             <Image
               src="/images/experience-images/mwes-badge.png"

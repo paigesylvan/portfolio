@@ -1,3 +1,4 @@
+// components/Experience/9-Project3Part3.tsx
 "use client";
 
 import Image from "next/image";
@@ -21,9 +22,8 @@ export default function Project3Part3() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-0">
-      <div className="w-full max-w-[1400px] mx-auto">
-
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-18 pb-8 lg:pb-0 lg:mt-36 scale-[0.85] md:scale-[0.83] lg:scale-[0.8] origin-top">
+      <div className="w-full max-w-[1200px] mx-auto">
         {/* Top: two cards */}
         <motion.div
           variants={parent()}
@@ -35,7 +35,7 @@ export default function Project3Part3() {
           {/* Problem Solving */}
           <motion.article
             variants={item(prefersReduced)}
-            className="max-w-[580px] rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-6 md:p-8"
+            className="max-w-[580px] rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
               <Image
@@ -47,7 +47,7 @@ export default function Project3Part3() {
               />
               <h3 className="text-lg font-semibold">Problem Solving</h3>
             </div>
-            <p className="mt-4 text-white/85 leading-relaxed">
+            <p className="mt-4 text-white/85 leading-snug text-sm md:text-base">
               A major challenge in this project was learning and creating PLC logic to support the
               recipe functionality. I built logic that allowed operators to save, edit, and delete
               both pin and plate recipes, then ensured these updates were reflected in the HMI
@@ -62,7 +62,7 @@ export default function Project3Part3() {
           {/* Learning Experience */}
           <motion.article
             variants={item(prefersReduced)}
-            className="max-w-[580px] rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-6 md:p-8"
+            className="max-w-[580px] rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
               <Image
@@ -74,7 +74,7 @@ export default function Project3Part3() {
               />
               <h3 className="text-lg font-semibold">Learning Experience</h3>
             </div>
-            <p className="mt-4 text-white/85 leading-relaxed">
+            <p className="mt-4 text-white/85 leading-snug text-sm md:text-base">
               This project let me bridge UI design principles with industrial automation. Following
               HMI design guidelines reinforced how consistency and clarity are critical for
               operators. Uploading and organizing the tag database, then binding PLC tags to
@@ -93,34 +93,28 @@ export default function Project3Part3() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2"
+          className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2"
         >
           {/* Left: PLC ladder / Studio 5000 */}
-          <motion.div
-            variants={item(prefersReduced)}
-            className="rounded-2xl "
-          >
+          <motion.div variants={item(prefersReduced)} className="rounded-2xl">
             <Image
-              src="/images/experience-images/plc-ladder.png"  // <-- update to your path
+              src="/images/experience-images/plc-ladder.png"
               alt="PLC ladder logic for recipe process"
               width={2000}
               height={1200}
-              className="w-[600px] h-[250px] rounded-xl"
+              className="w-full h-auto rounded-xl"
               priority
             />
           </motion.div>
 
           {/* Right: HMI recipe edit */}
-          <motion.div
-            variants={item(prefersReduced)}
-            className="rounded-2xl "
-          >
+          <motion.div variants={item(prefersReduced)} className="rounded-2xl">
             <Image
-              src="/images/experience-images/recipe-edit.png"  // <-- update to your path
+              src="/images/experience-images/recipe-edit.png"
               alt="HMI Plate Recipe Edit"
               width={1600}
               height={1200}
-              className="w-w-[600px] h-[250px] rounded-xl"
+              className="w-full h-auto rounded-xl"
             />
           </motion.div>
         </motion.div>

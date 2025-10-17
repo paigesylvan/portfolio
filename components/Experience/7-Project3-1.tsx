@@ -1,3 +1,4 @@
+// components/Experience/7-Project3Part1.tsx
 "use client";
 
 import Image from "next/image";
@@ -22,8 +23,8 @@ export default function Project3Part1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
-      <div className="w-full max-w-[1400px] mx-auto mt-24">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-18 pb-8 lg:pb-0 lg:mt-36 scale-[0.85] md:scale-[0.83] lg:scale-[0.8] origin-top">
+      <div className="w-full max-w-[1200px] mx-auto">
         <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="left" />
 
         <motion.div
@@ -49,14 +50,15 @@ export default function Project3Part1() {
               />
             </div>
             <p className="mt-2 text-[11px] text-white/60 text-center">
-              Brainstorming sessions with Controls Engineer Manager on layout and overview functionality.
+              Brainstorming sessions with Controls Engineer Manager on layout and overview
+              functionality.
             </p>
           </motion.div>
 
           {/* ===== MOBILE ORDER: 2 =====  DESKTOP: ROW 1 LEFT (text) */}
           <motion.article
             variants={item(prefersReduced)}
-            className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-6 md:p-8"
+            className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
               <Image
@@ -69,12 +71,13 @@ export default function Project3Part1() {
               <h3 className="text-lg font-semibold">Over View</h3>
             </div>
 
-            <p className="mt-5 text-white/85 leading-tight">
-              I designed and implemented a complete HMI application in
-              <span className="font-semibold"> FactoryTalk View SE</span> for a robotic welding and assembly cell.
-              Operators can control cell functions and see real-time status, part flow, and alarms—
-              all within an interface aligned with the company’s design system. The role blended UI
-              design, user flows, and interaction logic with technical implementation.
+            <p className="mt-4 text-white/85 leading-tight text-sm md:text-base">
+              I designed and implemented a complete HMI application in{" "}
+              <span className="font-semibold">FactoryTalk View SE</span> for a robotic welding and
+              assembly cell. Operators can control cell functions and see real-time status, part
+              flow, and alarms — all within an interface aligned with the company’s design system.
+              The role blended UI design, user flows, and interaction logic with technical
+              implementation.
             </p>
           </motion.article>
 
@@ -100,7 +103,7 @@ export default function Project3Part1() {
           {/* ===== MOBILE ORDER: 4 =====  DESKTOP: ROW 2 LEFT (text) */}
           <motion.article
             variants={item(prefersReduced)}
-            className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-6 md:p-8"
+            className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
               <Image
@@ -113,10 +116,10 @@ export default function Project3Part1() {
               <h3 className="text-lg font-semibold">My Role</h3>
             </div>
 
-            <ul className="mt-5 space-y-2 text-white/85 leading-tight list-disc pl-5">
+            <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-sm md:text-base">
               <li>
-                Designed and created the HMI application using FactoryTalk View Studio; ensured
-                UI flows aligned with operator tasks.
+                Designed and created the HMI application using FactoryTalk View Studio; ensured UI
+                flows aligned with operator tasks.
               </li>
               <li>Followed the company HMI design system and guidelines for consistency.</li>
               <li>Uploaded and organized the tag database.</li>

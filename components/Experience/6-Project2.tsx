@@ -1,3 +1,4 @@
+// components/Experience/6-Project2.tsx
 "use client";
 
 import Image from "next/image";
@@ -82,7 +83,7 @@ export default function Project2() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-24 pb-8 lg:pb-0 lg:mt-0">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-18 scale-[0.95] md:scale-[0.92] lg:scale-[0.9] origin-top">
       <div className="w-full max-w-[1400px] mx-auto">
         <SectionHeader kicker="PROJECT 2" title="ASRS Project" align="left" />
 
@@ -91,7 +92,7 @@ export default function Project2() {
           {/* Left: HMI screen */}
           <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
             <Image
-              src="/images/experience-images/asrs-hmi.png"   // <-- update paths
+              src="/images/experience-images/asrs-hmi.png"
               alt="ASRS overview status screen"
               width={1920}
               height={1080}
@@ -106,7 +107,7 @@ export default function Project2() {
           {/* Right: scripting/editor */}
           <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
             <Image
-              src="/images/experience-images/asrs-script.png" // <-- update paths
+              src="/images/experience-images/asrs-script.png"
               alt="Ignition scripting view"
               width={1920}
               height={1080}
@@ -124,13 +125,13 @@ export default function Project2() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8"
+          className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
         >
           {blocks.map((b) => (
             <motion.article
               key={b.key}
               variants={item(prefersReduced)}
-              className="rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] px-8 py-8 flex flex-col transition-colors hover:bg-white/[0.10]"
+              className="rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] px-4 py-8 flex flex-col transition-colors hover:bg-white/[0.10]"
             >
               <div className="flex flex-col items-center text-center">
                 <Image
@@ -148,7 +149,7 @@ export default function Project2() {
               )}
 
               {b.bullets && (
-                <ul className="mt-4 space-y-2 text-white/80 leading-tight list-disc pl-2">
+                <ul className="mt-4 space-y-2 text-white/80 list-disc pl-[5px] leading-tight">
                   {b.bullets.map((li, i) => (
                     <li key={i}>{li}</li>
                   ))}
