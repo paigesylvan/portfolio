@@ -19,7 +19,7 @@ export default function HeroDots({
   subtitle = "I build clean, responsive experiences guided by research and craft.",
   kicker = "PORTFOLIO",
   height, // if omitted, we'll use min-h-screen
-  videoSrc = "/videos/hero-loop.mp4",
+  videoSrc = "/video/hero-loop.mp4",
   posterSrc,
 }: Props) {
   const sectionRef = useRef<HTMLElement | null>(null);
