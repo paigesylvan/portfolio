@@ -22,7 +22,7 @@ export default function CursorCircle() {
     <div
       ref={elRef}
       aria-hidden
-      className="pointer-events-none fixed z-[9999] h-8 w-8 rounded-full border-2 border-white"
+      className="pointer-events-none fixed z-[9999] h-8 w-8 rounded-full border-2 border-white hidden md:block"
       style={{
         left: 0,
         top: 0,
