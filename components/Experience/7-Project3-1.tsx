@@ -1,4 +1,3 @@
-// components/Experience/7-Project3Part1.tsx
 "use client";
 
 import Image from "next/image";
@@ -23,7 +22,7 @@ export default function Project3Part1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-18 lg:mt-24 scale-[0.85] md:scale-[0.83] lg:scale-[0.8] origin-top">
+    <section className="flex flex-col items-center justify-center px-4 text-white mt-16 lg:mt-20 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
         <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="left" />
 
@@ -34,7 +33,7 @@ export default function Project3Part1() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-8"
         >
-          {/* ===== MOBILE ORDER: 1 =====  DESKTOP: ROW 1 RIGHT (image) */}
+          {/* ===== IMAGE 1 ===== */}
           <motion.div
             variants={item(prefersReduced)}
             className="order-1 md:order-2 md:col-span-7"
@@ -55,10 +54,10 @@ export default function Project3Part1() {
             </p>
           </motion.div>
 
-          {/* ===== MOBILE ORDER: 2 =====  DESKTOP: ROW 1 LEFT (text) */}
+          {/* ===== TEXT 1 ===== */}
           <motion.article
             variants={item(prefersReduced)}
-            className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
+            className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
               <Image
@@ -68,7 +67,7 @@ export default function Project3Part1() {
                 height={56}
                 className="w-12 h-12 object-contain"
               />
-              <h3 className="text-lg font-semibold">Over View</h3>
+              <h3 className="text-lg font-semibold">Overview</h3>
             </div>
 
             <p className="mt-4 text-white/85 leading-tight text-sm md:text-base">
@@ -81,7 +80,7 @@ export default function Project3Part1() {
             </p>
           </motion.article>
 
-          {/* ===== MOBILE ORDER: 3 =====  DESKTOP: ROW 2 RIGHT (image) */}
+          {/* ===== IMAGE 2 ===== */}
           <motion.div
             variants={item(prefersReduced)}
             className="order-3 md:order-4 md:col-span-7"
@@ -100,10 +99,10 @@ export default function Project3Part1() {
             </p>
           </motion.div>
 
-          {/* ===== MOBILE ORDER: 4 =====  DESKTOP: ROW 2 LEFT (text) */}
+          {/* ===== TEXT 2 ===== */}
           <motion.article
             variants={item(prefersReduced)}
-            className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
+            className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
               <Image
