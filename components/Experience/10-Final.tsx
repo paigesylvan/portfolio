@@ -1,4 +1,3 @@
-// components/Experience/Outcome.tsx
 "use client";
 
 import Image from "next/image";
@@ -23,10 +22,10 @@ export default function Outcome() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 text-white mt-18 pb-8 lg:pb-0 lg:mt-24 scale-[0.8] md:scale-[0.78] lg:scale-[0.75] origin-top">
-      <div className="w-full max-w-[1000px] mx-auto">
-        {/* Tightened spacing */}
-        <div className="mb-2 !mt-0">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-20 mb-0">
+      <div className="w-full max-w-[1200px] mx-auto">
+        {/* Header */}
+        <div className="mb-2">
           <SectionHeader
             kicker="OUTCOME"
             title="Bridging Design and Development"
