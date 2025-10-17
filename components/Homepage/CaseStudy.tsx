@@ -31,7 +31,7 @@ const studies: Study[] = [
     title:
       "How Thoughtful UX Design Increases Engagement for First-Time Campers",
     subtitle:
-      "A Responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear.",
+      "A responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear.",
     tags: ["UX-UI", "USER FLOW", "USABILITY TESTING"],
     image: "/images/homepage-images/camping-laptop.png",
     imageAlt: "Camping site on laptop",
@@ -53,65 +53,27 @@ export default function CaseStudies() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="case-studies" className="relative py-32 bg-black overflow-hidden">
-      {/* ---- Subtle modern dark-grey backdrop shapes ---- */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* top-left curved blade */}
-        <div
-          className="absolute -top-52 -left-72 w-[1100px] h-[800px] rotate-[-14deg] opacity-[0.45] blur-[1px]"
-          style={{
-            background:
-              "radial-gradient(120% 140% at 65% 35%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 40%, rgba(255,255,255,0) 70%)",
-            WebkitMaskImage:
-              "conic-gradient(from 210deg at 70% 40%, rgba(0,0,0,1) 0 45%, rgba(0,0,0,0) 60%)",
-            maskImage:
-              "conic-gradient(from 210deg at 70% 40%, rgba(0,0,0,1) 0 45%, rgba(0,0,0,0) 60%)",
-          }}
-        />
-        {/* bottom-right curved blade */}
-        <div
-          className="absolute -bottom-64 -right-80 w-[1200px] h-[900px] rotate-[10deg] opacity-[0.38] blur-[0.5px]"
-          style={{
-            background:
-              "radial-gradient(120% 140% at 40% 60%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 40%, rgba(255,255,255,0) 70%)",
-            WebkitMaskImage:
-              "conic-gradient(from 30deg at 35% 55%, rgba(0,0,0,1) 0 50%, rgba(0,0,0,0) 65%)",
-            maskImage:
-              "conic-gradient(from 30deg at 35% 55%, rgba(0,0,0,1) 0 50%, rgba(0,0,0,0) 65%)",
-          }}
-        />
-        {/* center soft vignette to deepen the background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(80% 60% at 50% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 45%, rgba(0,0,0,0.0) 70%)",
-          }}
-        />
-        {/* very subtle bottom fade to black to help section transition */}
-        <div
-          className="absolute bottom-0 left-0 w-full h-[240px]"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%)",
-          }}
-        />
-        {/* optional film-grain for nicer glass contrast */}
-        <div
-          className="absolute inset-0 opacity-[0.05] mix-blend-soft-light"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.55'/></svg>\")",
-            backgroundSize: "140px 140px",
-          }}
-        />
-      </div>
+    <section
+      id="case-studies"
+      className="relative py-32 overflow-hidden text-white"
+    >
+      {/* Background image with dark overlay */}
+      <div
+        className="absolute inset-0 -z-10 bg-black"
+        style={{
+          backgroundImage: "url('/images/homepage-images/case-study-bg.png')", // update this path
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed", // optional: creates a parallax feel
+          opacity: 0.65,
+        }}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
 
       <h2 className="mb-10 text-center text-xs tracking-[0.3em] text-white/70">
         CASE STUDIES
       </h2>
 
-      {/* Cards stack */}
       <div className="space-y-12 lg:space-y-24">
         {studies.map((s) => (
           <motion.article
@@ -136,13 +98,9 @@ export default function CaseStudies() {
               bg-white/[0.06] backdrop-blur-lg
               shadow-[0_8px_30px_rgba(0,0,0,0.35)]
               px-4 py-6 md:px-5 md:py-7 lg:px-6 lg:py-12
-              transition-colors hover:bg-white/[0.08] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]
+              transition-all hover:bg-white/[0.08] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]
             "
           >
-            {/* inner highlight line (thin glass sheen) */}
-            <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/5" />
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
             <div className="grid items-center gap-8 md:grid-cols-12">
               {/* image */}
               <div className="md:col-span-5">
