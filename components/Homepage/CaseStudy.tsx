@@ -53,50 +53,101 @@ export default function CaseStudies() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="case-studies" className="py-32">
+    <section id="case-studies" className="relative py-32 bg-black overflow-hidden">
+      {/* ---- Subtle modern dark-grey backdrop shapes ---- */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        {/* top-left curved blade */}
+        <div
+          className="absolute -top-52 -left-72 w-[1100px] h-[800px] rotate-[-14deg] opacity-[0.45] blur-[1px]"
+          style={{
+            background:
+              "radial-gradient(120% 140% at 65% 35%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 40%, rgba(255,255,255,0) 70%)",
+            WebkitMaskImage:
+              "conic-gradient(from 210deg at 70% 40%, rgba(0,0,0,1) 0 45%, rgba(0,0,0,0) 60%)",
+            maskImage:
+              "conic-gradient(from 210deg at 70% 40%, rgba(0,0,0,1) 0 45%, rgba(0,0,0,0) 60%)",
+          }}
+        />
+        {/* bottom-right curved blade */}
+        <div
+          className="absolute -bottom-64 -right-80 w-[1200px] h-[900px] rotate-[10deg] opacity-[0.38] blur-[0.5px]"
+          style={{
+            background:
+              "radial-gradient(120% 140% at 40% 60%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.045) 40%, rgba(255,255,255,0) 70%)",
+            WebkitMaskImage:
+              "conic-gradient(from 30deg at 35% 55%, rgba(0,0,0,1) 0 50%, rgba(0,0,0,0) 65%)",
+            maskImage:
+              "conic-gradient(from 30deg at 35% 55%, rgba(0,0,0,1) 0 50%, rgba(0,0,0,0) 65%)",
+          }}
+        />
+        {/* center soft vignette to deepen the background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(80% 60% at 50% 40%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 45%, rgba(0,0,0,0.0) 70%)",
+          }}
+        />
+        {/* very subtle bottom fade to black to help section transition */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-[240px]"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%)",
+          }}
+        />
+        {/* optional film-grain for nicer glass contrast */}
+        <div
+          className="absolute inset-0 opacity-[0.05] mix-blend-soft-light"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.55'/></svg>\")",
+            backgroundSize: "140px 140px",
+          }}
+        />
+      </div>
+
       <h2 className="mb-10 text-center text-xs tracking-[0.3em] text-white/70">
         CASE STUDIES
       </h2>
 
-      {/* gap between cards */}
+      {/* Cards stack */}
       <div className="space-y-12 lg:space-y-24">
         {studies.map((s) => (
           <motion.article
             key={s.slug}
             initial="hidden"
-            whileInView="show" // reveal each card on scroll
-            viewport={{ once: true, amount: 0.4 }} // start when ~40% visible
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
             variants={{
               hidden: { opacity: 0, y: prefersReduced ? 0 : 36 },
               show: {
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: prefersReduced ? 0 : 1.4, // slower animation
+                  duration: prefersReduced ? 0 : 1.0,
                   ease: "easeOut",
                 },
               },
             }}
-            className="w-[90%] lg:w-[70%] mx-auto bg-white/10
-             lg:px-6 lg:py-12 pb-8 pt-4
-            
-            group relative overflow-hidden
-            rounded-3xl
-            border border-white/15
-            bg-white/6
-            backdrop-blur-md
-            ring-[2px] ring-inset ring-white/10
-            shadow-[0_8px_30px_rgba(0,0,0,0.35)]
-            px-4 py-6 md:px-5 md:py-7
-            transition-all
-            hover:bg-white/7 hover:ring-white/15 hover:shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
+            className="
+              group relative mx-auto w-[90%] lg:w-[70%] overflow-hidden rounded-3xl
+              border border-white/10 ring-1 ring-inset ring-white/10
+              bg-white/[0.06] backdrop-blur-lg
+              shadow-[0_8px_30px_rgba(0,0,0,0.35)]
+              px-4 py-6 md:px-5 md:py-7 lg:px-6 lg:py-12
+              transition-colors hover:bg-white/[0.08] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]
+            "
           >
-            <div className="grid items-center gap-8 md:grid-cols-12">
+            {/* inner highlight line (thin glass sheen) */}
+            <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/5" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
+            <div className="grid items-center gap-8 md:grid-cols-12">
               {/* image */}
-              <div className=" md:col-span-5">
+              <div className="md:col-span-5">
                 <div className="mx-auto max-w-xs md:max-w-lg flex justify-center">
-                  <div className="relative rounded-2xl ">
+                  <div className="relative rounded-2xl">
                     <Image
                       src={s.image}
                       alt={s.imageAlt}
@@ -115,14 +166,14 @@ export default function CaseStudies() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-[0.5px] bg-white/10 px-3 py-1 text-[8px] lg:text-[14px] tracking-[0.12em] text-white/90"
+                      className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[8px] lg:text-[14px] tracking-[0.12em] text-white/90 ring-1 ring-inset ring-white/5"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <h3 className=" lg:w-[70%] py-1 lg:py-6 font-bold leading-tight text-lg md:text-[36px] lg:text-2xl ">
+                <h3 className="lg:w-[70%] py-1 lg:py-6 font-bold leading-tight text-lg md:text-[36px] lg:text-2xl">
                   {s.title}
                 </h3>
                 <p className="mt-3 max-w-prose text-md text-white/70 md:text-base leading-tight">
@@ -136,8 +187,6 @@ export default function CaseStudies() {
                   {s.cta ?? "View Case Study"}
                 </Link>
               </div>
-
-
             </div>
           </motion.article>
         ))}
