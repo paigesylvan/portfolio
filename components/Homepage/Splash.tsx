@@ -6,11 +6,9 @@ type Props = {
   title?: string;
   subtitle?: string;
   kicker?: string;
-  /** If provided, sets a fixed height (px). Otherwise the hero fills the screen. */
   height?: number;
-  /** Video background source, e.g. "/videos/hero-loop.mp4" */
   videoSrc?: string;
-  /** Optional poster image for the video */
+  videoSrcWebm?: string;
   posterSrc?: string;
 };
 
@@ -18,20 +16,22 @@ export default function HeroDots({
   title = "Design that actually works.",
   subtitle = "I build clean, responsive experiences guided by research and craft.",
   kicker = "PORTFOLIO",
-  height, // if omitted, we'll use min-h-screen
-  videoSrc = "/video/hero-loop.mp4",
+  height,
+  videoSrc = "/videos/hero.mp4",
+  videoSrcWebm,
   posterSrc,
 }: Props) {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const rafRef = useRef<number | null>(null);
   const targetXY = useRef({ x: 0, y: 0 });
   const currentXY = useRef({ x: 0, y: 0 });
 
+  // Cursor spotlight logic
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
 
-    // Initialize spotlight at center
     const rect = el.getBoundingClientRect();
     currentXY.current = { x: rect.width / 2, y: rect.height / 2 };
     el.style.setProperty("--mx", `${currentXY.current.x}px`);
@@ -53,7 +53,7 @@ export default function HeroDots({
 
       if (rafRef.current == null) {
         const tick = () => {
-          const ease = 0.18; // higher = snappier cursor following
+          const ease = 0.18;
           currentXY.current.x += (targetXY.current.x - currentXY.current.x) * ease;
           currentXY.current.y += (targetXY.current.y - currentXY.current.y) * ease;
           el.style.setProperty("--mx", `${currentXY.current.x}px`);
@@ -71,7 +71,6 @@ export default function HeroDots({
       }
     };
 
-    // Listen on window so nothing blocks interaction
     window.addEventListener("pointermove", onMove, { passive: true });
     window.addEventListener("touchmove", onMove, { passive: true });
     window.addEventListener("pointerup", stop);
@@ -88,7 +87,24 @@ export default function HeroDots({
     };
   }, []);
 
-  // If height is passed, use fixed height. Otherwise, take full screen height.
+  // Try to autoplay video
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const tryPlay = () => {
+      v.muted = true;
+      v.playsInline = true;
+      v.play().catch(() => {});
+    };
+    v.addEventListener("loadedmetadata", tryPlay);
+    v.addEventListener("canplay", tryPlay);
+    if (v.readyState >= 2) tryPlay();
+    return () => {
+      v.removeEventListener("loadedmetadata", tryPlay);
+      v.removeEventListener("canplay", tryPlay);
+    };
+  }, [videoSrc, videoSrcWebm]);
+
   const sectionClass =
     "relative w-full overflow-hidden text-white " +
     (height ? "" : "min-h-screen");
@@ -100,32 +116,38 @@ export default function HeroDots({
       style={
         {
           ...(height ? { height } : {}),
-          // Spotlight knobs (tweak any of these quickly):
-          // --spotR: core radius of dark area
-          // --spotFade: feather size
-          // --spotAlpha: opacity of the black blur
           ["--spotR" as any]: "120px",
           ["--spotFade" as any]: "200px",
           ["--spotAlpha" as any]: "0.55",
           ["--mx" as any]: "50vw",
           ["--my" as any]: "50vh",
-          backgroundColor: "#000", // pure black behind the video
+          backgroundColor: "#000",
         } as React.CSSProperties
       }
     >
-      {/* Full-bleed background video */}
+      {/* Video background */}
       <video
+        ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
-        src={videoSrc}
         poster={posterSrc}
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
+      >
+        {videoSrcWebm ? <source src={videoSrcWebm} type="video/webm" /> : null}
+        {videoSrc ? <source src={videoSrc} type="video/mp4" /> : null}
+      </video>
+
+      {/* --- Gradient fade at bottom --- */}
+      <div className="absolute bottom-0 left-0 w-full h-[220px] pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)",
+        }}
       />
 
-      {/* Cursor-following black blur overlay (does not block clicks) */}
+      {/* Cursor-following black blur overlay */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -146,7 +168,7 @@ export default function HeroDots({
         }}
       />
 
-      {/* Centered content */}
+      {/* Text content */}
       <div className={`relative z-10 mx-auto max-w-[1200px] px-6 ${height ? "h-full" : "min-h-screen"} flex items-center justify-center`}>
         <div className="text-center">
           <p className="text-[10px] tracking-[0.22em] text-white/70">{kicker}</p>
