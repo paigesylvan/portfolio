@@ -51,12 +51,12 @@ export default function Project3Part2() {
             />
           </motion.div>
 
-          {/* TR: small collaboration card + nav image (stacked) */}
-          <div className="md:col-span-5 flex flex-col gap-8">
+          {/* TR: Collaboration card + nav image (now full width stacked) */}
+          <div className="md:col-span-6 flex flex-col gap-8">
             {/* Collaboration card */}
             <motion.article
               variants={item(prefersReduced)}
-              className="max-w-[600px] rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
+              className="w-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
             >
               <div className="flex items-start gap-4">
                 <Image
@@ -83,22 +83,22 @@ export default function Project3Part2() {
             </motion.article>
 
             {/* Nav / menu image */}
-            <motion.div variants={item(prefersReduced)}>
+            <motion.div variants={item(prefersReduced)} className="w-full">
               <Image
                 src="/images/experience-images/nav-menu.png"
                 alt="HMI navigation/menu"
-                width={1400}
-                height={800}
+                width={1800}
+                height={900}
                 className="w-full h-auto rounded-xl"
               />
             </motion.div>
           </div>
 
-          {/* BL: Problem Solving card (tall) */}
+          {/* BL: Problem Solving card */}
           <motion.article
             variants={item(prefersReduced)}
             className="
-              md:col-span-6 max-w-[600px]
+              md:col-span-6
               rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10
               shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6
               flex flex-col

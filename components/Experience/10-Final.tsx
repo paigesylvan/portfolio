@@ -23,9 +23,9 @@ export default function Outcome() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-24 lg:mt-0 pb-12">
-      <div className="w-full max-w-[1200px] mx-auto">
-        {/* Tighten space under the header */}
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 text-white mt-18 pb-8 lg:pb-0 lg:mt-36 scale-[0.8] md:scale-[0.78] lg:scale-[0.75] origin-top">
+      <div className="w-full max-w-[1000px] mx-auto">
+        {/* Tightened spacing */}
         <div className="mb-2 !mt-0">
           <SectionHeader
             kicker="OUTCOME"
@@ -39,12 +39,12 @@ export default function Outcome() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center"
         >
           {/* Left copy */}
           <motion.div
             variants={item(prefersReduced)}
-            className="space-y-6 text-white/90 text-xl"
+            className="space-y-4 text-white/85 text-sm md:text-base leading-snug md:leading-normal"
           >
             <p>
               Jumping into the automation industry, with a full-stack web development
@@ -79,7 +79,7 @@ export default function Outcome() {
               alt="MWES Employee Badge"
               width={720}
               height={900}
-              className="w-[350px] md:w-[400px] h-auto object-contain rounded-xl"
+              className="w-[240px] md:w-[280px] h-auto object-contain rounded-xl"
               priority
             />
           </motion.div>
