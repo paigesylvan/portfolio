@@ -23,7 +23,7 @@ export default function Outcome() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 text-white mt-18 pb-8 lg:pb-0 lg:mt-36 scale-[0.8] md:scale-[0.78] lg:scale-[0.75] origin-top">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 text-white mt-18 pb-8 lg:pb-0 lg:mt-24 scale-[0.8] md:scale-[0.78] lg:scale-[0.75] origin-top">
       <div className="w-full max-w-[1000px] mx-auto">
         {/* Tightened spacing */}
         <div className="mb-2 !mt-0">
