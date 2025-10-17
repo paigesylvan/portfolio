@@ -1,4 +1,3 @@
-// components/Experience/5-Project1.tsx
 "use client";
 
 import Image from "next/image";
@@ -9,7 +8,7 @@ type Block =
   | {
       key: string;
       title: string;
-      icon: string;      // static icon (png/svg)
+      icon: string;
       alt: string;
       body?: string;
       bullets?: string[];
@@ -18,7 +17,7 @@ type Block =
 const blocks: Block[] = [
   {
     key: "overview",
-    title: "Over View",
+    title: "Overview",
     icon: "/images/experience-images/overview.png",
     alt: "Overview icon",
     body:
@@ -85,76 +84,67 @@ export default function Project1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-24 scale-[0.95] md:scale-[0.92] lg:scale-[0.9] origin-top">
+    <section className="flex flex-col items-center justify-center px-4 text-white mt-24 mb-0">
       <div className="w-full max-w-[1400px] mx-auto">
-        <SectionHeader
-          kicker="PROJECT 1"
-          title="Meter Room Project"
-          align="left"
-        />
+        <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
 
-        {/* Big HMI screenshot */}
+        {/* ---------- HMI Screenshot ---------- */}
         <div className="mt-6 flex flex-col items-center">
-          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full md:w-[82%]">
+          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)] w-full md:w-[82%]">
             <Image
               src="/images/experience-images/meter-room-hmi.png"
               alt="HMI status screen"
               width={1820}
               height={900}
-              className="w-[450px] h-[300px] rounded-xl"
+              className="w-[450px] h-[300px] rounded-xl mx-auto"
               priority
             />
           </div>
-          <p className="mt-2 text-[11px] text-white/60 italic">
-            Image of DP Machine Status Screen — *(red shown due to app being disconnected when saved)*
+          <p className="mt-2 text-[11px] text-white/60 italic text-center">
+            Image of DP Machine Status Screen —{" "}
+            <span className="opacity-80">(red shown due to app being disconnected when saved)</span>
           </p>
         </div>
 
-        {/* Five cards */}
+        {/* ---------- Cards ---------- */}
         <motion.div
-  variants={parent()}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true, amount: 0.25 }}
-  className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
->
-  {blocks.map((b) => (
-    <motion.article
-      key={b.key}
-      variants={item(prefersReduced)}
-      className="
-        rounded-3xl bg-white/[0.06] backdrop-blur-md 
-        ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)]
-        px-4 py-8 flex flex-col
-        transition-colors hover:bg-white/[0.10]
-      "
-    >
-      <div className="flex flex-col items-center text-center">
-        <Image
-          src={b.icon}
-          alt={b.alt}
-          width={96}
-          height={96}
-          className="h-16 w-16 object-contain"
-        />
-        <h3 className="mt-4 font-semibold">{b.title}</h3>
-      </div>
+          variants={parent()}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
+        >
+          {blocks.map((b) => (
+            <motion.article
+              key={b.key}
+              variants={item(prefersReduced)}
+              className="rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] px-4 py-8 flex flex-col transition-colors hover:bg-white/[0.10]"
+            >
+              <div className="flex flex-col items-center text-center">
+                <Image
+                  src={b.icon}
+                  alt={b.alt}
+                  width={96}
+                  height={96}
+                  className="h-16 w-16 object-contain"
+                />
+                <h3 className="mt-4 font-semibold">{b.title}</h3>
+              </div>
 
-      {b.body && (
-        <p className="mt-4 text-white/80 leading-tight">{b.body}</p>
-      )}
+              {b.body && (
+                <p className="mt-4 text-white/80 leading-tight">{b.body}</p>
+              )}
 
-      {b.bullets && (
-        <ul className="mt-4 space-y-2 text-white/80 list-disc pl-[5px] leading-tight">
-          {b.bullets.map((li, i) => (
-            <li key={i}>{li}</li>
+              {b.bullets && (
+                <ul className="mt-4 space-y-2 text-white/80 list-disc pl-[5px] leading-tight">
+                  {b.bullets.map((li, i) => (
+                    <li key={i}>{li}</li>
+                  ))}
+                </ul>
+              )}
+            </motion.article>
           ))}
-        </ul>
-      )}
-    </motion.article>
-  ))}
-</motion.div>
-
+        </motion.div>
       </div>
     </section>
   );

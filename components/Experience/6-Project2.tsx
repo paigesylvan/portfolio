@@ -1,4 +1,3 @@
-// components/Experience/6-Project2.tsx
 "use client";
 
 import Image from "next/image";
@@ -18,7 +17,7 @@ type Block =
 const blocks: Block[] = [
   {
     key: "overview",
-    title: "Over View",
+    title: "Overview",
     icon: "/images/experience-images/overview.png",
     alt: "Overview icon",
     body:
@@ -83,14 +82,14 @@ export default function Project2() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-24 scale-[0.95] md:scale-[0.92] lg:scale-[0.9] origin-top">
+    <section className="flex flex-col items-center justify-center px-4 text-white mt-24 mb-0">
       <div className="w-full max-w-[1400px] mx-auto">
         <SectionHeader kicker="PROJECT 2" title="ASRS Project" align="left" />
 
-        {/* Two large images */}
+        {/* ---------- IMAGES ---------- */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {/* Left: HMI screen */}
-          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
             <Image
               src="/images/experience-images/asrs-hmi.png"
               alt="ASRS overview status screen"
@@ -100,12 +99,15 @@ export default function Project2() {
               priority
             />
             <p className="mt-2 text-[11px] text-white/60 italic text-center">
-              Image of DP Machine Status Screen — <span className="opacity-80">red shown due to app being disconnected when saved</span>
+              Image of DP Machine Status Screen —{" "}
+              <span className="opacity-80">
+                red shown due to app being disconnected when saved
+              </span>
             </p>
           </div>
 
           {/* Right: scripting/editor */}
-          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+          <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-3 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
             <Image
               src="/images/experience-images/asrs-script.png"
               alt="Ignition scripting view"
@@ -114,12 +116,15 @@ export default function Project2() {
               className="w-full h-auto rounded-xl"
             />
             <p className="mt-2 text-[11px] text-white/60 italic text-center">
-              Image of DP Machine Status Screen — <span className="opacity-80">red shown due to app being disconnected when saved</span>
+              Image of DP Machine Status Screen —{" "}
+              <span className="opacity-80">
+                red shown due to app being disconnected when saved
+              </span>
             </p>
           </div>
         </div>
 
-        {/* Cards */}
+        {/* ---------- CARDS ---------- */}
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -131,7 +136,7 @@ export default function Project2() {
             <motion.article
               key={b.key}
               variants={item(prefersReduced)}
-              className="rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] px-4 py-8 flex flex-col transition-colors hover:bg-white/[0.10]"
+              className="rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] px-4 py-8 flex flex-col transition-colors hover:bg-white/[0.10]"
             >
               <div className="flex flex-col items-center text-center">
                 <Image

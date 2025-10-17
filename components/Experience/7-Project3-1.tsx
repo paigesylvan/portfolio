@@ -22,7 +22,7 @@ export default function Project3Part1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-16 lg:mt-20 mb-0">
+    <section className="flex flex-col items-center justify-center px-4 text-white mt-16 lg:mt-36 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
         <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="left" />
 

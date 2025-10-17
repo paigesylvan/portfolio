@@ -1,4 +1,3 @@
-// components/Experience/8-Project3Part2.tsx
 "use client";
 
 import Image from "next/image";
@@ -22,19 +21,15 @@ export default function Project3Part2() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-18 lg:pb-0 lg:mt-24 scale-[0.85] md:scale-[0.83] lg:scale-[0.8] origin-top">
+    <section className="flex flex-col items-center justify-center px-4 text-white mt-18 lg:mt-24 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-        {/* GRID LAYOUT */}
+        {/* ---------- GRID LAYOUT ---------- */}
         <motion.div
           variants={parent()}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="
-            grid grid-cols-1 gap-8
-            md:grid-cols-12
-            md:auto-rows-[minmax(180px,auto)]
-          "
+          className="grid grid-cols-1 gap-8 md:grid-cols-12 md:auto-rows-[minmax(180px,auto)]"
         >
           {/* TL: Large HMI screen */}
           <motion.div
@@ -51,12 +46,12 @@ export default function Project3Part2() {
             />
           </motion.div>
 
-          {/* TR: Collaboration card + nav image (now full width stacked) */}
+          {/* TR: Collaboration card + nav image */}
           <div className="md:col-span-6 flex flex-col gap-8">
             {/* Collaboration card */}
             <motion.article
               variants={item(prefersReduced)}
-              className="w-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6"
+              className="w-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
             >
               <div className="flex items-start gap-4">
                 <Image
@@ -97,12 +92,7 @@ export default function Project3Part2() {
           {/* BL: Problem Solving card */}
           <motion.article
             variants={item(prefersReduced)}
-            className="
-              md:col-span-6
-              rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10
-              shadow-[0_30px_100px_rgba(0,0,0,0.45)] p-5 md:p-6
-              flex flex-col
-            "
+            className="md:col-span-6 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col"
           >
             <div className="flex items-start gap-4">
               <Image
@@ -149,7 +139,7 @@ export default function Project3Part2() {
           </motion.article>
 
           {/* BR: Large Conveyors HMI */}
-          <motion.div variants={item(prefersReduced)} className="md:col-span-6 py-3">
+          <motion.div variants={item(prefersReduced)} className="md:col-span-6">
             <Image
               src="/images/experience-images/conveyors.png"
               alt="Conveyors control HMI"
