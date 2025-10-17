@@ -85,7 +85,7 @@ export default function Project1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-24 pb-8 lg:pb-0 lg:mt-0 scale-[0.95] md:scale-[0.92] lg:scale-[0.9] origin-top">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 text-white mt-24 pb-8 lg:pb-0 lg:mt-36 scale-[0.95] md:scale-[0.92] lg:scale-[0.9] origin-top">
       <div className="w-full max-w-[1400px] mx-auto">
         <SectionHeader
           kicker="PROJECT 1"
