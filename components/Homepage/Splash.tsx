@@ -17,7 +17,7 @@ export default function HeroDots({
   subtitle = "I build clean, responsive experiences guided by research and craft.",
   kicker = "PORTFOLIO",
   height,
-  videoSrc = "/videos/hero.mp4",
+  videoSrc = "/video/hero-loop.mp4",
   videoSrcWebm,
   posterSrc,
 }: Props) {
