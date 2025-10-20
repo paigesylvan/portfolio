@@ -5,21 +5,20 @@ import React from "react";
 import SectionHeader from "../SectionHeader";
 
 type DonutProps = {
-  percent: number;           // 0–100
-  color?: string;            // tailwind color class for stroke
-  size?: number;             // px
-  stroke?: number;           // px
+  percent: number;
+  color?: string;
+  size?: number;
+  stroke?: number;
   captionTop: string;
   label: string;
-  delay?: number;            // seconds
-  duration?: number;         // seconds
+  delay?: number;
+  duration?: number;
 };
 
-/* Responsive helper: treat < md as "small" */
 function useIsSmallScreen() {
   const [isSmall, setIsSmall] = React.useState(false);
   React.useEffect(() => {
-    const check = () => setIsSmall(window.innerWidth < 768); // Tailwind md breakpoint
+    const check = () => setIsSmall(window.innerWidth < 768);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -40,8 +39,6 @@ function Donut({
   const prefersReduced = useReducedMotion();
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;
-
-  // animate via strokeDashoffset (full -> target)
   const targetOffset = (1 - percent / 100) * c;
 
   const ref = React.useRef<HTMLDivElement | null>(null);
@@ -54,10 +51,7 @@ function Donut({
         height={size}
         viewBox={`0 0 ${size} ${size}`}
         className="drop-shadow-[0_6px_24px_rgba(127,178,255,0.25)]"
-        aria-label={`${percent}%`}
-        role="img"
       >
-        {/* track */}
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -66,8 +60,6 @@ function Donut({
           strokeWidth={stroke}
           fill="none"
         />
-
-        {/* animated arc */}
         <motion.circle
           cx={size / 2}
           cy={size / 2}
@@ -76,7 +68,6 @@ function Donut({
           strokeWidth={stroke}
           fill="none"
           strokeLinecap="round"
-          // full dasharray, then animate the dashoffset
           strokeDasharray={c}
           initial={{ strokeDashoffset: c }}
           animate={
@@ -86,12 +77,13 @@ function Donut({
               ? { strokeDashoffset: targetOffset }
               : { strokeDashoffset: c }
           }
-          transition={{ duration: prefersReduced ? 0 : duration, ease: "easeOut", delay }}
-          // start at top
+          transition={{
+            duration: prefersReduced ? 0 : duration,
+            ease: "easeOut",
+            delay,
+          }}
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
         />
-
-        {/* percent text */}
         <text
           x="50%"
           y="50%"
@@ -105,60 +97,67 @@ function Donut({
       </svg>
 
       <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight mx-auto">
-  {captionTop}
-</p>
-<p className=" text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight mx-auto">
-  {label}
-</p>
+        {captionTop}
+      </p>
+      <p className="text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight mx-auto">
+        {label}
+      </p>
     </div>
   );
 }
 
 export default function ResearchInsights() {
   const isSmall = useIsSmallScreen();
-  const donutSize = isSmall ? 56 : 90;   
-const donutStroke = isSmall ? 8 : 9;   
-
+  const donutSize = isSmall ? 56 : 90;
+  const donutStroke = isSmall ? 8 : 9;
 
   return (
-    <div className="mx-auto lg:w-[90%] max-w-[1200px]  mt-24 lg:mt-8">
+    <div className="mx-auto lg:w-[85%] max-w-[1100px] mt-24 lg:mt-8">
       <SectionHeader
         kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"
         align="center"
       />
 
-      <div className="mt-8 lg:mt-24 grid lg:gap-8 md:grid-cols-12 items-start">
-        {/* LEFT: Insight card (matches homepage card styling) */}
-        <div className="md:col-span-8 px-12 py-6 ">
-          <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-4 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-            <h3 className="text-xl md:text-4xl text-white mb-2 lg:mb-4">
+      <div className="mt-8 lg:mt-20 grid md:grid-cols-12 items-start gap-4 lg:gap-6">
+        {/* LEFT: Insight card */}
+        <div className="md:col-span-7 px-6 py-6">
+          <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-6 md:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+            <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-3">
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-xs lg:text-md ">
+            <p className="text-white/80 text-xs lg:text-sm">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.
             </p>
 
-            <ul className="mt-2 lg:mt-6 space-y-1 text-white/70 text-xs lg:text-md">
+            <ul className="mt-3 lg:mt-5 space-y-1 text-white/70 text-xs lg:text-sm">
               <li>• There’s a gap in user-friendly grooming apps overall.</li>
-              <li>• Many groomers still rely on outdated sites and phone calls to book appointments.</li>
-              <li>• First-time users seek reassurance their dog will be treated with care.</li>
-              <li>• Users worry about timing, delays, and unexpected changes.</li>
+              <li>
+                • Many groomers still rely on outdated sites and phone calls to
+                book appointments.
+              </li>
+              <li>
+                • First-time users seek reassurance their dog will be treated
+                with care.
+              </li>
+              <li>
+                • Users worry about timing, delays, and unexpected changes.
+              </li>
             </ul>
 
-            <p className="mt-4 lg:mt-24 text-white/90 leading-relaxed text-xs lg:text-md">
+            <p className="mt-6 lg:mt-12 text-white/90 leading-relaxed text-xs lg:text-sm">
               <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
-              Trust, transparency, and clear communication matter as much as convenience—especially
-              for first-time users.
+              Trust, transparency, and clear communication matter as much as
+              convenience—especially for first-time users.
             </p>
           </div>
         </div>
 
-        {/* RIGHT: Animated donuts with subtle stagger */}
-        <div className="md:col-span-4 flex md:flex-col justify-center gap-4 mt-12">
+        {/* RIGHT: Donuts */}
+        <div className="md:col-span-5 flex md:flex-col justify-center gap-6 lg:gap-8 mt-12 md:mt-0">
           <Donut
             percent={67}
             captionTop="of U.S. households"

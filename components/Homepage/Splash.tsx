@@ -7,8 +7,8 @@ type Props = {
   subtitle?: string;
   kicker?: string;
   height?: number;
-  videoSrc?: string;
-  videoSrcWebm?: string;
+  videoSrc?: string;       // MP4 (H.264/AAC) — required for iOS
+  videoSrcWebm?: string;   // Optional WebM (Chrome/Android)
   posterSrc?: string;
 };
 
@@ -17,9 +17,10 @@ export default function HeroDots({
   subtitle = "I build clean, responsive experiences guided by research and craft.",
   kicker = "PORTFOLIO",
   height,
-  videoSrc = "/video/hero-loop.mp4",
+  // TIP: put videos under /public/videos; MP4 is key for iOS Safari
+  videoSrc = "/images/homepage-images/hero-loop.mp4",
   videoSrcWebm,
-  posterSrc,
+  posterSrc = "/images/homepage-images/hero-poster.jpg",
 }: Props) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -27,7 +28,7 @@ export default function HeroDots({
   const targetXY = useRef({ x: 0, y: 0 });
   const currentXY = useRef({ x: 0, y: 0 });
 
-  // Cursor spotlight logic
+  // Cursor spotlight logic (unchanged)
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
@@ -76,7 +77,6 @@ export default function HeroDots({
     window.addEventListener("pointerup", stop);
     window.addEventListener("pointercancel", stop);
     window.addEventListener("blur", stop);
-
     return () => {
       stop();
       window.removeEventListener("pointermove", onMove);
@@ -87,27 +87,70 @@ export default function HeroDots({
     };
   }, []);
 
-  // Try to autoplay video
+  // Robust mobile autoplay
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    const tryPlay = () => {
-      v.muted = true;
-      v.playsInline = true;
-      v.play().catch(() => {});
-    };
-    v.addEventListener("loadedmetadata", tryPlay);
-    v.addEventListener("canplay", tryPlay);
+
+    // iOS quirks: set attributes ASAP
+    v.muted = true;
+    v.defaultMuted = true;
+    // @ts-expect-error: webkit inline attr for older iOS
+    v.setAttribute("webkit-playsinline", "true");
+    v.playsInline = true;
+    v.controls = false;
+
+    const tryPlay = () => v.play().catch(() => { /* ignored */ });
+
+    // 1) try as soon as we have metadata/canplay
+    const onReady = () => tryPlay();
+    v.addEventListener("loadedmetadata", onReady);
+    v.addEventListener("canplay", onReady);
+
+    // 2) if already buffered enough
     if (v.readyState >= 2) tryPlay();
+
+    // 3) resume on tab visibility regain (iOS sometimes pauses)
+    const onVis = () => { if (document.visibilityState === "visible") tryPlay(); };
+    document.addEventListener("visibilitychange", onVis);
+
+    // 4) FINAL fallback: first user gesture anywhere on page
+    const onFirstTap = () => {
+      tryPlay();
+      window.removeEventListener("touchstart", onFirstTap);
+      window.removeEventListener("click", onFirstTap);
+    };
+    window.addEventListener("touchstart", onFirstTap, { passive: true, once: true });
+    window.addEventListener("click", onFirstTap, { once: true });
+
     return () => {
-      v.removeEventListener("loadedmetadata", tryPlay);
-      v.removeEventListener("canplay", tryPlay);
+      v.removeEventListener("loadedmetadata", onReady);
+      v.removeEventListener("canplay", onReady);
+      document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("touchstart", onFirstTap);
+      window.removeEventListener("click", onFirstTap);
     };
   }, [videoSrc, videoSrcWebm]);
 
+  // Pause when off-screen, play when in view (saves battery on mobile)
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    const io = new IntersectionObserver((entries) => {
+      const e = entries[0];
+      if (!e) return;
+      if (e.isIntersecting) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    }, { threshold: 0.1 });
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+
   const sectionClass =
-    "relative w-full overflow-hidden text-white " +
-    (height ? "" : "min-h-screen");
+    "relative w-full overflow-hidden text-white " + (height ? "" : "min-h-screen");
 
   return (
     <section
@@ -125,25 +168,31 @@ export default function HeroDots({
         } as React.CSSProperties
       }
     >
-      {/* Video background */}
+      {/* Background video */}
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
-        poster={posterSrc}
+        // important for mobile UX
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        // @ts-expect-error: iOS inline play attribute
+        webkit-playsinline="true"
+        preload="metadata"     // smaller mobile footprint
+        poster={posterSrc}
+        disableRemotePlayback  // avoids AirPlay prompts
       >
         {videoSrcWebm ? <source src={videoSrcWebm} type="video/webm" /> : null}
         {videoSrc ? <source src={videoSrc} type="video/mp4" /> : null}
       </video>
 
-      {/* --- Gradient fade at bottom --- */}
-      <div className="absolute bottom-0 left-0 w-full h-[220px] pointer-events-none"
+      {/* Bottom fade into next section */}
+      <div
+        className="absolute bottom-0 left-0 w-full h-[220px] pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)",
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)",
         }}
       />
 
@@ -168,7 +217,7 @@ export default function HeroDots({
         }}
       />
 
-      {/* Text content */}
+      {/* Content */}
       <div className={`relative z-10 mx-auto max-w-[1200px] px-6 ${height ? "h-full" : "min-h-screen"} flex items-center justify-center`}>
         <div className="text-center">
           <p className="text-[10px] tracking-[0.22em] text-white/70">{kicker}</p>
@@ -180,6 +229,9 @@ export default function HeroDots({
           </p>
         </div>
       </div>
+
+      {/* Subtle bottom cap (transparent -> black) */}
+      <div className="absolute bottom-0 left-0 w-full h-[290px] bg-gradient-to-t from-black to-transparent pointer-events-none" />
     </section>
   );
 }

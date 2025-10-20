@@ -39,7 +39,7 @@ const studies: Study[] = [
   },
   {
     slug: "/projects/cleaners",
-    title: "How Clear Design Improves User Trust for a Local Dry Cleaner",
+    title: "How Clear Design Improves User Trust for a Local Dry Cleaners",
     subtitle:
       "Designed and coded a responsive homepage that simplifies service discovery and builds confidence for a local dry cleaning business.",
     tags: ["VS CODE", "REACT", "RESPONSIVE DESIGN"],
@@ -53,22 +53,21 @@ export default function CaseStudies() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section
-      id="case-studies"
-      className="relative py-32 overflow-hidden text-white"
-    >
-      {/* Background image with dark overlay */}
+    <section id="case-studies" className="relative py-32 overflow-hidden text-white">
+      
+      <div className="absolute top-0 left-0 w-full h-[60px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
+  
       <div
         className="absolute inset-0 -z-10 bg-black"
         style={{
-          backgroundImage: "url('/images/homepage-images/case-study-bg.png')", // update this path
+          backgroundImage: "url('/images/homepage-images/case-study-bg.jpeg')", // update this path
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
           opacity: 0.65,
         }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
+     
 
       <h2 className="mb-10 text-center text-xs tracking-[0.3em] text-white/70">
         CASE STUDIES
@@ -131,7 +130,7 @@ export default function CaseStudies() {
                   ))}
                 </div>
 
-                <h3 className="lg:w-[70%] py-1 lg:py-6 font-bold leading-tight text-lg md:text-[36px] lg:text-2xl">
+                <h3 className="lg:w-[85%] py-1 lg:py-6 font-bold leading-tight text-lg md:text-[36px] lg:text-2xl">
                   {s.title}
                 </h3>
                 <p className="mt-3 max-w-prose text-md text-white/70 md:text-base leading-tight">

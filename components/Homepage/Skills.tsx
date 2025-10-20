@@ -85,7 +85,7 @@ export default function Skills() {
               <h3 className="lg:mb-3 text-lg font-semibold">{s.title}</h3>
 
               {/* Body */}
-              <p className="mx-auto md:mx-0 text-white/80 leading-tight text-lg max-w-sm md:max-w-none w-[50%]">
+              <p className="mx-auto md:mx-0 text-white/80 leading-tight text-lg max-w-sm w-[65%]">
                 {s.body}
               </p>
             </motion.div>
