@@ -77,11 +77,7 @@ function Donut({
               ? { strokeDashoffset: targetOffset }
               : { strokeDashoffset: c }
           }
-          transition={{
-            duration: prefersReduced ? 0 : duration,
-            ease: "easeOut",
-            delay,
-          }}
+          transition={{ duration: prefersReduced ? 0 : duration, ease: "easeOut", delay }}
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
         />
         <text
@@ -112,52 +108,67 @@ export default function ResearchInsights() {
   const donutStroke = isSmall ? 8 : 9;
 
   return (
-    <div className="mx-auto lg:w-[85%] max-w-[1100px] mt-24 lg:mt-8">
+    <div className="mx-auto lg:w-[82%] max-w-[1050px] mt-24 lg:mt-8">
       <SectionHeader
         kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"
         align="center"
       />
 
-      <div className="mt-8 lg:mt-20 grid md:grid-cols-12 items-start gap-4 lg:gap-6">
-        {/* LEFT: Insight card */}
-        <div className="md:col-span-7 px-6 py-6">
-          <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-6 md:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-            <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-3">
+      {/* Desktop: side-by-side with EXACT 100px gap + equal heights */}
+      <div
+        className="
+          mt-8 lg:mt-16 
+          flex flex-col md:flex-row
+          md:items-stretch 
+        "
+      >
+        {/* LEFT: Insight card — takes ~58% */}
+        <div className="md:basis-[58%] md:flex md:flex-col md:h-auto">
+          <div
+            className="
+              h-full rounded-3xl bg-[#111]/80 backdrop-blur-md 
+              ring-1 ring-white/10 
+              p-5 md:p-6 
+              shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+            "
+          >
+            <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-2.5">
               Market Insights
             </h3>
 
-            <p className="text-white/80 text-xs lg:text-sm">
+            <p className="text-white/80 text-xs lg:text-base">
               I conducted secondary research by analyzing app reviews, service
               provider websites, and pet-care forums to learn how dog grooming
               digital experiences feel to users today.
             </p>
 
-            <ul className="mt-3 lg:mt-5 space-y-1 text-white/70 text-xs lg:text-sm">
+            <ul className="mt-3 lg:mt-4 space-y-1 text-white/70 text-xs lg:text-base">
               <li>• There’s a gap in user-friendly grooming apps overall.</li>
-              <li>
-                • Many groomers still rely on outdated sites and phone calls to
-                book appointments.
-              </li>
-              <li>
-                • First-time users seek reassurance their dog will be treated
-                with care.
-              </li>
-              <li>
-                • Users worry about timing, delays, and unexpected changes.
-              </li>
+              <li>• Many groomers still rely on outdated sites and phone calls to book appointments.</li>
+              <li>• First-time users seek reassurance their dog will be treated with care.</li>
+              <li>• Users worry about timing, delays, and unexpected changes.</li>
             </ul>
 
-            <p className="mt-6 lg:mt-12 text-white/90 leading-relaxed text-xs lg:text-sm">
+            <p className="mt-5 lg:mt-8 text-white/90 leading-relaxed text-xs lg:text-base">
               <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
-              Trust, transparency, and clear communication matter as much as
-              convenience—especially for first-time users.
+              Trust, transparency, and clear communication matter as much as convenience—especially
+              for first-time users.
             </p>
           </div>
         </div>
 
-        {/* RIGHT: Donuts */}
-        <div className="md:col-span-5 flex md:flex-col justify-center gap-6 lg:gap-8 mt-12 md:mt-0">
+        {/* RIGHT: Donut column — takes ~42% and defines the total height */}
+        <div
+          className="
+            md:basis-[42%]
+            md:h-auto
+            flex md:flex-col
+            justify-center
+            gap-5 lg:gap-6
+            mt-10 md:mt-0
+          "
+        >
           <Donut
             percent={67}
             captionTop="of U.S. households"

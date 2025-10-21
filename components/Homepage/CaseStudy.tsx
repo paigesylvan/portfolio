@@ -60,13 +60,17 @@ export default function CaseStudies() {
       <div
         className="absolute inset-0 -z-10 bg-black"
         style={{
-          backgroundImage: "url('/images/homepage-images/case-study-bg.jpeg')", // update this path
+          backgroundImage: "url('/images/homepage-images/case-study-bg2.jpeg')", // update this path
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
           opacity: 0.65,
         }}
       />
+
+
+  {/* Optional gradient overlay to help text pop */}
+  <div className="absolute inset-0 bg-black/60 -z-10" />
      
 
       <h2 className="mb-10 text-center text-xs tracking-[0.3em] text-white/70">
