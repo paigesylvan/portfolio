@@ -11,7 +11,7 @@ import BeginnerFlow from "../../../../components/Project2/8-BeginnerFlow";
 import TestingIterationCamping from "../../../../components/Project2/9-Testing";
 import Iterations from "../../../../components/Project2/10-Iterations";
 import FinalDesign from "../../../../components/Project2/11-FinalDesign";
-import ChallengesOutcomes from "../../../../components/Project2/12-Outcome";
+import OutcomeCamping from "../../../../components/Project2/12-Outcome";
 
 
 
@@ -36,7 +36,7 @@ export default function DogGroomingPage() {
   <Section id="testing"> <TestingIterationCamping /></Section>
   <Section id="iterations"> <Iterations /></Section>  
   <Section id="final"> <FinalDesign /></Section>
-  <Section id="outcome"> <ChallengesOutcomes /></Section>
+  <Section id="outcome"> <OutcomeCamping /></Section>
 </main>
 
   );

@@ -14,31 +14,25 @@ export default function OutcomeCamping() {
         />
 
         {/* 2-column layout */}
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* LEFT — mobile demo video */}
-          <div className="lg:col-span-6">
-            <div className="relative p-2 md:p-3">
-              {/* subtle pedestal shadow */}
-              <div className="pointer-events-none absolute left-1/2 -bottom-5 -translate-x-1/2 w-[70%] h-6 rounded-full bg-black/70 blur-2xl opacity-50" />
-              <div className="relative overflow-hidden rounded-xl ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-                <video
-                  src="/images/project2-images/elmnt-mobile-demo.mp4" /* <-- update path */
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="none"
-                  poster="/images/project2-images/mobile-poster.jpg" /* optional */
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* LEFT — mobile demo video (no border or ring, smaller height) */}
+          <div className="lg:col-span-6 flex justify-center">
+            <video
+              src="/images/project2-images/elmnt-mobile-demo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/images/project2-images/mobile-poster.jpg"
+              className="w-full max-w-[320px] h-[560px] md:max-w-[380px] md:h-[1000px] rounded-xl object-cover"
+            />
           </div>
 
           {/* RIGHT — stacked Outcome + Next Steps */}
           <div className="lg:col-span-6 mt-6 lg:mt-0 flex flex-col gap-8">
-            {/* Outcome */}
-            <div>
+            {/* Outcome bubble */}
+            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
               <h3 className="text-lg md:text-xl font-semibold">
                 What improved after testing
               </h3>
@@ -78,7 +72,7 @@ export default function OutcomeCamping() {
               </ul>
             </div>
 
-            {/* Next Steps */}
+            {/* Next Steps bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
               <h4 className="text-base md:text-lg font-semibold">Next steps</h4>
               <p className="mt-2 text-white/90 leading-snug text-sm">
