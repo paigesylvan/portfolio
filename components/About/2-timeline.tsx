@@ -110,7 +110,15 @@ export default function TimelineAbout() {
       heading: "2024",
       subheading: "UI Design in Complex Systems",
       body:
-        "As a Software Engineer Intern, I designed and built HMI applications for industrial automation — combining design and logic.",
+        "As a Software Engineer Intern, I designed and built HMI applications for industrial automation, combining design and logic.",
+    },
+    {
+      images: ["/images/about-images/2025-1.png"],
+      imageAlt: "2025",
+      heading: "Present Day",
+      subheading: "Product Design + UX/UI Design",
+      body:
+        "From my experience at my internship I discovered my true interest, which I realize correleated into everything I have been lead to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course where I have learning and polishing two projects case studies. ",
     },
   ];
 
