@@ -20,11 +20,12 @@ type TimelineItem = {
 };
 
 const ACTIVE_BAND_PX = 120;
+const START_OFFSET_PX = 220; // where the filled line begins visually
 const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(v, max));
 
 export default function TimelineAbout() {
-  const prefersReduced = useReducedMotion() ?? false; 
+  const prefersReduced = useReducedMotion() ?? false;
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollY } = useScroll();
@@ -33,6 +34,9 @@ export default function TimelineAbout() {
   const [segmentTop, setSegmentTop] = useState(0);
   const [segmentLen, setSegmentLen] = useState(0);
 
+  // Where the spine should end (px from container top). This will align with the 2025 row center.
+  const [lineEndPx, setLineEndPx] = useState<number | null>(null);
+
   useLayoutEffect(() => {
     const update = () => {
       if (!containerRef.current) return;
@@ -40,6 +44,16 @@ export default function TimelineAbout() {
       const absTop = window.scrollY + rect.top;
       setContainerTopAbs(absTop);
       setContainerHeight(containerRef.current.scrollHeight);
+
+      // Find the last timeline row and compute its center
+      const rows =
+        containerRef.current.querySelectorAll<HTMLElement>("[data-timeline-row]");
+      if (rows.length) {
+        const last = rows[rows.length - 1];
+        const r = last.getBoundingClientRect();
+        const lastCenterAbs = window.scrollY + r.top + r.height / 2;
+        setLineEndPx(Math.max(0, lastCenterAbs - absTop));
+      }
     };
     update();
     window.addEventListener("resize", update, { passive: true });
@@ -48,21 +62,28 @@ export default function TimelineAbout() {
 
   useMotionValueEvent(scrollY, "change", (y) => {
     if (!containerRef.current) return;
+
     const viewportCenter = window.innerHeight / 2;
     const progressPx = y + viewportCenter - containerTopAbs;
-    const maxLen = containerHeight * 0.4;
+
+    // Maximum allowable filled length so the line ends at 2025
+    const capLen = Math.max(
+      0,
+      Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - START_OFFSET_PX)
+    );
+
     let nextTop = 0;
     let nextLen = 0;
 
     if (progressPx <= 0) {
       nextTop = 0;
       nextLen = 0;
-    } else if (progressPx < maxLen) {
-      nextTop = 220;
+    } else if (progressPx < capLen) {
+      nextTop = START_OFFSET_PX;
       nextLen = progressPx;
     } else {
-      nextTop = progressPx - maxLen;
-      nextLen = maxLen;
+      nextTop = progressPx - capLen;
+      nextLen = capLen;
     }
 
     nextTop = clamp(nextTop, 0, Math.max(0, containerHeight - nextLen));
@@ -118,7 +139,7 @@ export default function TimelineAbout() {
       heading: "Present Day",
       subheading: "Product Design + UX/UI Design",
       body:
-        "From my experience at my internship I discovered my true interest, which I realize correleated into everything I have been lead to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course where I have learning and polishing two projects case studies. ",
+        "From my experience at my internship I discovered my true interest, which I realize correleated into everything I have been lead to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course where I have learning and polishing two projects case studies.",
     },
   ];
 
@@ -127,22 +148,26 @@ export default function TimelineAbout() {
       <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">
         {/* Header */}
         <div className="text-center mb-48 relative z-20">
-          <p className="text-[11px] tracking-[0.22em] text-white/60">
-            THE PATH SO FAR
-          </p>
+          <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
           <h2 className="mt-2 text-3xl md:text-5xl font-bold">My Journey</h2>
         </div>
 
         {/* ===== Timeline Spine(s) ===== */}
         {/* Mobile: LEFT-ALIGNED spine */}
-        <div className="pointer-events-none absolute left-3 w-[3px] h-full bg-white/15 rounded-full md:hidden" />
+        <div
+          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden"
+          style={{ top: 0, height: lineEndPx ? `${lineEndPx}px` : "100%" }}
+        />
         <div
           className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white md:hidden"
           style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
         />
 
         {/* Desktop: CENTER spine */}
-        <div className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] h-full bg-white/15 rounded-full hidden md:block" />
+        <div
+          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block"
+          style={{ top: "250px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
+        />
         <div
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block"
           style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
@@ -245,6 +270,7 @@ function TimelineRow({
 
   return (
     <motion.div
+      data-timeline-row
       ref={rowRef}
       initial={{ opacity: 0, y: prefersReduced ? 0 : 28 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -309,7 +335,7 @@ function TimelineRow({
       <div className="hidden md:block md:col-span-2" />
 
       {/* Text */}
-      <div className="md:col-span-5">
+      <div className="md:col-span-5 max-w-[350px]">
         <h3 className="text-2xl md:text-3xl font-semibold">{item.heading}</h3>
         {item.subheading && (
           <p className="text-white/60 text-sm md:text-base mt-1 mb-2 italic">

@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 export default function OutcomeCamping() {
   return (
     <section className="px-4 md:px-6 text-white mt-24 lg:mt-0 pb-16">
-      <div className="mx-auto w-full max-w-[1100px] py-12 md:py-16">
+      <div className="mx-auto w-full max-w-[900px] py-12 md:py-16">
         {/* Header */}
         <SectionHeader
           kicker="OUTCOME & RESULTS"
@@ -14,7 +14,7 @@ export default function OutcomeCamping() {
         />
 
         {/* 2-column layout */}
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
           
           {/* LEFT — Demo Video */}
           <div className="lg:col-span-6 flex justify-center">

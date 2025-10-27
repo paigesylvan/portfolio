@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function UserFlow() {
   return (
-    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white mt-24 md:mt-0">
+    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white mt-24 md:mt-12">
       <div className="mx-auto w-full max-w-[1000px]">
         <SectionHeader
           kicker="USER FLOW"
