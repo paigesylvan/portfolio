@@ -6,8 +6,8 @@ import Userflow from "../../../../components/Project2/3-Userflow";
 import Mindmap from "../../../../components/Project2/4-Mindmap";
 import Insight from "../../../../components/Project2/5-Insight";
 import Wireframes from "../../../../components/Project2/6-Wireframes";
-import Prototype from "../../../../components/Project2/7-Prototype";
-import BeginnerFlow from "../../../../components/Project2/8-BeginnerFlow";
+import Prototype from "../../../../components/Project2/8-Prototype";
+import BeginnerFlow from "../../../../components/Project2/7-BeginnerFlow";
 import TestingIterationCamping from "../../../../components/Project2/9-Testing";
 import Iterations from "../../../../components/Project2/10-Iterations";
 import FinalDesign from "../../../../components/Project2/11-FinalDesign";
@@ -31,8 +31,8 @@ export default function DogGroomingPage() {
   <Section id="Mindmap"><Mindmap /></Section>
   <Section id="Insight"><Insight/></Section>
   <Section id="wireframes"> <Wireframes /></Section>
-  <Section id="prototypes"> <Prototype /></Section>
   <Section id="beginnerflow"> <BeginnerFlow /></Section>
+  <Section id="prototypes"> <Prototype /></Section>
   <Section id="testing"> <TestingIterationCamping /></Section>
   <Section id="iterations"> <Iterations /></Section>  
   <Section id="final"> <FinalDesign /></Section>

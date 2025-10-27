@@ -13,10 +13,12 @@ export default function FinalDesign() {
           align="center"
         />
               {/* short blurb */}
-              <p className="mx-auto mt-3 max-w-2xl text-center text-white/85 text-sm sm:text-base leading-tight">
-          Iterations improved clarity on the homepage and confidence throughout checkout,
-          especially for first-time campers. The result is a smoother, more guided experience
-          that reduces overwhelm and builds trust with users.
+              <p className="mx-auto mt-3 max-w-5xl text-center text-white/85 text-sm sm:text-base leading-tight">
+           The final product is a intuitive and sleek e-commerce experience designed to help 
+          users feel confident while gearing up for the outdoors. Clear navigation, 
+          curated bundles, and simplified product details reduce decision fatigue and make selections
+           feel guided rather than overwhelming. Thoughtful information hierarchy and reassuring microcopy support users at every step, while a clean, modern visual style reinforces trust and brand clarity. The result is a shopping experience that transforms uncertainty into excitement, empowering users to explore nature with confidence and the right gear for their adventure.
+        
         </p>
 
         {/* Video Demo */}

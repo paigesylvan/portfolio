@@ -6,19 +6,17 @@ import SectionHeader from "../SectionHeader";
 export default function IA() {
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-10 md:py-14">
-      <div className="w-full max-w-[780px] mx-auto">
+      <div className="w-full max-w-[850px] mx-auto">
         {/* ---------- HEADER ---------- */}
         <SectionHeader
-          kicker="TURNING GOALS INTO APP FLOWS"
-          title="Information Architecture"
+          kicker="INFORMATION ARCHITECTURE"
+          title="Turning Goals Into App Flows"
           align="center"
         />
 
         {/* ---------- INTRO TEXT ---------- */}
-        <p className="mx-auto mt-3 max-w-[620px] text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
-          The site map helps ensure that the structure of the app addresses user needs
-          uncovered in research. My focus was to make information easily accessible,
-          with clear navigation for effortless booking and browsing.
+        <p className="mx-auto mt-3 max-w-4xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
+          My focus was to make information easily accessible with clear navigation for effortless booking and browsing. The site map helps ensure that the structure of the app consistently addresses user needs uncovered in my research. 
         </p>
 
         {/* ---------- IA IMAGE ---------- */}

@@ -8,10 +8,10 @@ import SectionHeader from "../SectionHeader";
 export default function PrototypesCamping() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white mt-24 lg:mt-0">
-      <div className="w-full max-w-[900px] mx-auto">
+      <div className="w-full max-w-[1100px] mx-auto">
         <SectionHeader
-          kicker="LOW FIDELITY TESTING"
-          title="Prototypes"
+          kicker="LOW FIDELITY PROTOTYPES"
+          title="Core Experience Screens"
           align="center"
         />
 
@@ -38,7 +38,7 @@ export default function PrototypesCamping() {
 
               {/* IMAGE */}
               <div className="order-2 lg:order-1">
-                <div className="relative w-full aspect-[3/4] md:aspect-[4/5] lg:h-[300px] overflow-hidden">
+                <div className="relative w-full aspect-[3/4] md:aspect-[4/5] lg:h-[500px] overflow-hidden">
                   <Image
                     src="/images/project2-images/proto-home.png"
                     alt="Homepage Prototype"
@@ -62,8 +62,8 @@ export default function PrototypesCamping() {
                 </div>
 
                 <p className="text-white/80 leading-snug text-sm">
-                  Tests a step-by-step helper to narrow choices by trip type,
-                  duration, and experience level—reducing choice overload.
+                The homepage introduces users to the shop through a clear hero message and brief brand description. This establishes orientation and trust from the start. Below, curated product bundles and grouped categories help beginners ease into browsing without feeling overwhelmed by too many choices.
+
                 </p>
                 <ul className="mt-2 md:mt-4 space-y-1.5 text-white/70 text-sm">
                   <li>• Fewer decision points per screen</li>
@@ -95,7 +95,7 @@ export default function PrototypesCamping() {
 
               {/* IMAGE */}
               <div className="order-2 lg:order-1">
-                <div className="relative w-full aspect-[3/4] md:aspect-[4/5] lg:h-[300px] overflow-hidden">
+                <div className="relative w-full aspect-[3/4] md:aspect-[4/5] lg:h-[500px] overflow-hidden">
                   <Image
                     src="/images/project2-images/proto-bundle.png"
                     alt="Product Page Prototype"
@@ -118,8 +118,7 @@ export default function PrototypesCamping() {
                 </div>
 
                 <p className="text-white/80 leading-snug text-sm">
-                  Tests pre-built kits for “First-Time Camper,” “Weekend Getaway,”
-                  and “Backpacking Lite” to boost confidence and speed.
+                The bundle page presents curated products with clear descriptions to reduce confusion and help beginners understand what they need. Prominent call-to-action buttons at the bottom guide the next step in the shopping experience and ensure users always know how to move forward.
                 </p>
                 <ul className="mt-2 md:mt-4 space-y-1.5 text-white/70 text-sm">
                   <li>• Clear value &amp; fewer choices</li>

@@ -7,15 +7,15 @@ import SectionHeader from "../SectionHeader";
 export default function UserFlow() {
   return (
     <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white mt-24 md:mt-0">
-      <div className="mx-auto w-full max-w-[900px]">
+      <div className="mx-auto w-full max-w-[1000px]">
         <SectionHeader
-          kicker="GETTING TO KNOW THE USER"
-          title="User Flow"
+          kicker="USER FLOW"
+          title="Getting to Know the User"
           align="center"
         />
 
-        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-2xl text-center text-white/80 leading-snug md:leading-normal pb-6">
-          To better understand the camper’s decision-making process, I created a user journey map.
+        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-6xl text-center text-white/80 leading-snug md:leading-normal pb-6">
+          To better understand the user decision-making process while on a store website, I created a user journey map.
           This helped identify moments of confusion and stress across the shopping experience, as
           well as opportunities to simplify decision-making with clear guidance.
         </p>

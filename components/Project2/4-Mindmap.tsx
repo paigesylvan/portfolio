@@ -6,14 +6,14 @@ import SectionHeader from "../SectionHeader";
 export default function MindMap() {
   return (
     <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white pt-24 md:pt-28">
-      <div className="max-w-[900px] w-full mx-auto text-center">
+      <div className="max-w-[1000px] w-full mx-auto text-center">
         <SectionHeader
-          kicker="CONNECTING INSIGHTS"
-          title="Mind Map"
+          kicker="MIND MAP"
+          title="Connecting Insights"
           align="center"
         />
 
-        <p className="mx-auto mt-4 max-w-2xl text-white/85 leading-snug md:leading-normal text-xs md:text-sm lg:text-base">
+        <p className="mx-auto mt-4 max-w-5xl text-white/85 leading-snug md:leading-normal text-xs md:text-sm lg:text-base">
           After mapping the user journey, I created a mind map to explore how different user goals,
           pain points, and personas could translate into the website’s needs and features.
           This helped visualize the relationships between problems and possible solutions,
@@ -22,14 +22,14 @@ export default function MindMap() {
 
         {/* Large Image */}
         <div className="mt-8 md:mt-12 flex justify-center">
-          <div className="relative w-full max-w-[1200px]">
+          <div className="relative w-full max-w-[700px]">
             <Image
               src="/images/project2-images/mindmap.png"
               alt="Mind map visualizing connections between user needs and features"
-              width={1600}
+              width={1000}
               height={1000}
               priority
-              sizes="(min-width: 1024px) 60vw, 92vw"
+              sizes="(min-width: 904px) 60vw, 84vw"
               className="w-full h-auto rounded-2xl object-contain drop-shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
             />
           </div>

@@ -12,8 +12,9 @@ export default function UsersSection() {
         title="Who's Behind the Experience"
         align="center"
       />
-        <p className="mx-auto mt-4 max-w-3xl text-center text-white/80 lg:text-base">
-        Based on market insights, I developed four user personas to align design choices with the diverse needs and challenges of pet owners.
+        <p className="mx-auto mt-4 max-w-4xl text-center text-white/80 lg:text-base">
+        After research, my next to step was to understand the user.
+        Based on market insights, I developed four user personas to understand and align design choices with the diverse needs and challenges of pet owners.
         </p>
 
       <div className="flex items-center justify-center">

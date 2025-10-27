@@ -55,8 +55,8 @@ export default function Outcome() {
               One of the biggest challenges of this project was bridging the gap between
               design and development. On the surface, creating HMI screens might seem like
               a purely technical task, but I quickly learned how deeply design decisions
-              impact usability. Every choice— from layout and spacing to how recipes were
-              saved and displayed— had to balance technical accuracy with operator clarity.
+              impact usability. Every choice from layout and spacing to how recipes were
+              saved and displayed had to balance technical accuracy with operator clarity.
             </p>
             <p>
               At times, I dove into PLC logic and electrical schematics to ensure

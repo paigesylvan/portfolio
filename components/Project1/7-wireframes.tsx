@@ -37,15 +37,19 @@ export default function Wireframes() {
 
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-10 md:py-14">
-      <div className="w-full max-w-[760px] mx-auto">
+      <div className="w-full max-w-6xl mx-auto">
         <SectionHeader
           kicker="LOW-FI EXPLORATION"
           title="Key Wireframes"
           align="center"
         />
 
-        <p className="mx-auto mt-3 max-w-[620px] text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
-          I began sketching early concepts of the pages. These quick sketches allowed me to explore layouts and content hierarchy. I tested different navigation bar options to see which would enhance usability and identified which items were most essential to feature. Wireframing helped establish early structure for core flows—appointment creation, groomer discovery, and status visibility.
+        <p className="mx-auto mt-3 max-w-5xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
+          I began sketching early concepts of the pages.
+          These quick sketches allowed me to explore layouts and content hierarchy.
+           I tested different navigation bar options to see which would enhance usability and identified which 
+           items were most essential to feature. Wireframing helped me establish early structure for core flows; appointment 
+           creation, groomer discovery, and status visibility.
         </p>
 
         {/* Wireframes grid */}

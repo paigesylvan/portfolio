@@ -2,23 +2,27 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 
 export default function BeginnerFlow() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white">
       <div className="w-full max-w-[900px] mx-auto">
+      <SectionHeader
+          kicker="LOW FIDELITY PROTOTYPES"
+          title="Turning Complexity into Clarity "
+          align="center"
+        />
         {/* Title & copy */}
-        <div className="mb-6 md:mb-8">
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-snug lg:leading-tight">
-            Turning complexity into clarity with a beginner-friendly shopping flow.
-          </h2>
-          <p className="mt-3 max-w-3xl text-white/85 text-xs sm:text-sm md:text-base leading-snug lg:leading-relaxed">
-            After my user research, my goal was simplifying the layout, curating gear selections,
-            and clearly communicating value. Every design choice—from the streamlined bundle
-            presentation to the guided add-on options—was made to reduce decision fatigue and build
-            confidence for those new to camping.
+        <div className="mb-6 md:mb-8 flex justify-center">
+          <p className="mt-3 max-w-3xl mx-auto text-white/85 text-xs sm:text-sm md:text-base leading-snug lg:leading-relaxed text-center">
+          After my user research, my goal was to simplify the layout, curating gear selections,
+          and clearly communicating value. Every design choice, from the streamlined bundle
+          presentation to the guided add-on options, was made to reduce decision fatigue and build
+          confidence for users shopping.
           </p>
         </div>
+
 
         {/* Image card */}
         <motion.div

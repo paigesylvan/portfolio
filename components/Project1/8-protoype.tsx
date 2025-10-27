@@ -14,10 +14,9 @@ export default function Prototype() {
           align="center"
         />
 
-        <p className="text-xs md:text-base mx-auto mt-3 max-w-2xl text-white/85 leading-snug md:leading-normal">
-          I refined my wireframes into low-fidelity prototypes to validate navigation,
-          booking flows, and onboarding interactions before moving into high-fidelity
-          UI design.
+        <p className="text-xs md:text-base mx-auto mt-3 max-w-4xl text-white/85 leading-snug md:leading-normal">
+          After exploring different page layouts, I refined my wireframes into low-fidelity prototypes. 
+          Connecting the pages helped validate navigation, booking flows, and onboarding interactions before moving into high-fidelity UI design. 
         </p>
 
         {/* Two prototypes (Onboarding & Booking) */}
@@ -62,7 +61,7 @@ export default function Prototype() {
               BOOKING APPOINTMENT FLOW
             </p>
             <p className="mt-1 text-xs md:text-sm text-white/70 max-w-sm">
-              Validated service selection, scheduling, and confirmation steps.
+              Tested service selection, scheduling, and confirmation steps.
             </p>
           </div>
         </div>

@@ -32,16 +32,12 @@ export default function FinalDesign() {
           {/* Text column */}
 <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
   <p className="text-white/85 leading-tight text-sm lg:text-[16px] md:text-[17px] max-w-[350px] mx-auto md:mx-0">
-    The biggest challenge was balancing simplicity with trust, early versions felt
-    either too bare or too cluttered. Iterative testing helped refine booking flows,
-    add multi-dog support, and build credibility with groomer bios and status updates.
-    The outcome was a streamlined, reassuring app that simplified scheduling while
-    boosting user confidence.
+  Iterative testing refined the booking experience, strengthened multi-dog support, and increased trust through clearer groomer profiles, messaging, and appointment status updates. A key design challenge was balancing simplicity with reassurance, since early concepts felt either too bare or overly busy. The final outcome is a streamlined and confident scheduling experience that helps pet owners feel informed and supported throughout the process.
   </p>
 
   {/* Button inside the bubble */}
   <Link
-    href="https://www.figma.com"  /* Replace with real link */
+    href="https://www.figma.com/proto/1fKLri7C8IZINRq3tWhYIV/Pampered-Paws?node-id=1-503&t=MTdqUvYwpWVoXLwk-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A503"  /* Replace with real link */
     target="_blank"
     rel="noopener noreferrer"
     className="

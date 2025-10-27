@@ -84,14 +84,14 @@ export default function Goals() {
     <section className="mt-12 md:mt-24 flex flex-col items-center justify-center px-3 md:px-6 text-white pb-8 md:pb-16">
       <div className="w-full max-w-[900px] mx-auto">
         <SectionHeader
-          kicker="THE WHY BEHIND THE DESIGN"
+          kicker="DEFINING THE DESIGN "
           title="6 UX Findings and Design Goals"
           align="center"
         />
 
         {/* Intro blurb */}
-        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-2xl text-center text-white/80 leading-tight">
-          From my research, I identified six key focus areas from user needs to guide my UI design decisions.
+        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-4xl text-center text-white/80 leading-tight">
+          From my research, I identified key focus areas from user needs to guide my UI design decisions.
           These findings highlight the need for a digital experience that builds trust, simplifies decisions,
           and streamlines the booking process.
         </p>

@@ -162,7 +162,7 @@ export default function TestingIterationCamping() {
               </li>
             </ul>
             <p className="mt-2 text-[12px] text-white/70 leading-snug">
-              These changes balanced simplicity and trust—clear explanations +
+              These changes balanced simplicity and trust. Clear explanations +
               streamlined selection increased confidence to complete a purchase.
             </p>
           </motion.div>

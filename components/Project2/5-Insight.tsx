@@ -42,7 +42,6 @@ const insights: Insight[] = [
   },
 ];
 
-// stagger + slide-up
 const parent = (stagger = 0.12) => ({
   hidden: { opacity: 1 },
   show: {
@@ -65,20 +64,28 @@ export default function KeyInsights() {
 
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 sm:px-6 text-white mt-36 lg:mt-0 pb-6">
-      <div className="w-full max-w-[900px] mx-auto">
+      <div className="w-full max-w-[1000px] mx-auto">
         <SectionHeader
-          kicker="FINDINGS FROM RESEARCH"
-          title="Key Insights"
+          kicker="KEY INSIGHTS"
+          title="Findings From Research"
           align="center"
           accent="camp"
         />
+
+        {/* ---------- New blurb added here ---------- */}
+        <p className="text-center text-[10px] sm:text-sm md:text-base text-white/70 leading-snug max-w-[780px] mx-auto mt-3">
+          User journeys and mind mapping helped identify where first-time campers felt
+          uncertain or overwhelmed. These methods revealed core pain points and guided
+          the design goals shown below, ensuring design decisions are supporting the user experience.
+
+        </p>
 
         <motion.div
           variants={parent()}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
+          className="mt-12 lg:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
         >
           {insights.map((i) => (
             <motion.div
@@ -88,7 +95,6 @@ export default function KeyInsights() {
                          p-4 md:p-6 text-center shadow-[0_16px_60px_rgba(0,0,0,0.45)] 
                          transition-all hover:bg-white/[0.06] hover:-translate-y-0.5"
             >
-              {/* Top content */}
               <div>
                 <div className="mx-auto mb-4 sm:mb-5 flex items-center justify-center">
                   <div className="w-[70px] h-[60px] sm:w-[90px] sm:h-[70px] flex items-center justify-center">
@@ -108,7 +114,6 @@ export default function KeyInsights() {
                 </p>
               </div>
 
-              {/* Bottom */}
               <div className="mt-4 sm:mt-6">
                 <div className="h-px w-10 sm:w-8 mx-auto bg-emerald-400/40" />
                 <p className="mt-3 text-[10px] tracking-[0.22em] text-emerald-300/90">
@@ -118,6 +123,7 @@ export default function KeyInsights() {
                   {i.goal}
                 </p>
               </div>
+
             </motion.div>
           ))}
         </motion.div>

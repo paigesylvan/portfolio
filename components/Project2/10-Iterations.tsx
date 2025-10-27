@@ -48,7 +48,7 @@ export default function Iterations() {
             <h3 className="mt-2 text-base md:text-base font-semibold leading-snug">
               Added grid to Collections
             </h3>
-            <p className="mt-2 text-[10px] md:text-base text-white/80 leading-snug">
+            <p className="mt-2 text-[10px] md:text-[12px] text-white/80 leading-snug">
               Added grid to Collections for quicker scanning and variety at a glance.
             </p>
 
@@ -98,7 +98,7 @@ export default function Iterations() {
             <h3 className="mt-2 text-base md:text-lg font-semibold leading-snug">
               Reduced hesitation with clearer details
             </h3>
-            <p className="mt-2 text-[10px] md:text-[11px] text-white/80 leading-snug">
+            <p className="mt-2 text-[10px] md:text-[12px] text-white/80 leading-snug">
               Added quantity adjuster, return policy, and tax/shipping info to reduce hesitation and reinforce trust.
             </p>
 

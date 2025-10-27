@@ -14,21 +14,44 @@ export default function Testing() {
           align="center"
         />
 
-        {/* ---------- SUBTITLE ---------- */}
-        <h3 className="mt-1 md:mt-3 text-[10px] md:text-[11px] lg:text-[12px] font-medium text-white/85 px-3 leading-snug">
-          Moderated usability testing informed iterations and guided my final design decisions.
-        </h3>
+        {/* ---------- DESCRIPTION (polished) ---------- */}
+        <div className="mx-auto mt-3 max-w-[620px] text-left">
+          <p className="text-[10px] md:text-base text-white/75 leading-snug md:leading-snug">
+          After developing low-fidelity prototypes, I conducted a moderated usability test with a participant representative 
+          of the target user. They completed key booking tasks using a think-aloud protocol, supported by follow-up questions 
+          to understand expectations and decision-making. The results informed refinements to the high-fidelity prototypes, 
+          and ensured the final design aligned with user needs and confidence in booking.
+          </p>
 
-        {/* ---------- DESCRIPTION ---------- */}
-        <p className="text-[10px] md:text-base mx-auto mt-3 max-w-[620px] text-white/75 leading-snug md:leading-snug">
-          Through a moderated usability study of one user, they navigated through the app
-          while I noted comments and areas for refinement. Feedback was positive about the
-          booking process and ability to schedule for more than one dog. To bring more
-          reassurance and comfort to the user, I prioritized the status of appointments and
-          personalization of dog profiles on the home screen. The service information and
-          messaging features were not easily accessible, so they were added to the navigation
-          menu to support both new and repeating users.
-        </p>
+          {/* Positive signals */}
+          <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
+            Positive signals
+          </h4>
+          <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug md:leading-snug">
+            <li>The booking flow was straightforward.</li>
+            <li>Scheduling for multiple dogs was perceived as valuable and intuitive.</li>
+          </ul>
+
+          {/* Friction */}
+          <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
+            Identified friction
+          </h4>
+          <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug md:leading-snug">
+            <li>Appointment status was unclear after booking.</li>
+            <li>The user sought reassurance their dog was “in good hands.”</li>
+            <li>Service information and messaging were not easily discoverable.</li>
+          </ul>
+
+          {/* Changes */}
+          <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
+            Design adjustments based on insights
+          </h4>
+          <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug md:leading-snug">
+            <li>Surfaced <span className="font-medium text-white/85">appointment status</span> to reduce uncertainty and increase trust.</li>
+            <li>Enhanced <span className="font-medium text-white/85">dog profile personalization</span> on the home screen for emotional reassurance.</li>
+            <li>Added <span className="font-medium text-white/85">service info and messaging</span> to the primary navigation for new and returning users.</li>
+          </ul>
+        </div>
 
         {/* ---------- EVOLUTION IMAGES ---------- */}
         <div className="mt-8 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
@@ -46,12 +69,12 @@ export default function Testing() {
             {
               src: "/images/project1-images/evolution-3.png",
               title: "Second Iteration",
-              desc: "Personalized screen with appointments",
+              desc: "Personalized homescreen with appointments + dog profile",
             },
             {
               src: "/images/project1-images/evolution-4.png",
               title: "Final Design",
-              desc: "Added navigation + messaging feature",
+              desc: "Added navigation bar with CTA throughout entire app",
             },
           ].map((card, i) => (
             <div

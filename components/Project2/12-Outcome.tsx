@@ -36,13 +36,13 @@ export default function OutcomeCamping() {
               <h3 className="text-lg md:text-xl font-semibold">
                 What improved after testing
               </h3>
-              <ul className="mt-4 space-y-4 text-white/90 text-xs sm:text-sm leading-snug">
+              <ul className="mt-4 space-y-4 text-white/90 text-2xs sm:text-sm leading-snug">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <p>
                     <span className="font-semibold text-white">Improved Clarity:</span>{" "}
                     Users can now easily distinguish between Starter Bundle, Elemental
-                    Collections, and Shop All — reducing confusion about ELMNT’s offerings.
+                    Collections, and Shop All, reducing confusion about ELMNT’s offerings.
                   </p>
                 </li>
                 <li className="flex gap-2">
