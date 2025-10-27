@@ -15,7 +15,8 @@ export default function OutcomeCamping() {
 
         {/* 2-column layout */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* LEFT — mobile demo video (no border or ring, smaller height) */}
+          
+          {/* LEFT — Demo Video */}
           <div className="lg:col-span-6 flex justify-center">
             <video
               src="/images/project2-images/elmnt-mobile-demo.mp4"
@@ -25,96 +26,84 @@ export default function OutcomeCamping() {
               playsInline
               preload="none"
               poster="/images/project2-images/mobile-poster.jpg"
-              className=" w-[350px] h-[560px] mt-24"
+              className="w-[300px] h-[480px] mt-20"
             />
           </div>
 
-          {/* RIGHT — stacked Outcome + Next Steps */}
-          <div className="lg:col-span-6 mt-6 lg:mt-0 flex flex-col gap-8">
+          {/* RIGHT — Outcome + Next Steps */}
+          <div className="lg:col-span-6 mt-6 lg:mt-24 flex flex-col gap-6">
+            
             {/* Outcome bubble */}
-            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-              <h3 className="text-lg md:text-xl font-semibold">
+            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+              <h3 className="text-sm md:text-base font-semibold">
                 What improved after testing
               </h3>
-              <ul className="mt-4 space-y-4 text-white/90 text-2xs sm:text-sm leading-snug">
+              <ul className="mt-3 space-y-3 text-[10px] sm:text-[11px] leading-snug text-white/85">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <p>
-                    <span className="font-semibold text-white">Improved Clarity:</span>{" "}
-                    Users can now easily distinguish between Starter Bundle, Elemental
-                    Collections, and Shop All, reducing confusion about ELMNT’s offerings.
+                    <span className="font-semibold text-white">Improved clarity:</span>{" "}
+                    Clearer structure between Starter Bundles, Elemental Collections,
+                    and Shop All, reducing confusion.
                   </p>
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <p>
-                    <span className="font-semibold text-white">Smoother Navigation:</span>{" "}
-                    The homepage-to-checkout flow now has fewer steps and clearer calls-to-action,
-                    minimizing hesitation and backtracking.
+                    <span className="font-semibold text-white">Smoother navigation:</span>{" "}
+                    Fewer steps and more visible calls-to-action reduce backtracking.
                   </p>
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <p>
-                    <span className="font-semibold text-white">Increased Confidence:</span>{" "}
-                    Curated bundles and supportive descriptions reduce decision fatigue.
-                    Checkout details like quantity, returns, and shipping reinforced trust.
+                    <span className="font-semibold text-white">Increased confidence:</span>{" "}
+                    Curated bundles and clearer details lower decision fatigue.
                   </p>
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <p>
-                    <span className="font-semibold text-white">Cross-Platform Consistency:</span>{" "}
-                    Desktop and mobile experiences were aligned to maintain clarity and trust,
-                    giving first-time campers the same guided experience across devices.
+                    <span className="font-semibold text-white">Cross-platform consistency:</span>{" "}
+                    Mobile and desktop provide the same structured guidance.
                   </p>
                 </li>
               </ul>
             </div>
 
             {/* Next Steps bubble */}
-            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-              <h4 className="text-base md:text-lg font-semibold">Next steps</h4>
-              <p className="mt-2 text-white/90 leading-snug text-sm">
-                While the redesign addressed key issues of clarity, navigation, and confidence,
-                there are opportunities to continue improving the experience:
+            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+              <h4 className="text-xs md:text-sm font-semibold">Next steps</h4>
+              <p className="mt-2 text-[10px] sm:text-[11px] leading-snug text-white/85">
+                Opportunities remain to continue improving confidence and clarity:
               </p>
 
-              <ul className="mt-5 space-y-5 text-sm">
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+              <ul className="mt-4 space-y-4 text-[10px] sm:text-[11px] text-white/80 leading-snug">
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <div>
-                    <p className="font-semibold">Validate with more users</p>
-                    <p className="text-white/85">
-                      Conduct additional usability tests with a larger group to confirm whether
-                      the redesigned homepage and checkout flow solve the problems consistently.
-                    </p>
+                    <p className="font-semibold text-white">Validate with more users</p>
+                    <p>Ensure improvements hold true across diverse beginners.</p>
                   </div>
                 </li>
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <div>
-                    <p className="font-semibold">Refine product copy</p>
-                    <p className="text-white/85">
-                      Test variations of bundle and collection descriptions to see which language
-                      most effectively reassures beginners and reduces hesitation.
-                    </p>
+                    <p className="font-semibold text-white">Refine product copy</p>
+                    <p>Test wording that most effectively reassures new campers.</p>
                   </div>
                 </li>
-                <li className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <div>
-                    <p className="font-semibold">Measure engagement</p>
-                    <p className="text-white/85">
-                      Track how users interact with bundles versus collections to evaluate which
-                      entry points drive the most confident purchases.
-                    </p>
+                    <p className="font-semibold text-white">Measure engagement</p>
+                    <p>Track which entry points drive confident purchases.</p>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
-          {/* END right column */}
+
         </div>
       </div>
     </section>

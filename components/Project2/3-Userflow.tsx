@@ -14,7 +14,7 @@ export default function UserFlow() {
           align="center"
         />
 
-        <p className="text-xs md:text-sm lg:text-base mx-auto mt-4 max-w-6xl text-center text-white/80 leading-snug md:leading-normal pb-6">
+        <p className="text-xs md:text-sm lg:text-md mx-auto mt-4 max-w-6xl text-center text-white/80 leading-snug md:leading-normal pb-6">
           To better understand the user decision-making process while on a store website, I created a user journey map.
           This helped identify moments of confusion and stress across the shopping experience, as
           well as opportunities to simplify decision-making with clear guidance.
@@ -25,8 +25,8 @@ export default function UserFlow() {
           <Image
             src="/images/project2-images/userflow.png"
             alt="User flow journey map"
-            width={2800}
-            height={1100}
+            width={1000}
+            height={900}
             priority
             sizes="(min-width: 1024px) 55vw, 92vw"
             className="w-full h-auto rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,0.45)] object-contain"

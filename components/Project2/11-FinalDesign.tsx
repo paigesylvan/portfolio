@@ -13,7 +13,7 @@ export default function FinalDesign() {
           align="center"
         />
               {/* short blurb */}
-              <p className="mx-auto mt-3 max-w-5xl text-center text-white/85 text-sm sm:text-base leading-tight">
+              <p className="mx-auto mt-3 max-w-6xl text-center text-white/85 text-[10px] sm:text-base leading-tight">
            The final product is a intuitive and sleek e-commerce experience designed to help 
           users feel confident while gearing up for the outdoors. Clear navigation, 
           curated bundles, and simplified product details reduce decision fatigue and make selections
@@ -23,7 +23,7 @@ export default function FinalDesign() {
 
         {/* Video Demo */}
         <div className="flex justify-center mt-10">
-          <div className="overflow-hidden max-w-[1000px] w-full">
+          <div className="overflow-hidden max-w-[950px] w-full">
             <video
               src="/images/project2-images/final-design-desktop.mp4" // replace with your actual path
               autoPlay

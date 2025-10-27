@@ -22,7 +22,7 @@ export default function HeroOverviewDryCleaner() {
 
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16">
-      <div className="mx-auto w-full max-w-[1000px] px-4 md:px-6">
+      <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
         {/* ---------- HEADER ---------- */}
         <div className="text-center">
           <SectionHeader
@@ -84,7 +84,7 @@ export default function HeroOverviewDryCleaner() {
               width={2200}
               height={1400}
               priority
-              className="relative z-10 w-[92vw] max-w-[960px] h-auto rounded-2xl ring-1 ring-white/10 shadow-2xl"
+              className="relative z-10 w-[92vw] max-w-[500px] h-auto"
             />
           </motion.div>
         </div>

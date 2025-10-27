@@ -8,68 +8,9 @@ const tools = ["VS CODE", "REACT", "TAILWIND CSS", "VERCEL"];
 export default function OverviewDryCleaner() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
-      <div className="mx-auto w-[90%] md:w-[70%] space-y-10">
-
-        {/* Meta blocks */}
-        <div className="space-y-8">
-          {/* PROJECT */}
-          <div>
-            <p className="text-[11px] tracking-[0.22em] accent-text">PROJECT</p>
-            <p className="mt-2 text-lg md:text-xl text-white/90">
-              Design and Develop a Responsive Website for Local Dry Cleaners
-            </p>
-          </div>
-
-          {/* DURATION */}
-          <div>
-            <p className="text-[11px] tracking-[0.22em] accent-text">DURATION</p>
-            <p className="mt-2 text-lg md:text-xl text-white/90">January 2025 – May 2025</p>
-          </div>
-
-          {/* ROLE */}
-          <div>
-            <p className="text-[11px] tracking-[0.22em] accent-text">ROLE</p>
-            <p className="mt-2 text-lg md:text-xl text-white/90">
-              UX/UI Designer, Researcher, Visual Designer, Usability Tester, Developer
-            </p>
-          </div>
-
-          {/* SKILLS */}
-          <div>
-            <p className="text-[11px] tracking-[0.22em] accent-text">
-              UX/UI SKILLSET’S LEVERAGED
-            </p>
-
-            <div className="mt-4 flex flex-wrap gap-3">
-              {skillset1.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-[13px] tracking-wide text-white/90 ring-1 ring-inset ring-white/5 shadow-sm"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* TOOLS */}
-          <div>
-            <p className="text-[11px] tracking-[0.22em] accent-text">TOOLS LEVERAGED</p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {tools.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-[13px] tracking-wide text-white/90 ring-1 ring-inset ring-white/5 shadow-sm"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
 
         {/* Company / charcoal bubble */}
-        <div className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+        <div className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] max-w-6xl">
           <div className="px-6 py-8 md:px-10 md:py-10">
             <p className="text-[11px] tracking-[0.22em] accent-text">
               GETTING TO KNOW THE COMPANY
@@ -101,7 +42,7 @@ export default function OverviewDryCleaner() {
           </div>
         </div>
 
-      </div>
+ 
     </section>
   );
 }

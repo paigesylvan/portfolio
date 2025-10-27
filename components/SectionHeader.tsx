@@ -28,7 +28,7 @@ export default function SectionHeader({
       )}
       <h2
         className={`font-semibold leading-tight lg:mt-2 text-white ${
-          titleClassName || "text-xl md:text-4xl"
+          titleClassName || "text-xl md:text-3xl"
         }`}
       >
         {title}
