@@ -13,8 +13,8 @@ type Props = {
 };
 
 export default function HeroDots({
-  title = "Design that actually works.",
-  subtitle = "I build clean, responsive experiences guided by research and craft.",
+  title = "Paige Sylvan",
+  subtitle = "Design that actually works. I build clean, responsive experiences guided by research and craft.",
   kicker = "PORTFOLIO",
   height,
   // TIP: put videos under /public/videos; MP4 is key for iOS Safari
@@ -172,16 +172,14 @@ export default function HeroDots({
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
-        // important for mobile UX
         autoPlay
         muted
         loop
         playsInline
-        // @ts-expect-error: iOS inline play attribute
         webkit-playsinline="true"
-        preload="metadata"     // smaller mobile footprint
+        preload="metadata"    
         poster={posterSrc}
-        disableRemotePlayback  // avoids AirPlay prompts
+        disableRemotePlayback 
       >
         {videoSrcWebm ? <source src={videoSrcWebm} type="video/webm" /> : null}
         {videoSrc ? <source src={videoSrc} type="video/mp4" /> : null}
@@ -221,7 +219,7 @@ export default function HeroDots({
       <div className={`relative z-10 mx-auto max-w-[1200px] px-6 ${height ? "h-full" : "min-h-screen"} flex items-center justify-center`}>
         <div className="text-center">
           <p className="text-[10px] tracking-[0.22em] text-white/70">{kicker}</p>
-          <h1 className="mt-2 text-2xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+          <h1 className="mt-2 text-2xl md:text-4xl lg:text-5xl leading-tight">
             {title}
           </h1>
           <p className="mt-3 text-white/85 text-sm md:text-base max-w-[680px] mx-auto">

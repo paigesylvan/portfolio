@@ -11,7 +11,6 @@ import Wireframes from "../../../../components/Project1/7-wireframes";
 import Prototype from "../../../../components/Project1/8-protoype";
 import Testing from "../../../../components/Project1/9-testing";
 import FinalDesign from "../../../../components/Project1/10-final";
-import ChallengesOutcomes from "../../../../components/Project1/11-outcomes";
 
 
 export default function DogGroomingPage() {
@@ -32,7 +31,6 @@ export default function DogGroomingPage() {
   <Section id="prototypes"> <Prototype /></Section>
   <Section id="testing"> <Testing /></Section>
   <Section id="final"> <FinalDesign /></Section>
-  <Section id="outcomes"> <ChallengesOutcomes /></Section>
 </main>
 
   );

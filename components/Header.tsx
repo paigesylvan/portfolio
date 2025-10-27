@@ -25,7 +25,7 @@ export default function Header() {
             href="/"
             className="text-white font-semibold tracking-wide lg:text-xl"
           >
-            P.S.
+            PS
           </Link>
 
           {/* Desktop navigation */}

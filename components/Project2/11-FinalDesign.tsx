@@ -13,7 +13,7 @@ export default function FinalDesign() {
           align="center"
         />
               {/* short blurb */}
-              <p className="mx-auto mt-3 max-w-2xl text-center text-white/85 text-sm sm:text-base leading-snug">
+              <p className="mx-auto mt-3 max-w-2xl text-center text-white/85 text-sm sm:text-base leading-tight">
           Iterations improved clarity on the homepage and confidence throughout checkout,
           especially for first-time campers. The result is a smoother, more guided experience
           that reduces overwhelm and builds trust with users.

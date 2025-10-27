@@ -25,7 +25,7 @@ export default function OutcomeCamping() {
               playsInline
               preload="none"
               poster="/images/project2-images/mobile-poster.jpg"
-              className="w-full max-w-[320px] h-[560px] md:max-w-[380px] md:h-[1000px] rounded-xl object-cover"
+              className=" w-[350px] h-[560px] mt-24"
             />
           </div>
 

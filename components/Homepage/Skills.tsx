@@ -13,21 +13,21 @@ const skills: Skill[] = [
   {
     title: "Simplify the Complex",
     body:
-      "I thrive on making things clearer and easier to use, decluttering workflows and untangling overloaded interfaces.",
+      "I work to make things clearer and easier to use, decluttering workflows and untangling overloaded interfaces.",
     gif: "/gifs/wireframes.gif",
     alt: "Wireframes animation",
   },
   {
     title: "Design With Intent",
     body:
-      "I translate user needs and business goals into clean, intuitive interfaces that make sense the first time you click.",
+      "I translate business goals and user needs into clean, intuitive interfaces that make sense the first time you click.",
     gif: "/gifs/palette.gif",
     alt: "Design tools animation",
   },
   {
     title: "Ship Real Products",
     body:
-      "From sketches to code, I bring ideas to life and build responsive products that actually work.",
+      "From sketches to code, I love bringing ideas to life and building responsive products that actually work.",
     gif: "/gifs/dev-desktop.gif",
     alt: "Development desktop animation",
   },
