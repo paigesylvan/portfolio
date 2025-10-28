@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function HeroOverviewCamping() {
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14">
+    <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14 lg:mt-[50px]">
       <div className="mx-auto w-full max-w-[950px] px-4 md:px-6">
         {/* ---------- HEADER ---------- */}
         <div className="text-center">
@@ -18,6 +18,8 @@ export default function HeroOverviewCamping() {
             titleClassName="text-sm md:text-xl lg:text-2xl max-w-[600px] mx-auto mt-2"
           />
         </div>
+{/* STRONG GREEN GLOW FIELD BEHIND PHONES */}
+
 
         {/* ---------- HERO IMAGE ---------- */}
         <div className="relative mt-6 md:mt-8 flex items-end justify-center">
@@ -26,7 +28,26 @@ export default function HeroOverviewCamping() {
 
           {/* Pedestal shadow */}
           <div className="pointer-events-none absolute left-1/2 bottom-2 -translate-x-1/2 w-[380px] max-w-[85vw] h-[60px] rounded-full bg-black/80 blur-[60px] opacity-70" />
+          <div
+  className="absolute inset-0 z-1 pointer-events-none
+  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+  w-[800px] h-[800px]"
+  style={{
+    background: [
+      // Core vibrant green pulse behind devices
+      "radial-gradient(400px 300px at 50% 55%, rgba(0,255,150,0.85) 0%, rgba(0,255,150,0.38) 45%, rgba(0,0,0,0) 75%)",
 
+      // Lime-green spread upward and outward
+      "radial-gradient(800px 400px at 48% 60%, rgba(80,255,180,0.26) 0%, rgba(80,255,180,0.12) 48%, rgba(0,0,0,0) 80%)",
+
+      // Emerald depth around the lower edges for richness
+      "radial-gradient(500px 400px at 40% 72%, rgba(0,180,120,0.22) 0%, rgba(0,180,120,0.10) 44%, rgba(0,0,0,0) 78%)",
+    ].join(", "),
+    filter: "blur(80px)",
+    opacity: 0.9,
+    mixBlendMode: "screen",
+  }}
+/>
           <Image
             src="/images/project2-images/camping-hero-laptop.png"
             alt="ELMNT camping website homepage mockup"

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
@@ -83,6 +84,28 @@ export default function Outcome() {
             />
           </motion.div>
         </motion.div>
+
+<h1 className="max-w-lg text-[#D6A75E] ">
+View the portion of the Project 3 operations manual I authored to guide operators in using the program I designed.
+</h1>
+    <Link
+      href="/images/experience-images/operations-manual.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        inline-flex items-center justify-center
+        px-5 py-2.5 rounded-full
+        font-medium text-white text-sm
+        bg-white/10 border border-white/20 backdrop-blur-md
+        shadow-[0_3px_12px_rgba(0,0,0,0.3)]
+        hover:bg-white/20 hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
+        transition-all duration-300 mt-3
+      "
+    >
+      View Document
+    </Link>
+
+
       </div>
     </section>
   );

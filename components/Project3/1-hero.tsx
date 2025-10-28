@@ -35,6 +35,29 @@ export default function HeroOverviewDryCleaner() {
           />
         </div>
 
+{/* STRONG BEIGE / WARM NEUTRAL GLOW FIELD BEHIND PHONES */}
+<div
+  className="absolute inset-0 z-1 pointer-events-none
+             left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2
+             w-[600px] h-[600px]"
+  style={{
+    background: [
+      // Core warm highlight directly behind devices
+      "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
+
+      // Soft beige expansion outward for natural gradation
+      "radial-gradient(800px 400px at 48% 60%, rgba(250,215,170,0.26) 0%, rgba(250,215,170,0.12) 48%, rgba(0,0,0,0) 80%)",
+
+      // Subtle champagne warmth around lower edges for contrast
+      "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
+    ].join(", "),
+    filter: "blur(80px)",
+    opacity: 0.92,
+    mixBlendMode: "screen",
+  }}
+/>
+
+
         {/* ---------- HERO IMAGE (DESKTOP MOCKUP) ---------- */}
         <div className="relative mt-6 md:mt-10 flex items-end justify-center">
           {/* ===== BIG LAYERED WARM RADIAL (behind mockup) ===== */}
