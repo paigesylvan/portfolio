@@ -19,11 +19,11 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-4 lg:top-10 z-50">
       <div className="mx-auto w-[92%] md:w-[85%]">
-        <div className="flex items-center justify-between rounded-full bg-black/10 backdrop-blur-sm px-5 py-3 lg:py-6 lg:px-12">
+        <div className="flex items-center justify-between rounded-full ring ring-3 ring-slate-50 bg-black/10 backdrop-blur-sm px-5 py-3 lg:py-6 lg:px-12">
           {/* Brand */}
           <Link
             href="/"
-            className="text-white font-semibold tracking-wide lg:text-xl"
+            className="text-white font-semibold tracking-wide lg:text-5xl"
           >
             PS
           </Link>

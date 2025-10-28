@@ -53,11 +53,13 @@ export default function CaseStudies() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="case-studies" className="relative py-20 overflow-hidden text-white">
-
+    <section id="case-studies" className="relative py-20 overflow-hidden text-white w-screen">
+      {/* Top cap into this section */}
       <div className="absolute top-0 left-0 w-full h-[40px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
+
+      {/* Photo texture (base) */}
       <div
-        className="absolute inset-0 -z-10 bg-black"
+        className="absolute inset-0 -z-20 bg-black"
         style={{
           backgroundImage: "url('/images/homepage-images/case-study-bg2.jpeg')",
           backgroundSize: "cover",
@@ -66,9 +68,42 @@ export default function CaseStudies() {
           opacity: 0.55,
         }}
       />
-      <div className="absolute inset-0 bg-black/60 -z-10" />
+{/* ✅ Extra mid-height hue band to add more color lower on the page */}
 
-      <h2 className="mb-6 text-center text-[10px] tracking-[0.25em] text-white/60">
+{/* CONTINUOUS MULTIHUE FIELD (no seam) */}
+<div
+  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[70vh] -z-20 pointer-events-none"
+  style={{
+    background: [
+      // broad indigo body across the center-bottom
+      "radial-gradient(1400px 720px at 52% 105%, rgba(70,70,160,0.34) 0%, rgba(70,70,160,0.20) 40%, rgba(70,70,160,0.06) 68%, rgba(70,70,160,0) 90%)",
+      // cyan/teal right
+      "radial-gradient(1200px 620px at 103% 102%, rgba(0,196,255,0.34) 0%, rgba(0,196,255,0.16) 42%, rgba(0,196,255,0.06) 68%, rgba(0,196,255,0) 88%)",
+      "radial-gradient(1100px 600px at 86% 96%, rgba(0,210,190,0.28) 0%, rgba(0,210,190,0.14) 44%, rgba(0,210,190,0.05) 70%, rgba(0,210,190,0) 90%)",
+      // warm/violet left
+      "radial-gradient(1200px 620px at -6% 104%, rgba(170,90,255,0.28) 0%, rgba(170,90,255,0.14) 44%, rgba(170,90,255,0.05) 70%, rgba(170,90,255,0) 90%)",
+      "radial-gradient(1100px 580px at -10% 95%, rgba(238,100,160,0.22) 0%, rgba(238,100,160,0.12) 42%, rgba(238,100,160,0.05) 68%, rgba(238,100,160,0) 90%)",
+      // gentle diagonal sweep to unify the field
+      "linear-gradient(12deg, rgba(90,60,255,0.00) 20%, rgba(90,60,255,0.28) 45%, rgba(90,60,255,0.00) 72%)",
+    ].join(", "),
+    mixBlendMode: "screen",
+
+    // feather the TOP edge of this entire field so it melts into black/content above
+    WebkitMaskImage:
+      "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 64%)",
+    maskImage:
+      "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 64%)",
+  }}
+/>
+
+{/* optional micro-softener to ensure perfect blend on all engines */}
+
+
+
+      {/* Black veil to keep text legible */}
+      <div className="absolute inset-0 bg-black/60 -z-0" />
+
+      <h2 className="mb-6 text-center text-[13px] tracking-[0.3em] text-white z-30">
         CASE STUDIES
       </h2>
 
@@ -98,11 +133,10 @@ export default function CaseStudies() {
               shadow-[0_5px_22px_rgba(0,0,0,0.35)]
               px-4 py-5 md:px-5 md:py-7 lg:px-6 lg:py-10
               transition-all
-              hover:bg-white/[0.08] hover:shadow-[0_8px_28px_rgba(0,0,0,0.45)]
+              hover:bg-white/[0.08] hover:shadow-[0_8px_28px_rgba(0,0,0,0.45)] max-w-6xl
             "
           >
             <div className="grid items-center gap-6 md:grid-cols-12">
-
               {/* image */}
               <div className="md:col-span-5">
                 <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
@@ -182,7 +216,6 @@ export default function CaseStudies() {
                     </svg>
                   </span>
                 </Link>
-
               </div>
             </div>
           </motion.article>

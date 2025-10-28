@@ -5,9 +5,34 @@ import Link from "next/link";
 
 export default function HomeAbout() {
   return (
-    <section className="w-full px-6 py-14 text-white">
-      <div className="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-10 items-center">
+    <section className="relative w-full px-6 py-14 text-white overflow-hidden mb-24">
+      
+      {/* ✨ Hue behind headshot */}
+{/* ✨ Hue directly behind the headshot */}
+<div
+  className="pointer-events-none absolute -z-10"
+  style={{
+    width: "500px",
+    height: "800px",
+    left: "54%",
+    top: "45%",
+    transform: "translate(-10%, -40%)", 
+    background: `
+      radial-gradient(
+        300px 260px at center,
+        rgba(238,100,160,0.32) 0%,
+        rgba(140,90,255,0.25) 35%,
+        rgba(60,160,255,0.22) 60%,
+        rgba(0,0,0,0) 90%
+      )
+    `,
+    filter: "blur(90px)",
+  }}
+/>
 
+
+      <div className="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-10 items-center">
+        
         {/* Text left */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
@@ -67,7 +92,7 @@ export default function HomeAbout() {
 
         {/* Photo right */}
         <div className="flex justify-center">
-          <div className="rounded-xl overflow-hidden">
+          <div className="rounded-xl overflow-hidden relative z-10">
             <Image
               src="/images/homepage-images/paige-headshot.png"
               alt="Paige Sylvan headshot"

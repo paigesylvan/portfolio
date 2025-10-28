@@ -39,7 +39,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 lg:py-32 overflow-hidden bg-black text-white"
+      className="relative py-24 lg:py-32 overflow-hidden bg-black text-white mb-24"
     >
       {/* Gradient overlay */}
       <div
