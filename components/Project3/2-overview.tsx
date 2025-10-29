@@ -15,7 +15,7 @@ export default function OverviewDryCleaner() {
             <p className="text-[11px] tracking-[0.22em] accent-text">
               GETTING TO KNOW THE COMPANY
             </p>
-            <h3 className="mt-3 text-3xl md:text-4xl font-semibold">Quick Cleaners</h3>
+            <h3 className="mt-3 text-3xl font-semibold">Quick Cleaners</h3>
 
             <div className="mt-6 space-y-5 text-white/85 leading-relaxed">
               <p>

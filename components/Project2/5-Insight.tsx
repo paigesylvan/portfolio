@@ -73,7 +73,7 @@ export default function KeyInsights() {
         />
 
         {/* ---------- New blurb added here ---------- */}
-        <p className="text-center text-[10px] sm:text-sm md:text-base text-white/70 leading-snug max-w-[780px] mx-auto mt-3">
+        <p className="text-center text-[10px] sm:text-sm md:text-md text-white/70 leading-snug max-w-[780px] mx-auto mt-3">
           User journeys and mind mapping helped identify where first-time campers felt
           uncertain or overwhelmed. These methods revealed core pain points and guided
           the design goals shown below, ensuring design decisions are supporting the user experience.
@@ -108,7 +108,7 @@ export default function KeyInsights() {
                   </div>
                 </div>
 
-                <h3 className="text-sm sm:text-base md:text-lg font-semibold">{i.title}</h3>
+                <h3 className="text-sm sm:text-base md:text-md font-semibold">{i.title}</h3>
                 <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-white/80 leading-snug">
                   {i.body}
                 </p>

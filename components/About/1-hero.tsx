@@ -31,10 +31,11 @@ export default function AboutHero() {
           <br className="hidden md:block" />
           a designer who blends creativity and logic.
         </h1>
-        <p className="mt-6 text-white/80 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+        <p className="mt-8 text-white/80 max-w-4xl mx-auto text-lg md:text-2xl leading-relaxed">
           My background in development and UX design helps me craft experiences
           that are not only beautiful but built to work in the real world.
         </p>
+
       </div>
     </section>
   );

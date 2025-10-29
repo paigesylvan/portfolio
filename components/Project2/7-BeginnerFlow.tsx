@@ -15,7 +15,7 @@ export default function BeginnerFlow() {
         />
         {/* Title & copy */}
         <div className="mb-6 md:mb-8 flex justify-center">
-          <p className="mt-3 max-w-3xl mx-auto text-white/85 text-xs sm:text-sm md:text-base leading-snug lg:leading-relaxed text-center">
+          <p className="mt-3 max-w-3xl mx-auto text-white/85 text-xs sm:text-sm md:text-md leading-snug lg:leading-relaxed text-center">
           After my user research, my goal was to simplify the layout, curating gear selections,
           and clearly communicating value. Every design choice, from the streamlined bundle
           presentation to the guided add-on options, was made to reduce decision fatigue and build
@@ -30,7 +30,7 @@ export default function BeginnerFlow() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)]"
+          className="rounded-2xl"
         >
           <Image
             src="/images/project2-images/flow-wide.png"

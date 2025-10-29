@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function UsersSection() {
   return (
-    <div className="mx-auto w-[92%] md:w-[70%]">
+    <div className="mx-auto w-[92%] md:w-[70%] lg:mt-12">
       <SectionHeader
         kicker="USER PERSONAS"
         title="Who's Behind the Experience"

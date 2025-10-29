@@ -13,7 +13,7 @@ export default function MindMap() {
           align="center"
         />
 
-        <p className="mx-auto mt-4 max-w-5xl text-white/85 leading-snug md:leading-normal text-xs md:text-sm lg:text-base">
+        <p className="mx-auto mt-4 max-w-5xl text-white/85 leading-snug md:leading-normal text-xs md:text-sm lg:text-md">
           After mapping the user journey, I created a mind map to explore how different user goals,
           pain points, and personas could translate into the website’s needs and features.
           This helped visualize the relationships between problems and possible solutions,
@@ -26,10 +26,10 @@ export default function MindMap() {
             <Image
               src="/images/project2-images/mindmap.png"
               alt="Mind map visualizing connections between user needs and features"
-              width={1000}
-              height={1000}
+              width={900}
+              height={900}
               priority
-              sizes="(min-width: 904px) 60vw, 84vw"
+              sizes="(min-width: 890px) 60vw, 80vw"
               className="w-full h-auto rounded-2xl object-contain drop-shadow-[0_25px_80px_rgba(0,0,0,0.6)]"
             />
           </div>

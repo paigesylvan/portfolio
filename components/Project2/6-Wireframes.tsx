@@ -33,7 +33,7 @@ export default function Wireframes() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 sm:px-4 text-white mt-20 lg:mt-0 pb-6">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 sm:px-4 text-white mt-20 lg:mt-12 pb-6">
       <div className="w-full max-w-[800px] mx-auto">
         <SectionHeader
           kicker="LOW-FI EXPLORATION"
@@ -41,7 +41,7 @@ export default function Wireframes() {
           align="center"
         />
 
-        <p className="mx-auto mt-3 max-w-2xl text-center text-white/80 text-xs md:text-sm lg:text-base leading-snug">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-white/80 text-xs md:text-md leading-snug">
           I began with low-fidelity wireframes to explore layouts that reduce overwhelm and guide users quickly toward the right gear. 
           Since research showed beginners feel unsure where to start, I focused on surfacing curated bundles and trust-building elements 
           early in the flow. Each frame experimented with ways to balance product discovery and clarity without clutter.

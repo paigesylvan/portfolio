@@ -23,6 +23,7 @@ export default function HeroOverviewDryCleaner() {
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16">
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
+
         {/* ---------- HEADER ---------- */}
         <div className="text-center">
           <SectionHeader
@@ -35,64 +36,25 @@ export default function HeroOverviewDryCleaner() {
           />
         </div>
 
-{/* STRONG BEIGE / WARM NEUTRAL GLOW FIELD BEHIND PHONES */}
-<div
-  className="absolute inset-0 z-1 pointer-events-none
-             left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2
-             w-[600px] h-[600px]"
-  style={{
-    background: [
-      // Core warm highlight directly behind devices
-      "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
 
-      // Soft beige expansion outward for natural gradation
-      "radial-gradient(800px 400px at 48% 60%, rgba(250,215,170,0.26) 0%, rgba(250,215,170,0.12) 48%, rgba(0,0,0,0) 80%)",
 
-      // Subtle champagne warmth around lower edges for contrast
-      "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
-    ].join(", "),
-    filter: "blur(80px)",
-    opacity: 0.92,
-    mixBlendMode: "screen",
-  }}
-/>
 
 
         {/* ---------- HERO IMAGE (DESKTOP MOCKUP) ---------- */}
-        <div className="relative mt-6 md:mt-10 flex items-end justify-center">
-          {/* ===== BIG LAYERED WARM RADIAL (behind mockup) ===== */}
-          {/* Core glow */}
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10
-                       -translate-x-1/2 -translate-y-1/2
-                       w-[2600px] max-w-[220vw] aspect-[2.4/1] rounded-full
-                       bg-[radial-gradient(circle_at_center,rgba(230,214,195,0.75)_0%,rgba(190,160,130,0.45)_45%,rgba(0,0,0,0)_90%)]
-                       blur-[420px] opacity-95"
-            aria-hidden
-          />
-          {/* Mid halo */}
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10
-                       -translate-x-1/2 -translate-y-1/2
-                       w-[2200px] max-w-[200vw] aspect-[2.8/1] rounded-full
-                       bg-[radial-gradient(circle_at_center,rgba(210,185,160,0.35)_0%,rgba(140,110,85,0.25)_40%,rgba(0,0,0,0)_92%)]
-                       blur-[360px] opacity-90"
-            aria-hidden
-          />
-          {/* Outer tint to extend field */}
-          <div
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10
-                       -translate-x-1/2 -translate-y-1/2
-                       w-[3400px] max-w-[280vw] aspect-[3.2/1] rounded-full
-                       bg-[radial-gradient(circle_at_center,rgba(200,165,130,0.22)_0%,rgba(0,0,0,0)_85%)]
-                       blur-[520px] opacity-80"
-            aria-hidden
+        <div className="relative mt-6 lg:mt-0 flex items-end justify-center">
+          <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]"
+            style={{
+            background: [
+              "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
+              "radial-gradient(800px 400px at 48% 60%, rgba(250,215,170,0.26) 0%, rgba(250,215,170,0.12) 48%, rgba(0,0,0,0) 80%)",  
+              "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
+            ].join(", "),
+            filter: "blur(80px)",
+            opacity: 0.92,
+            mixBlendMode: "screen",
+            }}
           />
 
-          {/* pedestal shadow */}
-          <div className="pointer-events-none absolute left-1/2 bottom-0 -translate-x-1/2 w-[520px] max-w-[90vw] h-[70px] rounded-full bg-black/80 blur-[70px] opacity-70" />
-
-          {/* Desktop mockup */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -110,10 +72,11 @@ export default function HeroOverviewDryCleaner() {
               className="relative z-10 w-[92vw] max-w-[500px] h-auto"
             />
           </motion.div>
+
         </div>
 
         {/* ---------- OVERVIEW ---------- */}
-        <div className="mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
+        <div className="mt-10 lg:mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
           {/* LEFT — Project & Role */}
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>

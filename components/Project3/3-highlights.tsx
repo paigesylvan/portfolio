@@ -5,15 +5,16 @@ import Link from "next/link";
 
 export default function HighlightsDryCleaner() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
-      <div className="mx-auto w-[92%] md:w-[72%]">
-        <div className="grid gap-10 md:grid-cols-12 items-start">
-          {/* LEFT – phone mock */}
+    <section className="flex py-10 md:py-12 text-white px-4">
+      <div className="mx-auto w-full max-w-[820px]">
+        <div className="grid gap-8 md:gap-10 md:grid-cols-12 items-start">
+
+          {/* LEFT — phone mock */}
           <div className="md:col-span-5">
-            <div className="mx-auto max-w-[380px]">
-              <div className="rounded-[34px]  bg-white/[0.03] p-3 shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+            <div className="mx-auto max-w-[260px] md:max-w-[300px]">
+              <div className="rounded-[32px] bg-white/[0.03] p-3 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
                 <Image
-                  src="/images/project3-images/phone-hero.png" // ← your phone mock image
+                  src="/images/project3-images/phone-hero.png"
                   alt="Quick Cleaners mobile hero"
                   width={100}
                   height={500}
@@ -24,104 +25,81 @@ export default function HighlightsDryCleaner() {
             </div>
           </div>
 
-          {/* RIGHT – three charcoal cards */}
-          <div className="md:col-span-7 space-y-6 transition-transform hover:-translate-y-0.5 max-w-4xl">
+          {/* RIGHT — three cards */}
+          <div className="md:col-span-7 space-y-4 md:space-y-5">
+
             {/* Card 1 */}
-            <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-6 md:p-7 shadow-[0_24px_80px_rgba(0,0,0,0.45)] animate-[fadeInUp_700ms_ease-out_forwards] opacity-0">
-              <p className="text-[10px] tracking-[0.22em] accent-text">
-                DESIGN DECISIONS
-              </p>
-              <div className="mt-3 space-y-4 text-white/85">
-                <div>
-                  <p className="font-semibold text-white">Responsive Layout:</p>
-                  <p>
-                    Optimized for mobile-first browsing with Scroll-Triggered Card Flip and
-                    service card flip on hover on desktop and larger screen sizes.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">Service Cards:</p>
-                  <p>
-                    Clearly indicated services with description. (They opted out of including
-                    prices because of competitive industry)
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">Trust Signals:</p>
-                  <p>
-                    Included owner’s story of her small independent business, and perks offered.
-                  </p>
-                </div>
+            <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
+              <p className="text-[11px] tracking-[0.22em] accent-text">DESIGN DECISIONS</p>
+              <div className="mt-2 text-white/85">
+                <p className="font-semibold text-white text-[13px] md:text-sm mt-2">Responsive Layout:</p>
+                <p className="text-[13px] md:text-sm">
+                  Mobile-first browsing with scroll-triggered card flip effects.
+                </p>
+
+                <p className="font-semibold text-white text-[13px] md:text-sm mt-2">Service Cards:</p>
+                <p className="text-[13px] md:text-sm">
+                  Clear service descriptions without pricing due to competitive industry.
+                </p>
+
+                <p className="font-semibold text-white text-[13px] md:text-sm mt-2">Trust Signals:</p>
+                <p className="text-[13px] md:text-sm">
+                  Showcased owner’s story to build familiarity and credibility.
+                </p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-6 md:p-7 shadow-[0_24px_80px_rgba(0,0,0,0.45)] animate-[fadeInUp_800ms_ease-out_forwards] opacity-0">
-              <p className="text-[10px] tracking-[0.22em] accent-text">
-                DEVELOPMENT HIGHLIGHTS
-              </p>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-white/85">
-                <li>Built with semantic HTML, JavaScript and Tailwind CSS</li>
-                <li>Used utility classes for fast prototyping and consistent spacing</li>
-                <li>Implemented smooth scroll and anchor links for intuitive navigation</li>
-                <li>Deployed as a static site for speed and simplicity</li>
+            <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
+              <p className="text-[11px] tracking-[0.22em] accent-text">DEVELOPMENT HIGHLIGHTS</p>
+              <ul className="mt-2 list-disc space-y-1 pl-4 text-white/85 text-[13px] md:text-sm">
+                <li>Semantic HTML, JavaScript, Tailwind CSS</li>
+                <li>Utility classes for faster iteration</li>
+                <li>Smooth scroll interactions</li>
+                <li>Static deployment for speed</li>
               </ul>
             </div>
 
             {/* Card 3 */}
-            <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-6 md:p-7 shadow-[0_24px_80px_rgba(0,0,0,0.45)] animate-[fadeInUp_900ms_ease-out_forwards] opacity-0">
-              <p className="text-[10px] tracking-[0.22em] accent-text">OUTCOME</p>
-              <p className="mt-3 text-white/85">
-                The site now serves as a welcoming digital storefront, helping users quickly
-                understand services and feel confident reaching out. It’s fast, clear, and
-                emotionally resonant—just like the business it represents.
+            <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
+              <p className="text-[11px] tracking-[0.22em] accent-text">OUTCOME</p>
+              <p className="mt-2 text-white/85 text-[13px] md:text-sm">
+                A welcoming digital storefront that improves confidence and clarity for users.
               </p>
             </div>
-            <Link
-    href="https://www.figma.com/proto/1fKLri7C8IZINRq3tWhYIV/Pampered-Paws?node-id=1-503&t=MTdqUvYwpWVoXLwk-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A503"  /* Replace with real link */
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
-      group relative mt-8 inline-flex items-center gap-3
-      rounded-full px-6 py-3 font-medium text-white
-      bg-white/[0.06] backdrop-blur-md
-      shadow-[0_4px_12px_rgba(0,0,0,0.3)]
-      border border-white/10
-      transition-all duration-300
-      hover:bg-white/[0.15] hover:shadow-[0_6px_20px_rgba(0,0,0,0.45)]
-      focus-visible:ring-2 focus-visible:ring-white/40
-    "
-  >
-    <span className="text-sm tracking-wide">
-      Website Link
-    </span>
-    <span
-      className="
-        flex items-center justify-center
-        w-7 h-7 rounded-full
-        bg-white/10
-        transition-all duration-300
-        group-hover:bg-white/30
-        group-hover:translate-x-1
-      "
-    >
-      <svg
-        xmlns="http://www.quickcleanersandlaundry.com"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-4 h-4"
-      >
-        <path d="M5 12h14" />
-        <path d="m12 5 7 7-7 7" />
-      </svg>
-    </span>
-  </Link>
-          </div>
 
+            {/* CTA Button */}
+            <Link
+              href="https://www.quickcleanersandlaundry.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                group relative mt-6 inline-flex items-center gap-2
+                rounded-full px-5 py-2.5 font-medium text-white text-[13px]
+                bg-white/[0.06] backdrop-blur-md
+                border border-white/10
+                shadow-[0_3px_12px_rgba(0,0,0,0.3)]
+                transition-all duration-300
+                hover:bg-white/[0.15] hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
+                focus-visible:ring-2 focus-visible:ring-white/40
+              "
+            >
+              Website Link
+              <span
+                className="
+                  flex items-center justify-center
+                  w-6 h-6 rounded-full
+                  bg-white/10
+                  transition-all duration-300
+                  group-hover:bg-white/30
+                  group-hover:translate-x-1
+                "
+              >
+                ➜
+              </span>
+            </Link>
+
+          </div>
         </div>
       </div>
     </section>

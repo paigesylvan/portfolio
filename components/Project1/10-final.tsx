@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function FinalDesign() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-0 ">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 lg:mt-12 ">
       <div className="max-w-[1100px] w-full mx-auto text-center md:text-left">
         {/* Header */}
         <SectionHeader kicker="PROJECT OUTCOME" title="Final Design" align="center" />

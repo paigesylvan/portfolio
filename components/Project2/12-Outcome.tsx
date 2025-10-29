@@ -4,7 +4,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function OutcomeCamping() {
   return (
-    <section className="px-4 md:px-6 text-white mt-24 lg:mt-0 pb-16">
+    <section className="px-4 md:px-6 text-white mt-24 lg:mt-0">
       <div className="mx-auto w-full max-w-[900px] py-12 md:py-16">
         {/* Header */}
         <SectionHeader
@@ -26,12 +26,12 @@ export default function OutcomeCamping() {
               playsInline
               preload="none"
               poster="/images/project2-images/mobile-poster.jpg"
-              className="w-[300px] h-[480px] mt-20"
+              className="w-[300px] h-[480px] mt-6"
             />
           </div>
 
           {/* RIGHT — Outcome + Next Steps */}
-          <div className="lg:col-span-6 mt-6 lg:mt-24 flex flex-col gap-6">
+          <div className="lg:col-span-6 mt-6  flex flex-col gap-6">
             
             {/* Outcome bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">

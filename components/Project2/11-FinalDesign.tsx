@@ -13,7 +13,7 @@ export default function FinalDesign() {
           align="center"
         />
               {/* short blurb */}
-              <p className="mx-auto mt-3 max-w-6xl text-center text-white/85 text-[10px] sm:text-base leading-tight">
+              <p className="mx-auto mt-3 max-w-6xl text-center text-white/85 text-[10px] md:text-md leading-tight">
            The final product is a intuitive and sleek e-commerce experience designed to help 
           users feel confident while gearing up for the outdoors. Clear navigation, 
           curated bundles, and simplified product details reduce decision fatigue and make selections

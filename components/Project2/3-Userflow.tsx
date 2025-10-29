@@ -25,10 +25,10 @@ export default function UserFlow() {
           <Image
             src="/images/project2-images/userflow.png"
             alt="User flow journey map"
-            width={1000}
+            width={900}
             height={900}
             priority
-            sizes="(min-width: 1024px) 55vw, 92vw"
+            sizes="(min-width: 900px) 50vw, 90vw"
             className="w-full h-auto rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,0.45)] object-contain"
           />
         </div>
