@@ -33,6 +33,16 @@ const skills: Skill[] = [
   },
 ];
 
+// Static color fields (no animation) rotated per card
+const HUES = [
+  // pink → violet
+  "radial-gradient(520px 360px at 50% 50%, rgba(238,100,160,0.38) 0%, rgba(170,90,255,0.30) 42%, rgba(0,0,0,0) 78%)",
+  // cyan → blue
+  "radial-gradient(520px 360px at 50% 50%, rgba(0,195,255,0.34) 0%, rgba(80,140,255,0.28) 42%, rgba(0,0,0,0) 78%)",
+  // teal → indigo
+  "radial-gradient(520px 360px at 50% 50%, rgba(0,210,190,0.34) 0%, rgba(70,70,160,0.26) 42%, rgba(0,0,0,0) 78%)",
+];
+
 export default function Skills() {
   const prefersReduced = useReducedMotion();
 
@@ -41,12 +51,12 @@ export default function Skills() {
       id="skills"
       className="relative py-24 lg:py-32 overflow-hidden bg-black text-white mb-24"
     >
-      {/* Gradient overlay */}
+      {/* Soft global vignette */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 26%, rgba(0,0,0,0.6) 52%, rgba(0,0,0,0) 100%)",
         }}
       />
 
@@ -54,40 +64,44 @@ export default function Skills() {
         SKILLS
       </h2>
 
-      {/* content container */}
       <div className="mx-auto w-full md:w-[70%] px-6 md:px-0 lg:pl-[10.5%]">
         <div className="grid gap-10 md:grid-cols-3 text-center md:text-left">
           {skills.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: prefersReduced ? 0 : 36 }}
+              initial={{ opacity: 0, y: prefersReduced ? 0 : 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
-              transition={{
-                duration: prefersReduced ? 0 : 1.2,
-                ease: "easeOut",
-                delay: i * 0.08,
-              }}
+              transition={{ duration: prefersReduced ? 0 : 0.9, ease: "easeOut", delay: i * 0.08 }}
+              className="relative"
             >
-              {/* GIF */}
-              <div className="mb-6 flex justify-center md:justify-start lg:pl-12">
-                <Image
-                  src={s.gif}
-                  alt={s.alt}
-                  width={100}
-                  height={100}
-                  unoptimized
-                  className="h-16 w-20 md:h-20 object-contain opacity-90"
-                />
+              {/* Static blur behind this card (visible, not blended away) */}
+              <div
+                aria-hidden
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
+                           w-[520px] h-[360px] blur-[99px] opacity-50 pointer-events-none"
+                style={{ background: HUES[i % HUES.length] }}
+              />
+
+              {/* Card content above the blur */}
+              <div className="relative z-10 pl-3">
+                <div className="mb-6 flex justify-center md:justify-start lg:pl-12">
+                  <Image
+                    src={s.gif}
+                    alt={s.alt}
+                    width={100}
+                    height={100}
+                    unoptimized
+                    className="h-16 w-20 md:h-20 object-contain opacity-90"
+                  />
+                </div>
+
+                <h3 className="lg:mb-3 text-lg font-semibold">{s.title}</h3>
+
+                <p className="mx-auto md:mx-0 text-white/80 leading-tight text-lg max-w-xs w-[50%]">
+                  {s.body}
+                </p>
               </div>
-
-              {/* Title */}
-              <h3 className="lg:mb-3 text-lg font-semibold">{s.title}</h3>
-
-              {/* Body */}
-              <p className="mx-auto md:mx-0 text-white/80 leading-tight text-lg max-w-sm w-[65%]">
-                {s.body}
-              </p>
             </motion.div>
           ))}
         </div>

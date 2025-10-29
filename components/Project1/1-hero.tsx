@@ -31,12 +31,12 @@ export default function HeroOverviewDog() {
             align="center"
             accent="dog"
             kickerClassName="text-[7px] md:text-xs text-[#9DC0FF]"
-            titleClassName="text-sm md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
+            titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
           />
         </div>
 
         {/* ---------- HERO IMAGE (PHONES) ---------- */}
-        <div className="relative mt-6 md:mt-10 flex items-end justify-center gap-4 md:gap-6">
+        <div className="relative mt-10 flex items-end justify-center gap-4 md:gap-6">
        
         {/* STRONG BLUE GLOW FIELD BEHIND PHONES */}
         <div
@@ -120,9 +120,9 @@ export default function HeroOverviewDog() {
         </div>
 
         {/* ---------- OVERVIEW ---------- */}
-        <div className="mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
+        <div className="mt-12 lg:mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
           {/* LEFT — Project & Role */}
-          <div className='ml-24'>
+          <div className='lg:ml-24'>
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
             <p className="mt-1 text-white/90">
               Design a mobile-first app for a local dog grooming service.

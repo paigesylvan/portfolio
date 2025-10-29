@@ -108,7 +108,7 @@ export default function ResearchInsights() {
   const donutStroke = isSmall ? 8 : 9;
 
   return (
-    <div className="mx-auto lg:w-[82%] max-w-[1050px] mt-24 lg:mt-8">
+    <div className="mx-auto lg:w-[82%] max-w-[1050px] lg:mt-8">
       <SectionHeader
         kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"
@@ -124,13 +124,14 @@ export default function ResearchInsights() {
         "
       >
         {/* LEFT: Insight card — takes ~58% */}
-        <div className="md:basis-[58%] md:flex md:flex-col md:h-auto">
+        <div className=" md:basis-[58%] md:flex md:flex-col md:h-auto">
           <div
             className="
-              h-full rounded-3xl bg-[#111]/80 backdrop-blur-md 
-              ring-1 ring-white/10 
-              p-5 md:p-6 
-              shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+            h-full rounded-3xl bg-[#111]/80 backdrop-blur-md 
+            ring-1 ring-white/10 
+            p-5 md:p-6 
+            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+            max-w-[90%] sm:max-w-[70%] md:max-w-none mx-auto
             "
           >
             <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-2.5">

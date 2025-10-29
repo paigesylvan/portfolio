@@ -44,7 +44,7 @@ export default function Wireframes() {
           align="center"
         />
 
-        <p className="mx-auto mt-3 max-w-5xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
+        <p className="mx-auto mt-3 max-w-[300px] lg:max-w-5xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
           I began sketching early concepts of the pages.
           These quick sketches allowed me to explore layouts and content hierarchy.
            I tested different navigation bar options to see which would enhance usability and identified which 

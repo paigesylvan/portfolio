@@ -53,7 +53,7 @@ export default function CaseStudies() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="case-studies" className="relative py-20 overflow-hidden text-white w-screen">
+    <section id="case-studies" className="relative py-20 overflow-hidden text-white w-screen ">
       {/* Top cap into this section */}
       <div className="absolute top-0 left-0 w-full h-[40px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
 
@@ -72,7 +72,7 @@ export default function CaseStudies() {
 
 {/* CONTINUOUS MULTIHUE FIELD (no seam) */}
 <div
-  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[70vh] -z-20 pointer-events-none"
+  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[30vh] -z-20 pointer-events-none"
   style={{
     background: [
       // broad indigo body across the center-bottom
@@ -107,7 +107,7 @@ export default function CaseStudies() {
         CASE STUDIES
       </h2>
 
-      <div className="space-y-10 lg:space-y-16">
+      <div className="space-y-10 lg:space-y-16  pb-12 lg:pb-60">
         {studies.map((s) => (
           <motion.article
             key={s.slug}

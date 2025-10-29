@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-4 lg:top-10 z-50">
       <div className="mx-auto w-[92%] md:w-[85%]">
-        <div className="flex items-center justify-between rounded-full ring ring-3 ring-slate-50 bg-black/10 backdrop-blur-sm px-5 py-3 lg:py-4 lg:px-12">
+        <div className="flex items-center justify-between rounded-full ring-1 lg:ring-3 ring-slate-50 bg-black/10 backdrop-blur-sm px-5 py-1 lg:py-3  lg:px-12">
           {/* Brand */}
           <Link
             href="/"
@@ -57,7 +57,7 @@ export default function Header() {
             aria-controls="mobile-menu"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 ring-white/30 text-white"
+            className="md:hidden inline-flex h-7 w-7 items-center justify-center "
           >
             <span className="sr-only">Open menu</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
