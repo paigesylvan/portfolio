@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function UserFlow() {
   return (
-    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white mt-24 md:mt-12">
+    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white mt-12">
       <div className="mx-auto w-full max-w-[1000px]">
         <SectionHeader
           kicker="USER FLOW"
@@ -14,7 +14,7 @@ export default function UserFlow() {
           align="center"
         />
 
-        <p className="text-xs md:text-sm lg:text-md mx-auto mt-4 max-w-6xl text-center text-white/80 leading-snug md:leading-normal pb-6">
+        <p className="text-xs md:text-sm lg:text-md mx-auto mt-2 lg:mt-4 max-w-[300px] lg:max-w-6xl text-center text-white/80 leading-snug md:leading-normal pb-6">
           To better understand the user decision-making process while on a store website, I created a user journey map.
           This helped identify moments of confusion and stress across the shopping experience, as
           well as opportunities to simplify decision-making with clear guidance.
@@ -38,7 +38,7 @@ export default function UserFlow() {
           href="/images/project2-images/userflow.png"
           target="_blank"
           rel="noopener noreferrer"
-          className="block md:hidden mt-3 mx-auto w-fit rounded-xl border border-white/10 bg-white/10 px-5 py-2 text-xs text-white hover:bg-white/20 transition-all duration-200"
+          className="block md:hidden mt-6 mx-auto w-fit rounded-xl border border-white/10 bg-white/10 px-5 py-2 text-xs text-white hover:bg-white/20 transition-all duration-200"
         >
           View Full Image
         </a>

@@ -73,7 +73,7 @@ export default function KeyInsights() {
         />
 
         {/* ---------- New blurb added here ---------- */}
-        <p className="text-center text-[10px] sm:text-sm md:text-md text-white/70 leading-snug max-w-[780px] mx-auto mt-3">
+        <p className="text-center text-[10px] sm:text-sm md:text-md text-white/70 leading-snug max-w-[300px] lg:max-w-[780px] mx-auto mt-3">
           User journeys and mind mapping helped identify where first-time campers felt
           uncertain or overwhelmed. These methods revealed core pain points and guided
           the design goals shown below, ensuring design decisions are supporting the user experience.
@@ -91,7 +91,7 @@ export default function KeyInsights() {
             <motion.div
               key={i.title}
               variants={item(prefersReduced)}
-              className="group flex flex-col justify-between h-full rounded-2xl bg-white/[0.03] backdrop-blur-md ring-1 ring-white/10 
+              className="group flex flex-col max-w-[300px] justify-between h-full rounded-2xl bg-white/[0.03] backdrop-blur-md ring-1 ring-white/10 
                          p-4 md:p-6 text-center shadow-[0_16px_60px_rgba(0,0,0,0.45)] 
                          transition-all hover:bg-white/[0.06] hover:-translate-y-0.5"
             >

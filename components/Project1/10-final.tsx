@@ -96,9 +96,9 @@ export default function FinalDesign() {
         >
           <Link
             href="/projects/camping"
-            className="group inline-flex items-center gap-2 text-sm md:text-base text-white/70 hover:text-white transition-all duration-300"
+            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm  text-[#7FB2FF] hover:text-white/20 transition-all duration-300"
           >
-            <span className="underline underline-offset-4 decoration-white/40 group-hover:decoration-white">
+            <span>
               Next Case Study
             </span>
             <svg

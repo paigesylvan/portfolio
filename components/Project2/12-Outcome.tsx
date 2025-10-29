@@ -1,10 +1,12 @@
 "use client";
 
 import SectionHeader from "../SectionHeader";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function OutcomeCamping() {
   return (
-    <section className="px-4 md:px-6 text-white mt-24 lg:mt-0">
+    <section className="px-8 md:px-6 text-white mt-12 lg:mt-0">
       <div className="mx-auto w-full max-w-[900px] py-12 md:py-16">
         {/* Header */}
         <SectionHeader
@@ -15,7 +17,6 @@ export default function OutcomeCamping() {
 
         {/* 2-column layout */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
-          
           {/* LEFT — Demo Video */}
           <div className="lg:col-span-6 flex justify-center">
             <video
@@ -31,8 +32,7 @@ export default function OutcomeCamping() {
           </div>
 
           {/* RIGHT — Outcome + Next Steps */}
-          <div className="lg:col-span-6 mt-6  flex flex-col gap-6">
-            
+          <div className="lg:col-span-6 mt-6 flex flex-col gap-6">
             {/* Outcome bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
               <h3 className="text-sm md:text-base font-semibold">
@@ -103,8 +103,30 @@ export default function OutcomeCamping() {
               </ul>
             </div>
           </div>
-
         </div>
+
+        {/* --- Animated Next Case Study Link --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mt-14 flex justify-center"
+        >
+          <Link
+            href="/projects/cleaners" // change this route
+            className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-emerald-300 flex items-center gap-2 transition-all"
+          >
+            Next Case Study
+            <motion.span
+              whileHover={{ x: 4 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="inline-block"
+            >
+              →
+            </motion.span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

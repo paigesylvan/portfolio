@@ -61,7 +61,7 @@ export default function TestingIterationCamping() {
             <p className="text-[10px] tracking-[0.22em] text-[#00C67C] font-semibold">
               WHAT I WANTED TO LEARN
             </p>
-            <h3 className="text-base md:text-lg font-semibold text-white mt-2 mb-6">
+            <h3 className="text-base md:text-lg font-semibold text-white mt-2 mb-8 lg:mb-6">
               Learning Objectives
             </h3>
 
@@ -72,7 +72,7 @@ export default function TestingIterationCamping() {
                   alt="Clarity"
                 />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Clarity</h4>
-                <p className="mt-1 text-[12px] text-white/70 leading-snug">
+                <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Do users quickly grasp what the site offers?
                 </p>
               </div>
@@ -84,7 +84,7 @@ export default function TestingIterationCamping() {
                 <h4 className="font-semibold text-[#00C67C] text-xs">
                   Navigation
                 </h4>
-                <p className="mt-1 text-[12px] text-white/70 leading-snug">
+                <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Can users move from discovery to purchase without friction?
                 </p>
               </div>
@@ -96,7 +96,7 @@ export default function TestingIterationCamping() {
                 <h4 className="font-semibold text-[#00C67C] text-xs">
                   Confidence
                 </h4>
-                <p className="mt-1 text-[12px] text-white/70 leading-snug">
+                <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Do tighter bundles + clear copy raise purchase confidence?
                 </p>
               </div>

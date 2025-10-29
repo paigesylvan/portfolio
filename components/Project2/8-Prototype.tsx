@@ -16,7 +16,7 @@ export default function PrototypesCamping() {
         />
 
         {/* Stack on mobile; side-by-side on desktop */}
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 lg:mb-0">
           {/* ========== BUBBLE A ========== */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
