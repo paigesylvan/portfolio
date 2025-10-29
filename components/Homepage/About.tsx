@@ -17,7 +17,7 @@ export default function HomeAbout() {
           width: "300px",
           height: "500px",
           left: "50%",
-          top: "30%",
+          top: "40%",
           transform: "translate(-50%, -40%)",
           background: `
             radial-gradient(
