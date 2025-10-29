@@ -16,7 +16,7 @@ export default function FinalDesign() {
         {/* Video and Text wrapper */}
         <div className="flex flex-col-reverse md:flex-col items-center mt-8 gap-6">
           {/* Text */}
-          <p className="mx-auto max-w-6xl text-center text-white/85 text-[10px] md:text-md leading-tight px-6 lg:px-0">
+          <p className="mx-auto max-w-3xl text-center text-white/85 text-[10px] md:text-md leading-tight px-6 lg:px-0">
             The final product is an intuitive and sleek e-commerce experience designed to help 
             users feel confident while gearing up for the outdoors. Clear navigation, curated bundles, 
             and simplified product details reduce decision fatigue and make selections feel guided rather 
