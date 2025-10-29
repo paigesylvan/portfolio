@@ -54,25 +54,11 @@ export default function CaseStudies() {
 
   return (
     <section id="case-studies" className="relative mt-20 overflow-hidden text-white w-screen ">
-      {/* Top cap into this section */}
-      <div className="absolute top-0 left-0 w-full h-[40px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
 
-      {/* Photo texture (base) */}
-      <div
-        className="absolute inset-0 -z-20 bg-black"
-        style={{
-          backgroundImage: "url('/images/homepage-images/case-study-bg2.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          opacity: 0.55,
-        }}
-      />
-{/* ✅ Extra mid-height hue band to add more color lower on the page */}
 
 {/* CONTINUOUS MULTIHUE FIELD (no seam) */}
 <div
-  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[30vh] -z-20 pointer-events-none"
+  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[20vh] -z-20 pointer-events-none"
   style={{
     background: [
       // broad indigo body across the center-bottom
@@ -107,7 +93,7 @@ export default function CaseStudies() {
         CASE STUDIES
       </h2>
 
-      <div className="space-y-10 lg:space-y-16  pb-36 lg:mb-60">
+      <div className="space-y-10 lg:space-y-16  pb-36 lg:mb-48">
         {studies.map((s) => (
           <motion.article
             key={s.slug}
