@@ -73,6 +73,7 @@ export default function CaseStudies() {
       "linear-gradient(12deg, rgba(90,60,255,0.00) 20%, rgba(90,60,255,0.28) 45%, rgba(90,60,255,0.00) 72%)",
     ].join(", "),
     mixBlendMode: "screen",
+    filter: "blur(150px)",
 
     // feather the TOP edge of this entire field so it melts into black/content above
     WebkitMaskImage:
