@@ -14,8 +14,8 @@ export default function HomeAbout() {
         transition={{ duration: 3, ease: "easeInOut" }}
         className="pointer-events-none absolute z-0 md:hidden"
         style={{
-          width: "900px",
-          height: "900px",
+          width: "300px",
+          height: "500px",
           left: "50%",
           top: "30%",
           transform: "translate(-50%, -40%)",
