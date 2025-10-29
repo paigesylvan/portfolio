@@ -100,7 +100,7 @@ export default function Skills() {
 
                 <h3 className="lg:mb-3 text-lg font-semibold">{s.title}</h3>
 
-                <p className="mx-auto md:mx-0 text-white/80 leading-tight text-lg max-w-xs w-[50%]">
+                <p className="mx-auto md:mx-0 text-white/80 leading-tight text-lg max-w-md lg:max-w-xs lg:w-[50%]">
                   {s.body}
                 </p>
               </div>

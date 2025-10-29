@@ -53,7 +53,7 @@ export default function CaseStudies() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="case-studies" className="relative py-20 overflow-hidden text-white w-screen ">
+    <section id="case-studies" className="relative mt-20 overflow-hidden text-white w-screen ">
       {/* Top cap into this section */}
       <div className="absolute top-0 left-0 w-full h-[40px] bg-gradient-to-b from-black to-transparent pointer-events-none" />
 
@@ -101,13 +101,13 @@ export default function CaseStudies() {
 
 
       {/* Black veil to keep text legible */}
-      <div className="absolute inset-0 bg-black/60 -z-0" />
+      <div className="absolute inset-0 -z-0" />
 
-      <h2 className="mb-6 text-center text-[13px] tracking-[0.3em] text-white z-30">
+      <h2 className="py-6 text-center text-[13px] tracking-[0.3em] text-white z-30">
         CASE STUDIES
       </h2>
 
-      <div className="space-y-10 lg:space-y-16  pb-12 lg:pb-60">
+      <div className="space-y-10 lg:space-y-16  pb-36 lg:mb-60">
         {studies.map((s) => (
           <motion.article
             key={s.slug}
