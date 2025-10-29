@@ -2,8 +2,8 @@ import "./globals.css";
 import Header from "../../components/Header";
 import Cursor from "../../components/cursor";
 export const metadata = {
-  title: "Your Site Title",
-  description: "Your description",
+  title: "Paige Sylvan",
+  description: "Paige Sylvan's Portfolio",
   viewport: "width=device-width, initial-scale=1", 
 };
 
