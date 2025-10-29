@@ -7,31 +7,62 @@ import { motion } from "framer-motion";
 export default function HomeAbout() {
   return (
     <section className="relative w-full px-6 py-14 text-white overflow-hidden mb-24">
-      {/* ✨ Always-visible glowing hue */}
+      {/* ✨ Mobile glow (centered) */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-        className="pointer-events-none absolute z-0"
+        transition={{ duration: 3, ease: "easeInOut" }}
+        className="pointer-events-none absolute z-0 md:hidden"
         style={{
-          width: "1200px",
-          height: "1200px",
+          width: "900px",
+          height: "900px",
           left: "50%",
-          top: "40%",
+          top: "30%",
           transform: "translate(-50%, -40%)",
           background: `
             radial-gradient(
-              450px 360px at center,
-              rgba(238,100,160,0.38) 0%,
-              rgba(140,90,255,0.3) 35%,
-              rgba(60,160,255,0.26) 65%,
-              rgba(0,0,0,0) 90%
+              480px 380px at center,
+              rgba(238,100,160,0.50) 0%,   /* pink core */
+              rgba(140,90,255,0.40) 25%,   /* violet mid */
+              rgba(60,160,255,0.35) 55%,   /* blue outer mid */
+              rgba(19,78,88,0.60) 90%,     /* teal outer edge */
+              rgba(0,0,0,0) 100%   
             )
           `,
           filter: "blur(90px)",
           opacity: 1,
         }}
       />
+
+      {/* ✨ Desktop glow (shifted right) */}
+{/* ✨ Desktop glow (shifted right with outer blue tone) */}
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 2, ease: "easeInOut" }}
+  className="pointer-events-none absolute z-0 hidden md:block"
+  style={{
+    width: "300px",
+    height: "320px",
+    left: "63%",
+    top: "45%",
+    transform: "translate(-50%, -40%)",
+    background: `
+      radial-gradient(
+        480px 380px at center,
+        rgba(238,100,160,0.50) 5%,   /* pink core */
+        rgba(140,90,255,0.30) 25%,   /* violet mid */
+        rgba(60,160,255,0.35) 35%,   /* blue outer mid */
+        rgba(0,230,190,0.95) 55%,      /* 💎 vibrant teal edge */
+        rgba(0,230,190,0.60) 70%,      /* extended teal halo */
+        rgba(0,0,0,0) 100%   
+      )
+    `,
+    filter: "blur(70px)",
+    opacity: 1,
+  }}
+/>
+
 
       <div className="relative z-10 mx-auto max-w-[1100px] grid md:grid-cols-2 gap-10 items-center">
         {/* LEFT — Text */}
@@ -51,78 +82,34 @@ export default function HomeAbout() {
             Open to: Full-time Product Designer or UX/UI roles • Wisconsin • Remote-friendly
           </p>
 
-          {/* MOBILE BUTTON — now below text */}
+          {/* MOBILE BUTTON */}
           <Link
             href="/about"
-            className="
-              md:hidden group inline-flex items-center gap-2 mt-2
-              rounded-full px-5 py-2.5 font-medium text-white text-[13px]
-              bg-white/[0.06] backdrop-blur-md
-              shadow-[0_3px_10px_rgba(0,0,0,0.3)]
-              border border-white/10
-              transition-all duration-300
-              hover:bg-white/[0.15] hover:shadow-[0_5px_16px_rgba(0,0,0,0.45)]
-              focus-visible:ring-2 focus-visible:ring-white/40
-            "
+            className="md:hidden group inline-flex items-center gap-2 mt-2 rounded-full px-5 py-2.5 font-medium text-white text-[13px] bg-white/[0.06] backdrop-blur-md shadow-[0_3px_10px_rgba(0,0,0,0.3)] border border-white/10 transition-all duration-300 hover:bg-white/[0.15] hover:shadow-[0_5px_16px_rgba(0,0,0,0.45)] focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <span className="tracking-wide">More About Me</span>
-            <span
-              className="
-                flex items-center justify-center
-                w-6 h-6 rounded-full bg-white/10
-                transition-all duration-300
-                group-hover:bg-white/30 group-hover:translate-x-1
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-3.5 h-3.5"
-              >
+            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 transition-all duration-300 group-hover:bg-white/30 group-hover:translate-x-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" strokeWidth="2"
+                   strokeLinecap="round" strokeLinejoin="round"
+                   className="w-3.5 h-3.5">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
               </svg>
             </span>
           </Link>
 
-          {/* DESKTOP BUTTON (still below text on large) */}
+          {/* DESKTOP BUTTON */}
           <Link
             href="/about"
-            className="
-              hidden md:inline-flex items-center gap-2 mt-6
-              rounded-full px-5 py-2.5 font-medium text-white text-[13px]
-              bg-white/[0.06] backdrop-blur-md
-              shadow-[0_3px_10px_rgba(0,0,0,0.3)]
-              border border-white/10
-              transition-all duration-300
-              hover:bg-white/[0.15] hover:shadow-[0_5px_16px_rgba(0,0,0,0.45)]
-              focus-visible:ring-2 focus-visible:ring-white/40
-            "
+            className="hidden md:inline-flex items-center gap-2 mt-6 rounded-full px-5 py-2.5 font-medium text-white text-[13px] bg-white/[0.06] backdrop-blur-md shadow-[0_3px_10px_rgba(0,0,0,0.3)] border border-white/10 transition-all duration-300 hover:bg-white/[0.15] hover:shadow-[0_5px_16px_rgba(0,0,0,0.45)] focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <span className="tracking-wide">More About Me</span>
-            <span
-              className="
-                flex items-center justify-center
-                w-6 h-6 rounded-full bg-white/10
-                transition-all duration-300
-                group-hover:bg-white/30 group-hover:translate-x-1
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-3.5 h-3.5"
-              >
+            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 transition-all duration-300 group-hover:bg-white/30 group-hover:translate-x-1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" strokeWidth="2"
+                   strokeLinecap="round" strokeLinejoin="round"
+                   className="w-3.5 h-3.5">
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
               </svg>

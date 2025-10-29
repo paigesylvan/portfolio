@@ -19,8 +19,7 @@ type TimelineItem = {
   cycleMs?: number;
 };
 
-const ACTIVE_BAND_PX = 120;
-const START_OFFSET_PX = 220; // where the filled line begins visually
+const ACTIVE_BAND_PX = 100;
 const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(v, max));
 
@@ -34,7 +33,21 @@ export default function TimelineAbout() {
   const [segmentTop, setSegmentTop] = useState(0);
   const [segmentLen, setSegmentLen] = useState(0);
 
-  // Where the spine should end (px from container top). This will align with the 2025 row center.
+  // responsive offset for mobile vs desktop
+  const [startOffset, setStartOffset] = useState(100); // default desktop offset
+
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767.98px)");
+    const apply = () => setStartOffset(mq.matches ? 10 : 100); // smaller offset on mobile
+    apply();
+    mq.addEventListener?.("change", apply);
+    window.addEventListener("resize", apply, { passive: true });
+    return () => {
+      mq.removeEventListener?.("change", apply);
+      window.removeEventListener("resize", apply);
+    };
+  }, []);
+
   const [lineEndPx, setLineEndPx] = useState<number | null>(null);
 
   useLayoutEffect(() => {
@@ -69,7 +82,7 @@ export default function TimelineAbout() {
     // Maximum allowable filled length so the line ends at 2025
     const capLen = Math.max(
       0,
-      Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - START_OFFSET_PX)
+      Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - startOffset)
     );
 
     let nextTop = 0;
@@ -79,7 +92,7 @@ export default function TimelineAbout() {
       nextTop = 0;
       nextLen = 0;
     } else if (progressPx < capLen) {
-      nextTop = START_OFFSET_PX;
+      nextTop = startOffset; // uses responsive offset
       nextLen = progressPx;
     } else {
       nextTop = progressPx - capLen;
@@ -139,19 +152,18 @@ export default function TimelineAbout() {
       heading: "Present Day",
       subheading: "Product Design + UX/UI Design",
       body:
-        "From my experience at my internship I discovered my true interest, which I realize correleated into everything I have been lead to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course where I have learning and polishing two projects case studies.",
+        "From my experience at my internship I discovered my true interest, which I realize correlated into everything I have been lead to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course to solidify my skills and polish two project case studies.",
     },
   ];
 
   return (
-    <section className="relative px-6 py-28 bg-black text-white">
-      <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">
-        {/* Header */}
-        <div className="text-center mb-48 relative z-20">
-          <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
-          <h2 className="mt-2 text-3xl md:text-5xl font-bold">My Journey</h2>
-        </div>
+    <section className="relative px-6 lg:py-28 bg-black text-white">
+      <div className="text-center relative z-20">
+        <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
+        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-24">My Journey</h2>
+      </div>
 
+      <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">
         {/* ===== Timeline Spine(s) ===== */}
         {/* Mobile: LEFT-ALIGNED spine */}
         <div
@@ -166,7 +178,7 @@ export default function TimelineAbout() {
         {/* Desktop: CENTER spine */}
         <div
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block"
-          style={{ top: "250px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
+          style={{ top: "100px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
         />
         <div
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block"

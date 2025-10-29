@@ -82,7 +82,7 @@ export default function Experience() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white mt-36 pb-12 lg:pb-0 lg:mt-0">
+    <section className="flex min-h-[100svh] flex-col items-center justify-center text-white mt-36 pb-12 lg:pb-0 lg:mt-0 px-8">
       <div className="w-full max-w-[1200px] mx-auto">
         <SectionHeader
           kicker="HANDS ON EXPERIENCE"

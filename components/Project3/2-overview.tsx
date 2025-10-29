@@ -17,7 +17,7 @@ export default function OverviewDryCleaner() {
             </p>
             <h3 className="mt-3 text-3xl font-semibold">Quick Cleaners</h3>
 
-            <div className="mt-6 space-y-5 text-white/85 leading-relaxed">
+            <div className="mt-6 space-y-5 text-white/85 leading-tight">
               <p>
                 Quick Cleaners in Pewaukee, Wisconsin has been in the dry cleaning industry for
                 over 30 years, yet had no online presence. Through research I found majority of

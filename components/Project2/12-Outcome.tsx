@@ -115,7 +115,7 @@ export default function OutcomeCamping() {
         >
           <Link
             href="/projects/cleaners" // change this route
-            className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-emerald-300 flex items-center gap-2 transition-all"
+            className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20  flex items-center gap-2 transition-all"
           >
             Next Case Study
             <motion.span

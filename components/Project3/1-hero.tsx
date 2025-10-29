@@ -21,7 +21,7 @@ export default function HeroOverviewDryCleaner() {
   const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE WEB"];
 
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16">
+    <section className="w-screen bg-black text-white flex flex-col justify-center  md:py-16">
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
 
         {/* ---------- HEADER ---------- */}
@@ -42,7 +42,7 @@ export default function HeroOverviewDryCleaner() {
 
         {/* ---------- HERO IMAGE (DESKTOP MOCKUP) ---------- */}
         <div className="relative mt-6 lg:mt-0 flex items-end justify-center">
-          <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]"
+          <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:h-[600px]"
             style={{
             background: [
               "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
@@ -63,20 +63,20 @@ export default function HeroOverviewDryCleaner() {
             transition={{ delay: prefersReduced ? 0 : 0.1 }}
             className="relative"
           >
-            <Image
-              src="/images/project3-images/desktop.png"
-              alt="Dry cleaner homepage on desktop"
-              width={2200}
-              height={1400}
-              priority
-              className="relative z-10 w-[92vw] max-w-[500px] h-auto"
-            />
+        <Image
+          src="/images/project3-images/desktop.png"
+          alt="Dry cleaner homepage on desktop"
+          width={2200}
+          height={1400}
+          priority
+          className="relative z-10 w-[80vw] max-w-[400px] sm:w-[70vw] md:w-[500px] lg:w-[600px] h-auto mx-auto"
+        />
           </motion.div>
 
         </div>
 
         {/* ---------- OVERVIEW ---------- */}
-        <div className="mt-10 lg:mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
+        <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
           {/* LEFT — Project & Role */}
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>

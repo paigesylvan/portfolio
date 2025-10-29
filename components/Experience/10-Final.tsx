@@ -85,25 +85,42 @@ export default function Outcome() {
           </motion.div>
         </motion.div>
 
-<h1 className="max-w-lg text-[#D6A75E] ">
-View the portion of the Project 3 operations manual I authored to guide operators in using the program I designed.
-</h1>
-    <Link
-      href="/images/experience-images/operations-manual.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
+        <div className="text-center mt-10 mb-4">
+  <h1 className="mx-auto max-w-[650px] text-[#D6A75E] font-semibold leading-snug text-base sm:text-sm md:text-xl lg:text-2xl">
+    View the portion of the Project 3 Operations Manual I authored to guide operators 
+    in using the program I designed.
+  </h1>
+
+  <Link
+    href="/images/experience-images/operations-manual.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      group inline-flex items-center justify-center
+      mt-5 px-6 py-2.5 rounded-full
+      font-medium text-[13px] sm:text-sm text-white
+      bg-white/[0.08] border border-white/20 backdrop-blur-md
+      shadow-[0_3px_12px_rgba(0,0,0,0.3)]
+      hover:bg-white/[0.18] hover:shadow-[0_5px_20px_rgba(0,0,0,0.45)]
+      transition-all duration-300
+    "
+  >
+    View Document
+    <span
       className="
-        inline-flex items-center justify-center
-        px-5 py-2.5 rounded-full
-        font-medium text-white text-sm
-        bg-white/10 border border-white/20 backdrop-blur-md
-        shadow-[0_3px_12px_rgba(0,0,0,0.3)]
-        hover:bg-white/20 hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
-        transition-all duration-300 mt-3
+        ml-2 flex items-center justify-center
+        w-5 h-5 rounded-full
+        bg-white/10
+        transition-all duration-300
+        group-hover:bg-[#D6A75E]/40
+        group-hover:translate-x-1
       "
     >
-      View Document
-    </Link>
+      →
+    </span>
+  </Link>
+</div>
+
 
 
       </div>

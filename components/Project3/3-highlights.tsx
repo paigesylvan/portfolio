@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function HighlightsDryCleaner() {
   return (
-    <section className="flex py-10 md:py-12 text-white px-4">
+    <section className="flex py-10 md:py-12 text-white px-4 mt-8 lg:mt-0">
       <div className="mx-auto w-full max-w-[820px]">
         <div className="grid gap-8 md:gap-10 md:grid-cols-12 items-start">
-
           {/* LEFT — phone mock */}
           <div className="md:col-span-5">
-            <div className="mx-auto max-w-[260px] md:max-w-[300px]">
+            <div className="mx-auto max-w-[250px] md:max-w-[300px]">
               <div className="rounded-[32px] bg-white/[0.03] p-3 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
                 <Image
                   src="/images/project3-images/phone-hero.png"
@@ -26,8 +26,7 @@ export default function HighlightsDryCleaner() {
           </div>
 
           {/* RIGHT — three cards */}
-          <div className="md:col-span-7 space-y-4 md:space-y-5">
-
+          <div className="md:col-span-7 space-y-4 md:space-y-5 px-8">
             {/* Card 1 */}
             <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
               <p className="text-[11px] tracking-[0.22em] accent-text">DESIGN DECISIONS</p>
@@ -68,7 +67,7 @@ export default function HighlightsDryCleaner() {
               </p>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA — Website Link */}
             <Link
               href="https://www.quickcleanersandlaundry.com"
               target="_blank"
@@ -98,9 +97,31 @@ export default function HighlightsDryCleaner() {
                 ➜
               </span>
             </Link>
-
           </div>
         </div>
+
+        {/* --- Animated "View My Experience" Link --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mt-14 flex justify-center"
+        >
+          <Link
+            href="/experience" // adjust route if needed
+            className="group text-[11px] sm:text-sm font-medium text-[#D6A75E] hover:text-white/20 flex items-center gap-2 transition-all"
+          >
+            View My Experience
+            <motion.span
+              whileHover={{ x: 4 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="inline-block"
+            >
+              →
+            </motion.span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -33,14 +33,10 @@ const skills: Skill[] = [
   },
 ];
 
-// Static color fields (no animation) rotated per card
 const HUES = [
-  // pink → violet
-  "radial-gradient(520px 360px at 50% 50%, rgba(238,100,160,0.38) 0%, rgba(170,90,255,0.30) 42%, rgba(0,0,0,0) 78%)",
-  // cyan → blue
-  "radial-gradient(520px 360px at 50% 50%, rgba(0,195,255,0.34) 0%, rgba(80,140,255,0.28) 42%, rgba(0,0,0,0) 78%)",
-  // teal → indigo
-  "radial-gradient(520px 360px at 50% 50%, rgba(0,210,190,0.34) 0%, rgba(70,70,160,0.26) 42%, rgba(0,0,0,0) 78%)",
+  "radial-gradient(520px 360px at 50% 50%, rgba(238,100,160,0.28) 0%, rgba(170,90,255,0.20) 42%, rgba(0,0,0,0) 78%)",
+  "radial-gradient(520px 360px at 50% 50%, rgba(0,195,255,0.24) 0%, rgba(80,140,255,0.28) 42%, rgba(0,0,0,0) 78%)",
+  "radial-gradient(520px 360px at 50% 50%, rgba(0,210,190,0.24) 0%, rgba(19,78,88,0.40) 42%, rgba(0,0,0,0) 78%)",
 ];
 
 export default function Skills() {
@@ -75,15 +71,21 @@ export default function Skills() {
               transition={{ duration: prefersReduced ? 0 : 0.9, ease: "easeOut", delay: i * 0.08 }}
               className="relative"
             >
-              {/* Static blur behind this card (visible, not blended away) */}
+              {/* Static blur behind this card */}
               <div
                 aria-hidden
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0
-                           w-[520px] h-[360px] blur-[99px] opacity-50 pointer-events-none"
+                className="
+                  absolute left-1/2 top-1/2
+                  -translate-x-1/2 -translate-y-1/2
+                  md:-translate-x-[60%] lg:-translate-x-[70%]
+                  z-0 w-[500px] h-[360px]
+                  md:w-[520px] md:h-[380px]
+                  blur-[99px] opacity-50 pointer-events-none
+                "
                 style={{ background: HUES[i % HUES.length] }}
               />
 
-              {/* Card content above the blur */}
+              {/* Card content */}
               <div className="relative z-10 pl-3">
                 <div className="mb-6 flex justify-center md:justify-start lg:pl-12">
                   <Image

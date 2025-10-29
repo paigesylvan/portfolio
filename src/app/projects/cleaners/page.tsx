@@ -16,6 +16,7 @@ export default function DryCleanerPage() {
         snap-y snap-mandatory
         scroll-smooth
         bg-black text-white
+        overflow-hidden
       "
     >
       <Section id="hero"><Hero /></Section>
