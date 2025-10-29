@@ -44,7 +44,7 @@ export default function HomeAbout() {
   style={{
     width: "300px",
     height: "320px",
-    left: "63%",
+    left: "66%",
     top: "45%",
     transform: "translate(-50%, -40%)",
     background: `
