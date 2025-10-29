@@ -102,7 +102,7 @@ export default function Header() {
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full ring-1 ring-black/10"
+                  className="inline-flex h-10 w-10 items-center justify-center "
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path
