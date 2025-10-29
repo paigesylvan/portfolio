@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function HighlightsDryCleaner() {
   return (
-    <section className="flex py-10 md:py-12 text-white px-4 mt-8 lg:mt-0">
+    <section className="flex py-10 md:py-12 text-white px-4 mt-8 lg:mt-12">
       <div className="mx-auto w-full max-w-[820px]">
         <div className="grid gap-8 md:gap-10 md:grid-cols-12 items-start">
           {/* LEFT — phone mock */}
