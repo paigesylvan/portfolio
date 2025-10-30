@@ -61,7 +61,7 @@ const blocks: Block[] = [
     icon: "/images/experience-images/learn.png",
     alt: "Learning icon",
     body:
-      "Resulting HMI improved trust and efficiency via accurate data, better spacing, and clearer inputs—supporting a smoother handoff and demonstrating how interface detail impacts factory-floor usability.",
+      "Resulting HMI improved trust and efficiency via accurate data, better spacing, and clearer inputs, supporting a smoother handoff and demonstrating how interface detail impacts factory-floor usability.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function Project1() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-6 text-white mt-36 mb-0">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-36 mb-12 lg:mb-0">
       <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
 

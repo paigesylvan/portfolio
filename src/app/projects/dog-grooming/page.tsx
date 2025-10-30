@@ -15,7 +15,7 @@ import FinalDesign from "../../../../components/Project1/10-final";
 
 export default function DogGroomingPage() {
   return (
-<main className="project-blue w-screen h-[100svh] overflow-y-auto snap-y snap-mandatory scroll-smooth  text-white
+<main className="project-blue w-screen overflow-x-hidden  h-[100svh] overflow-y-auto snap-y snap-mandatory scroll-smooth  text-white
         project-blue
         h-[100svh]
         overflow-y-auto

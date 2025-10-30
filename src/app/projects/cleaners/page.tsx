@@ -17,6 +17,7 @@ export default function DryCleanerPage() {
         scroll-smooth
         bg-black text-white
         overflow-hidden
+        overflow-x-hidden
       "
     >
       <Section id="hero"><Hero /></Section>

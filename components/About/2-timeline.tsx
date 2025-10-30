@@ -160,7 +160,7 @@ export default function TimelineAbout() {
     <section className="relative px-6 lg:py-28 bg-black text-white">
       <div className="text-center relative z-20">
         <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
-        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-24">My Journey</h2>
+        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-">My Journey</h2>
       </div>
 
       <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">

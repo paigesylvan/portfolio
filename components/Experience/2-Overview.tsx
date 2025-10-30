@@ -127,7 +127,7 @@ export default function OverviewMWES() {
               </div>
 
               {/* Stats mobile */}
-              <div className="mt-24 md:hidden">
+              <div className="mt-12 md:hidden">
                 <div className="grid grid-cols-3 gap-4">
                   {[
                     { end: 2, label: "Locations" },
