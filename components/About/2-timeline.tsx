@@ -1,13 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  motion,
-  AnimatePresence,
-  useReducedMotion,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
 
 type TimelineItem = {
@@ -25,9 +19,24 @@ const clamp = (v: number, min: number, max: number) =>
 
 export default function TimelineAbout() {
   const prefersReduced = useReducedMotion() ?? false;
+
+  // The section that owns the absolute lines
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const { scrollY } = useScroll();
+  // === Detect the *real* scroll container and keep it reactive ===
+  const [scrollHost, setScrollHost] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const snap = document.querySelector<HTMLElement>(".snap-page");
+    const main = document.querySelector<HTMLElement>("main");
+
+    const isScrollable = (el?: HTMLElement | null) =>
+      !!el && el.scrollHeight > el.clientHeight;
+
+    const host = snap ?? (isScrollable(main) ? main! : document.documentElement);
+    setScrollHost(host);
+  }, []);
+
   const [containerTopAbs, setContainerTopAbs] = useState(0);
   const [containerHeight, setContainerHeight] = useState(0);
   const [segmentTop, setSegmentTop] = useState(0);
@@ -38,7 +47,7 @@ export default function TimelineAbout() {
 
   useLayoutEffect(() => {
     const mq = window.matchMedia("(max-width: 767.98px)");
-    const apply = () => setStartOffset(mq.matches ? 10 : 100); // smaller offset on mobile
+    const apply = () => setStartOffset(mq.matches ? 10 : 100);
     apply();
     mq.addEventListener?.("change", apply);
     window.addEventListener("resize", apply, { passive: true });
@@ -50,60 +59,122 @@ export default function TimelineAbout() {
 
   const [lineEndPx, setLineEndPx] = useState<number | null>(null);
 
+  // Measure positions relative to the *scroll container*, not always window
+  const measure = () => {
+    if (!containerRef.current || !scrollHost) return;
+
+    const host = scrollHost;
+    const hostScrollTop =
+      host === document.documentElement ? window.scrollY : host.scrollTop;
+
+    const rect = containerRef.current.getBoundingClientRect();
+
+    // Absolute top of container relative to host scroll origin
+    const hostRect =
+      host === document.documentElement ? { top: 0 } : host.getBoundingClientRect();
+
+    const absTop = hostScrollTop + (rect.top - hostRect.top);
+
+    setContainerTopAbs(absTop);
+    setContainerHeight(containerRef.current.scrollHeight);
+
+    // Find the last timeline row and compute its center
+    const rows =
+      containerRef.current.querySelectorAll<HTMLElement>("[data-timeline-row]");
+    if (rows.length) {
+      const last = rows[rows.length - 1];
+      const r = last.getBoundingClientRect();
+      const lastCenterAbs = hostScrollTop + (r.top - hostRect.top) + r.height / 2;
+      setLineEndPx(Math.max(0, lastCenterAbs - absTop));
+    }
+  };
+
+  // Bind measure to both window and host (so window-scroll pages work)
   useLayoutEffect(() => {
-    const update = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const absTop = window.scrollY + rect.top;
-      setContainerTopAbs(absTop);
-      setContainerHeight(containerRef.current.scrollHeight);
+    if (!scrollHost) return;
+    measure();
 
-      // Find the last timeline row and compute its center
-      const rows =
-        containerRef.current.querySelectorAll<HTMLElement>("[data-timeline-row]");
-      if (rows.length) {
-        const last = rows[rows.length - 1];
-        const r = last.getBoundingClientRect();
-        const lastCenterAbs = window.scrollY + r.top + r.height / 2;
-        setLineEndPx(Math.max(0, lastCenterAbs - absTop));
-      }
-    };
-    update();
-    window.addEventListener("resize", update, { passive: true });
-    return () => window.removeEventListener("resize", update);
-  }, []);
+    const onResize = () => measure();
+    const onScrollAny = () => measure();
 
-  useMotionValueEvent(scrollY, "change", (y) => {
-    if (!containerRef.current) return;
+    // always listen on window
+    window.addEventListener("resize", onResize, { passive: true });
+    window.addEventListener("scroll", onScrollAny, { passive: true });
 
-    const viewportCenter = window.innerHeight / 2;
-    const progressPx = y + viewportCenter - containerTopAbs;
-
-    // Maximum allowable filled length so the line ends at 2025
-    const capLen = Math.max(
-      0,
-      Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - startOffset)
-    );
-
-    let nextTop = 0;
-    let nextLen = 0;
-
-    if (progressPx <= 0) {
-      nextTop = 0;
-      nextLen = 0;
-    } else if (progressPx < capLen) {
-      nextTop = startOffset; // uses responsive offset
-      nextLen = progressPx;
-    } else {
-      nextTop = progressPx - capLen;
-      nextLen = capLen;
+    // and also on host if it’s a separate scroller
+    if (scrollHost !== document.documentElement) {
+      scrollHost.addEventListener("scroll", onScrollAny, { passive: true });
     }
 
-    nextTop = clamp(nextTop, 0, Math.max(0, containerHeight - nextLen));
+    return () => {
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onScrollAny);
+      if (scrollHost !== document.documentElement) {
+        scrollHost.removeEventListener("scroll", onScrollAny as EventListener);
+      }
+    };
+  }, [scrollHost]);
 
-    setSegmentTop(nextTop);
-    setSegmentLen(nextLen);
-  });
+  // Drive the fill segment from the host's/ window's scroll position
+  useEffect(() => {
+    if (!containerRef.current || !scrollHost) return;
+
+    const host = scrollHost;
+
+    const compute = () => {
+      const viewportCenter =
+        host === document.documentElement ? window.innerHeight / 2 : host.clientHeight / 2;
+
+      const hostScrollTop =
+        host === document.documentElement ? window.scrollY : host.scrollTop;
+
+      const progressPx = hostScrollTop + viewportCenter - containerTopAbs;
+
+      const capLen = Math.max(
+        0,
+        Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - startOffset)
+      );
+
+      let nextTop = 0;
+      let nextLen = 0;
+
+      if (progressPx <= 0) {
+        nextTop = 0;
+        nextLen = 0;
+      } else if (progressPx < capLen) {
+        nextTop = startOffset;
+        nextLen = progressPx;
+      } else {
+        nextTop = progressPx - capLen;
+        nextLen = capLen;
+      }
+
+      nextTop = clamp(nextTop, 0, Math.max(0, containerHeight - nextLen));
+      setSegmentTop(nextTop);
+      setSegmentLen(nextLen);
+    };
+
+    // initial + listeners
+    compute();
+
+    const onScrollAny = () => compute();
+    const onResize = () => compute();
+
+    window.addEventListener("scroll", onScrollAny, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
+
+    if (host !== document.documentElement) {
+      host.addEventListener("scroll", onScrollAny, { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener("scroll", onScrollAny);
+      window.removeEventListener("resize", onResize);
+      if (host !== document.documentElement) {
+        host.removeEventListener("scroll", onScrollAny);
+      }
+    };
+  }, [scrollHost, containerTopAbs, containerHeight, lineEndPx, startOffset]);
 
   const items: TimelineItem[] = [
     {
@@ -157,31 +228,31 @@ export default function TimelineAbout() {
   ];
 
   return (
-    <section className="relative px-6 lg:py-28 bg-black text-white">
-      <div className="text-center relative z-20">
+    <section className="relative isolate px-6 lg:py-28 bg-black text-white">
+      <div className="text-center relative">
         <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
-        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-">My Journey</h2>
+        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-24">My Journey</h2>
       </div>
 
       <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">
         {/* ===== Timeline Spine(s) ===== */}
         {/* Mobile: LEFT-ALIGNED spine */}
         <div
-          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden"
+          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden z-20 mix-blend-normal"
           style={{ top: 0, height: lineEndPx ? `${lineEndPx}px` : "100%" }}
         />
         <div
-          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white md:hidden"
+          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white md:hidden z-[60] mix-blend-normal"
           style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
         />
 
         {/* Desktop: CENTER spine */}
         <div
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block"
+          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block z-20 mix-blend-normal"
           style={{ top: "100px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
         />
         <div
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block"
+          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block z-30 mix-blend-normal"
           style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
         />
 
@@ -195,6 +266,7 @@ export default function TimelineAbout() {
               containerTopAbs={containerTopAbs}
               segmentTop={segmentTop}
               segmentLen={segmentLen}
+              scrollHost={scrollHost}
               priority={i === 0}
             />
           ))}
@@ -212,6 +284,7 @@ function TimelineRow({
   segmentTop,
   segmentLen,
   priority,
+  scrollHost,
 }: {
   item: TimelineItem;
   prefersReduced: boolean;
@@ -219,36 +292,58 @@ function TimelineRow({
   segmentTop: number;
   segmentLen: number;
   priority?: boolean;
+  scrollHost?: HTMLElement | null;
 }) {
   const rowRef = useRef<HTMLDivElement | null>(null);
   const [dotFilled, setDotFilled] = useState(false);
   const [idx, setIdx] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
+  // Helpers to normalize window vs element scroller
+  const isDoc =
+    !scrollHost || scrollHost === (typeof document !== "undefined" ? document.documentElement : null);
+  const getHostScrollTop = () =>
+    isDoc ? window.scrollY : (scrollHost as HTMLElement).scrollTop;
+  const getHostClientHeight = () =>
+    isDoc ? window.innerHeight : (scrollHost as HTMLElement).clientHeight;
+  const getHostRectTop = () =>
+    isDoc ? 0 : (scrollHost as HTMLElement).getBoundingClientRect().top;
+
+  // --- ACTIVE band calc (use host for viewport center & attach listeners to host)
   useEffect(() => {
     let raf = 0;
     const el = rowRef.current;
     if (!el) return;
+
     const calc = () => {
-      const rect = el.getBoundingClientRect();
-      const rowCenter = rect.top + rect.height / 2;
-      const vpCenter = window.innerHeight / 2;
+      const rect = el.getBoundingClientRect(); // viewport coords
+      const vpCenter = getHostRectTop() + getHostClientHeight() / 2; // host viewport center
+      const rowCenter = rect.top + rect.height / 2; // viewport coords
       setIsActive(Math.abs(rowCenter - vpCenter) <= ACTIVE_BAND_PX);
     };
+
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(calc);
     };
+    const onResize = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(calc);
+    };
+
     calc();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
+    const target: any = isDoc ? window : (scrollHost as HTMLElement);
+    target.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
+
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      target.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
-  }, []);
+  }, [scrollHost]);
 
+  // Cycle images when active
   useEffect(() => {
     if (prefersReduced || !isActive || (item.images?.length ?? 0) < 2) return;
     const t = setInterval(
@@ -258,24 +353,34 @@ function TimelineRow({
     return () => clearInterval(t);
   }, [prefersReduced, isActive, item.images, item.cycleMs]);
 
+  // --- Dot fill calc: compute row center ABSOLUTE to the host scroll origin
   useLayoutEffect(() => {
     const el = rowRef.current;
     if (!el) return;
+
     const update = () => {
-      const rect = el.getBoundingClientRect();
-      const rowCenterAbs = window.scrollY + rect.top + rect.height / 2;
+      const rect = el.getBoundingClientRect(); // viewport coords
+      const rowCenterAbs =
+        getHostScrollTop() + (rect.top - getHostRectTop()) + rect.height / 2;
+
       const segTopAbs = containerTopAbs + segmentTop;
       const segBotAbs = segTopAbs + segmentLen;
       setDotFilled(rowCenterAbs >= segTopAbs && rowCenterAbs <= segBotAbs);
     };
+
     update();
-    window.addEventListener("resize", update, { passive: true });
-    window.addEventListener("scroll", update, { passive: true });
+    const target: any = isDoc ? window : (scrollHost as HTMLElement);
+    const onScroll = () => update();
+    const onResize = () => update();
+
+    target.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
+
     return () => {
-      window.removeEventListener("resize", update);
-      window.removeEventListener("scroll", update);
+      target.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
-  }, [containerTopAbs, segmentTop, segmentLen]);
+  }, [scrollHost, containerTopAbs, segmentTop, segmentLen]);
 
   const currentSrc =
     item.images?.length ? item.images[idx] : "/images/placeholder.png";
@@ -294,7 +399,7 @@ function TimelineRow({
       {/* Mobile: slightly right of the line */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-20 md:hidden flex items-center justify-center"
+        className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center mix-blend-normal"
       >
         <div
           className={`h-3.5 w-3.5 rounded-full ${
@@ -306,7 +411,7 @@ function TimelineRow({
       {/* Desktop: centered dot */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-20 hidden md:flex items-center justify-center"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] hidden md:flex items-center justify-center mix-blend-normal"
       >
         <div
           className={`h-3.5 w-3.5 rounded-full ${

@@ -70,7 +70,7 @@ export default function OverviewMWES() {
   );
 
   return (
-    <section className="project-yellow flex flex-col justify-center px-4 sm:px-6 py-10 md:py-16 text-white ml-88">
+    <section className="project-yellow flex flex-col justify-center px-4 sm:px-6 py-10 md:py-16 text-white ml-88 mt-12 lg:mt-0">
       {/* added flex justify-center wrapper to center entire block */}
       <div className="w-full flex justify-center">
         <div className="w-full max-w-[1200px] mx-auto">

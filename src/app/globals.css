@@ -6,24 +6,8 @@ html, body {
   height: 100%;
   margin: 0;
   background: #000;
-  overflow-y: auto;      
-  -webkit-overflow-scrolling: touch;
 }
 
-/* Safe-area helpers if you use them */
-.pt-safe { padding-top: env(safe-area-inset-top); }
-.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
-
-.pt-safe {
-  padding-top: env(safe-area-inset-top);
-}
-.pb-safe {
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-html, body {
-  overflow-x: hidden;
-}
 
 * { cursor: none !important; }
 input, textarea { cursor: text !important; }
