@@ -6,7 +6,7 @@ import HomeAbout from "../../components/Homepage/About";
 
 export default function Home() {
   return (
-    <main className="min-h-screen grid place-items-center text-white snap-page pt-safe pb-safe">
+    <main className="h-screen grid place-items-center text-white snap-page">
       <div className="">
         <Hero />
         <HomeAbout />

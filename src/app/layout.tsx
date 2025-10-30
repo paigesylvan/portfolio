@@ -15,7 +15,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="min-h-screen">
+    <html lang="en" className="h-screen">
 <meta name="theme-color" content="#000000" />
 <meta name="theme-color bg-black" content="#000000" media="(prefers-color-scheme: dark)" />
 
