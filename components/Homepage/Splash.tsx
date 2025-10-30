@@ -25,7 +25,7 @@ export default function HeroProficoFullMultihue({
       {/* Multihue aurora base (stronger, full-bleed) */}
 {/* TOP-ONLY multihue, extended + masked so it fades out smoothly */}
 <div
-  className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[70vh] pointer-events-none -z-10"
+  className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[70vh] pointer-events-none z-0"
   style={{
     backgroundImage: [
       "radial-gradient(1400px 600px at 50% -24%, rgba(255,165,80,0.85) 0%, rgba(255,165,80,0.34) 42%, rgba(255,165,80,0) 70%)",

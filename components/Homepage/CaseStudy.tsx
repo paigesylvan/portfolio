@@ -58,7 +58,7 @@ export default function CaseStudies() {
 
 {/* CONTINUOUS MULTIHUE FIELD (no seam) */}
 <div
-  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[20vh] -z-20 pointer-events-none"
+  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[20vh] z-0 pointer-events-none"
   style={{
     background: [
       // broad indigo body across the center-bottom
