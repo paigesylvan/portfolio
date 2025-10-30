@@ -16,7 +16,8 @@ export default function HeroProficoFullMultihue({
   return (
     <section
     
-      className={`relative w-screen overflow-hidden text-white ${height ? "" : "min-h-screen"}`}
+    className={`relative w-screen overflow-hidden text-white ${height ? "" : "min-h-screen-fix pt-safe pb-safe"}`}
+
       style={{
         ...(height ? { height } : {}),
         marginLeft: "calc(50% - 50vw)",

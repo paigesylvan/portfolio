@@ -43,20 +43,24 @@ a, button, [role="button"], [data-nextjs-dialog], [data-nextjs-toast] { cursor: 
 .project-yellow .accent-bg   { @apply bg-[#FACC15]; }
 .project-yellow .accent-ring { @apply ring-[#FACC15]/30; }
 
-/* Make the background truly edge-to-edge, even during rubber-band scroll */
-html, body { height: 100%; background: #000; }
-
-/* iOS fallback when dvh isn't available */
-html, body { min-height: -webkit-fill-available; }
-
-/* A utility for full screen height that works on iOS + others */
-.min-h-screen-fix {
-  min-height: 100dvh;               /* dynamic viewport: includes URL bar changes */
-  min-height: 100svh;               /* fallback (Safari 15) */
-  min-height: -webkit-fill-available; /* legacy iOS fallback */
+/* Fill the physical screen and paint black behind Safari chrome */
+html, body {
+  height: 100%;
+  min-height: -webkit-fill-available; /* legacy iOS */
+  background: #000;                   /* shows under the bars */
 }
 
-/* Safe-area helpers (top notch / bottom home indicator) */
-.pt-safe { padding-top: env(safe-area-inset-top); padding-top: constant(safe-area-inset-top); }
-.pb-safe { padding-bottom: env(safe-area-inset-bottom); padding-bottom: constant(safe-area-inset-bottom); }
+/* A utility that truly matches the visible screen on iOS/Android */
+.min-h-screen-fix {
+  min-height: 100dvh;                 /* modern dynamic viewport */
+  min-height: 100svh;                 /* Safari 15 fallback */
+  min-height: -webkit-fill-available; /* legacy fallback */
+}
 
+/* Safe-area padding helpers for content (not backgrounds) */
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+}
+.pt-safe { padding-top: var(--sat); }
+.pb-safe { padding-bottom: var(--sab); }

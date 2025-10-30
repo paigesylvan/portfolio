@@ -15,8 +15,8 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="h-full bg-black text-white antialiased overflow-x-hidden">
+    <html lang="en" className="">
+      <body className=" bg-black text-white antialiased overflow-x-hidden">
         <div className="hidden md:block">
           <Cursor />
         </div>
