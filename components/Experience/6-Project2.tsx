@@ -153,7 +153,7 @@ export default function Project2() {
               )}
 
               {b.bullets && (
-                <ul className="mt-3 space-y-1.5 text-white/80 list-disc pl-[5px] leading-snug">
+                <ul className="mt-3 space-y-1.5 text-white/80 list-disc pl-[15px] leading-snug">
                   {b.bullets.map((li, i) => (
                     <li key={i}>{li}</li>
                   ))}

@@ -74,7 +74,7 @@ export default function Project3Part1() {
               I designed and implemented a complete HMI application in{" "}
               <span className="font-semibold">FactoryTalk View SE</span> for a robotic welding and
               assembly cell. Operators can control cell functions and see real-time status, part
-              flow, and alarms — all within an interface aligned with the company’s design system.
+              flow, and alarms, all within an interface aligned with the company’s design system.
               The role blended UI design, user flows, and interaction logic with technical
               implementation.
             </p>

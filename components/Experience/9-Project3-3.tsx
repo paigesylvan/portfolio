@@ -84,7 +84,7 @@ export default function Project3Part3() {
                 for operators. Uploading and organizing the tag database, then binding PLC tags to
                 on-screen components, strengthened my understanding of how the HMI layer connects to
                 real machine behavior. I also created my own PLC logic for searching, saving, and
-                deleting recipes—deepening my grasp of accurate process control. Finally,
+                deleting recipes, deepening my grasp of accurate process control. Finally,
                 documenting the application for the customer’s operation manual improved my ability
                 to explain complex systems in a clear, actionable way.
               </p>

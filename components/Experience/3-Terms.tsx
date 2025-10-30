@@ -115,7 +115,7 @@ export default function Terms() {
               </div>
 
               {/* Body for desktop (under the image) */}
-              <p className="hidden sm:block lg:mt-6 text-white/80 leading-relaxed">
+              <p className="hidden sm:block lg:mt-6 text-white/80 leading-snug">
                 {t.body}
               </p>
             </motion.article>

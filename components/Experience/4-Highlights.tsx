@@ -130,7 +130,7 @@ export default function Experience() {
               </div>
 
               <h3 className="mt-5 text-base font-semibold">{h.title}</h3>
-              <p className="mt-3 text-white/80 leading-snug lg:leading-relaxed">{h.body}</p>
+              <p className="mt-3 text-white/80 leading-snug lg:leading-snug">{h.body}</p>
             </motion.article>
           ))}
         </motion.div>
