@@ -6,7 +6,13 @@ html, body {
   height: 100%;
   margin: 0;
   background: #000;
+  overflow-y: auto;      
+  -webkit-overflow-scrolling: touch;
 }
+
+/* Safe-area helpers if you use them */
+.pt-safe { padding-top: env(safe-area-inset-top); }
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
 
 .pt-safe {
   padding-top: env(safe-area-inset-top);
@@ -22,11 +28,6 @@ html, body {
 * { cursor: none !important; }
 input, textarea { cursor: text !important; }
 a, button, [role="button"], [data-nextjs-dialog], [data-nextjs-toast] { cursor: none !important; }
-
-html, body { 
-  min-height: 100%;
-  overflow-y: auto;  
-}
 
 .snap-page {
   height: 100vh;

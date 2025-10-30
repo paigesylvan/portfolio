@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -54,41 +53,23 @@ export default function CaseStudies() {
 
   return (
     <section id="case-studies" className="relative mt-20 overflow-hidden text-white w-screen ">
-
-
-{/* CONTINUOUS MULTIHUE FIELD (no seam) */}
-<div
-  className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[20vh] z-0 pointer-events-none"
-  style={{
-    background: [
-      // broad indigo body across the center-bottom
-      "radial-gradient(1400px 720px at 52% 105%, rgba(70,70,160,0.34) 0%, rgba(70,70,160,0.20) 40%, rgba(70,70,160,0.06) 68%, rgba(70,70,160,0) 90%)",
-      // cyan/teal right
-      "radial-gradient(1200px 620px at 103% 102%, rgba(0,196,255,0.34) 0%, rgba(0,196,255,0.16) 42%, rgba(0,196,255,0.06) 68%, rgba(0,196,255,0) 88%)",
-      "radial-gradient(1100px 600px at 86% 96%, rgba(0,210,190,0.28) 0%, rgba(0,210,190,0.14) 44%, rgba(0,210,190,0.05) 70%, rgba(0,210,190,0) 90%)",
-      // warm/violet left
-      "radial-gradient(1200px 620px at -6% 104%, rgba(170,90,255,0.28) 0%, rgba(170,90,255,0.14) 44%, rgba(170,90,255,0.05) 70%, rgba(170,90,255,0) 90%)",
-      "radial-gradient(1100px 580px at -10% 95%, rgba(238,100,160,0.22) 0%, rgba(238,100,160,0.12) 42%, rgba(238,100,160,0.05) 68%, rgba(238,100,160,0) 90%)",
-      // gentle diagonal sweep to unify the field
-      "linear-gradient(12deg, rgba(90,60,255,0.00) 20%, rgba(90,60,255,0.28) 45%, rgba(90,60,255,0.00) 72%)",
-    ].join(", "),
-    mixBlendMode: "screen",
-    filter: "blur(150px)",
-
-    // feather the TOP edge of this entire field so it melts into black/content above
-    WebkitMaskImage:
-      "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 64%)",
-    maskImage:
-      "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 64%)",
-  }}
-/>
-
-{/* optional micro-softener to ensure perfect blend on all engines */}
-
-
-
-      {/* Black veil to keep text legible */}
-      <div className="absolute inset-0 -z-0" />
+      <div 
+        className="absolute left-1/2 -translate-x-1/2 inset-x-0 bottom-0 w-screen h-[20vh] z-0 pointer-events-none"
+        style={{
+          background: [
+            "radial-gradient(1400px 720px at 52% 105%, rgba(70,70,160,0.34) 0%, rgba(70,70,160,0.20) 40%, rgba(70,70,160,0.06) 68%, rgba(70,70,160,0) 90%)",
+            "radial-gradient(1200px 620px at 103% 102%, rgba(0,196,255,0.34) 0%, rgba(0,196,255,0.16) 42%, rgba(0,196,255,0.06) 68%, rgba(0,196,255,0) 88%)",
+            "radial-gradient(1100px 600px at 86% 96%, rgba(0,210,190,0.28) 0%, rgba(0,210,190,0.14) 44%, rgba(0,210,190,0.05) 70%, rgba(0,210,190,0) 90%)",
+            "radial-gradient(1200px 620px at -6% 104%, rgba(170,90,255,0.28) 0%, rgba(170,90,255,0.14) 44%, rgba(170,90,255,0.05) 70%, rgba(170,90,255,0) 90%)",
+            "radial-gradient(1100px 580px at -10% 95%, rgba(238,100,160,0.22) 0%, rgba(238,100,160,0.12) 42%, rgba(238,100,160,0.05) 68%, rgba(238,100,160,0) 90%)",
+            "linear-gradient(12deg, rgba(90,60,255,0.00) 20%, rgba(90,60,255,0.28) 45%, rgba(90,60,255,0.00) 72%)",
+          ].join(", "),
+          mixBlendMode: "screen",
+          filter: "blur(150px)",
+          WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 64%)",
+          maskImage: "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 64%)",
+        }}
+      />
 
       <h2 className="py-6 text-center text-[13px] tracking-[0.3em] text-white z-30">
         CASE STUDIES
@@ -112,17 +93,7 @@ export default function CaseStudies() {
                 },
               },
             }}
-            className="
-              group relative mx-auto w-[92%] lg:w-[75%]
-              overflow-hidden rounded-3xl
-              border border-white/10 ring-1 ring-inset ring-white/10
-              bg-white/[0.05] backdrop-blur-lg
-              shadow-[0_5px_22px_rgba(0,0,0,0.35)]
-              px-4 py-5 md:px-5 md:py-7 lg:px-6 lg:py-10
-              transition-all
-              hover:bg-white/[0.08] hover:shadow-[0_8px_28px_rgba(0,0,0,0.45)] max-w-6xl
-            "
-          >
+            className=" group relative mx-auto w-[92%] lg:w-[75%] overflow-hidden rounded-3xl border border-white/10 ring-1 ring-inset ring-white/10  bg-white/[0.05] backdrop-blur-lg shadow-[0_5px_22px_rgba(0,0,0,0.35)] px-4 py-5 md:px-5 md:py-7 lg:px-6 lg:py-10 transition-all  hover:bg-white/[0.08] hover:shadow-[0_8px_28px_rgba(0,0,0,0.45)] max-w-6xl " >
             <div className="grid items-center gap-6 md:grid-cols-12">
               {/* image */}
               <div className="md:col-span-5">
@@ -139,17 +110,13 @@ export default function CaseStudies() {
                   </div>
                 </div>
               </div>
-
               {/* text */}
               <div className="md:col-span-7 lg:pl-12 pl-4">
                 <div className="mb-3 flex flex-wrap gap-1 lg:gap-2">
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/10 bg-white/[0.06] px-2 py-[2px]
-                                 text-[7px] lg:text-[10px] tracking-[0.1em] text-white/85
-                                 ring-1 ring-inset ring-white/5"
-                    >
+                      className="rounded-full border border-white/10 bg-white/[0.06] px-2 py-[2px] text-[7px] lg:text-[10px] tracking-[0.1em] text-white/85 ring-1 ring-inset ring-white/5">
                       {t}
                     </span>
                   ))}
@@ -166,17 +133,7 @@ export default function CaseStudies() {
                 {/* CTA */}
                 <Link
                   href={s.slug}
-                  className="
-                    group relative mt-6 inline-flex items-center gap-2
-                    rounded-full px-5 py-2.5 font-medium text-white text-[12px]
-                    bg-white/[0.06] backdrop-blur-md
-                    border border-white/10
-                    shadow-[0_3px_12px_rgba(0,0,0,0.3)]
-                    transition-all duration-300
-                    hover:bg-white/[0.15] hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
-                    focus-visible:ring-2 focus-visible:ring-white/40
-                  "
-                >
+                  className="group relative mt-6 inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium text-white text-[12px] bg-white/[0.06] backdrop-blur-md border border-white/10 shadow-[0_3px_12px_rgba(0,0,0,0.3)] transition-all duration-300 hover:bg-white/[0.15] hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)] focus-visible:ring-2 focus-visible:ring-white/40 ">
                   <span>{s.cta ?? "View Case Study"}</span>
                   <span
                     className="
