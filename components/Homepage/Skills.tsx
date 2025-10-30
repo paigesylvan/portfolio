@@ -86,7 +86,7 @@ export default function Skills() {
               />
 
               {/* Card content */}
-              <div className="relative z-10 pl-3">
+              <div className="relative z-10 pl-3 pb-8 lg:pb-0">
                 <div className="mb-6 flex justify-center md:justify-start lg:pl-12">
                   <Image
                     src={s.gif}

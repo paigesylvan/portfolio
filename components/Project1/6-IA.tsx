@@ -35,7 +35,7 @@ export default function IA() {
 
           {/* ---------- MOBILE-ONLY FULL VIEW BUTTON ---------- */}
           <a
-            href="/images/project1-images/ia-large.png"
+            href="/images/project1-images/ia.png"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 md:hidden mx-auto inline-block rounded-full border border-white/10 

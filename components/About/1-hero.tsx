@@ -2,7 +2,7 @@
 
 export default function AboutHero() {
   return (
-    <section className="relative isolate flex items-center justify-center px-6 py-28 md:py-40 bg-black text-white overflow-hidden h-[900px]">
+    <section className="relative isolate flex items-center justify-center px-6 md:py-40 bg-black text-white overflow-hidden h-[900px] mb-36">
       {/* Multihue aurora base (behind content, full-bleed) */}
       <div
         className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none -z-10"
@@ -26,14 +26,24 @@ export default function AboutHero() {
 
       {/* Content above hues */}
       <div className="relative z-10 mx-auto w-full max-w-[1100px] text-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          Hi, I’m Paige —
-          <br className="hidden md:block" />
-          a designer who blends creativity and logic.
+        <h1 className="text-3xl md:text-6xl font-extrabold leading-tight lg:mt-60">
+          Hi, I’m Paige 👋
         </h1>
-        <p className="mt-8 text-white/80 max-w-4xl mx-auto text-lg md:text-2xl leading-snug">
+        <h1 className="mt-12 text-lg lg:text-4xl font-extrabold leading-tight ">
+          A designer who blends creativity and logic.
+        </h1>
+   
+        <p className=" text-white/80 max-w-3xl mx-auto text-l md:text-2xl leading-snug pt-1 ">
           My background in development and UX design helps me craft experiences
           that are not only beautiful but built to work in the real world.
+        </p>
+
+        <p className=" text-white/80 max-w-4xl mx-auto text-xs lg:text-md leading-snug pt-24 pb-2 accent-text uppercase tracking-[0.12em]">
+          A few things I love
+        </p>
+        <p className="text-lg lg:text-5xl ">
+        🎟️ 🥢 🏀 🌮 🎨 🎾 🌱 🌍 🌊  ☕ 🎲 🐶
+                     
         </p>
 
       </div>

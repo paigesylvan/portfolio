@@ -15,6 +15,7 @@ export default function HeroProficoFullMultihue({
 }: Props) {
   return (
     <section
+    
       className={`relative w-screen overflow-hidden text-white ${height ? "" : "min-h-screen"}`}
       style={{
         ...(height ? { height } : {}),

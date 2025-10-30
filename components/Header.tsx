@@ -23,7 +23,7 @@ export default function Header() {
           {/* Brand */}
           <Link
             href="/"
-            className="text-white font-semibold tracking-wide lg:text-3xl"
+            className="text-white font-semibold tracking-wide lg:text-3xl hover:text-purple-400"
           >
             PS
           </Link>
@@ -33,19 +33,19 @@ export default function Header() {
             {/* ✅ This now navigates properly to the homepage & scrolls */}
             <Link
               href="/#case-studies"
-              className="uppercase tracking-[0.18em]"
+              className="uppercase tracking-[0.18em] hover:text-orange-500"
             >
               Case Studies
             </Link>
             <Link
               href="/experience"
-              className="uppercase tracking-[0.18em]"
+              className="uppercase tracking-[0.18em] hover:text-teal-600"
             >
               Experience
             </Link>
             <Link
               href="/about"
-              className="uppercase tracking-[0.18em]"
+              className="uppercase tracking-[0.18em] hover:text-blue-600"
             >
               About Me
             </Link>

@@ -32,7 +32,7 @@ export default function UsersSection() {
 
         {/* Mobile button BELOW image */}
         <a
-          href="/images/project1-images/users-large.png"
+          href="/images/project1-images/ia-large.png"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-12 md:hidden inline-block rounded-full border border-white/10 
