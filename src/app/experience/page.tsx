@@ -14,7 +14,7 @@ import Outcomes from "../../../components/Experience/10-Final";
 
 export default function ExperiencePage() {
   return (
-    <main className="snap-page bg-black text-white project-yellow">
+    <main className="snap-page bg-black text-white project-yellow snap-page pt-safe pb-safe">
       <Section id="hero"><ExperienceHero /></Section>
       <Section id="overview"><OverviewMWES /></Section>
       <Section id="terms"><Terms /></Section>
