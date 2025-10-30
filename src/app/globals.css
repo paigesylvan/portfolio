@@ -43,3 +43,27 @@ a, button, [role="button"], [data-nextjs-dialog], [data-nextjs-toast] { cursor: 
 .project-yellow .accent-bg   { @apply bg-[#FACC15]; }
 .project-yellow .accent-ring { @apply ring-[#FACC15]/30; }
 
+html, body {
+  height: 100%;
+  min-height: -webkit-fill-available;
+  background: #000;
+}
+
+.min-h-screen-fix {
+  min-height: 100dvh;
+  min-height: 100svh;
+  min-height: -webkit-fill-available;
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+:root {
+  color-scheme: dark;
+}
+

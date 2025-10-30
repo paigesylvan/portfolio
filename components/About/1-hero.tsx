@@ -2,7 +2,7 @@
 
 export default function AboutHero() {
   return (
-    <section className="relative isolate flex items-center justify-center px-6 md:py-40 bg-black text-white overflow-hidden h-[900px] mb-36">
+    <section className="relative isolate flex items-center justify-center px-6 bg-black text-white overflow-hidden h-[900px] mb-36">
       {/* Multihue aurora base (behind content, full-bleed) */}
       <div
         className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none -z-10"
