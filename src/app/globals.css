@@ -43,26 +43,3 @@ a, button, [role="button"], [data-nextjs-dialog], [data-nextjs-toast] { cursor: 
 .project-yellow .accent-bg   { @apply bg-[#FACC15]; }
 .project-yellow .accent-ring { @apply ring-[#FACC15]/30; }
 
-/* Fill the physical screen and paint black behind Safari chrome */
-html, body {
-  height: 100%;
-  min-height: -webkit-fill-available; /* legacy iOS */
-  background: #000;                   /* shows under the bars */
-}
-
-/* A utility that truly matches the visible screen on iOS/Android */
-.min-h-screen-fix {
-  min-height: 100dvh;                 /* modern dynamic viewport */
-  min-height: 100svh;                 /* Safari 15 fallback */
-  min-height: -webkit-fill-available; /* legacy fallback */
-}
-
-/* Safe-area padding helpers for content (not backgrounds) */
-:root {
-  --sat: env(safe-area-inset-top);
-  --sab: env(safe-area-inset-bottom);
-  color-scheme: dark;
-}
-.pt-safe { padding-top: var(--sat); }
-.pb-safe { padding-bottom: var(--sab); }
-
