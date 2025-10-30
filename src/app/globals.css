@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #000;
+}
+
+/* Safe-area utilities */
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Optional: prevent sideways wiggle on iOS when using vw tricks */
+html, body {
+  overflow-x: hidden;
+}
+
+
 /* Cursor (deduped) */
 * { cursor: none !important; }
 input, textarea { cursor: text !important; }
