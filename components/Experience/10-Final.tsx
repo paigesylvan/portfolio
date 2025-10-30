@@ -22,7 +22,7 @@ export default function Outcome() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-6 text-white mt-16">
+    <section className="flex flex-col items-center justify-center px-6 text-white mt-24 lg:mt-16 mb-24 lg:mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
         {/* Header */}
         <div className="[&_h1]:mb-0 [&_h2]:mb-0 [&_p]:mb-0">
@@ -46,7 +46,7 @@ export default function Outcome() {
           {/* LEFT — Text content */}
           <motion.div
             variants={item(prefersReduced)}
-            className="flex flex-col justify-between text-white/85 text-[15px] leading-relaxed max-w-[62ch]"
+            className="flex flex-col justify-between text-white/85 text-[15px] leading-snug max-w-[62ch]"
           >
             <div className="space-y-4">
               <p>

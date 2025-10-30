@@ -16,6 +16,7 @@ export default function FinalDesign() {
         {/* Video and Text wrapper */}
         <div className="flex flex-col-reverse md:flex-col items-center mt-8 gap-6">
           {/* Text */}
+          <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
           <p className="mx-auto max-w-3xl text-center text-white/85 text-[10px] md:text-md leading-tight px-6 lg:px-0">
             The final product is an intuitive and sleek e-commerce experience designed to help 
             users feel confident while gearing up for the outdoors. Clear navigation, curated bundles, 
@@ -25,6 +26,8 @@ export default function FinalDesign() {
             is a shopping experience that transforms uncertainty into excitement, empowering users to explore 
             nature with confidence and the right gear for their adventure.
           </p>
+          </div>
+
 
           {/* Video Demo */}
           <div className="flex justify-center w-full">

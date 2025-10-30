@@ -32,7 +32,7 @@ export default function HeroOverviewDryCleaner() {
             align="center"
             // omit accent for safety unless you have a 'drycleaner' variant
             kickerClassName="text-[7px] md:text-xs text-[#E6D6C3]"
-            titleClassName="text-sm md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
+            titleClassName="text-sm md:text-2xl lg:text-3xl max-w-[300px] lg:max-w-[600px] mx-auto mt-2"
           />
         </div>
 
@@ -41,7 +41,7 @@ export default function HeroOverviewDryCleaner() {
 
 
         {/* ---------- HERO IMAGE (DESKTOP MOCKUP) ---------- */}
-        <div className="relative mt-6 lg:mt-0 flex items-end justify-center">
+        <div className="relative  flex items-end justify-center">
           <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:h-[600px]"
             style={{
             background: [
