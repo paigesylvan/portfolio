@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { useRef, useState, useLayoutEffect, useEffect } from "react";
+import {
+  useRef,
+  useState,
+  useLayoutEffect,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "react";
 
 type TimelineItem = {
   images: string[];
@@ -23,7 +30,7 @@ export default function TimelineAbout() {
   // The section that owns the absolute lines
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // === Detect the *real* scroll container and keep it reactive ===
+  // Detect the *real* scroll container and keep it reactive
   const [scrollHost, setScrollHost] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -60,7 +67,7 @@ export default function TimelineAbout() {
   const [lineEndPx, setLineEndPx] = useState<number | null>(null);
 
   // Measure positions relative to the *scroll container*, not always window
-  const measure = () => {
+  const measure = useCallback(() => {
     if (!containerRef.current || !scrollHost) return;
 
     const host = scrollHost;
@@ -87,7 +94,7 @@ export default function TimelineAbout() {
       const lastCenterAbs = hostScrollTop + (r.top - hostRect.top) + r.height / 2;
       setLineEndPx(Math.max(0, lastCenterAbs - absTop));
     }
-  };
+  }, [scrollHost]);
 
   // Bind measure to both window and host (so window-scroll pages work)
   useLayoutEffect(() => {
@@ -110,10 +117,10 @@ export default function TimelineAbout() {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("scroll", onScrollAny);
       if (scrollHost !== document.documentElement) {
-        scrollHost.removeEventListener("scroll", onScrollAny as EventListener);
+        scrollHost.removeEventListener("scroll", onScrollAny);
       }
     };
-  }, [scrollHost]);
+  }, [scrollHost, measure]);
 
   // Drive the fill segment from the host's/ window's scroll position
   useEffect(() => {
@@ -132,7 +139,10 @@ export default function TimelineAbout() {
 
       const capLen = Math.max(
         0,
-        Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - startOffset)
+        Math.min(
+          containerHeight * 0.4,
+          (lineEndPx ?? containerHeight) - startOffset
+        )
       );
 
       let nextTop = 0;
@@ -299,15 +309,30 @@ function TimelineRow({
   const [idx, setIdx] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
-  // Helpers to normalize window vs element scroller
-  const isDoc =
-    !scrollHost || scrollHost === (typeof document !== "undefined" ? document.documentElement : null);
-  const getHostScrollTop = () =>
-    isDoc ? window.scrollY : (scrollHost as HTMLElement).scrollTop;
-  const getHostClientHeight = () =>
-    isDoc ? window.innerHeight : (scrollHost as HTMLElement).clientHeight;
-  const getHostRectTop = () =>
-    isDoc ? 0 : (scrollHost as HTMLElement).getBoundingClientRect().top;
+  // Stable memo for "is the document the scroller?"
+  const isDoc = useMemo(
+    () =>
+      !scrollHost ||
+      scrollHost ===
+        (typeof document !== "undefined" ? document.documentElement : null),
+    [scrollHost]
+  );
+
+  // Stable callbacks for host measurements
+  const getHostScrollTop = useCallback(
+    () => (isDoc ? window.scrollY : (scrollHost as HTMLElement).scrollTop),
+    [isDoc, scrollHost]
+  );
+
+  const getHostClientHeight = useCallback(
+    () => (isDoc ? window.innerHeight : (scrollHost as HTMLElement).clientHeight),
+    [isDoc, scrollHost]
+  );
+
+  const getHostRectTop = useCallback(
+    () => (isDoc ? 0 : (scrollHost as HTMLElement).getBoundingClientRect().top),
+    [isDoc, scrollHost]
+  );
 
   // --- ACTIVE band calc (use host for viewport center & attach listeners to host)
   useEffect(() => {
@@ -332,7 +357,7 @@ function TimelineRow({
     };
 
     calc();
-    const target: any = isDoc ? window : (scrollHost as HTMLElement);
+    const target: Window | HTMLElement = isDoc ? window : (scrollHost as HTMLElement);
     target.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize, { passive: true });
 
@@ -341,7 +366,7 @@ function TimelineRow({
       target.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
     };
-  }, [scrollHost]);
+  }, [getHostClientHeight, getHostRectTop, isDoc, scrollHost]);
 
   // Cycle images when active
   useEffect(() => {
@@ -369,7 +394,7 @@ function TimelineRow({
     };
 
     update();
-    const target: any = isDoc ? window : (scrollHost as HTMLElement);
+    const target: Window | HTMLElement = isDoc ? window : (scrollHost as HTMLElement);
     const onScroll = () => update();
     const onResize = () => update();
 
@@ -380,7 +405,15 @@ function TimelineRow({
       target.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
     };
-  }, [scrollHost, containerTopAbs, segmentTop, segmentLen]);
+  }, [
+    getHostRectTop,
+    getHostScrollTop,
+    isDoc,
+    scrollHost,
+    containerTopAbs,
+    segmentTop,
+    segmentLen,
+  ]);
 
   const currentSrc =
     item.images?.length ? item.images[idx] : "/images/placeholder.png";

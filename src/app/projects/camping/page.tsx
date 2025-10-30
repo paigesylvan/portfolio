@@ -17,15 +17,7 @@ import OutcomeCamping from "../../../../components/Project2/12-Outcome";
 
 export default function DogGroomingPage() {
   return (
-<main className=" w-screen overflow-x-hidden h-[100svh] overflow-y-auto snap-y snap-mandatory scroll-smooth bg-black text-white
- 
-      project-green
-      h-[100svh]
-      overflow-y-auto
-      snap-y snap-mandatory
-      scroll-smooth
-      bg-black text-white
-    ">
+<main className=" w-screen overflow-x-hidden h-[100svh] overflow-y-auto snap-y snap-mandatory scroll-smooth bg-black text-white project-green">
   <Section id="hero"><Hero /></Section>
   <Section id="userflow"><Userflow /></Section>
   <Section id="Mindmap"><Mindmap /></Section>

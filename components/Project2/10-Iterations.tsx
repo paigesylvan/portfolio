@@ -2,27 +2,30 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import type { Variants } from "framer-motion";  // 👈 add this
 import SectionHeader from "../SectionHeader";
 
-const parent = (stagger = 0.12) => ({
+// 👇 type your variants
+const parent: Variants = {
   hidden: { opacity: 1 },
-  show: { opacity: 1, transition: { staggerChildren: stagger } },
-});
+  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
+};
 
-const item = (reduced: boolean) => ({
+// 👇 return typed Variants and coerce ease to a tuple (no string)
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.5, ease: "easeOut" },
+    transition: { duration: reduced ? 0 : 0.5, ease: [0.4, 0, 0.2, 1] },
   },
 });
 
 export default function Iterations() {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = (useReducedMotion() ?? false); // 👈 coerce to boolean
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white mt-20 lg:mt-36 lg:mt-0 pb-8 md:pb-10">
+    <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white mt-20 lg:mt-0 pb-8 md:pb-10">
       <div className="mx-auto w-full max-w-[780px] md:max-w-[820px]">
         <SectionHeader
           kicker="FINDINGS → REFINEMENTS"
@@ -32,7 +35,7 @@ export default function Iterations() {
 
         <motion.div
           className="mt-6 md:mt-8 grid gap-4 md:gap-6 md:grid-cols-2"
-          variants={parent()}
+          variants={parent}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
