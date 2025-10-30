@@ -42,3 +42,21 @@ a, button, [role="button"], [data-nextjs-dialog], [data-nextjs-toast] { cursor: 
 .project-yellow .accent-text { @apply text-[#FACC15]; }    
 .project-yellow .accent-bg   { @apply bg-[#FACC15]; }
 .project-yellow .accent-ring { @apply ring-[#FACC15]/30; }
+
+/* Make the background truly edge-to-edge, even during rubber-band scroll */
+html, body { height: 100%; background: #000; }
+
+/* iOS fallback when dvh isn't available */
+html, body { min-height: -webkit-fill-available; }
+
+/* A utility for full screen height that works on iOS + others */
+.min-h-screen-fix {
+  min-height: 100dvh;               /* dynamic viewport: includes URL bar changes */
+  min-height: 100svh;               /* fallback (Safari 15) */
+  min-height: -webkit-fill-available; /* legacy iOS fallback */
+}
+
+/* Safe-area helpers (top notch / bottom home indicator) */
+.pt-safe { padding-top: env(safe-area-inset-top); padding-top: constant(safe-area-inset-top); }
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); padding-bottom: constant(safe-area-inset-bottom); }
+
