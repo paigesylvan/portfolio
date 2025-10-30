@@ -8,7 +8,7 @@ export default function AboutFinalSection() {
     href.startsWith("http") || href.toLowerCase().endsWith(".pdf") || href.startsWith("/");
 
   return (
-    <section className="relative isolate w-full overflow-hidden py-28 md:py-40 text-white">
+    <section className="relative isolate w-full overflow-hidden text-white">
       {/* Background hues */}
       <div
         className="absolute inset-0 -z-20 pointer-events-none"
@@ -27,7 +27,7 @@ export default function AboutFinalSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[1100px] px-6">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 mt-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
           {/* LEFT: Text */}
           <div className="md:col-span-7">
@@ -39,7 +39,7 @@ export default function AboutFinalSection() {
           </div>
 
           {/* RIGHT: Icons */}
-          <div className="md:col-span-5 flex justify-center md:justify-end">
+          <div className="md:col-span-5 flex justify-center md:justify-end pb-12 lg:py-36">
             <ul className="flex flex-wrap md:flex-nowrap gap-6 md:gap-7">
               {[
                 { label: "Resume",  href: "/images/about-images/paigesylvan.pdf", icon: "file" },
