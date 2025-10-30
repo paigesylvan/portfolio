@@ -10,34 +10,24 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  viewportFit: "cover", // allows content to extend under Safari bars
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <head>
-        {/* Makes Safari & Android dark UI tint */}
-        <meta name="theme-color" content="#000000" />
-        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-      </head>
+<meta name="theme-color" content="#000000" />
+<meta name="theme-color bg-black" content="#000000" media="(prefers-color-scheme: dark)" />
 
-      <body className="h-full bg-black text-white antialiased overflow-x-hidden">
-        {/* Underlay ensures full black under top/bottom Safari bars */}
-        <div className="fixed inset-0 -z-50 bg-black pointer-events-none" />
+      <body className=" bg-black text-white antialiased overflow-x-hidden">
 
-        {/* Custom Cursor (desktop only) */}
         <div className="hidden md:block">
           <Cursor />
         </div>
-
-        {/* Header with safe-area padding so it doesn’t overlap status bar */}
-        <div className="pt-safe">
-          <Header />
-        </div>
-
-        {/* Main content with dynamic viewport height fix */}
-        <main className="min-h-screen-fix pb-safe">{children}</main>
+        <Header />
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
