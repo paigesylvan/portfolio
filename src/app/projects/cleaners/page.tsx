@@ -18,7 +18,7 @@ export default function DryCleanerPage() {
         bg-black text-white
         overflow-hidden
         overflow-x-hidden
-        snap-page pt-safe pb-safe
+
       "
     >
       <Section id="hero"><Hero /></Section>

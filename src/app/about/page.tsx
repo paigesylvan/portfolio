@@ -5,7 +5,7 @@ import Three from "../../../components/About/3";
 
 export default function AboutPage() {
   return (
-    <main className="bg-black text-white overflow-x-hidden snap-page pt-safe pb-safe">
+    <main className="bg-black text-white overflow-x-hidden snap-page ">
       <AboutHero />
       <TimelineAbout />
       <Three />
