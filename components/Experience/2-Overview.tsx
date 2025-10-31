@@ -73,15 +73,15 @@ export default function OverviewMWES() {
     <section className="project-yellow flex flex-col justify-center px-4 sm:px-6 py-10 md:py-16 text-white ml-88 mt-12 lg:mt-0">
       <div className="w-full flex justify-center">
         <div className="w-full max-w-[1200px] mx-auto">
-          <div className="text-center md:text-left mb-4 md:mb-6">
-            <SectionHeader
-              kicker="GETTING TO KNOW THE COMPANY"
-              title="Midwest Engineered Systems (MWES)"
-              align="left"
-              titleClassName="text-2xl lg:text-4xl"
-              kickerClassName="text-[10px] sm:text-[11px]"
-            />
-          </div>
+        <div className="text-center md:text-left mb-4 md:mb-6">
+          <SectionHeader
+          kicker="GETTING TO KNOW THE COMPANY"
+           title={<span data-nosnippet>Midwest Engineered Systems (MWES)</span>}
+          align="left"
+          titleClassName="text-2xl lg:text-4xl"
+          kickerClassName="text-[10px] sm:text-[11px]"
+          />
+        </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start md:items-center">
             {/* Left side */}
@@ -100,7 +100,7 @@ export default function OverviewMWES() {
 
               <div className="rounded-xl bg-white/[0.04] ring-1 ring-white/10 p-3 text-white/85 mt-4">
                 <p className="text-xs sm:text-sm">
-                  <span className="font-semibold accent-text">Note:</span> Due to an
+                  <span className="font-semibold accent-text" data-nosnippet>Note:</span> Due to an
                   ongoing NDA with MWES, client names are undisclosed.
                 </p>
               </div>

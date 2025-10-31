@@ -8,7 +8,7 @@ export default function ExperienceHero() {
       <div className="w-full max-w-[1200px] mx-auto text-center">
         <p className="text-[12px] tracking-[0.22em] text-amber-400"> EXPERIENCE </p>
         <h1 className="mt-2 text-xl lg:text-5xl">Software Engineer Internship</h1>
-        <p className="mt-6 text-sm lg:text-4xl text-white/85 leading-relaxed"> Midwest Engineered Systems </p>
+        <p className="mt-6 text-sm lg:text-4xl text-white/85 leading-relaxed"><span data-nosnippet>Midwest Engineered Systems</span> </p>
         <p className="mt-1 text-xs lg:text-xl text-white/85 leading-relaxed"> August 2024 – January 2025 </p>
 
         {/* Radial glow behind image */}

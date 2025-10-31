@@ -12,6 +12,7 @@ import Project3Part2 from "../../../components/Experience/8-Project3-2";
 import Project3Part3 from "../../../components/Experience/9-Project3-3";
 import Outcomes from "../../../components/Experience/10-Final";
 
+
 export default function ExperiencePage() {
   return (
     <main className="snap-page bg-black text-white project-yellow snap-page ">
