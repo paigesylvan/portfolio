@@ -1,4 +1,3 @@
-// components/Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -8,7 +7,6 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -20,7 +18,7 @@ export default function Header() {
     <header className="fixed inset-x-0 top-4 lg:top-10 z-50">
       <div className="mx-auto w-[92%] md:w-[85%]">
         <div className="flex items-center justify-between rounded-full ring-1 lg:ring-3 ring-slate-50 bg-black/10 backdrop-blur-sm px-5 py-1 lg:py-3  lg:px-12">
-          {/* Brand */}
+
           <Link
             href="/"
             className="text-white font-semibold tracking-wide lg:text-3xl hover:text-purple-400"
@@ -28,9 +26,8 @@ export default function Header() {
             PS
           </Link>
 
-          {/* Desktop navigation */}
+
           <nav className="hidden md:flex items-center gap-8 text-sm lg:text-md text-white/90">
-            {/* ✅ This now navigates properly to the homepage & scrolls */}
             <Link
               href="/#case-studies"
               className="uppercase tracking-[0.18em] hover:text-orange-500"
@@ -76,7 +73,6 @@ export default function Header() {
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop (click to close) */}
             <motion.button
               aria-label="Close menu"
               className="fixed inset-0 z-40 md:hidden bg-black/30"

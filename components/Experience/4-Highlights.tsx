@@ -1,4 +1,3 @@
-// components/Experience/4-Highlights.tsx
 "use client";
 
 import Image from "next/image";
@@ -8,8 +7,8 @@ import { motion, useReducedMotion } from "framer-motion";
 type Highlight = {
   title: string;
   body: string;
-  still: string; // static PNG/SVG
-  gif: string;   // animated GIF (plays on hover)
+  still: string; 
+  gif: string;   
   alt: string;
 };
 
@@ -108,7 +107,7 @@ export default function Experience() {
                 transition-colors hover:bg-white/[0.10]
               "
             >
-              {/* icon: swap to GIF on hover */}
+
               <div className="relative h-20 w-20">
                 {/* still */}
                 <Image
@@ -118,7 +117,7 @@ export default function Experience() {
                   height={160}
                   className="absolute inset-0 h-20 w-20 object-contain opacity-100 transition-opacity duration-200 group-hover:opacity-0"
                 />
-                {/* gif (kept unoptimized so it animates) */}
+                {/* animated gif */}
                 <Image
                   src={h.gif}
                   alt={h.alt}

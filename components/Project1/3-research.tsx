@@ -115,7 +115,7 @@ export default function ResearchInsights() {
         align="center"
       />
 
-      {/* Desktop: side-by-side with EXACT 100px gap + equal heights */}
+      {/* Desktop: side-by-side*/}
       <div
         className="
           mt-8 lg:mt-16 
@@ -123,7 +123,7 @@ export default function ResearchInsights() {
           md:items-stretch 
         "
       >
-        {/* LEFT: Insight card — takes ~58% */}
+        {/* left */}
         <div className=" md:basis-[58%] md:flex md:flex-col md:h-auto">
           <div
             className="
@@ -158,7 +158,7 @@ export default function ResearchInsights() {
           </div>
         </div>
 
-        {/* RIGHT: Donut column — takes ~42% and defines the total height */}
+        {/* right*/}
         <div
           className="
             md:basis-[42%]

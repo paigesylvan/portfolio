@@ -8,12 +8,12 @@ export default function FinalDesign() {
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-24 lg:mt-18 mb-8 lg:mb-0">
       <div className="max-w-[1100px] w-full mx-auto text-center md:text-left">
-        {/* Header */}
+
         <SectionHeader kicker="PROJECT OUTCOME" title="Final Design" align="center" />
 
-        {/* Content grid: video first on mobile, 2-col on desktop */}
+        {/* video first on mobile, 2-col on desktop */}
         <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-center">
-          {/* Video column (first in DOM so it shows above text on mobile) */}
+          {/* Video column  */}
           <div className="flex justify-center">
             <div className="rounded-2xl overflow-hidden">
               <video
@@ -29,7 +29,6 @@ export default function FinalDesign() {
             </div>
           </div>
 
-          {/* Text bubble */}
           <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] max-w-[380px] mx-auto md:mx-0">
             <p className="text-white/85 leading-tight text-[11px] md:text-[16px]">
               Iterative testing refined the booking experience, strengthened multi-dog
@@ -86,7 +85,7 @@ export default function FinalDesign() {
           </div>
         </div>
 
-        {/* Animated “Next Case Study” link */}
+        {/* Animated link */}
         <motion.div
           className="mt-20 md:mt-24 mb-6 text-center"
           initial={{ opacity: 0, y: 16 }}

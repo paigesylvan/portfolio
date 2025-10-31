@@ -23,7 +23,7 @@ export default function Project3Part2() {
   return (
     <section className="flex flex-col items-center justify-center px-4 text-white mt-18 lg:mt-36 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-        {/* ---------- GRID LAYOUT ---------- */}
+
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -31,7 +31,7 @@ export default function Project3Part2() {
           viewport={{ once: true, amount: 0.25 }}
           className="grid grid-cols-1 gap-8 md:grid-cols-12 md:auto-rows-[minmax(180px,auto)]"
         >
-          {/* TL: Large HMI screen */}
+
           <motion.div
             variants={item(prefersReduced)}
             className="md:col-span-6 rounded-2xl"
@@ -46,9 +46,8 @@ export default function Project3Part2() {
             />
           </motion.div>
 
-          {/* TR: Collaboration card + nav image */}
+
           <div className="md:col-span-6 flex flex-col gap-8">
-            {/* Collaboration card */}
             <motion.article
               variants={item(prefersReduced)}
               className="w-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
@@ -77,7 +76,6 @@ export default function Project3Part2() {
               </ul>
             </motion.article>
 
-            {/* Nav / menu image */}
             <motion.div variants={item(prefersReduced)} className="w-full">
               <Image
                 src="/images/experience-images/nav-menu.png"
@@ -89,7 +87,7 @@ export default function Project3Part2() {
             </motion.div>
           </div>
 
-          {/* BL: Problem Solving card */}
+
           <motion.article
             variants={item(prefersReduced)}
             className="md:col-span-6 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col"
@@ -138,7 +136,6 @@ export default function Project3Part2() {
             </div>
           </motion.article>
 
-          {/* BR: Large Conveyors HMI */}
           <motion.div variants={item(prefersReduced)} className="md:col-span-6">
             <Image
               src="/images/experience-images/conveyors.png"

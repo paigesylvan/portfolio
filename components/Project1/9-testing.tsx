@@ -7,14 +7,13 @@ export default function Testing() {
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-8 md:py-10 mt-20 md:mt-48 mb-8 lg:mb-0">
       <div className="max-w-[760px] w-full text-center mx-auto">
-        {/* ---------- HEADER ---------- */}
+
         <SectionHeader
           kicker="TESTING USABILITY"
           title="Design Evolution Through Iteration"
           align="center"
         />
 
-        {/* ---------- DESCRIPTION (polished) ---------- */}
         <div className="mx-auto mt-3 max-w-[620px] text-left">
           <p className="text-[10px] md:text-base text-white/75 leading-snug md:leading-snug">
           After developing low-fidelity prototypes, I conducted a moderated usability test with a participant representative 
@@ -23,7 +22,6 @@ export default function Testing() {
           and ensured the final design aligned with user needs and confidence in booking.
           </p>
 
-          {/* Positive signals */}
           <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
             Positive signals
           </h4>
@@ -32,7 +30,6 @@ export default function Testing() {
             <li>Scheduling for multiple dogs was perceived as valuable and intuitive.</li>
           </ul>
 
-          {/* Friction */}
           <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
             Identified friction
           </h4>
@@ -42,7 +39,6 @@ export default function Testing() {
             <li>Service information and messaging were not easily discoverable.</li>
           </ul>
 
-          {/* Changes */}
           <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
             Design adjustments based on insights
           </h4>
@@ -53,7 +49,6 @@ export default function Testing() {
           </ul>
         </div>
 
-        {/* ---------- EVOLUTION IMAGES ---------- */}
         <div className="mt-8 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 justify-items-center">
           {[
             {
@@ -93,7 +88,6 @@ export default function Testing() {
                 />
               </div>
 
-              {/* Captions */}
               <p className="mt-2 text-[9px] md:text-[10px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
                 {card.title}
               </p>

@@ -8,7 +8,6 @@ export default function OutcomeCamping() {
   return (
     <section className="px-8 md:px-6 text-white mt-12 lg:mt-0">
       <div className="mx-auto w-full max-w-[900px] py-12 md:py-16">
-        {/* Header */}
         <SectionHeader
           kicker="OUTCOME & RESULTS"
           title="A Simpler, More Trustworthy Camping Experience"
@@ -17,7 +16,7 @@ export default function OutcomeCamping() {
 
         {/* 2-column layout */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
-          {/* LEFT — Demo Video */}
+          {/* left - video */}
           <div className="lg:col-span-6 flex justify-center">
             <video
               src="/images/project2-images/elmnt-mobile-demo.mp4"
@@ -31,7 +30,7 @@ export default function OutcomeCamping() {
             />
           </div>
 
-          {/* RIGHT — Outcome + Next Steps */}
+          {/* right - outcome */}
           <div className="lg:col-span-6 mt-6 flex flex-col gap-6">
             {/* Outcome bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
@@ -105,7 +104,7 @@ export default function OutcomeCamping() {
           </div>
         </div>
 
-        {/* --- Animated Next Case Study Link --- */}
+        {/* next case link */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +113,7 @@ export default function OutcomeCamping() {
           className="mt-14 flex justify-center"
         >
           <Link
-            href="/projects/cleaners" // change this route
+            href="/projects/cleaners" 
             className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20  flex items-center gap-2 transition-all"
           >
             Next Case Study

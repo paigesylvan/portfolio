@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 
-/* ---------- CountUp ---------- */
+
 function CountUp({
   end,
   duration = 2000,
@@ -53,7 +53,7 @@ function CountUp({
   );
 }
 
-/* ----------------------------- Page Section ----------------------------- */
+
 export default function OverviewMWES() {
   const skills = useMemo(
     () => [
@@ -71,10 +71,8 @@ export default function OverviewMWES() {
 
   return (
     <section className="project-yellow flex flex-col justify-center px-4 sm:px-6 py-10 md:py-16 text-white ml-88 mt-12 lg:mt-0">
-      {/* added flex justify-center wrapper to center entire block */}
       <div className="w-full flex justify-center">
         <div className="w-full max-w-[1200px] mx-auto">
-          {/* Header (unchanged) */}
           <div className="text-center md:text-left mb-4 md:mb-6">
             <SectionHeader
               kicker="GETTING TO KNOW THE COMPANY"
@@ -85,7 +83,6 @@ export default function OverviewMWES() {
             />
           </div>
 
-          {/* Grid content */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start md:items-center">
             {/* Left side */}
             <div>

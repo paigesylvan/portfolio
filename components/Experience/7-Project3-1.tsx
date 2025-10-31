@@ -33,7 +33,7 @@ export default function Project3Part1() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-8"
         >
-          {/* ===== IMAGE 1 ===== */}
+
           <motion.div
             variants={item(prefersReduced)}
             className="order-1 md:order-2 md:col-span-7"
@@ -54,7 +54,7 @@ export default function Project3Part1() {
             </p>
           </motion.div>
 
-          {/* ===== TEXT 1 ===== */}
+
           <motion.article
             variants={item(prefersReduced)}
             className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
@@ -80,7 +80,7 @@ export default function Project3Part1() {
             </p>
           </motion.article>
 
-          {/* ===== IMAGE 2 ===== */}
+
           <motion.div
             variants={item(prefersReduced)}
             className="order-3 md:order-4 md:col-span-7"
@@ -99,7 +99,7 @@ export default function Project3Part1() {
             </p>
           </motion.div>
 
-          {/* ===== TEXT 2 ===== */}
+
           <motion.article
             variants={item(prefersReduced)}
             className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"

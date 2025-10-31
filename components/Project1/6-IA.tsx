@@ -7,19 +7,19 @@ export default function IA() {
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-10 md:py-14">
       <div className="w-full max-w-[850px] mx-auto">
-        {/* ---------- HEADER ---------- */}
+        {/* header */}
         <SectionHeader
           kicker="INFORMATION ARCHITECTURE"
           title="Turning Goals Into App Flows"
           align="center"
         />
 
-        {/* ---------- INTRO TEXT ---------- */}
+        {/* intro */}
         <p className="mx-auto mt-3 max-w-[300px] lg:max-w-4xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
           My focus was to make information easily accessible with clear navigation for effortless booking and browsing. The site map helps ensure that the structure of the app consistently addresses user needs uncovered in my research. 
         </p>
 
-        {/* ---------- IA IMAGE ---------- */}
+        {/* image */}
         <div className="mt-6 md:mt-8 flex flex-col items-center justify-center">
           <div className="w-full p-1.5 md:p-2 max-w-[620px] md:max-w-[700px]">
             <Image
@@ -33,7 +33,7 @@ export default function IA() {
             />
           </div>
 
-          {/* ---------- MOBILE-ONLY FULL VIEW BUTTON ---------- */}
+          {/* mobile button */}
           <a
             href="/images/project1-images/ia.png"
             target="_blank"

@@ -6,16 +6,15 @@ export default function FinalDesign() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white lg:mt-0">
       <div className="max-w-[1200px] w-full mx-auto text-center">
-        {/* Header */}
+
         <SectionHeader
           kicker="PROJECT OUTCOME"
           title="Final Design"
           align="center"
         />
 
-        {/* Video and Text wrapper */}
         <div className="flex flex-col-reverse md:flex-col items-center mt-8 gap-6">
-          {/* Text */}
+
           <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
           <p className="mx-auto max-w-3xl text-center text-white/85 text-[10px] md:text-md leading-tight px-6 lg:px-0">
             The final product is an intuitive and sleek e-commerce experience designed to help 
@@ -28,8 +27,6 @@ export default function FinalDesign() {
           </p>
           </div>
 
-
-          {/* Video Demo */}
           <div className="flex justify-center w-full">
             <div className="overflow-hidden max-w-[950px] w-full py-12 lg:py-0">
               <video

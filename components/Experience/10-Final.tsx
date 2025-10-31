@@ -24,7 +24,7 @@ export default function Outcome() {
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-24 lg:mt-16 mb-24 lg:mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-        {/* Header */}
+ 
         <div className="[&_h1]:mb-0 [&_h2]:mb-0 [&_p]:mb-0">
           <SectionHeader
             kicker="OUTCOME"
@@ -35,7 +35,7 @@ export default function Outcome() {
           />
         </div>
 
-        {/* CONTENT GRID */}
+
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -43,7 +43,7 @@ export default function Outcome() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-stretch"
         >
-          {/* LEFT — Text content */}
+ 
           <motion.div
             variants={item(prefersReduced)}
             className="flex flex-col justify-between text-white/85 text-[15px] leading-snug max-w-[62ch]"
@@ -72,7 +72,6 @@ export default function Outcome() {
               </p>
             </div>
 
-            {/* GOLD CTA — pushed down */}
             <div className="text-center md:text-left mt-10 md:mt-20">
               <h1 className="mx-auto max-w-[980px] text-[#D6A75E] font-semibold leading-snug text-base md:text-lg">
                 View the portion of the Project 3 Operations Manual I authored to guide

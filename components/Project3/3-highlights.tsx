@@ -9,7 +9,7 @@ export default function HighlightsDryCleaner() {
     <section className="flex py-10 md:py-12 text-white px-4 mt-8 lg:mt-12">
       <div className="mx-auto w-full max-w-[820px]">
         <div className="grid gap-8 md:gap-10 md:grid-cols-12 items-start">
-          {/* LEFT — phone mock */}
+          {/* Left */}
           <div className="md:col-span-5">
             <div className="mx-auto max-w-[250px] md:max-w-[300px]">
               <div className="rounded-[32px] bg-white/[0.03] p-3 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
@@ -25,7 +25,7 @@ export default function HighlightsDryCleaner() {
             </div>
           </div>
 
-          {/* RIGHT — three cards */}
+          {/* Right */}
           <div className="md:col-span-7 space-y-4 md:space-y-5 px-8">
             {/* Card 1 */}
             <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
@@ -67,7 +67,6 @@ export default function HighlightsDryCleaner() {
               </p>
             </div>
 
-            {/* CTA — Website Link */}
             <Link
               href="https://www.quickcleanersandlaundry.com"
               target="_blank"
@@ -100,7 +99,7 @@ export default function HighlightsDryCleaner() {
           </div>
         </div>
 
-        {/* --- Animated "View My Experience" Link --- */}
+        {/* View Experience Button */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +108,7 @@ export default function HighlightsDryCleaner() {
           className="mt-14 flex justify-center"
         >
           <Link
-            href="/experience" // adjust route if needed
+            href="/experience" 
             className="group text-[11px] sm:text-sm font-medium text-[#D6A75E] hover:text-white/20 flex items-center gap-2 transition-all"
           >
             View My Experience

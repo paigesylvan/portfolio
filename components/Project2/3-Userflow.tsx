@@ -1,4 +1,3 @@
-// components/Project2/UserFlow.tsx
 "use client";
 
 import Image from "next/image";
@@ -33,7 +32,7 @@ export default function UserFlow() {
           />
         </div>
 
-        {/* Mobile-only: view full image */}
+        {/* Mobile */}
         <a
           href="/images/project2-images/userflow.png"
           target="_blank"

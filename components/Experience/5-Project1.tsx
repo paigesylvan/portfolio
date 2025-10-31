@@ -87,7 +87,6 @@ export default function Project1() {
       <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
 
-        {/* ---------- HMI Screenshot ---------- */}
         <div className="lg:mt-12 flex flex-col items-center">
           <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)] w-full md:w-[80%]">
             <Image
@@ -105,7 +104,6 @@ export default function Project1() {
           </p>
         </div>
 
-        {/* ---------- Cards ---------- */}
         <motion.div
           variants={parent()}
           initial="hidden"

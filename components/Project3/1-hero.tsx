@@ -24,23 +24,17 @@ export default function HeroOverviewDryCleaner() {
     <section className="w-screen bg-black text-white flex flex-col justify-center  md:py-16">
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
 
-        {/* ---------- HEADER ---------- */}
+
         <div className="text-center">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
             title="How Clear Design Improves User Trust for a Local Dry Cleaner"
             align="center"
-            // omit accent for safety unless you have a 'drycleaner' variant
             kickerClassName="text-[7px] md:text-xs text-[#E6D6C3]"
             titleClassName="text-sm md:text-2xl lg:text-3xl max-w-[300px] lg:max-w-[600px] mx-auto mt-2"
           />
         </div>
 
-
-
-
-
-        {/* ---------- HERO IMAGE (DESKTOP MOCKUP) ---------- */}
         <div className="relative  flex items-end justify-center">
           <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:h-[600px]"
             style={{
@@ -75,9 +69,9 @@ export default function HeroOverviewDryCleaner() {
 
         </div>
 
-        {/* ---------- OVERVIEW ---------- */}
+        {/* overview */}
         <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
-          {/* LEFT — Project & Role */}
+          {/* left */}
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>
             <p className="mt-1 text-white/90">
@@ -90,7 +84,7 @@ export default function HeroOverviewDryCleaner() {
             </p>
           </div>
 
-          {/* RIGHT — Duration & Skills */}
+          {/* right */}
           <div className="mt-6 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">DURATION</p>
             <p className="mt-1 text-white/90">June 2025 – July 2025</p>
@@ -99,7 +93,7 @@ export default function HeroOverviewDryCleaner() {
               UX/UI SKILLSETS LEVERAGED
             </p>
 
-            {/* Skills chips */}
+            {/* Skills */}
             <div className="mt-2 space-y-2">
               <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {skillsRow1.map((t) => (

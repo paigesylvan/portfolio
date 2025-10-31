@@ -83,10 +83,8 @@ export default function Terms() {
                 flex flex-col text-left sm:text-center
               "
             >
-              {/* Mobile: horizontal bubble (image left, text right)
-                  Desktop: vertical stack (title -> image -> body) */}
+              {/* Mobile:  (image left, text right) Desktop: (title -> image -> body) */}
               <div className="flex items-start gap-3 sm:block">
-                {/* Image: fixed small on mobile, large on desktop */}
                 <div className="flex-none">
                   <Image
                     src={t.image}

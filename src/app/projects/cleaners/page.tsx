@@ -1,4 +1,3 @@
-// src/app/projects/dry-cleaner/page.tsx (or similar path)
 import Section from "../../../../components/section";
 
 import Hero from "../../../../components/Project3/1-hero";

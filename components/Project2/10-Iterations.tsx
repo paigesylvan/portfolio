@@ -2,16 +2,14 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import type { Variants } from "framer-motion";  // 👈 add this
+import type { Variants } from "framer-motion";  
 import SectionHeader from "../SectionHeader";
 
-// 👇 type your variants
 const parent: Variants = {
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: 0.12 } },
 };
 
-// 👇 return typed Variants and coerce ease to a tuple (no string)
 const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 20 },
   show: {
@@ -22,7 +20,7 @@ const item = (reduced: boolean): Variants => ({
 });
 
 export default function Iterations() {
-  const prefersReduced = (useReducedMotion() ?? false); // 👈 coerce to boolean
+  const prefersReduced = (useReducedMotion() ?? false); 
 
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white mt-20 lg:mt-0 mb-12 md:pb-10">
@@ -40,7 +38,7 @@ export default function Iterations() {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
         >
-          {/* ---------- HOMEPAGE CARD ---------- */}
+          {/* homepage card  */}
           <motion.article
             variants={item(prefersReduced)}
             className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-4 md:p-4 shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
@@ -55,7 +53,7 @@ export default function Iterations() {
               Added grid to Collections for quicker scanning and variety at a glance.
             </p>
 
-            {/* Side-by-side BEFORE / AFTER */}
+            {/* Side-by-side before and after */}
             <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 items-start">
               <figure className="flex flex-col">
                 <div className="rounded-xl ring-1 ring-white/10 bg-white/[0.03] overflow-hidden">
@@ -90,7 +88,7 @@ export default function Iterations() {
             </div>
           </motion.article>
 
-          {/* ---------- CHECKOUT CARD ---------- */}
+          {/* checkout card */}
           <motion.article
             variants={item(prefersReduced)}
             className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-4 md:p-4 shadow-[0_12px_40px_rgba(0,0,0,0.45)]"

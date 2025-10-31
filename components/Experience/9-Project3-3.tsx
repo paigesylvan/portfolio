@@ -23,7 +23,7 @@ export default function Project3Part3() {
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-20 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-        {/* ---------- Top: Two Cards ---------- */}
+
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -31,7 +31,7 @@ export default function Project3Part3() {
           viewport={{ once: true, amount: 0.25 }}
           className="grid grid-cols-1 gap-6 md:grid-cols-2"
         >
-          {/* Problem Solving */}
+
           <motion.article
             variants={item(prefersReduced)}
             className="h-full rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
@@ -61,7 +61,7 @@ export default function Project3Part3() {
             </div>
           </motion.article>
 
-          {/* Learning Experience */}
+
           <motion.article
             variants={item(prefersReduced)}
             className="h-full rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
@@ -92,7 +92,7 @@ export default function Project3Part3() {
           </motion.article>
         </motion.div>
 
-        {/* ---------- Bottom: Two Images ---------- */}
+
         <motion.div
           variants={parent(0.1)}
           initial="hidden"
@@ -100,7 +100,7 @@ export default function Project3Part3() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2"
         >
-          {/* Left: PLC Ladder */}
+    
           <motion.div
             variants={item(prefersReduced)}
             className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/[0.05] ring-1 ring-white/10"
@@ -115,7 +115,7 @@ export default function Project3Part3() {
             />
           </motion.div>
 
-          {/* Right: HMI Recipe Edit */}
+
           <motion.div
             variants={item(prefersReduced)}
             className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/[0.05] ring-1 ring-white/10"

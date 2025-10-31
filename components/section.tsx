@@ -13,7 +13,6 @@ export default function Section({
   return (
     <section
       id={id}
-      // Force full viewport width & center
       className={`w-screen min-w-screen max-w-none min-h-[100svh] snap-start flex items-center justify-center ${className}`}
     >
       {children}

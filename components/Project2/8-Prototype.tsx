@@ -1,4 +1,3 @@
-// components/Project2/7-prototypes.tsx
 "use client";
 
 import Image from "next/image";
@@ -15,9 +14,9 @@ export default function PrototypesCamping() {
           align="center"
         />
 
-        {/* Stack on mobile; side-by-side on desktop */}
+        {/*  mobile (coiumn)   desktop (row) */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 mb-12 lg:mb-0">
-          {/* ========== BUBBLE A ========== */}
+          {/* bubble 1 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +25,7 @@ export default function PrototypesCamping() {
             className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-3 md:p-4"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-start lg:items-center">
-              {/* --- MOBILE TITLES ABOVE IMAGE ONLY --- */}
+
               <div className="lg:hidden mb-2 order-1">
                 <p className="text-[10px] tracking-[0.22em] text-emerald-300">
                   HOMEPAGE PROTOTYPE
@@ -36,7 +35,7 @@ export default function PrototypesCamping() {
                 </h3>
               </div>
 
-              {/* IMAGE */}
+              {/* image */}
               <div className="order-2 lg:order-1">
                 <div className="relative w-full aspect-[3/4] md:aspect-[4/5] lg:h-[500px] overflow-hidden">
                   <Image
@@ -49,7 +48,7 @@ export default function PrototypesCamping() {
                 </div>
               </div>
 
-              {/* CONTENT */}
+              {/* content */}
               <aside className="order-3 lg:order-2 flex flex-col justify-between">
                 {/* DESKTOP TITLES */}
                 <div className="hidden lg:block">
@@ -74,7 +73,7 @@ export default function PrototypesCamping() {
             </div>
           </motion.div>
 
-          {/* ========== BUBBLE B ========== */}
+          {/* bubble b */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +82,7 @@ export default function PrototypesCamping() {
             className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-3 md:p-4"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-start lg:items-center">
-              {/* --- MOBILE TITLES ABOVE IMAGE ONLY --- */}
+              {/* --- mobile titles aboce images --- */}
               <div className="lg:hidden mb-2 order-1">
                 <p className="text-[10px] tracking-[0.22em] text-emerald-300">
                   PRODUCT PAGE PROTOTYPE
@@ -93,7 +92,7 @@ export default function PrototypesCamping() {
                 </h3>
               </div>
 
-              {/* IMAGE */}
+              {/* image */}
               <div className="order-2 lg:order-1">
                 <div className="relative w-full aspect-[3/4] md:aspect-[4/5] lg:h-[500px] overflow-hidden">
                   <Image
@@ -105,9 +104,9 @@ export default function PrototypesCamping() {
                 </div>
               </div>
 
-              {/* CONTENT */}
+              {/* content */}
               <aside className="order-3 lg:order-2 flex flex-col justify-between">
-                {/* DESKTOP TITLES */}
+   
                 <div className="hidden lg:block">
                   <p className="text-[10px] tracking-[0.22em] mb-1 text-emerald-300">
                     PRODUCT PAGE PROTOTYPE

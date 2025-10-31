@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function HomeAbout() {
   return (
     <section className="relative w-full px-6 py-14 text-white overflow-hidden mb-24">
-      {/* ✨ Mobile glow (centered) */}
+      {/* Mobile glow */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,8 +34,7 @@ export default function HomeAbout() {
         }}
       />
 
-      {/* ✨ Desktop glow (shifted right) */}
-{/* ✨ Desktop glow (shifted right with outer blue tone) */}
+      {/* Desktop glow */}
 <motion.div
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
@@ -65,7 +64,7 @@ export default function HomeAbout() {
 
 
       <div className="relative z-10 mx-auto max-w-[1100px] grid md:grid-cols-2 gap-10 items-center">
-        {/* LEFT — Text */}
+        {/* Left */}
         <div className="text-center md:text-left order-2 md:order-1 flex flex-col items-center md:items-start">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             Product Designer & UX/UI Developer
@@ -82,7 +81,7 @@ export default function HomeAbout() {
             Open to: Full-time Product Designer or UX/UI roles • Wisconsin • Remote-friendly
           </p>
 
-          {/* MOBILE BUTTON */}
+          {/* Mobile Button */}
           <Link
             href="/about"
             className="md:hidden group inline-flex items-center gap-2 mt-2 rounded-full px-5 py-2.5 font-medium text-white text-[13px] bg-white/[0.06] backdrop-blur-md shadow-[0_3px_10px_rgba(0,0,0,0.3)] border border-white/10 transition-all duration-300 hover:bg-white/[0.15] hover:shadow-[0_5px_16px_rgba(0,0,0,0.45)] focus-visible:ring-2 focus-visible:ring-white/40"
@@ -99,7 +98,7 @@ export default function HomeAbout() {
             </span>
           </Link>
 
-          {/* DESKTOP BUTTON */}
+          {/* Desktop Button */}
           <Link
             href="/about"
             className="hidden md:inline-flex items-center gap-2 mt-6 rounded-full px-5 py-2.5 font-medium text-white text-[13px] bg-white/[0.06] backdrop-blur-md shadow-[0_3px_10px_rgba(0,0,0,0.3)] border border-white/10 transition-all duration-300 hover:bg-white/[0.15] hover:shadow-[0_5px_16px_rgba(0,0,0,0.45)] focus-visible:ring-2 focus-visible:ring-white/40"
@@ -117,7 +116,7 @@ export default function HomeAbout() {
           </Link>
         </div>
 
-        {/* RIGHT — Image */}
+        {/* Right */}
         <div className="flex justify-center order-1 md:order-2">
           <div className="rounded-xl overflow-hidden relative z-10">
             <Image

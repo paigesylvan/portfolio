@@ -3,7 +3,6 @@
 import Link from "next/link";
 
 export default function AboutFinalSection() {
-  // Open in new tab for external links or PDFs, not for mailto/tel
   const shouldOpenInNewTab = (href: string) =>
     href.startsWith("http") || href.toLowerCase().endsWith(".pdf") || href.startsWith("/");
 
@@ -29,7 +28,7 @@ export default function AboutFinalSection() {
 
       <div className="relative z-10 mx-auto max-w-[1100px] px-6 mt-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
-          {/* LEFT: Text */}
+          {/* Left Text */}
           <div className="md:col-span-7">
             <h3 className="text-[11px] tracking-[0.25em] text-white/60">CURRENTLY SEEKING</h3>
             <p className="mt-3 text-white/90 text-lg md:text-xl leading-relaxed max-w-[640px]">
@@ -38,7 +37,7 @@ export default function AboutFinalSection() {
             </p>
           </div>
 
-          {/* RIGHT: Icons */}
+          {/* Right Icons */}
           <div className="md:col-span-5 flex justify-center md:justify-end pb-12 lg:py-36">
             <ul className="flex flex-wrap md:flex-nowrap gap-6 md:gap-7">
               {[

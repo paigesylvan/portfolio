@@ -1,15 +1,9 @@
 "use client";
 
-import SectionHeader from "../SectionHeader"; // if you want to center a big header later
-
-const skillset1 = ["RESEARCH", "USER INTERVIEWS", "UI CREATION", "RESPONSIVE DESIGN"];
-const tools = ["VS CODE", "REACT", "TAILWIND CSS", "VERCEL"];
-
 export default function OverviewDryCleaner() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
 
-        {/* Company / charcoal bubble */}
         <div className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] max-w-6xl">
           <div className="px-6 py-8 md:px-10 md:py-10">
             <p className="text-[11px] tracking-[0.22em] accent-text">

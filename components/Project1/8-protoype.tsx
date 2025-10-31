@@ -1,4 +1,3 @@
-// components/Project1/10-prototype.tsx
 "use client";
 
 import Image from "next/image";
@@ -19,9 +18,9 @@ export default function Prototype() {
           Connecting the pages helped validate navigation, booking flows, and onboarding interactions before moving into high-fidelity UI design. 
         </p>
 
-{/* Two prototypes (Onboarding & Booking) */}
+{/* Two prototypes */}
 <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
-  {/* Onboarding Flow — 1/3 width */}
+  {/* Onboarding flow*/}
   <div className="flex flex-col items-center md:col-span-1">
     <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
       <div className="relative w-full h-[260px] sm:h-[320px] md:h-[340px] overflow-hidden rounded-xl">
@@ -43,7 +42,7 @@ export default function Prototype() {
     </p>
   </div>
 
-  {/* Booking Flow — 2/3 width */}
+  {/* Booking Flow*/}
   <div className="flex flex-col items-center md:col-span-2">
     <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
       <div className="relative w-full aspect-[3/2] md:h-[340px] overflow-hidden rounded-xl">

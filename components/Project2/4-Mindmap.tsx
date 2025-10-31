@@ -35,7 +35,7 @@ export default function MindMap() {
           </div>
         </div>
 
-        {/* Mobile-only: View Full Image */}
+        {/* Mobile */}
         <a
           href="/images/project2-images/mindmap.png"
           target="_blank"

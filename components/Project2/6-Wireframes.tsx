@@ -47,7 +47,7 @@ export default function Wireframes() {
           early in the flow. Each frame experimented with ways to balance product discovery and clarity without clutter.
         </p>
 
-        {/* Grid: smaller scale, 3 cols on desktop */}
+        {/* Grid, 3 cols on desktop */}
         <motion.div
           className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 justify-items-center"
           variants={parent()}

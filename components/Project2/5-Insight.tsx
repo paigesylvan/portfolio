@@ -72,7 +72,6 @@ export default function KeyInsights() {
           accent="camp"
         />
 
-        {/* ---------- New blurb added here ---------- */}
         <p className="text-center text-[10px] sm:text-sm md:text-md text-white/70 leading-snug max-w-[300px] lg:max-w-[780px] mx-auto mt-3">
           User journeys and mind mapping helped identify where first-time campers felt
           uncertain or overwhelmed. These methods revealed core pain points and guided

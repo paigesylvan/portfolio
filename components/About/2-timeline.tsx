@@ -26,11 +26,7 @@ const clamp = (v: number, min: number, max: number) =>
 
 export default function TimelineAbout() {
   const prefersReduced = useReducedMotion() ?? false;
-
-  // The section that owns the absolute lines
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  // Detect the *real* scroll container and keep it reactive
   const [scrollHost, setScrollHost] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -48,9 +44,7 @@ export default function TimelineAbout() {
   const [containerHeight, setContainerHeight] = useState(0);
   const [segmentTop, setSegmentTop] = useState(0);
   const [segmentLen, setSegmentLen] = useState(0);
-
-  // responsive offset for mobile vs desktop
-  const [startOffset, setStartOffset] = useState(100); // default desktop offset
+  const [startOffset, setStartOffset] = useState(100); 
 
   useLayoutEffect(() => {
     const mq = window.matchMedia("(max-width: 767.98px)");
@@ -66,7 +60,6 @@ export default function TimelineAbout() {
 
   const [lineEndPx, setLineEndPx] = useState<number | null>(null);
 
-  // Measure positions relative to the *scroll container*, not always window
   const measure = useCallback(() => {
     if (!containerRef.current || !scrollHost) return;
 
@@ -76,7 +69,6 @@ export default function TimelineAbout() {
 
     const rect = containerRef.current.getBoundingClientRect();
 
-    // Absolute top of container relative to host scroll origin
     const hostRect =
       host === document.documentElement ? { top: 0 } : host.getBoundingClientRect();
 
@@ -85,7 +77,6 @@ export default function TimelineAbout() {
     setContainerTopAbs(absTop);
     setContainerHeight(containerRef.current.scrollHeight);
 
-    // Find the last timeline row and compute its center
     const rows =
       containerRef.current.querySelectorAll<HTMLElement>("[data-timeline-row]");
     if (rows.length) {
@@ -96,19 +87,16 @@ export default function TimelineAbout() {
     }
   }, [scrollHost]);
 
-  // Bind measure to both window and host (so window-scroll pages work)
   useLayoutEffect(() => {
     if (!scrollHost) return;
     measure();
 
     const onResize = () => measure();
     const onScrollAny = () => measure();
-
-    // always listen on window
+    
     window.addEventListener("resize", onResize, { passive: true });
     window.addEventListener("scroll", onScrollAny, { passive: true });
 
-    // and also on host if it’s a separate scroller
     if (scrollHost !== document.documentElement) {
       scrollHost.addEventListener("scroll", onScrollAny, { passive: true });
     }
@@ -122,7 +110,6 @@ export default function TimelineAbout() {
     };
   }, [scrollHost, measure]);
 
-  // Drive the fill segment from the host's/ window's scroll position
   useEffect(() => {
     if (!containerRef.current || !scrollHost) return;
 
@@ -164,7 +151,6 @@ export default function TimelineAbout() {
       setSegmentLen(nextLen);
     };
 
-    // initial + listeners
     compute();
 
     const onScrollAny = () => compute();
@@ -245,8 +231,8 @@ export default function TimelineAbout() {
       </div>
 
       <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">
-        {/* ===== Timeline Spine(s) ===== */}
-        {/* Mobile: LEFT-ALIGNED spine */}
+
+        {/* Mobile Spine */}
         <div
           className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden z-20 mix-blend-normal"
           style={{ top: 0, height: lineEndPx ? `${lineEndPx}px` : "100%" }}
@@ -256,7 +242,7 @@ export default function TimelineAbout() {
           style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
         />
 
-        {/* Desktop: CENTER spine */}
+        {/* Desktop Spine */}
         <div
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block z-20 mix-blend-normal"
           style={{ top: "100px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
@@ -286,7 +272,7 @@ export default function TimelineAbout() {
   );
 }
 
-/* ------------------------- TIMELINE ROW ------------------------- */
+
 function TimelineRow({
   item,
   prefersReduced,
@@ -309,7 +295,6 @@ function TimelineRow({
   const [idx, setIdx] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
-  // Stable memo for "is the document the scroller?"
   const isDoc = useMemo(
     () =>
       !scrollHost ||
@@ -318,7 +303,6 @@ function TimelineRow({
     [scrollHost]
   );
 
-  // Stable callbacks for host measurements
   const getHostScrollTop = useCallback(
     () => (isDoc ? window.scrollY : (scrollHost as HTMLElement).scrollTop),
     [isDoc, scrollHost]
@@ -334,16 +318,15 @@ function TimelineRow({
     [isDoc, scrollHost]
   );
 
-  // --- ACTIVE band calc (use host for viewport center & attach listeners to host)
   useEffect(() => {
     let raf = 0;
     const el = rowRef.current;
     if (!el) return;
 
     const calc = () => {
-      const rect = el.getBoundingClientRect(); // viewport coords
-      const vpCenter = getHostRectTop() + getHostClientHeight() / 2; // host viewport center
-      const rowCenter = rect.top + rect.height / 2; // viewport coords
+      const rect = el.getBoundingClientRect(); 
+      const vpCenter = getHostRectTop() + getHostClientHeight() / 2; 
+      const rowCenter = rect.top + rect.height / 2; 
       setIsActive(Math.abs(rowCenter - vpCenter) <= ACTIVE_BAND_PX);
     };
 
@@ -368,7 +351,6 @@ function TimelineRow({
     };
   }, [getHostClientHeight, getHostRectTop, isDoc, scrollHost]);
 
-  // Cycle images when active
   useEffect(() => {
     if (prefersReduced || !isActive || (item.images?.length ?? 0) < 2) return;
     const t = setInterval(
@@ -378,7 +360,6 @@ function TimelineRow({
     return () => clearInterval(t);
   }, [prefersReduced, isActive, item.images, item.cycleMs]);
 
-  // --- Dot fill calc: compute row center ABSOLUTE to the host scroll origin
   useLayoutEffect(() => {
     const el = rowRef.current;
     if (!el) return;
@@ -428,8 +409,8 @@ function TimelineRow({
       viewport={{ once: false, amount: 0.25 }}
       className="relative grid items-center gap-6 md:gap-8 md:grid-cols-12 pl-8 md:pl-0"
     >
-      {/* ===== Dots ===== */}
-      {/* Mobile: slightly right of the line */}
+      
+      {/* Mobile Dots */}
       <div
         aria-hidden
         className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center mix-blend-normal"
@@ -441,7 +422,7 @@ function TimelineRow({
         />
       </div>
 
-      {/* Desktop: centered dot */}
+      {/* Desktop Dots */}
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] hidden md:flex items-center justify-center mix-blend-normal"

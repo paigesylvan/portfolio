@@ -85,9 +85,8 @@ export default function Project2() {
       <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
         <SectionHeader kicker="PROJECT 2" title="ASRS Project" align="left" />
 
-        {/* ---------- IMAGES ---------- */}
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {/* Left: HMI screen */}
+          {/* left */}
           <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)]">
             <Image
               src="/images/experience-images/asrs-hmi.png"
@@ -105,7 +104,7 @@ export default function Project2() {
             </p>
           </div>
 
-          {/* Right: scripting/editor */}
+          {/* right */}
           <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)]">
             <Image
               src="/images/experience-images/asrs-script.png"
@@ -123,7 +122,6 @@ export default function Project2() {
           </div>
         </div>
 
-        {/* ---------- CARDS ---------- */}
         <motion.div
           variants={parent()}
           initial="hidden"

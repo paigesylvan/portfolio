@@ -7,7 +7,7 @@ export default function HeroOverviewCamping() {
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14 lg:mt-[50px]">
       <div className="mx-auto w-full max-w-[950px] px-4 md:px-6">
-        {/* ---------- HEADER ---------- */}
+
         <div className="text-center">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE DESIGN"
@@ -18,27 +18,16 @@ export default function HeroOverviewCamping() {
             titleClassName="text-sm md:text-xl lg:text-2xl max-w-[600px] mx-auto mt-2"
           />
         </div>
-{/* STRONG GREEN GLOW FIELD BEHIND PHONES */}
 
-
-        {/* ---------- HERO IMAGE ---------- */}
         <div className="relative mt-6 md:mt-8 flex items-end justify-center">
-       
- 
-          <div
-          className="absolute inset-0 z-1 pointer-events-none
+          <div className="absolute inset-0 z-1 pointer-events-none
             left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
             w-[400px] h-[100px]
             lg:w-[800px] lg:h-[800px]"
           style={{
           background: [
-          // Core vibrant green pulse behind devices
           "radial-gradient(400px 300px at 50% 55%, rgba(0,255,150,0.85) 0%, rgba(0,255,150,0.38) 45%, rgba(0,0,0,0) 75%)",
-
-          // Lime-green spread upward and outward
           "radial-gradient(800px 400px at 48% 60%, rgba(80,255,180,0.26) 0%, rgba(80,255,180,0.12) 48%, rgba(0,0,0,0) 80%)",
-
-          // Emerald depth around the lower edges for richness
           "radial-gradient(500px 400px at 40% 72%, rgba(0,180,120,0.22) 0%, rgba(0,180,120,0.10) 44%, rgba(0,0,0,0) 78%)",
           ].join(", "),
           filter: "blur(80px)",
@@ -56,9 +45,9 @@ export default function HeroOverviewCamping() {
           />
         </div>
 
-        {/* ---------- OVERVIEW ---------- */}
+        {/* overview */}
         <div className="mt-8 grid md:grid-cols-2 md:gap-6 md:items-start text-[11px] md:text-[12px] leading-snug">
-          {/* LEFT — Project & Role */}
+          {/* left */}
           <div>
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">PROJECT</p>
             <p className="mt-1 text-white/90">
@@ -71,7 +60,7 @@ export default function HeroOverviewCamping() {
             </p>
           </div>
 
-          {/* RIGHT — Duration & Skills */}
+          {/* right */}
           <div className="mt-5 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">DURATION</p>
             <p className="mt-1 text-white/90">May 2025 – July 2025</p>
@@ -81,7 +70,7 @@ export default function HeroOverviewCamping() {
             </p>
 
             <div className="mt-2 space-y-2">
-              {/* Row 1 */}
+
               <div className="flex flex-wrap justify-start gap-1.5 md:gap-2">
                 {["RESEARCH", "USER FLOWS", "USABILITY TESTING", "SKETCHING"].map((t) => (
                   <span
@@ -93,7 +82,6 @@ export default function HeroOverviewCamping() {
                 ))}
               </div>
 
-              {/* Row 2 */}
               <div className="flex flex-wrap justify-start gap-1.5 md:gap-2">
                 {["WIREFRAMING", "PROTOTYPING", "RESPONSIVE DESIGN", "UI CREATION"].map((t) => (
                   <span

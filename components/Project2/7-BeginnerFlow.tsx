@@ -13,7 +13,7 @@ export default function BeginnerFlow() {
           title="Turning Complexity into Clarity "
           align="center"
         />
-        {/* Title & copy */}
+
         <div className="mb-6 md:mb-8 flex justify-center">
           <p className="mt-3 max-w-3xl mx-auto text-white/85 text-xs sm:text-sm md:text-md leading-snug lg:leading-relaxed text-center">
           After my user research, my goal was to simplify the layout, curating gear selections,
@@ -23,8 +23,6 @@ export default function BeginnerFlow() {
           </p>
         </div>
 
-
-        {/* Image card */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
