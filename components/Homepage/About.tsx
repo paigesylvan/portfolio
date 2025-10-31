@@ -49,11 +49,11 @@ export default function HomeAbout() {
     background: `
       radial-gradient(
         480px 380px at center,
-        rgba(238,100,160,0.50) 5%,   /* pink core */
-        rgba(140,90,255,0.30) 25%,   /* violet mid */
-        rgba(60,160,255,0.35) 35%,   /* blue outer mid */
-        rgba(0,230,190,0.95) 55%,      /* 💎 vibrant teal edge */
-        rgba(0,230,190,0.60) 70%,      /* extended teal halo */
+        rgba(238,100,160,0.50) 5%,   
+        rgba(140,90,255,0.30) 25%, 
+        rgba(60,160,255,0.35) 35%,  
+        rgba(0,230,190,0.95) 55%,  
+        rgba(0,230,190,0.60) 70%,   
         rgba(0,0,0,0) 100%   
       )
     `,
