@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
+import { LazyMotion, domAnimation, MotionConfig, m, useReducedMotion } from "framer-motion";
 
 type Study = {
   slug: string;
@@ -50,87 +50,103 @@ const studies: Study[] = [
 export default function CaseStudies() {
   const reduce = useReducedMotion();
 
-  const reveal = {
-    hidden: { opacity: 0, y: reduce ? 0 : 20 },
-    show:   { opacity: 1, y: 0, transition: { duration: reduce ? 0 : 0.35, ease: "easeOut" } },
+  const easeOut = [0.22, 1, 0.36, 1] as const;
+
+  const card = {
+    hidden: { opacity: 0, y: reduce ? 0 : 14, scale: reduce ? 1 : 0.98 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: reduce
+        ? { duration: 0 }
+        : { duration: 0.5, ease: easeOut, staggerChildren: 0.06, when: "beforeChildren" },
+    },
+  };
+
+  const piece = {
+    hidden: { opacity: 0, y: reduce ? 0 : 10 },
+    show: { opacity: 1, y: 0, transition: reduce ? { duration: 0 } : { duration: 0.45, ease: easeOut } },
+  };
+
+  const imageWrap = {
+    hidden: { opacity: 0, y: reduce ? 0 : 10, scale: reduce ? 1 : 0.985 },
+    show:   { opacity: 1, y: 0, scale: 1, transition: reduce ? { duration: 0 } : { duration: 0.5, ease: easeOut } },
   };
 
   return (
     <section id="case-studies" className="relative mt-20 overflow-hidden text-white full-bleed">
-      {/* bottom glow (no blur/filter) */}
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[22vh] pointer-events-none z-0" />
 
       <h2 className="py-6 text-center text-[13px] tracking-[0.3em] text-white">CASE STUDIES</h2>
 
       <LazyMotion features={domAnimation}>
-        <div className="space-y-10 lg:space-y-16 pb-36 lg:mb-48">
-          {studies.map((s, idx) => (
-            <m.article
-              key={s.slug}
-              variants={reveal}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.4 }}
-              className="case-card group"
-            >
-              <div className="grid items-center gap-6 md:grid-cols-12">
-                {/* image */}
-                <div className="md:col-span-5">
-                  <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
-                    <div className="relative">
-                      <Image
-                        src={s.image}
-                        alt={s.imageAlt}
-                        width={1200}
-                        height={900}
-                        sizes="(min-width: 768px) 300px, 220px"
-                        className="h-[180px] w-auto md:h-[300px] object-contain"
-                        priority={idx === 0}
-                      />
-                      <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+        <MotionConfig reducedMotion="user">
+          <div className="space-y-10 lg:space-y-16 pb-36 lg:mb-48">
+            {studies.map((s, idx) => (
+              <m.article
+                key={s.slug}
+                variants={card}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.35, margin: "0px 0px -10% 0px" }}
+                className="case-card group transform-gpu will-change-transform"
+              >
+                <div className="grid items-center gap-6 md:grid-cols-12">
+                  {/* image */}
+                  <m.div variants={imageWrap} className="md:col-span-5">
+                    <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
+                      <div className="relative">
+                        <Image
+                          src={s.image}
+                          alt={s.imageAlt}
+                          width={1200}
+                          height={900}
+                          sizes="(min-width: 768px) 300px, 220px"
+                          className="h-[180px] w-auto md:h-[300px] object-contain"
+                          priority={idx === 0}
+                        />
+                        <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+                      </div>
                     </div>
+                  </m.div>
+
+                  {/* text */}
+                  <div className="md:col-span-7 lg:pl-12 pl-4">
+                    <m.div variants={piece} className="mb-3 flex flex-wrap gap-1 lg:gap-2">
+                      {s.tags.map((t) => (
+                        <span key={t} className="chip">{t}</span>
+                      ))}
+                    </m.div>
+
+                    <m.h3 variants={piece} className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]">
+                      {s.title}
+                    </m.h3>
+
+                    <m.p variants={piece} className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight">
+                      {s.subtitle}
+                    </m.p>
+
+                    <m.div variants={piece}>
+                      <Link href={s.slug} className="cta-btn group mt-6">
+                        <span>{s.cta ?? "View Case Study"}</span>
+                        <span className="cta-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                               fill="none" stroke="currentColor" strokeWidth="2"
+                               strokeLinecap="round" strokeLinejoin="round"
+                               className="w-3.5 h-3.5">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                          </svg>
+                        </span>
+                      </Link>
+                    </m.div>
                   </div>
                 </div>
-
-                {/* text */}
-                <div className="md:col-span-7 lg:pl-12 pl-4">
-                  <div className="mb-3 flex flex-wrap gap-1 lg:gap-2">
-                    {s.tags.map((t) => (
-                      <span key={t} className="chip">{t}</span>
-                    ))}
-                  </div>
-
-                  <h3 className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]">
-                    {s.title}
-                  </h3>
-
-                  <p className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight">
-                    {s.subtitle}
-                  </p>
-
-                  <Link href={s.slug} className="cta-btn group mt-6">
-                    <span>{s.cta ?? "View Case Study"}</span>
-                    <span className="cta-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-3.5 h-3.5"
-                      >
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            </m.article>
-          ))}
-        </div>
+              </m.article>
+            ))}
+          </div>
+        </MotionConfig>
       </LazyMotion>
     </section>
   );

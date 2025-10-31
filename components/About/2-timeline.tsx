@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   useRef,
   useState,
@@ -437,28 +437,15 @@ function TimelineRow({
       {/* Image */}
       <div className="md:col-span-5">
         <div className="relative w-full h-[220px] sm:h-[260px] md:h-[420px] overflow-hidden rounded-xl">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={currentSrc}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: prefersReduced ? 0 : 0.9,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-              className="absolute inset-0"
-            >
-              <Image
-                src={currentSrc}
-                alt={item.imageAlt}
-                fill
-                sizes="(min-width: 768px) 600px, 100vw"
-                className="object-cover"
-                priority={priority}
-              />
-            </motion.div>
-          </AnimatePresence>
+        <Image
+  src={item.images[0] ?? "/images/placeholder.png"}
+  alt={item.imageAlt}
+  fill
+  sizes="(min-width: 768px) 600px, 100vw"
+  className="object-cover"
+  priority={priority}
+/>
+
         </div>
       </div>
 
