@@ -30,7 +30,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8 text-sm lg:text-md text-white/90">
             <Link
               href="/#case-studies"
-              className="uppercase tracking-[0.18em] hover:text-orange-500"
+              className="uppercase tracking-[0.18em] hover:text-orange-400"
             >
               Case Studies
             </Link>

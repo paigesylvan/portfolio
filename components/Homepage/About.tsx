@@ -43,7 +43,7 @@ export default function HomeAbout() {
   style={{
     width: "300px",
     height: "320px",
-    left: "63%",
+    left: "65%",
     top: "45%",
     transform: "translate(-50%, -40%)",
     background: `
@@ -57,7 +57,7 @@ export default function HomeAbout() {
         rgba(0,0,0,0) 100%   
       )
     `,
-    filter: "blur(70px)",
+    filter: "blur(95px)",
     opacity: 1,
   }}
 />
@@ -71,10 +71,7 @@ export default function HomeAbout() {
           </h2>
 
           <p className="text-white/85 leading-relaxed max-w-[480px] mx-auto md:mx-0 mb-6 text-[14px] md:text-[15px]">
-            Paige Sylvan is a product designer and UX/UI developer who creates clean,
-            intuitive digital experiences that connect users, visuals, and behavior.
-            Focused on improving everyday interactions through thoughtful design and
-            modern engineering practices.
+          I’m a product designer and UX/UI developer who creates clean, intuitive digital experiences that connect users, visuals, and behavior. I focus on improving everyday interactions through thoughtful design and modern development practices.
           </p>
 
           <p className="text-[11px] uppercase tracking-wide text-white/60 mb-6 md:mb-0">
