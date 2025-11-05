@@ -219,7 +219,7 @@ export default function TimelineAbout() {
       heading: "Present Day",
       subheading: "Product Design + UX/UI Design",
       body:
-        "From my experience at my internship I discovered my true interest, which I realize correlated into everything I have been lead to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course to solidify my skills and polish two project case studies.",
+        "From my experience at my internship I discovered my true interest, which I realize correlated into everything I have been led to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course to solidify my skills and polish two project case studies.",
     },
   ];
 
