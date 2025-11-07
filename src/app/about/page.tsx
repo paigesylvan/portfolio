@@ -1,4 +1,4 @@
-import AboutHero from "../../../components/About/1-hero"; 
+import AboutHero from "../../../components/About/1-hero";  
 import TimelineAbout from "../../../components/About/2-timeline";
 import Three from "../../../components/About/3";
 

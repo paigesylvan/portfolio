@@ -1,8 +1,27 @@
 "use client";
+import { useState } from "react";
+import Image from "next/image";
+
+
+
+const items = [
+  { src: "/images/about-images/about-1.JPG", label: "Traveling — China 2018" },
+  { src: "/images/about-images/about-2.jpeg", label: "Holiday baking joy" },
+  { src: "/images/about-images/about-3.jpeg", label: "Milwaukee Bucks fan & raffle winner" },
+  { src: "/images/about-images/about-4.jpeg", label: "New love for gardening" },
+  { src: "/images/about-images/about-5.jpeg", label: "Always crafting something" },
+  { src: "/images/about-images/about-6.png", label: "Adventures with Sadie" },
+];
+
 
 export default function AboutHero() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
+  };
   return (
-    <section className="relative isolate flex items-center justify-center px-6 bg-black text-white overflow-hidden h-[900px] mb-36">
+    <section className="relative isolate flex items-center justify-center px-6 bg-black text-white overflow-hidden pt-36">
       {/* Glow */}
       <div
         className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none -z-10"
@@ -45,6 +64,48 @@ export default function AboutHero() {
         🎟️ 🥢 🏀 🌮 🎨 🎾 🌱 🌍 🌊  ☕ 🎲 🐶
                      
         </p>
+
+        <div className="mx-auto w-full mt-12 ">
+
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-36">
+          {items.map((item, index) => {
+            const isActive = activeIndex === index;
+
+            return (
+              <button
+                key={index}
+                type="button"
+                onClick={() => handleToggle(index)}
+                className="relative group aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 focus:outline-none"
+              >
+                {/* Image */}
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  fill
+                  className={`object-cover transition-all duration-300
+                    ${isActive ? "blur-sm scale-105 brightness-75" : "scale-100"}
+                    group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75
+                  `}
+                />
+
+                {/* Overlay */}
+                <div
+                  className={`
+                    absolute inset-0 flex items-center justify-center px-2 text-center
+                    text-[9px] xs:text-xs sm:text-sm md:text-base font-medium
+                    transition-opacity duration-300
+                    ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
+                    bg-black/40 backdrop-blur-sm
+                  `}
+                >
+                  {item.label}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
       </div>
     </section>
