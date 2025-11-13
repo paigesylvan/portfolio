@@ -7,10 +7,10 @@ import Image from "next/image";
 const items = [
   { src: "/images/about-images/about-1.JPG", label: "Exploring new places; China 2018" },
   { src: "/images/about-images/about-2.jpeg", label: "Holiday baking joy" },
-  { src: "/images/about-images/about-3.jpeg", label: "Milwaukee Bucks fan & raffle winner" },
-  { src: "/images/about-images/about-4.jpeg", label: "New love for gardening" },
-  { src: "/images/about-images/about-5.jpeg", label: "Always crafting something" },
-  { src: "/images/about-images/about-6.png", label: "Adventures with Sadie" },
+  { src: "/images/about-images/about-3.jpeg", label: "Milwaukee Bucks fan & 50/50 raffle winner" },
+  { src: "/images/about-images/about-4.jpeg", label: "Summer gardening hobbyr" },
+  { src: "/images/about-images/about-5.jpeg", label: "Crafting handmade gifts" },
+  { src: "/images/about-images/about-6.png", label: "Adventures with my dog, Sadie" },
 ];
 
 
