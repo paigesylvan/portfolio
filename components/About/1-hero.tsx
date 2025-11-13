@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 const items = [
-  { src: "/images/about-images/about-1.JPG", label: "Traveling — China 2018" },
+  { src: "/images/about-images/about-1.JPG", label: "Revel in new places; China 2018" },
   { src: "/images/about-images/about-2.jpeg", label: "Holiday baking joy" },
   { src: "/images/about-images/about-3.jpeg", label: "Milwaukee Bucks fan & raffle winner" },
   { src: "/images/about-images/about-4.jpeg", label: "New love for gardening" },
