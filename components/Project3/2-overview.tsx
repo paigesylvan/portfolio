@@ -12,26 +12,28 @@ export default function OverviewDryCleaner() {
             <h3 className="mt-3 text-3xl font-semibold">Quick Cleaners</h3>
 
             <div className="mt-6 space-y-5 text-white/85 leading-tight text-xs lg:text-lg">
-              <p>
-                Quick Cleaners in Pewaukee, Wisconsin has been in the dry cleaning industry for
-                over 30 years, yet had no online presence. Through research I found majority of
-                local dry cleaners often rely on outdated websites or also have no online
-                presence at all. This company wanted a website to relay information to customers
-                and build trust through clarity and branding. From interviewing the owner and
-                employees that relayed that customers prioritize service details and contact info.
-              </p>
+            <p>
+              Quick Cleaners in Pewaukee, Wisconsin has been in the dry cleaning industry for
+              over 30 years, but had no online presence. Through competitive research, I found
+              that many local dry cleaners either rely on outdated websites or have no website
+              at all. Quick Cleaners wanted a modern, trustworthy site to relay key information
+              to customers and build credibility through clear content and branding.
+            </p>
 
-              <p>
-                The challenge was to design a site that felt modern, warm, and easy to navigate,
-                even for first-time visitors. My goal was to create a clean, trustworthy digital
-                presence that helps users quickly understand services, business info, and to feel
-                confident in the care provided through a one-page responsive website.
-              </p>
+            <p>
+              From interviews with the owner and employees, I learned that customers primarily
+              care about services, turnaround expectations and how to
+              contact the shop. The challenge was to design a site that feels warm, modern,
+              and easy to navigate—even for first-time visitors.
+            </p>
 
-              <p className="text-white/70">
-                I led the design and development, from the wireframes to final code, focusing on
-                mobile-first design, lightweight performance and layout clarity with warm branding.
-              </p>
+            <p className="text-white/70">
+              I led the project end-to-end, from research and wireframes to visual design and
+              front-end development. I focused on mobile-first responsive layouts, lightweight
+              performance, and clear hierarchy so customers can quickly understand services,
+              hours, and how to get in touch.
+            </p>
+
             </div>
           </div>
         </div>

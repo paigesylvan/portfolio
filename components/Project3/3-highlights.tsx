@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 export default function HighlightsDryCleaner() {
   return (
     <section className="flex py-10 md:py-12 text-white px-4 mt-8 lg:mt-12">
-      <div className="mx-auto w-full max-w-[820px]">
+      <div className="mx-auto w-full max-w-[950px]">
         <div className="grid gap-8 md:gap-10 md:grid-cols-12 items-start">
           {/* Left */}
           <div className="md:col-span-5">
-            <div className="mx-auto max-w-[250px] md:max-w-[300px]">
+            <div className="mx-auto max-w-[250px] md:max-w-[300px] flex flex-col items-center">
               <div className="rounded-[32px] bg-white/[0.03] p-3 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
                 <Image
                   src="/images/project3-images/phone-hero.png"
@@ -22,6 +22,36 @@ export default function HighlightsDryCleaner() {
                   priority
                 />
               </div>
+
+              <Link
+                href="https://www.quickcleanersandlaundry.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group relative mt-6 inline-flex items-center gap-2
+                  rounded-full px-5 py-2.5 font-medium text-white text-[13px]
+                  bg-white/[0.06] backdrop-blur-md
+                  border border-white/10
+                  shadow-[0_3px_12px_rgba(0,0,0,0.3)]
+                  transition-all duration-300
+                  hover:bg-white/[0.15] hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
+                  focus-visible:ring-2 focus-visible:ring-white/40
+                "
+              >
+                Visit Live Site
+                <span
+                  className="
+                    flex items-center justify-center
+                    w-6 h-6 rounded-full
+                    bg-white/10
+                    transition-all duration-300
+                    group-hover:bg-white/30
+                    group-hover:translate-x-1
+                  "
+                >
+                  ➜
+                </span>
+              </Link>
             </div>
           </div>
 
@@ -52,10 +82,10 @@ export default function HighlightsDryCleaner() {
             <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
               <p className="text-[11px] tracking-[0.22em] accent-text">DEVELOPMENT HIGHLIGHTS</p>
               <ul className="mt-2 list-disc space-y-1 pl-4 text-white/85 text-[13px] md:text-sm">
-                <li>Semantic HTML, JavaScript, Tailwind CSS</li>
-                <li>Utility classes for faster iteration</li>
-                <li>Smooth scroll interactions</li>
-                <li>Static deployment for speed</li>
+                <li>Semantic HTML, JavaScript, and Tailwind CSS for a responsive, accessible layout</li>
+                <li>Mobile-first structure and compressed assets for fast load times</li>
+                <li>Integrated Google Analytics 4 to track real user behavior</li>
+                <li>Basic on-page SEO (titles, meta descriptions, local keywords) to support Google search visibility</li>
               </ul>
             </div>
 
@@ -63,39 +93,9 @@ export default function HighlightsDryCleaner() {
             <div className="rounded-xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
               <p className="text-[11px] tracking-[0.22em] accent-text">OUTCOME</p>
               <p className="mt-2 text-white/85 text-[13px] md:text-sm">
-                A welcoming digital storefront that improves confidence and clarity for users.
+                After launch, the site began receiving consistent traffic from both direct visits and organic Google search. Google Analytics 4 shows users exploring multiple sections (services, hours, and contact) in a single visit, validating that the structure and content are easy to navigate for new customers.
               </p>
             </div>
-
-            <Link
-              href="https://www.quickcleanersandlaundry.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                group relative mt-6 inline-flex items-center gap-2
-                rounded-full px-5 py-2.5 font-medium text-white text-[13px]
-                bg-white/[0.06] backdrop-blur-md
-                border border-white/10
-                shadow-[0_3px_12px_rgba(0,0,0,0.3)]
-                transition-all duration-300
-                hover:bg-white/[0.15] hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
-                focus-visible:ring-2 focus-visible:ring-white/40
-              "
-            >
-              Website Link
-              <span
-                className="
-                  flex items-center justify-center
-                  w-6 h-6 rounded-full
-                  bg-white/10
-                  transition-all duration-300
-                  group-hover:bg-white/30
-                  group-hover:translate-x-1
-                "
-              >
-                ➜
-              </span>
-            </Link>
           </div>
         </div>
 
@@ -108,13 +108,13 @@ export default function HighlightsDryCleaner() {
           className="mt-14 flex justify-center"
         >
           <Link
-            href="/experience" 
+            href="/experience"
             className="group text-[11px] sm:text-sm font-medium text-[#D6A75E] hover:text-white/20 flex items-center gap-2 transition-all"
           >
             View My Experience
             <motion.span
               whileHover={{ x: 4 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 300 }}
               className="inline-block"
             >
               →

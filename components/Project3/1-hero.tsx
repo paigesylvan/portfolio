@@ -75,19 +75,20 @@ export default function HeroOverviewDryCleaner() {
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>
             <p className="mt-1 text-white/90">
-              Redesign a local dry cleaner’s site to clarify services, pricing, and trust signals.
+            Design and build the first website for a 30+ year local dry cleaner to clarify
+            services, hours, and trust signals for new and returning customers.
             </p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#E6D6C3]">ROLE</p>
             <p className="mt-1 text-white/90">
-              UX/UI Designer, Researcher, Visual Designer, Usability Tester
+              UX/UI Designer, Researcher, Front-End Developer, Usability Tester
             </p>
           </div>
 
           {/* right */}
           <div className="mt-6 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">DURATION</p>
-            <p className="mt-1 text-white/90">June 2025 – July 2025</p>
+            <p className="mt-1 text-white/90">June 2025 – August 2025</p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#E6D6C3]">
               UX/UI SKILLSETS LEVERAGED
