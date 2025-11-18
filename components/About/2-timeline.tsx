@@ -224,13 +224,13 @@ export default function TimelineAbout() {
   ];
 
   return (
-    <section className="relative isolate px-6 lg:py-28 bg-black text-white">
+    <section className="relative isolate px-6 bg-black text-white ">
       <div className="text-center relative">
         <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
         <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-24">My Journey</h2>
       </div>
 
-      <div ref={containerRef} className="relative mx-auto w-full max-w-[1700px]">
+      <div ref={containerRef} className="relative mx-auto w-full max-w-[1400px]">
 
         {/* Mobile Spine */}
         <div
@@ -442,7 +442,7 @@ function TimelineRow({
   alt={item.imageAlt}
   fill
   sizes="(min-width: 768px) 600px, 100vw"
-  className="object-cover"
+  className="object-contain"
   priority={priority}
 />
 
