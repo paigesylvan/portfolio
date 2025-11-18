@@ -29,7 +29,7 @@ export default function AboutHero() {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
   return (
-    <section className="relative isolate flex items-center justify-center px-6 bg-black text-white overflow-hidden pt-36">
+    <section className="relative isolate flex items-center justify-center px-6 bg-black text-white overflow-hidden">
       {/* Glow */}
       <div
         className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none -z-10"
@@ -52,23 +52,33 @@ export default function AboutHero() {
       />
 
       {/* Content above hues */}
-      <div className="relative z-10 mx-auto w-full max-w-[1100px] text-center">
-        <h1 className="text-3xl md:text-6xl font-extrabold leading-tight lg:mt-60">
-          Hi, I’m Paige 👋
+      <div className="relative z-10 mx-auto w-full max-w-[1100px] text-center mt-[40vh]">
+        <h1 className="mt-8 md:text-4xl">
+          Hi, I’m Paige!
         </h1>
-        <h1 className="mt-12 text-lg lg:text-4xl font-extrabold leading-tight ">
+        <h1 className="mt-12 text-lg lg:text-xl font-semibold leading-tight ">
           A designer who blends creativity and logic.
         </h1>
    
-        <p className=" text-white/80 max-w-3xl mx-auto text-l md:text-2xl leading-snug pt-1 ">
+        <p className=" text-white/80 max-w-[500px] mx-auto text-[14px] md:text-[15px] leading-snug pt-1 pb-[12vh] ">
           My background in development and UX design helps me craft experiences
           that are not only beautiful but built to work in the real world.
         </p>
 
-
+          {/* Headshot image in the middle of the column */}
+          <div className="flex justify-center mb-24">
+            <div className="rounded-3xl overflow-hidden relative z-10">
+              <Image
+                src="/images/about-images/paige.png"
+                alt="Paige Sylvan headshot"
+                width={500}
+                height={420}
+                className="rounded-3xl object-cover"
+              />
+            </div>
+          </div>
 
         <div className="mx-auto w-full mt-12 ">
-
         <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-36">
           {items.map((item, index) => {
             const isActive = activeIndex === index;
