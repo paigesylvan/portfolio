@@ -2,7 +2,15 @@
 import { useState } from "react";
 import Image from "next/image";
 
-
+/* 
+        <p className=" text-white/80 max-w-4xl mx-auto text-xs lg:text-md leading-snug pt-24 pb-2 accent-text uppercase tracking-[0.12em]">
+          A few things I love
+        </p>
+        <p className="text-lg lg:text-5xl ">
+        🎟️ 🥢 🏀 🌮 🎨 🎾 🌱 🌍 🌊  ☕ 🎲 🐶
+                     
+        </p>
+*/
 
 const items = [
   { src: "/images/about-images/about-1.JPG", label: "Exploring new places; China 2018" },
@@ -57,13 +65,7 @@ export default function AboutHero() {
           that are not only beautiful but built to work in the real world.
         </p>
 
-        <p className=" text-white/80 max-w-4xl mx-auto text-xs lg:text-md leading-snug pt-24 pb-2 accent-text uppercase tracking-[0.12em]">
-          A few things I love
-        </p>
-        <p className="text-lg lg:text-5xl ">
-        🎟️ 🥢 🏀 🌮 🎨 🎾 🌱 🌍 🌊  ☕ 🎲 🐶
-                     
-        </p>
+
 
         <div className="mx-auto w-full mt-12 ">
 

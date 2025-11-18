@@ -9,7 +9,7 @@ export default function Home() {
     <main className="h-screen grid place-items-center text-white snap-page relative min-h-screen-fix bg-black pt-safe pb-safe overflow-hidden">
       <div className="">
         <Hero />
-        <HomeAbout />
+
         <SkillsHomePage />
         <CaseStudies />
       </div>

@@ -72,8 +72,12 @@ export default function Outcome() {
               </p>
             </div>
 
+
+      
+
+
             <div className="text-center md:text-left mt-10 md:mt-20">
-              <h1 className="mx-auto max-w-[980px] text-[#D6A75E] font-semibold leading-snug text-base md:text-lg">
+              <h1 className=" text-[#D6A75E] leading-snug text-[10px] lg:text-xs max-w-[350px]">
                 View the portion of the Project 3 Operations Manual I authored to guide
                 operators in using the program I designed.
               </h1>

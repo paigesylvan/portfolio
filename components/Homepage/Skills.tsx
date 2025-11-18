@@ -60,7 +60,7 @@ export default function Skills() {
         SKILLS
       </h2>
 
-      <div className="mx-auto w-full md:w-[70%] px-6 md:px-0 lg:pl-[10.5%]">
+      <div className="mx-auto w-full md:w-[60%] px-6 md:px-0 lg:pl-[9%]">
         <div className="grid gap-12 md:gap-10 md:grid-cols-3 text-center md:text-left">
           {skills.map((s, i) => (
             <motion.div
