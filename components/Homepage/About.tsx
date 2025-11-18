@@ -71,7 +71,7 @@ export default function HomeAbout() {
           </h2>
 
           <p className="text-white/85 leading-relaxed max-w-[480px] mx-auto md:mx-0 mb-6 text-[14px] md:text-[15px]">
-          I’m a product designer and UX/UI developer who creates clean, intuitive digital experiences that connect users, visuals, and behavior. I focus on improving everyday interactions through thoughtful design and modern development practices.
+          I design clean, intuitive interfaces and build responsive, user-centered products with modern front-end tools. I blend UX strategy, visual design, and real development experience to turn complex problems into simple, functional experiences.
           </p>
 
           <p className="text-[11px] uppercase tracking-wide text-white/60 mb-6 md:mb-0">

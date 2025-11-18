@@ -10,7 +10,7 @@ type Props = {
 export default function HeroProficoFullMultihue({
   title = "Paige Sylvan",
   subtitle = "I design experiences that balance clarity, usability, and beauty. Driven by the process of turning an idea into something real.",
-  kicker = "UX/UI PORTFOLIO",
+  kicker = "",
   height,
 }: Props) {
   return (

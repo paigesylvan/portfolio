@@ -45,7 +45,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 lg:py-32 overflow-hidden bg-black text-white mb-24"
+      className="relative py-20 lg:py-32 overflow-hidden bg-black text-white mb-20"
     >
       {/* Soft global vignette */}
       <div
@@ -56,51 +56,57 @@ export default function Skills() {
         }}
       />
 
-      <h2 className="mb-16 text-center text-sm tracking-[0.3em] text-white/70">
+      <h2 className="mb-10 lg:mb-16 text-center text-sm tracking-[0.3em] text-white/70">
         SKILLS
       </h2>
 
       <div className="mx-auto w-full md:w-[70%] px-6 md:px-0 lg:pl-[10.5%]">
-        <div className="grid gap-10 md:grid-cols-3 text-center md:text-left">
+        <div className="grid gap-12 md:gap-10 md:grid-cols-3 text-center md:text-left">
           {skills.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: prefersReduced ? 0 : 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: prefersReduced ? 0 : 0.9, ease: "easeOut", delay: i * 0.08 }}
+              initial={prefersReduced ? false : { opacity: 0, y: 24 }}
+              whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: prefersReduced ? 0 : i * 0.06,
+              }}
               className="relative"
             >
-              {/* Static blur behind this card */}
+              {/* Blur only on md+ to avoid mobile jank */}
               <div
                 aria-hidden
                 className="
+                  hidden md:block
                   absolute left-1/2 top-1/2
                   -translate-x-1/2 -translate-y-1/2
                   md:-translate-x-[60%] lg:-translate-x-[70%]
-                  z-0 w-[500px] h-[360px]
-                  md:w-[520px] md:h-[380px]
-                  blur-[99px] opacity-50 pointer-events-none
+                  z-0 w-[420px] h-[320px]
+                  blur-[80px] opacity-55 pointer-events-none
                 "
                 style={{ background: HUES[i % HUES.length] }}
               />
 
               {/* Card content */}
-              <div className="relative z-10 pl-3 pb-8 lg:pb-0">
-                <div className="mb-6 flex justify-center md:justify-start lg:pl-12">
+              <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0">
+                <div className="mb-4 flex justify-center md:justify-start lg:pl-12">
                   <Image
                     src={s.gif}
                     alt={s.alt}
                     width={100}
                     height={100}
                     unoptimized
-                    className="h-16 w-20 md:h-20 object-contain opacity-90"
+                    className="h-14 w-18 md:h-20 md:w-24 object-contain opacity-90"
                   />
                 </div>
 
-                <h3 className="lg:mb-3 text-lg font-semibold">{s.title}</h3>
+                <h3 className="mb-2 lg:mb-3 text-base md:text-lg font-semibold">
+                  {s.title}
+                </h3>
 
-                <p className=" text-white/80 leading-tight px-8 lg:px-0 lg:w-[50%] text-[14px] md:text-[15px]">
+                <p className="text-white/80 leading-snug text-[14px] md:text-[15px] px-2 md:px-0 lg:w-[60%]">
                   {s.body}
                 </p>
               </div>
