@@ -1,8 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LazyMotion, domAnimation, MotionConfig, m, useReducedMotion } from "framer-motion";
+import {
+  LazyMotion,
+  domAnimation,
+  MotionConfig,
+  m,
+  useReducedMotion,
+} from "framer-motion";
 
 type Study = {
   slug: string;
@@ -17,7 +24,8 @@ type Study = {
 const studies: Study[] = [
   {
     slug: "/projects/dog-grooming",
-    title: "How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming",
+    title:
+      "How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming",
     subtitle:
       "A responsive grooming app designed to ease booking anxiety with empathetic UX and streamlined flows.",
     tags: ["UX RESEARCH", "UI CREATION", "PROTOTYPING"],
@@ -47,104 +55,173 @@ const studies: Study[] = [
   },
 ];
 
+// simple hook to detect mobile client-side
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpoint]);
+
+  return isMobile;
+}
+
 export default function CaseStudies() {
   const reduce = useReducedMotion();
+  const isMobile = useIsMobile();
+  const shouldAnimate = !reduce && !isMobile; // <-- no motion on mobile or if user prefers reduced
 
   const easeOut = [0.22, 1, 0.36, 1] as const;
 
   const card = {
-    hidden: { opacity: 0, y: reduce ? 0 : 14, scale: reduce ? 1 : 0.98 },
+    hidden: { opacity: 0, y: 14, scale: 0.98 },
     show: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: reduce
-        ? { duration: 0 }
-        : { duration: 0.5, ease: easeOut, staggerChildren: 0.06, when: "beforeChildren" },
+      transition: {
+        duration: 0.5,
+        ease: easeOut,
+        staggerChildren: 0.06,
+        when: "beforeChildren",
+      },
     },
   };
 
   const piece = {
-    hidden: { opacity: 0, y: reduce ? 0 : 10 },
-    show: { opacity: 1, y: 0, transition: reduce ? { duration: 0 } : { duration: 0.45, ease: easeOut } },
+    hidden: { opacity: 0, y: 10 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: easeOut },
+    },
   };
 
   const imageWrap = {
-    hidden: { opacity: 0, y: reduce ? 0 : 10, scale: reduce ? 1 : 0.985 },
-    show:   { opacity: 1, y: 0, scale: 1, transition: reduce ? { duration: 0 } : { duration: 0.5, ease: easeOut } },
+    hidden: { opacity: 0, y: 10, scale: 0.985 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.5, ease: easeOut },
+    },
   };
 
   return (
-    <section id="case-studies" className="relative mt-20 overflow-hidden text-white full-bleed">
+    <section
+      id="case-studies"
+      className="relative mt-20 overflow-hidden text-white full-bleed"
+    >
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[22vh] pointer-events-none z-0" />
 
-      <h2 className="py-6 text-center text-[13px] tracking-[0.3em] text-white">CASE STUDIES</h2>
+      <h2 className="py-6 text-center text-[13px] tracking-[0.3em] text-white">
+        CASE STUDIES
+      </h2>
 
       <LazyMotion features={domAnimation}>
         <MotionConfig reducedMotion="user">
           <div className="space-y-10 lg:space-y-16 pb-36 lg:mb-48">
-            {studies.map((s, idx) => (
-              <m.article
-                key={s.slug}
-                variants={card}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.35, margin: "0px 0px -10% 0px" }}
-                className="case-card group transform-gpu will-change-transform"
-              >
-                <div className="grid items-center gap-6 md:grid-cols-12">
-                  {/* image */}
-                  <m.div variants={imageWrap} className="md:col-span-5">
-                    <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
-                      <div className="relative">
-                        <Image
-                          src={s.image}
-                          alt={s.imageAlt}
-                          width={1200}
-                          height={900}
-                          sizes="(min-width: 768px) 300px, 220px"
-                          className="h-[180px] w-auto md:h-[300px] object-contain"
-                          priority={idx === 0}
-                        />
-                        <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+            {studies.map((s, idx) => {
+              const ArticleComp = shouldAnimate ? m.article : "article";
+              const ImageWrapComp = shouldAnimate ? m.div : "div";
+              const PieceComp = shouldAnimate ? m.div : "div";
+              const TitleComp = shouldAnimate ? m.h3 : "h3";
+              const TextComp = shouldAnimate ? m.p : "p";
+
+              return (
+                <ArticleComp
+                  key={s.slug}
+                  {...(shouldAnimate && {
+                    variants: card,
+                    initial: "hidden",
+                    whileInView: "show",
+                    viewport: {
+                      once: true,
+                      amount: 0.35,
+                      margin: "0px 0px -10% 0px",
+                    },
+                  })}
+                  className="case-card group md:transform-gpu md:will-change-transform"
+                >
+                  <div className="grid items-center gap-6 md:grid-cols-12">
+                    {/* image */}
+                    <ImageWrapComp
+                      {...(shouldAnimate && { variants: imageWrap })}
+                      className="md:col-span-5"
+                    >
+                      <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
+                        <div className="relative">
+                          <Image
+                            src={s.image}
+                            alt={s.imageAlt}
+                            width={600}
+                            height={450}
+                            sizes="(min-width: 768px) 300px, 220px"
+                            className="h-[180px] w-auto md:h-[300px] object-contain"
+                            priority={idx === 0}
+                          />
+                          <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+                        </div>
                       </div>
+                    </ImageWrapComp>
+
+                    {/* text */}
+                    <div className="md:col-span-7 lg:pl-12 pl-4">
+                      <PieceComp
+                        {...(shouldAnimate && { variants: piece })}
+                        className="mb-3 flex flex-wrap gap-1 lg:gap-2"
+                      >
+                        {s.tags.map((t) => (
+                          <span key={t} className="chip">
+                            {t}
+                          </span>
+                        ))}
+                      </PieceComp>
+
+                      <TitleComp
+                        {...(shouldAnimate && { variants: piece })}
+                        className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
+                      >
+                        {s.title}
+                      </TitleComp>
+
+                      <TextComp
+                        {...(shouldAnimate && { variants: piece })}
+                        className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight"
+                      >
+                        {s.subtitle}
+                      </TextComp>
+
+                      <PieceComp
+                        {...(shouldAnimate && { variants: piece })}
+                      >
+                        <Link href={s.slug} className="cta-btn group mt-6">
+                          <span>{s.cta ?? "View Case Study"}</span>
+                          <span className="cta-icon">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="w-3.5 h-3.5"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="m12 5 7 7-7 7" />
+                            </svg>
+                          </span>
+                        </Link>
+                      </PieceComp>
                     </div>
-                  </m.div>
-
-                  {/* text */}
-                  <div className="md:col-span-7 lg:pl-12 pl-4">
-                    <m.div variants={piece} className="mb-3 flex flex-wrap gap-1 lg:gap-2">
-                      {s.tags.map((t) => (
-                        <span key={t} className="chip">{t}</span>
-                      ))}
-                    </m.div>
-
-                    <m.h3 variants={piece} className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]">
-                      {s.title}
-                    </m.h3>
-
-                    <m.p variants={piece} className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight">
-                      {s.subtitle}
-                    </m.p>
-
-                    <m.div variants={piece}>
-                      <Link href={s.slug} className="cta-btn group mt-6">
-                        <span>{s.cta ?? "View Case Study"}</span>
-                        <span className="cta-icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                               fill="none" stroke="currentColor" strokeWidth="2"
-                               strokeLinecap="round" strokeLinejoin="round"
-                               className="w-3.5 h-3.5">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                          </svg>
-                        </span>
-                      </Link>
-                    </m.div>
                   </div>
-                </div>
-              </m.article>
-            ))}
+                </ArticleComp>
+              );
+            })}
           </div>
         </MotionConfig>
       </LazyMotion>

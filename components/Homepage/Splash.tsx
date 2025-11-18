@@ -31,7 +31,7 @@ export default function HeroProficoFullMultihue({
           <h1 className="mt-2 text-5xl md:text-7xl lg:text-8xl  tracking-[0.1em]">
             {title}
           </h1>
-          <p className="mt-10 text-white/95 text-sm md:text-2xl max-w-[700px] mx-auto">
+          <p className="mt-10 text-white/95 text-sm md:text-2xl px-12 lg:px-0 max-w-[700px] mx-auto">
             {subtitle}
           </p>
         </div>

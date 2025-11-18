@@ -211,7 +211,7 @@ export default function TimelineAbout() {
       heading: "2024",
       subheading: "UI Design in Complex Systems",
       body:
-        "As a Software Engineer Intern, I designed and built HMI applications for industrial automation, combining design and logic.",
+        "As a Software & UI Developer Intern, I designed and built HMI applications for industrial automation, combining design and logic.",
     },
     {
       images: ["/images/about-images/2025-1.png"],

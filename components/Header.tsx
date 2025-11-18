@@ -36,7 +36,7 @@ export default function Header() {
             </Link>
             <Link
               href="/experience"
-              className="uppercase tracking-[0.18em] hover:text-teal-600"
+              className="uppercase tracking-[0.18em] hover:text-yellow-400"
             >
               Experience
             </Link>

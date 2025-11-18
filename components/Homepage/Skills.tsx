@@ -106,7 +106,7 @@ export default function Skills() {
                   {s.title}
                 </h3>
 
-                <p className="text-white/80 leading-snug text-[14px] md:text-[15px] px-2 md:px-0 lg:w-[60%]">
+                <p className="text-white/80 leading-snug text-[14px] md:text-[15px] px-20 md:px-0  lg:w-[50%]">
                   {s.body}
                 </p>
               </div>
