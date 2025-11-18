@@ -52,7 +52,7 @@ export default function AboutHero() {
       />
 
       {/* Content above hues */}
-      <div className="relative z-10 mx-auto w-full max-w-[1100px] text-center mt-[40vh]">
+      <div className="relative z-10 mx-auto w-full max-w-[1100px] text-center mt-[35vh]">
         <h1 className="mt-8 md:text-4xl">
           Hi, I’m Paige!
         </h1>
@@ -78,7 +78,7 @@ export default function AboutHero() {
             </div>
           </div>
 
-        <div className="mx-auto w-full mt-12 ">
+        <div className="mx-auto w-full mt-96 ">
         <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-36">
           {items.map((item, index) => {
             const isActive = activeIndex === index;
@@ -88,7 +88,7 @@ export default function AboutHero() {
                 key={index}
                 type="button"
                 onClick={() => handleToggle(index)}
-                className="relative group aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/5 focus:outline-none"
+                className="rounded-full relative group aspect-square overflow-hidden border border-white/10 bg-white/5 focus:outline-none"
               >
                 {/* Image */}
                 <Image
@@ -97,7 +97,7 @@ export default function AboutHero() {
                   fill
                   className={`object-cover transition-all duration-300
                     ${isActive ? "blur-sm scale-105 brightness-75" : "scale-100"}
-                    group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75
+                    group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75 
                   `}
                 />
 

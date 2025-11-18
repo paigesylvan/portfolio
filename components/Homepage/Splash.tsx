@@ -39,7 +39,7 @@ export default function Her0({
   
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[35vh]">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[30vh]">
         <div className="flex flex-col items-center text-center gap-10">
           {/* Name + hero subtitle (from HeroProfico) */}
           <div>
@@ -71,7 +71,7 @@ export default function Her0({
 
           {/* About paragraph + CTA (from HomeAbout) */}
           <div className="max-w-[520px] mx-auto flex flex-col items-center gap-4">
-          <p className="mb-4 text-center text-sm tracking-[0.3em] text-white/70">
+          <p className="mb-4 text-center text-[11px] tracking-[0.22em] text-white/60">
             ABOUT ME
           </p>
             <h2 className="text-2xl md:text-3xl font-semibold">

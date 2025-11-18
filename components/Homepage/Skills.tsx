@@ -56,7 +56,7 @@ export default function Skills() {
         }}
       />
 
-      <h2 className="mb-10 lg:mb-16 text-center text-sm tracking-[0.3em] text-white/70">
+      <h2 className="mb-10 lg:mb-16 text-center text-[12px] tracking-[0.22em] text-white/60">
         SKILLS
       </h2>
 

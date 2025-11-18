@@ -117,7 +117,7 @@ export default function CaseStudies() {
     >
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[22vh] pointer-events-none z-0" />
 
-      <h2 className="mb-10 lg:mb-16 text-center text-sm tracking-[0.3em] text-white/70">
+      <h2 className="text-center mb-10 text-[11px] tracking-[0.22em] text-white/60">
         CASE STUDIES
       </h2>
 
