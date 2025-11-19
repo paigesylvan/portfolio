@@ -13,13 +13,35 @@ const items = [
   { src: "/images/about-images/about-6.png", label: "Adventures with my dog, Sadie" },
 ];
 
-
 const floatTransition = {
   duration: 5,
   repeat: Infinity as const,
   repeatType: "reverse" as const,
   ease: "easeInOut",
 };
+
+// glow color map per icon alt
+const glowColorByAlt: Record<string, string> = {
+  "Shopify Logo": "rgba(16, 185, 129, 0.85)",          // green
+  "Canva Logo": "rgba(56, 189, 248, 0.85)",            // teal/blue
+  "Google Analytics Logo": "rgba(245, 158, 11, 0.9)",  // amber
+  "Adobe AE Logo": "rgba(129, 140, 248, 0.9)",         // indigo
+  "Figma Logo": "rgba(244, 114, 182, 0.9)",            // pink
+  "React Logo": "rgba(45, 212, 191, 0.9)",             // cyan
+  "Next.js Logo": "rgba(248, 250, 252, 0.9)",          // soft white
+  "Javascript Logo": "rgba(250, 204, 21, 0.9)",        // yellow
+  "Tailwind Logo": "rgba(56, 189, 248, 0.9)",          // sky blue
+  "Sass Logo": "rgba(244, 114, 182, 0.9)",             // pink
+  "VS Code Logo": "rgba(59, 130, 246, 0.9)",           // blue
+  "CSS Logo": "rgba(37, 99, 235, 0.9)",                // deep blue
+  HTML: "rgba(249, 115, 22, 0.9)",                     // orange
+  Github: "rgba(248, 250, 252, 0.9)",                  // soft white
+  Vercel: "rgba(248, 250, 252, 0.9)",                  // soft white
+};
+
+function getGlowColor(alt: string) {
+  return glowColorByAlt[alt] ?? "rgba(255,255,255,0.8)";
+}
 
 function FloatingSkillIcon({
   src,
@@ -32,44 +54,70 @@ function FloatingSkillIcon({
   index: number;
   className: string;
 }) {
+  const glowColor = getGlowColor(alt);
+
   return (
     <motion.div
       className={`absolute flex flex-col items-center justify-center
         ${className} pointer-events-auto`}
       animate={{ y: [-6, 6] }}
       transition={{ ...floatTransition, delay: index * 0.18 }}
+      initial="rest"
+      whileHover="hover"
     >
-      {/* CIRCLE */}
+      {/* wrapper so glow + icon react to same hover state */}
       <motion.div
-        whileHover={{ scale: 1.15 }}
+        variants={{
+          rest: { scale: 1 },
+          hover: { scale: 1.15 },
+        }}
         transition={{ type: "spring", stiffness: 180, damping: 12 }}
-        className="flex h-14 w-14 md:h-24 md:w-24 items-center justify-center
-        rounded-full bg-white shadow-[0_18px_45px_rgba(0,0,0,0.45)]
-        relative"
+        className="relative flex items-center justify-center"
       >
-        <Image
-          src={src}
-          alt={alt}
-          width={60}
-          height={60}
-          className="h-12 w-12 md:h-24 md:w-24 object-contain transition-all duration-900 group-hover:scale-110"
+        {/* colored glow */}
+        <motion.div
+          className="absolute inset-0 rounded-full"
+          variants={{
+            rest: { opacity: 0, scale: 0.7 },
+            hover: { opacity: 1, scale: 1.3 },
+          }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          style={{
+            boxShadow: `0 0 40px 16px ${glowColor}`,
+            background: glowColor,
+            zIndex: -1,
+          }}
         />
+
+        {/* circle + icon */}
+        <div
+          className="flex h-14 w-14 md:h-24 md:w-24 items-center justify-center
+          rounded-full bg-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] relative"
+        >
+          <Image
+            src={src}
+            alt={alt}
+            width={60}
+            height={60}
+            className="h-14 w-14 md:h-24 md:w-24 object-contain transition-all duration-500"
+          />
+        </div>
       </motion.div>
 
-      {/* LABEL UNDERNEATH (fades in on hover) */}
+      {/* label */}
       <motion.span
-        initial={{ opacity: 0, y: 4 }}
-        whileHover={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-        className="text-white text-[10px] md:text-xs mt-1 opacity-0 group-hover:opacity-100 pointer-events-none"
+        variants={{
+          rest: { opacity: 0, y: 4 },
+          hover: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+        className="text-white text-[10px] md:text-xs mt-1 pointer-events-none"
       >
         {alt}
       </motion.span>
     </motion.div>
   );
 }
-
-
 
 export default function AboutHero() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -102,132 +150,122 @@ export default function AboutHero() {
 
       {/* Main content */}
       <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[12vh]">
-
-        {/* ----------------------------------------------------- */}
+        {/* Floating skills */}
         <div className="relative w-full h-[280px] md:h-[320px] mb-4 pointer-events-none">
-
-          {/* TOP ARCH (7 icons) */}
-
           {/* far left top */}
           <FloatingSkillIcon
             src="images/skills/2.png"
-            alt="Shopify Logo"
+            alt="Shopify"
             index={0}
-            className="top-12 lg:top-[30vh] left-[1%]"
+            className="top-[20vh] lg:top-[30vh] lg:left-[1%]"
           />
 
           {/* mid-left top */}
           <FloatingSkillIcon
             src="images/skills/1.png"
-            alt="Canva Logo"
+            alt="Canva"
             index={1}
-            className="top-24 lg:top-[17vh] left-[18%]"
+            className="top-12 left-2 lg:top-[17vh] lg:left-[18%]"
           />
 
           {/* left of center */}
           <FloatingSkillIcon
             src="images/skills/3.png"
-            alt="Adobe AE Logo"
+            alt="Adobe AE"
             index={2}
-            className="top-36 lg:top-[10vh] left-[30%]"
+            className="top-[20vh] lg:top-[10vh] left-[30%]"
           />
 
           {/* center top */}
           <FloatingSkillIcon
             src="images/skills/5.png"
-            alt="Figma Logo"
+            alt="Figma"
             index={3}
             className="top-8 lg:top-[12vh] left-[45%] -translate-x-1/2"
           />
 
-          {/*  right of center */}
+          {/* right of center */}
           <FloatingSkillIcon
             src="images/skills/13.png"
-            alt="VS Code Logo"
+            alt="VS Code"
             index={4}
-            className="top-4 lg:top-[10vh] right-[32%]"
+            className="top-24 right-[16%] lg:top-[10vh] lg:right-[32%]"
           />
 
           {/* mid-right top */}
           <FloatingSkillIcon
             src="images/skills/7.png"
-            alt="Next.js Logo"
+            alt="Next.js"
             index={5}
-            className="lg:top-[38vh] right-[20%]"
+            className="right-[30%] top-[20vh] lg:top-[38vh] lg:right-[20%]"
           />
 
-          {/*  far right top */}
+          {/* far right top */}
           <FloatingSkillIcon
             src="images/skills/6.png"
-            alt="React Logo"
+            alt="React"
             index={6}
-            className="lg:top-[30vh] right-[8%]"
+            className="top-[16vh] lg:top-[30vh] right-[1%]"
           />
 
-          {/* LEFT SIDE CASCADE (3 icons) */}
+          {/* LEFT SIDE CASCADE */}
 
-          {/* upper side left */}
           <FloatingSkillIcon
             src="images/skills/4.png"
-            alt="Google Analytics Logo"
+            alt="Google Analytics"
             index={7}
-            className="top-60 lg:top-[37vh] left-[16%]"
+            className="top-24 lg:top-[37vh] left-[16%]"
           />
 
-          {/*  mid-left */}
           <FloatingSkillIcon
             src="images/skills/10.png"
-            alt="Tailwind Logo"
+            alt="Tailwind.css"
             index={8}
-            className="top-48 lg:top-[50vh] left-[5%]"
+            className="top-[49vh] left-[8%] lg:top-[50vh] lg:left-[5%]"
           />
 
-          {/*  lower-left */}
           <FloatingSkillIcon
             src="images/skills/9.png"
-            alt="Sass Logo"
+            alt="Sass.css"
             index={9}
-            className="top-48 lg:top-[65vh] left-[10%]"
+            className="top-[60vh] lg:top-[65vh] lg:left-[10%]"
           />
 
-          {/* RIGHT SIDE CASCADE (3 icons) */}
+          {/* RIGHT SIDE CASCADE */}
 
-          {/*  upper side right */}
           <FloatingSkillIcon
             src="images/skills/8.png"
-            alt="Javascript Logo"
+            alt="Javascript"
             index={10}
-            className="top-48 lg:top-[45vh] right-[1%]"
+            className="top-[49vh] right-[15%] lg:top-[45vh] lg:right-[1%]"
           />
 
-          {/*  mid-right */}
           <FloatingSkillIcon
             src="images/skills/11.png"
-            alt="CSS Logo"
+            alt="CSS"
             index={11}
-            className="top-24 lg:top-[55vh] right-[16%]"
+            className="top-[55vh] right-1 lg:top-[55vh] lg:right-[16%]"
           />
 
-          {/* lower-right */}
           <FloatingSkillIcon
             src="images/skills/12.png"
             alt="HTML"
             index={12}
-            className="top-36 lg:top-[67vh] right-[5%]"
+            className="top-[28vh] lg:top-[67vh] right-[5%]"
           />
+
           <FloatingSkillIcon
             src="images/skills/14.png"
             alt="Github"
             index={13}
-            className="top-8 lg:top-[15vh] right-[12%]"
+            className="top-[1vh] lg:top-[15vh] right-[12%]"
           />
 
-          {/* GitHub — top row far left-extra */}
           <FloatingSkillIcon
             src="images/skills/15.png"
             alt="Vercel"
             index={14}
-            className="top-8 lg:top-[16vh] left-[2%]"
+            className="left-[20%] lg:top-[16vh] lg:left-[2%]"
           />
         </div>
 
@@ -244,7 +282,7 @@ export default function AboutHero() {
         </p>
 
         {/* Headshot */}
-        <div className="flex justify-center mb-24">
+        <div className="flex justify-center lg:mb-24">
           <div className="rounded-3xl overflow-hidden relative z-10">
             <Image
               src="/images/about-images/paige.png"
@@ -256,9 +294,7 @@ export default function AboutHero() {
           </div>
         </div>
 
-        {/* -----------------------------------------------------
-           GALLERY GRID
-        ------------------------------------------------------ */}
+        {/* Gallery grid */}
         <div className="mx-auto w-full mt-96">
           <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-36">
             {items.map((item, index) => {
@@ -271,7 +307,6 @@ export default function AboutHero() {
                   onClick={() => handleToggle(index)}
                   className="rounded-full relative group aspect-square overflow-hidden border border-white/10 bg-white/5 focus:outline-none"
                 >
-                  {/* Image */}
                   <Image
                     src={item.src}
                     alt={item.label}
@@ -286,11 +321,10 @@ export default function AboutHero() {
                     `}
                   />
 
-                  {/* Label Overlay */}
                   <div
                     className={`
                       absolute inset-0 flex items-center justify-center px-2 text-center
-                      text-[9px] xs:text-xs sm:text-sm md:text-base font-medium
+                      text-[9px] xs:text-xs sm:text-sm md:text-base font-medium mt-12
                       transition-opacity duration-300
                       ${
                         isActive
