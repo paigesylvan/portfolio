@@ -85,33 +85,33 @@ export default function FinalDesign() {
           </div>
         </div>
 
-        {/* Animated link */}
         <motion.div
-          className="mt-20 md:mt-24 mb-6 text-center"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Link
-            href="/projects/camping"
-            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm  text-[#7FB2FF] hover:text-white/20 transition-all duration-300"
-          >
-            <span>
-              Next Case Study
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </motion.div>
+  className="mt-20 md:mt-24 mb-6 text-center"
+  initial={{ opacity: 0, y: 16 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.5 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  <Link
+    href="/projects/camping"
+    prefetch={false}
+    className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#7FB2FF] hover:text-white/20 transition-all duration-300"
+  >
+    <span>Next Case Study</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </Link>
+</motion.div>
+
+
       </div>
     </section>
   );

@@ -7,11 +7,11 @@ import  PaigeOutlineTrace from "../outline"; // adjust path as needed
 
 const items = [
   { src: "/images/about-images/about-1.JPG", label: "Exploring new places; China 2018" },
-  { src: "/images/about-images/about-2.jpeg", label: "Holiday baking joy" },
+  { src: "/images/about-images/about-2.jpeg", label: "Enjoy baking fun things for the holidays" },
   { src: "/images/about-images/about-3.jpeg", label: "Milwaukee Bucks fan & 50/50 raffle winner" },
-  { src: "/images/about-images/about-4.jpeg", label: "Summer gardening hobby" },
-  { src: "/images/about-images/about-5.jpeg", label: "Crafting handmade gifts" },
-  { src: "/images/about-images/about-6.png", label: "Adventures with my dog, Sadie" },
+  { src: "/images/about-images/about-4.jpeg", label: "A new gardening hobby this summer" },
+  { src: "/images/about-images/about-5.jpeg", label: "Love crafting for others" },
+  { src: "/images/about-images/about-6.png", label: "Going on adventures with my dog, Sadie" },
 ];
 
 const floatTransition = {
@@ -257,50 +257,41 @@ export default function AboutHero() {
 </div>
 
         {/* Gallery grid */}
-        <div className="mx-auto w-full mt-96">
+        <div className="mx-auto w-full mt-36">
+        <div className="text-center relative">
+        <p className="text-[11px] tracking-[0.22em] text-white/60">BEYOND THE SCREEN</p>
+        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-24">Life Outside of Design</h2>
+      </div>
+
           <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-36">
-            {items.map((item, index) => {
-              const isActive = activeIndex === index;
+          {items.map((item, index) => (
+  <div
+    key={index}
+    className="rounded-full relative group aspect-square overflow-hidden border border-white/10 bg-white/5"
+  >
+    <Image
+      src={item.src}
+      alt={item.label}
+      fill
+      className="object-cover transition-all duration-300
+        group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75
+      "
+    />
 
-              return (
-                <button
-                  key={index}
-                  type="button"
-                  onClick={() => handleToggle(index)}
-                  className="rounded-full relative group aspect-square overflow-hidden border border-white/10 bg-white/5 focus:outline-none"
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.label}
-                    fill
-                    className={`object-cover transition-all duration-300
-                      ${
-                        isActive
-                          ? "blur-sm scale-105 brightness-75"
-                          : "scale-100"
-                      }
-                      group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75
-                    `}
-                  />
+    <div
+      className="
+        absolute inset-0 flex items-center justify-center px-2 text-center
+        text-[9px] xs:text-xs sm:text-sm md:text-base font-medium 
+        transition-opacity duration-300
+        opacity-0 group-hover:opacity-100
+        bg-black/40 backdrop-blur-sm
+      "
+    >
+      {item.label}
+    </div>
+  </div>
+))}
 
-                  <div
-                    className={`
-                      absolute inset-0 flex items-center justify-center px-2 text-center
-                      text-[9px] xs:text-xs sm:text-sm md:text-base font-medium mt-12
-                      transition-opacity duration-300
-                      ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0 group-hover:opacity-100"
-                      }
-                      bg-black/40 backdrop-blur-sm
-                    `}
-                  >
-                    {item.label}
-                  </div>
-                </button>
-              );
-            })}
           </div>
         </div>
       </div>

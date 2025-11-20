@@ -21,7 +21,7 @@ export default function Header() {
 
           <Link
             href="/"
-            className="text-white font-semibold tracking-wide lg:text-3xl hover:text-purple-400"
+            className="text-white font-semibold tracking-wide lg:text-3xl hover:text-gray-600"
           >
             PS
           </Link>
@@ -30,19 +30,19 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8 text-sm lg:text-md text-white/90">
             <Link
               href="/#case-studies"
-              className="uppercase tracking-[0.18em] hover:text-orange-400"
+              className="uppercase tracking-[0.18em] hover:text-gray-600"
             >
               Case Studies
             </Link>
             <Link
               href="/experience"
-              className="uppercase tracking-[0.18em] hover:text-yellow-500"
+              className="uppercase tracking-[0.18em] hover:text-gray-600"
             >
               Experience
             </Link>
             <Link
               href="/about"
-              className="uppercase tracking-[0.18em] hover:text-blue-600"
+              className="uppercase tracking-[0.18em] hover:text-gray-600"
             >
               About Me
             </Link>
