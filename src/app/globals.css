@@ -143,3 +143,19 @@ html, body {
   background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,.85) 26%, rgba(0,0,0,.6) 52%, rgba(0,0,0,0) 100%);
 }
 
+@keyframes outlineGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-outlineGlow {
+  background-size: 200% 200%;
+  animation: outlineGlow 10s ease-in-out infinite;
+}

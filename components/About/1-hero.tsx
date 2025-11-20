@@ -20,29 +20,6 @@ const floatTransition = {
   ease: "easeInOut",
 };
 
-// glow color map per icon alt
-const glowColorByAlt: Record<string, string> = {
-  "Shopify Logo": "rgba(16, 185, 129, 0.85)",          // green
-  "Canva Logo": "rgba(56, 189, 248, 0.85)",            // teal/blue
-  "Google Analytics Logo": "rgba(245, 158, 11, 0.9)",  // amber
-  "Adobe AE Logo": "rgba(129, 140, 248, 0.9)",         // indigo
-  "Figma Logo": "rgba(244, 114, 182, 0.9)",            // pink
-  "React Logo": "rgba(45, 212, 191, 0.9)",             // cyan
-  "Next.js Logo": "rgba(248, 250, 252, 0.9)",          // soft white
-  "Javascript Logo": "rgba(250, 204, 21, 0.9)",        // yellow
-  "Tailwind Logo": "rgba(56, 189, 248, 0.9)",          // sky blue
-  "Sass Logo": "rgba(244, 114, 182, 0.9)",             // pink
-  "VS Code Logo": "rgba(59, 130, 246, 0.9)",           // blue
-  "CSS Logo": "rgba(37, 99, 235, 0.9)",                // deep blue
-  HTML: "rgba(249, 115, 22, 0.9)",                     // orange
-  Github: "rgba(248, 250, 252, 0.9)",                  // soft white
-  Vercel: "rgba(248, 250, 252, 0.9)",                  // soft white
-};
-
-function getGlowColor(alt: string) {
-  return glowColorByAlt[alt] ?? "rgba(255,255,255,0.8)";
-}
-
 function FloatingSkillIcon({
   src,
   alt,
@@ -54,8 +31,6 @@ function FloatingSkillIcon({
   index: number;
   className: string;
 }) {
-  const glowColor = getGlowColor(alt);
-
   return (
     <motion.div
       className={`absolute flex flex-col items-center justify-center
@@ -65,7 +40,7 @@ function FloatingSkillIcon({
       initial="rest"
       whileHover="hover"
     >
-      {/* wrapper so glow + icon react to same hover state */}
+      {/* wrapper for scaling */}
       <motion.div
         variants={{
           rest: { scale: 1 },
@@ -74,21 +49,6 @@ function FloatingSkillIcon({
         transition={{ type: "spring", stiffness: 180, damping: 12 }}
         className="relative flex items-center justify-center"
       >
-        {/* colored glow */}
-        <motion.div
-          className="absolute inset-0 rounded-full"
-          variants={{
-            rest: { opacity: 0, scale: 0.7 },
-            hover: { opacity: 1, scale: 1.3 },
-          }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          style={{
-            boxShadow: `0 0 40px 16px ${glowColor}`,
-            background: glowColor,
-            zIndex: -1,
-          }}
-        />
-
         {/* circle + icon */}
         <div
           className="flex h-14 w-14 md:h-24 md:w-24 items-center justify-center
@@ -111,7 +71,7 @@ function FloatingSkillIcon({
           hover: { opacity: 1, y: 0 },
         }}
         transition={{ duration: 0.45, ease: "easeOut" }}
-        className="text-white text-[10px] md:text-xs mt-1 pointer-events-none"
+        className="text-white text-[10px] md:text-xs mt-4 pointer-events-none tracking-[0.12em]"
       >
         {alt}
       </motion.span>
@@ -209,7 +169,6 @@ export default function AboutHero() {
           />
 
           {/* LEFT SIDE CASCADE */}
-
           <FloatingSkillIcon
             src="images/skills/4.png"
             alt="Google Analytics"
@@ -232,7 +191,6 @@ export default function AboutHero() {
           />
 
           {/* RIGHT SIDE CASCADE */}
-
           <FloatingSkillIcon
             src="images/skills/8.png"
             alt="Javascript"
@@ -289,7 +247,7 @@ export default function AboutHero() {
               alt="Paige Sylvan headshot"
               width={500}
               height={420}
-              className="rounded-3xl object-cover"
+              className="rounded-full object-cover"
             />
           </div>
         </div>

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import  PaigeOutlineTrace from "../outline"; // adjust path as needed
+
 
 type Props = {
   title?: string;
@@ -56,18 +58,25 @@ export default function Her0({
             </p>
           </div>
 
-          {/* Headshot image in the middle of the column */}
-          <div className="flex justify-center mb-24">
-            <div className="rounded-3xl overflow-hidden relative z-10">
-              <Image
-                src="/images/homepage-images/paige-headshot.png"
-                alt="Paige Sylvan headshot"
-                width={500}
-                height={420}
-                className="rounded-3xl object-cover"
-              />
-            </div>
-          </div>
+
+          <div className="relative mx-auto w-[350px] md:w-[420px]">
+  {/* Image */}
+  <Image
+    src="/images/homepage-images/paige-headshot.png"
+    alt="Paige Sylvan headshot"
+    width={500}
+    height={420}
+    className="rounded-3xl object-cover w-full"
+  />
+
+  {/* Outline */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <PaigeOutlineTrace />
+  </div>
+</div>
+
+
+
 
           {/* About paragraph + CTA (from HomeAbout) */}
           <div className="max-w-[520px] mx-auto flex flex-col items-center gap-4">
