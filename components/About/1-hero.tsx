@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import  PaigeOutlineTrace from "../outline"; // adjust path as needed
 
 const items = [
   { src: "/images/about-images/about-1.JPG", label: "Exploring new places; China 2018" },
@@ -109,7 +110,7 @@ export default function AboutHero() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[12vh]">
+      <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[9vh]">
         {/* Floating skills */}
         <div className="relative w-full h-[280px] md:h-[320px] mb-4 pointer-events-none">
           {/* far left top */}
@@ -239,18 +240,21 @@ export default function AboutHero() {
           that are not only beautiful but built to work in the real world.
         </p>
 
-        {/* Headshot */}
-        <div className="flex justify-center lg:mb-24">
-          <div className="rounded-3xl overflow-hidden relative z-10">
-            <Image
-              src="/images/about-images/paige.png"
-              alt="Paige Sylvan headshot"
-              width={500}
-              height={420}
-              className="rounded-full object-cover"
-            />
-          </div>
-        </div>
+        <div className="relative mx-auto w-[350px] md:w-[420px]">
+  {/* Image */}
+  <Image
+    src="/images/homepage-images/paige-headshot.png"
+    alt="Paige Sylvan headshot"
+    width={500}
+    height={420}
+    className="rounded-3xl object-cover w-full"
+  />
+
+  {/* Outline */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <PaigeOutlineTrace />
+  </div>
+</div>
 
         {/* Gallery grid */}
         <div className="mx-auto w-full mt-96">

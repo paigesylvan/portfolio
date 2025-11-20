@@ -41,7 +41,7 @@ export default function AboutFinalSection() {
           <div className="md:col-span-5 flex justify-center md:justify-end pb-12 lg:py-36">
             <ul className="flex flex-wrap md:flex-nowrap gap-6 md:gap-7">
               {[
-                { label: "Resume",  href: "/images/about-images/PaigeSylvan.pdf", icon: "file" },
+                { label: "Resume",  href: "/images/about-images/Paige-Sylvan.pdf", icon: "file" },
                 { label: "LinkedIn", href: "https://linkedin.com/in/paige-sylvan", icon: "linkedin" },
                 { label: "GitHub",   href: "https://github.com/paigesylvan",     icon: "github" },
                 { label: "Email",    href: "mailto:paigesylvan@gmail.com",       icon: "mail" },

@@ -4,7 +4,7 @@ export default function ExperienceHero() {
   return (
     <section className="min-h-[100svh] flex items-center justify-center px-6">
       <div className="w-full max-w-[1200px] mx-auto text-center">
-        <p className="text-[12px] tracking-[0.22em] text-amber-400"> EXPERIENCE </p>
+        <p className="text-[12px] tracking-[0.22em] text-[#FACC15]"> EXPERIENCE </p>
         <h1 className="mt-2 text-xl lg:text-3xl">Software & UI Developer Internship</h1>
 
         <p className="mt-6 text-sm lg:text-2xl ">

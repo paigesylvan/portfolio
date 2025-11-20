@@ -41,7 +41,7 @@ export default function Her0({
   
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[30vh]">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[27vh]">
         <div className="flex flex-col items-center text-center gap-10">
           {/* Name + hero subtitle (from HeroProfico) */}
           <div>

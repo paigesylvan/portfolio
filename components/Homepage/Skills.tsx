@@ -45,7 +45,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-20 lg:py-32 overflow-hidden bg-black text-white mb-20"
+      className="relative  lg:py-32 overflow-hidden bg-black text-white lg:mb-20"
     >
       {/* Soft global vignette */}
       <div
@@ -83,8 +83,8 @@ export default function Skills() {
                   absolute left-1/2 top-1/2
                   -translate-x-1/2 -translate-y-1/2
                   md:-translate-x-[60%] lg:-translate-x-[70%]
-                  z-0 w-[420px] h-[320px]
-                  blur-[80px] opacity-55 pointer-events-none
+                  z-0 w-[420px] h-[180px]
+                  blur-[80px] opacity-90 pointer-events-none
                 "
                 style={{ background: HUES[i % HUES.length] }}
               />
@@ -106,7 +106,7 @@ export default function Skills() {
                   {s.title}
                 </h3>
 
-                <p className="text-white/80 leading-snug text-[14px] md:text-[15px] px-20 md:px-0  lg:w-[50%]">
+                <p className="text-white/80 leading-snug text-[14px] md:text-[15px] px-8 md:px-0 lg:w-[50%]">
                   {s.body}
                 </p>
               </div>
