@@ -1,30 +1,27 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import  PaigeOutlineTrace from "../outline"; // adjust path as needed
-
+import PaigeOutlineTrace from "../outline";
 
 type Props = {
   title?: string;
   subtitle?: string;
   kicker?: string;
-  height?: number;
+  minHeight?: number | string;
 };
 
-export default function Her0({
+export default function Hero({
   title = "PAIGE SYLVAN",
   subtitle = "I design experiences that balance clarity, usability, and beauty. Driven by the process of turning an idea into something real.",
   kicker = "",
-  height,
+  minHeight,
 }: Props) {
   return (
     <section
-      className="relative overflow-hidden text-white full-bleed pt-safe pb-safe "
-      style={height ? { height } : undefined}
+      aria-labelledby="hero-title"
+      className="relative overflow-hidden text-white full-bleed pt-safe pb-safe"
+      style={minHeight ? { minHeight } : undefined}
     >
-      {/* Original hero aurora background */}
+      {/* Aurora background */}
       <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[70vh] pointer-events-none z-0" />
       <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
       <div
@@ -36,53 +33,51 @@ export default function Her0({
         aria-hidden
       />
 
-
-
-  
-
-      {/* CONTENT */}
-      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[27vh]">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[18vh] md:mt-[24vh] lg:mt-[27vh]">
         <div className="flex flex-col items-center text-center gap-10">
-          {/* Name + hero subtitle (from HeroProfico) */}
+          
+          {/* Title + Subtitle */}
           <div>
             {kicker && (
               <p className="text-[10px] tracking-[0.22em] text-white/90">
                 {kicker}
               </p>
             )}
-            <h1 className="mt-2 text-5xl md:text-7xl lg:text-7xl tracking-[0.01em] font-semibold">
+
+            <h1
+              id="hero-title"
+              className="mt-2 text-5xl md:text-7xl lg:text-7xl tracking-[0.01em] font-semibold"
+            >
               {title}
             </h1>
+
             <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[500px] mx-auto mb-36">
               {subtitle}
             </p>
           </div>
 
-
+          {/* Image + Outline */}
           <div className="relative mx-auto w-[350px] md:w-[420px]">
-  {/* Image */}
-  <Image
-    src="/images/homepage-images/paige-headshot.png"
-    alt="Paige Sylvan headshot"
-    width={500}
-    height={420}
-    className="rounded-3xl object-cover w-full"
-  />
+            <Image
+              src="/images/homepage-images/paige-headshot.png"
+              alt="Paige Sylvan headshot"
+              width={500}
+              height={420}
+              className="rounded-3xl object-cover w-full"
+              priority
+              sizes="(min-width: 768px) 420px, 350px"
+            />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <PaigeOutlineTrace />
+            </div>
+          </div>
 
-  {/* Outline */}
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <PaigeOutlineTrace />
-  </div>
-</div>
-
-
-
-
-          {/* About paragraph + CTA (from HomeAbout) */}
+          {/* About block */}
           <div className="max-w-[520px] mx-auto flex flex-col items-center gap-4">
-          <p className="mb-4 text-center text-[11px] tracking-[0.22em] text-white/60">
-            ABOUT ME
-          </p>
+            <p className="mb-4 text-center text-[11px] tracking-[0.22em] text-white/60">
+              ABOUT ME
+            </p>
+
             <h2 className="text-2xl md:text-3xl font-semibold">
               Product Designer & UX/UI Developer
             </h2>
@@ -90,13 +85,12 @@ export default function Her0({
             <p className="text-white/85 leading-relaxed text-[14px] md:text-[15px]">
               I design clean, intuitive interfaces and build responsive,
               user-centered products with modern front-end tools. I blend UX
-              strategy, visual design, and real development experience to turn
+              strategy, visual design, and development experience to turn
               complex problems into simple, functional experiences.
             </p>
 
             <p className="text-[11px] uppercase tracking-wide text-white/60">
-              Open to: Full-time Product Designer or UX/UI roles • Wisconsin •
-              Remote-friendly
+              Open to: Full-time Product Designer or UX/UI roles • Wisconsin • Remote-friendly
             </p>
 
             <Link
