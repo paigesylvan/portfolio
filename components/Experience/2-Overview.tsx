@@ -115,7 +115,7 @@ export default function OverviewMWES() {
                   {skills.map((t) => (
                     <span
                       key={t}
-                      className="m-1.5 md:m-2 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-[11px] sm:text-[12px] tracking-wide text-white/90 ring-1 ring-inset ring-white/5 shadow-sm"
+                      className="rounded-lg border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
                     >
                       {t}
                     </span>
