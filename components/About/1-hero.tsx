@@ -16,7 +16,7 @@ const items = [
 
 const floatTransition = {
   duration: 5,
-  repeat: Infinity as const,
+  repeat: Infinity,
   repeatType: "reverse" as const,
   ease: "easeInOut",
 };

@@ -17,11 +17,11 @@ export default function HeroOverviewDryCleaner() {
     },
   };
 
-  const skillsRow1 = ["INFORMATION ARCHITECTURE", "UI DESIGN", "ACCESSIBILITY", "USABILITY TESTING"];
-  const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE WEB"];
+  const skillsRow1 = ["INFORMATION ARCHITECTURE", "UI DESIGN", "ACCESSIBILITY", ];
+  const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE WEBSITE", "USABILITY TESTING"];
 
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center  md:py-16">
+    <section className="w-screen bg-black text-white flex flex-col justify-center px-6  md:py-16 mt-16">
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
 
 
@@ -36,7 +36,7 @@ export default function HeroOverviewDryCleaner() {
         </div>
 
         <div className="relative  flex items-end justify-center">
-          <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:h-[600px]"
+          <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:h-[500px]"
             style={{
             background: [
               "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",

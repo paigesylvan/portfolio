@@ -4,7 +4,7 @@ export default function OverviewDryCleaner() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
 
-        <div className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] max-w-6xl">
+        <div className="rounded-3xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)] px-6 max-w-6xl">
           <div className="px-6 py-8 md:px-10 md:py-10">
             <p className="text-[11px] tracking-[0.22em] accent-text">
               GETTING TO KNOW THE COMPANY
