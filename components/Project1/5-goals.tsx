@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 type Goal = {
   title: string;
@@ -60,7 +60,7 @@ const goals: Goal[] = [
   },
 ];
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: {
     opacity: 1,
@@ -68,12 +68,14 @@ const parent = (stagger = 0.12) => ({
   },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.6, ease: "easeOut" },
+    transition: reduced
+      ? { duration: 0 }
+      : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
   },
 });
 
@@ -91,9 +93,10 @@ export default function Goals() {
 
         {/* Intro blurb */}
         <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-4xl text-center text-white/80 leading-tight">
-          From my research, I identified key focus areas from user needs to guide my UI design decisions.
-          These findings highlight the need for a digital experience that builds trust, simplifies decisions,
-          and streamlines the booking process.
+          From my research, I identified key focus areas from user needs to guide
+          my UI design decisions. These findings highlight the need for a
+          digital experience that builds trust, simplifies decisions, and
+          streamlines the booking process.
         </p>
 
         <motion.div
@@ -110,7 +113,7 @@ export default function Goals() {
           {goals.map((g) => (
             <motion.div
               key={g.title}
-              variants={item(prefersReduced)}
+              variants={item(!!prefersReduced)}
               className="
                 group flex flex-col items-center justify-between
                 rounded-xl bg-white/5 p-2 sm:p-3 md:p-4

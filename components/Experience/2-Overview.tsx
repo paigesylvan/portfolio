@@ -76,7 +76,7 @@ export default function OverviewMWES() {
         <div className="text-center md:text-left mb-4 md:mb-6">
           <SectionHeader
           kicker="GETTING TO KNOW THE COMPANY"
-           title={<span data-nosnippet>Midwest Engineered Systems (MWES)</span>}
+           title="Midwest Engineered Systems (MWES)"
           align="left"
           titleClassName="text-2xl lg:text-4xl"
           kickerClassName="text-[10px] sm:text-[11px]"

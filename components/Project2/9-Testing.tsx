@@ -1,20 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.5, ease: "easeOut" },
+    transition: reduced
+      ? { duration: 0 }
+      : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing (no string)
   },
 });
 
@@ -42,7 +44,6 @@ export default function TestingIterationCamping() {
           kicker="TESTING & ITERATION"
           title="How I validated and refined the experience"
           align="center"
-          accent="camp"
         />
 
         {/* Top row */}
@@ -55,7 +56,7 @@ export default function TestingIterationCamping() {
         >
           {/* Left card */}
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(!!prefersReduced)}
             className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_16px_60px_rgba(0,0,0,0.45)]"
           >
             <p className="text-[10px] tracking-[0.22em] text-[#00C67C] font-semibold">
@@ -67,35 +68,22 @@ export default function TestingIterationCamping() {
 
             <div className="mt-3 grid gap-4 sm:grid-cols-3 text-center">
               <div>
-                <MiniImage
-                  src="/images/project2-images/clarity.png"
-                  alt="Clarity"
-                />
+                <MiniImage src="/images/project2-images/clarity.png" alt="Clarity" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Clarity</h4>
                 <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Do users quickly grasp what the site offers?
                 </p>
               </div>
               <div>
-                <MiniImage
-                  src="/images/project2-images/navigation.png"
-                  alt="Navigation"
-                />
-                <h4 className="font-semibold text-[#00C67C] text-xs">
-                  Navigation
-                </h4>
+                <MiniImage src="/images/project2-images/navigation.png" alt="Navigation" />
+                <h4 className="font-semibold text-[#00C67C] text-xs">Navigation</h4>
                 <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Can users move from discovery to purchase without friction?
                 </p>
               </div>
               <div>
-                <MiniImage
-                  src="/images/project2-images/confidence.png"
-                  alt="Confidence"
-                />
-                <h4 className="font-semibold text-[#00C67C] text-xs">
-                  Confidence
-                </h4>
+                <MiniImage src="/images/project2-images/confidence.png" alt="Confidence" />
+                <h4 className="font-semibold text-[#00C67C] text-xs">Confidence</h4>
                 <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Do tighter bundles + clear copy raise purchase confidence?
                 </p>
@@ -105,7 +93,7 @@ export default function TestingIterationCamping() {
 
           {/* Right card */}
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(!!prefersReduced)}
             className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_16px_60px_rgba(0,0,0,0.45)]"
           >
             <p className="text-[9px] tracking-[0.22em] text-[#00C67C] font-semibold">
@@ -116,9 +104,7 @@ export default function TestingIterationCamping() {
             </h3>
             <p className="mt-2 text-[12px] text-white/75 leading-snug">
               I ran a{" "}
-              <span className="font-semibold text-[#00C67C]">
-                moderated usability test
-              </span>{" "}
+              <span className="font-semibold text-[#00C67C]">moderated usability test</span>{" "}
               with one participant. During the session, I:
             </p>
             <ul className="mt-2 space-y-1 list-disc pl-4 text-white/75 text-[12px] leading-snug">
@@ -144,7 +130,7 @@ export default function TestingIterationCamping() {
         >
           {/* Left card */}
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(!!prefersReduced)}
             className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_16px_60px_rgba(0,0,0,0.45)]"
           >
             <p className="text-[9px] tracking-[0.22em] text-[#00C67C] font-semibold">
@@ -154,12 +140,8 @@ export default function TestingIterationCamping() {
               Key Design Adjustments
             </h3>
             <ul className="mt-2 space-y-1 list-disc pl-4 text-white/75 text-[12px] leading-snug">
-              <li>
-                Elevated the Starter Bundle on the homepage with clearer context.
-              </li>
-              <li>
-                Simplified checkout copy and item details to reassure purchases.
-              </li>
+              <li>Elevated the Starter Bundle on the homepage with clearer context.</li>
+              <li>Simplified checkout copy and item details to reassure purchases.</li>
             </ul>
             <p className="mt-2 text-[12px] text-white/70 leading-snug">
               These changes balanced simplicity and trust. Clear explanations +
@@ -169,7 +151,7 @@ export default function TestingIterationCamping() {
 
           {/* Right card */}
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(!!prefersReduced)}
             className="rounded-2xl bg-white/[0.04] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_16px_60px_rgba(0,0,0,0.45)]"
           >
             <p className="text-[10px] tracking-[0.22em] text-[#00C67C] font-semibold">

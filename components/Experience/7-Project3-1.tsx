@@ -2,24 +2,34 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type Transition,
+} from "framer-motion";
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.7, ease: "easeOut" },
+    transition: {
+      duration: reduced ? 0 : 0.7,
+      // TS-safe equivalent of "easeOut"
+      ease: [0, 0, 0.58, 1],
+    } as Transition,
   },
 });
 
 export default function Project3Part1() {
   const prefersReduced = useReducedMotion();
+  const reduced = !!prefersReduced;
 
   return (
     <section className="flex flex-col items-center justify-center px-4 text-white mt-16 lg:mt-36 mb-0">
@@ -33,9 +43,8 @@ export default function Project3Part1() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-8"
         >
-
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="order-1 md:order-2 md:col-span-7"
           >
             <div className="w-full rounded-xl overflow-hidden">
@@ -54,9 +63,8 @@ export default function Project3Part1() {
             </p>
           </motion.div>
 
-
           <motion.article
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">
@@ -80,9 +88,8 @@ export default function Project3Part1() {
             </p>
           </motion.article>
 
-
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="order-3 md:order-4 md:col-span-7"
           >
             <div className="w-full rounded-xl overflow-hidden">
@@ -99,9 +106,8 @@ export default function Project3Part1() {
             </p>
           </motion.div>
 
-
           <motion.article
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
             <div className="flex items-start gap-4">

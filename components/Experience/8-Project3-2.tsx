@@ -1,29 +1,38 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type Transition,
+} from "framer-motion";
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 26 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.65, ease: "easeOut" },
+    transition: {
+      duration: reduced ? 0 : 0.65,
+      // TS-safe equivalent of "easeOut"
+      ease: [0, 0, 0.58, 1],
+    } as Transition,
   },
 });
 
 export default function Project3Part2() {
   const prefersReduced = useReducedMotion();
+  const reduced = !!prefersReduced;
 
   return (
     <section className="flex flex-col items-center justify-center px-4 text-white mt-18 lg:mt-36 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -31,9 +40,8 @@ export default function Project3Part2() {
           viewport={{ once: true, amount: 0.25 }}
           className="grid grid-cols-1 gap-8 md:grid-cols-12 md:auto-rows-[minmax(180px,auto)]"
         >
-
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="md:col-span-6 rounded-2xl"
           >
             <Image
@@ -46,10 +54,9 @@ export default function Project3Part2() {
             />
           </motion.div>
 
-
           <div className="md:col-span-6 flex flex-col gap-8">
             <motion.article
-              variants={item(prefersReduced)}
+              variants={item(reduced)}
               className="w-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
             >
               <div className="flex items-start gap-4">
@@ -76,7 +83,7 @@ export default function Project3Part2() {
               </ul>
             </motion.article>
 
-            <motion.div variants={item(prefersReduced)} className="w-full">
+            <motion.div variants={item(reduced)} className="w-full">
               <Image
                 src="/images/experience-images/nav-menu.png"
                 alt="HMI navigation/menu"
@@ -87,9 +94,8 @@ export default function Project3Part2() {
             </motion.div>
           </div>
 
-
           <motion.article
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="md:col-span-6 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col"
           >
             <div className="flex items-start gap-4">
@@ -136,7 +142,7 @@ export default function Project3Part2() {
             </div>
           </motion.article>
 
-          <motion.div variants={item(prefersReduced)} className="md:col-span-6">
+          <motion.div variants={item(reduced)} className="md:col-span-6">
             <Image
               src="/images/experience-images/conveyors.png"
               alt="Conveyors control HMI"

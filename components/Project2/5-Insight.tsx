@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 
 type Insight = {
@@ -26,15 +26,13 @@ const insights: Insight[] = [
     title: "Too Many Options",
     body:
       "Large catalogs overwhelmed users, making comparison and product discovery difficult.",
-    goal:
-      "Ease into gear discovery with curated product lines and collections.",
+    goal: "Ease into gear discovery with curated product lines and collections.",
     staticIcon: "/images/project2-images/navigation.png",
     alt: "Too many options icon",
   },
   {
     title: "Unfamiliar with Products",
-    body:
-      "Technical jargon and unclear features reduced trust and confidence.",
+    body: "Technical jargon and unclear features reduced trust and confidence.",
     goal:
       "Build trust through clear, digestible product descriptions, setup guides, and reviews.",
     staticIcon: "/images/project2-images/confidence.png",
@@ -42,7 +40,7 @@ const insights: Insight[] = [
   },
 ];
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: {
     opacity: 1,
@@ -50,12 +48,14 @@ const parent = (stagger = 0.12) => ({
   },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.7, ease: "easeOut" },
+    transition: reduced
+      ? { duration: 0 }
+      : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
   },
 });
 
@@ -65,18 +65,13 @@ export default function KeyInsights() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 sm:px-6 text-white mt-36 lg:mt-0 pb-6">
       <div className="w-full max-w-[1000px] mx-auto">
-        <SectionHeader
-          kicker="KEY INSIGHTS"
-          title="Findings From Research"
-          align="center"
-          accent="camp"
-        />
+        <SectionHeader kicker="KEY INSIGHTS" title="Findings From Research" align="center" />
 
         <p className="text-center text-[10px] sm:text-sm md:text-md text-white/70 leading-snug max-w-[300px] lg:max-w-[780px] mx-auto mt-3">
-          User journeys and mind mapping helped identify where first-time campers felt
-          uncertain or overwhelmed. These methods revealed core pain points and guided
-          the design goals shown below, ensuring design decisions are supporting the user experience.
-
+          User journeys and mind mapping helped identify where first-time campers
+          felt uncertain or overwhelmed. These methods revealed core pain points
+          and guided the design goals shown below, ensuring design decisions are
+          supporting the user experience.
         </p>
 
         <motion.div
@@ -89,7 +84,7 @@ export default function KeyInsights() {
           {insights.map((i) => (
             <motion.div
               key={i.title}
-              variants={item(prefersReduced)}
+              variants={item(!!prefersReduced)}
               className="group flex flex-col max-w-[300px] justify-between h-full rounded-2xl bg-white/[0.03] backdrop-blur-md ring-1 ring-white/10 
                          p-4 md:p-6 text-center shadow-[0_16px_60px_rgba(0,0,0,0.45)] 
                          transition-all hover:bg-white/[0.06] hover:-translate-y-0.5"
@@ -107,7 +102,9 @@ export default function KeyInsights() {
                   </div>
                 </div>
 
-                <h3 className="text-sm sm:text-base md:text-md font-semibold">{i.title}</h3>
+                <h3 className="text-sm sm:text-base md:text-md font-semibold">
+                  {i.title}
+                </h3>
                 <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-white/80 leading-snug">
                   {i.body}
                 </p>
@@ -122,7 +119,6 @@ export default function KeyInsights() {
                   {i.goal}
                 </p>
               </div>
-
             </motion.div>
           ))}
         </motion.div>

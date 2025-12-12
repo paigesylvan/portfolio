@@ -13,7 +13,6 @@ export default function HeroOverviewCamping() {
             kicker="RESPONSIVE WEBSITE DESIGN"
             title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
             align="center"
-            accent="camp"
             kickerClassName="text-[7px] md:text-xs text-emerald-400"
             titleClassName="text-sm md:text-xl lg:text-2xl max-w-[600px] mx-auto mt-2"
           />

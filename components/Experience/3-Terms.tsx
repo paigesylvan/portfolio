@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type Transition,
+} from "framer-motion";
 
 type Term = {
   title: string;
@@ -39,22 +44,29 @@ const terms: Term[] = [
   },
 ];
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+// ✅ type-safe variants (no "easeOut" string)
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.7, ease: "easeOut" },
+    transition: {
+      duration: reduced ? 0 : 0.7,
+      // cubic-bezier equivalent of easeOut, TS-safe
+      ease: [0, 0, 0.58, 1],
+    } as Transition,
   },
 });
 
 export default function Terms() {
   const prefersReduced = useReducedMotion();
+  // coerce boolean | null -> boolean
+  const reduced = !!prefersReduced;
 
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white">
@@ -75,7 +87,7 @@ export default function Terms() {
           {terms.map((t) => (
             <motion.article
               key={t.title}
-              variants={item(prefersReduced)}
+              variants={item(reduced)}
               className="
                 rounded-3xl bg-white/[0.06] backdrop-blur-md
                 ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)]
@@ -98,7 +110,9 @@ export default function Terms() {
 
                 {/* Right text column (mobile), top text (desktop) */}
                 <div className="flex-1 sm:mt-4 sm:mx-auto sm:max-w-[360px]">
-                  <h3 className="text-base sm:text-xl font-semibold">{t.title}</h3>
+                  <h3 className="text-base sm:text-xl font-semibold">
+                    {t.title}
+                  </h3>
                   {t.subtitle ? (
                     <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-white/70">
                       {t.subtitle}

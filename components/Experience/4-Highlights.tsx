@@ -2,13 +2,18 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type Transition,
+} from "framer-motion";
 
 type Highlight = {
   title: string;
   body: string;
-  still: string; 
-  gif: string;   
+  still: string;
+  gif: string;
   alt: string;
 };
 
@@ -18,7 +23,7 @@ const highlights: Highlight[] = [
     body:
       "Worked on cross-disciplinary teams to design HMIs for custom industrial automation projects.",
     still: "/images/experience-images/collab.png",
-    gif:  "/images/experience-images/collab.gif",
+    gif: "/images/experience-images/collab.gif",
     alt: "Collaboration icon",
   },
   {
@@ -26,7 +31,7 @@ const highlights: Highlight[] = [
     body:
       "Troubleshot HMI programming in Ignition Designer to ensure a seamless UI experience.",
     still: "/images/experience-images/solve.png",
-    gif:  "/images/experience-images/solve.gif",
+    gif: "/images/experience-images/solve.gif",
     alt: "Problem solving icon",
   },
   {
@@ -34,7 +39,7 @@ const highlights: Highlight[] = [
     body:
       "Designed an end-to-end HMI in FactoryTalk View SE and deployed to an Allen-Bradley PanelView 5000.",
     still: "/images/experience-images/uiux.png",
-    gif:  "/images/experience-images/uiux.gif",
+    gif: "/images/experience-images/uiux.gif",
     alt: "UI UX icon",
   },
   {
@@ -42,7 +47,7 @@ const highlights: Highlight[] = [
     body:
       "Went off-site to help troubleshoot remote viewing via Ewon devices for a customer.",
     still: "/images/experience-images/support.png",
-    gif:  "/images/experience-images/support.gif",
+    gif: "/images/experience-images/support.gif",
     alt: "Support icon",
   },
   {
@@ -50,7 +55,7 @@ const highlights: Highlight[] = [
     body:
       "Hands-on PLC hardware + logic; programmed with Studio 5000 and implemented PLC logic.",
     still: "/images/experience-images/code.png",
-    gif:  "/images/experience-images/code.gif",
+    gif: "/images/experience-images/code.gif",
     alt: "Programming icon",
   },
   {
@@ -58,27 +63,32 @@ const highlights: Highlight[] = [
     body:
       "Balanced usability, efficiency, design, and safety in complex industrial systems.",
     still: "/images/experience-images/safety.png",
-    gif:  "/images/experience-images/safety.gif",
+    gif: "/images/experience-images/safety.gif",
     alt: "Safety icon",
   },
 ];
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.7, ease: "easeOut" },
+    transition: {
+      duration: reduced ? 0 : 0.7,
+      // TS-safe equivalent of "easeOut"
+      ease: [0, 0, 0.58, 1],
+    } as Transition,
   },
 });
 
 export default function Experience() {
   const prefersReduced = useReducedMotion();
+  const reduced = !!prefersReduced;
 
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center text-white mt-36 pb-12 lg:pb-0 lg:mt-0 px-8">
@@ -99,7 +109,7 @@ export default function Experience() {
           {highlights.map((h) => (
             <motion.article
               key={h.title}
-              variants={item(prefersReduced)}
+              variants={item(reduced)}
               className="
                 group rounded-3xl bg-white/[0.06] backdrop-blur-md
                 ring-1 ring-white/10 shadow-[0_30px_100px_rgba(0,0,0,0.45)]
@@ -107,7 +117,6 @@ export default function Experience() {
                 transition-colors hover:bg-white/[0.10]
               "
             >
-
               <div className="relative h-20 w-20">
                 {/* still */}
                 <Image
@@ -129,7 +138,9 @@ export default function Experience() {
               </div>
 
               <h3 className="mt-5 text-base font-semibold">{h.title}</h3>
-              <p className="mt-3 text-white/80 leading-snug lg:leading-snug">{h.body}</p>
+              <p className="mt-3 text-white/80 leading-snug lg:leading-snug">
+                {h.body}
+              </p>
             </motion.article>
           ))}
         </motion.div>

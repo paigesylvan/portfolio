@@ -2,18 +2,27 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type Transition,
+} from "framer-motion";
 
 export default function HeroOverviewDog() {
   const prefersReduced = useReducedMotion();
 
-  const phoneVariants = {
+  const phoneVariants: Variants = {
     hidden: { opacity: 0, y: 14, filter: "blur(8px)" },
     show: {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: prefersReduced ? 0 : 0.7, ease: "easeOut" },
+      transition: {
+        duration: prefersReduced ? 0 : 0.7,
+        // TS-safe "easeOut" equivalent as a cubic-bezier curve
+        ease: [0, 0, 0.58, 1],
+      } as Transition,
     },
   };
 
@@ -23,13 +32,11 @@ export default function HeroOverviewDog() {
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-12 lg:mt-[50px]">
       <div className="mx-auto w-full max-w-[1000px] px-4 md:px-6">
-
         <div className="text-center">
           <SectionHeader
             kicker="MOBILE APPLICATION"
             title="How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming"
             align="center"
-            accent="dog"
             kickerClassName="text-[7px] md:text-xs text-[#9DC0FF]"
             titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
           />
@@ -37,24 +44,22 @@ export default function HeroOverviewDog() {
 
         {/* mobile hero image*/}
         <div className="relative mt-10 flex items-end justify-center gap-4 md:gap-6">
-       
-        {/* hue */}
-        <div
-        className="absolute inset-0 z-1 pointer-events-none
+          {/* hue */}
+          <div
+            className="absolute inset-0 z-1 pointer-events-none
              left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
              w-[800px] h-[800px]"
-        style={{
-          background: [
-          "radial-gradient(400px 300px at 50% 55%, rgba(80,140,255,0.9) 0%, rgba(80,140,255,0.4) 45%, rgba(0,0,0,0) 75%)",
-          "radial-gradient(800px 400px at 48% 60%, rgba(0,195,255,0.28) 0%, rgba(0,195,255,0.12) 48%, rgba(0,0,0,0) 80%)",
-          "radial-gradient(900px 400px at 40% 72%, rgba(110,80,255,0.20) 0%, rgba(110,80,255,0.08) 44%, rgba(0,0,0,0) 78%)",
-          ].join(", "),
-          filter: "blur(80px)",
-          opacity: 0.9,
-          mixBlendMode: "screen",
-          }}
+            style={{
+              background: [
+                "radial-gradient(400px 300px at 50% 55%, rgba(80,140,255,0.9) 0%, rgba(80,140,255,0.4) 45%, rgba(0,0,0,0) 75%)",
+                "radial-gradient(800px 400px at 48% 60%, rgba(0,195,255,0.28) 0%, rgba(0,195,255,0.12) 48%, rgba(0,0,0,0) 80%)",
+                "radial-gradient(900px 400px at 40% 72%, rgba(110,80,255,0.20) 0%, rgba(110,80,255,0.08) 44%, rgba(0,0,0,0) 78%)",
+              ].join(", "),
+              filter: "blur(80px)",
+              opacity: 0.9,
+              mixBlendMode: "screen",
+            }}
           />
-
 
           {/* left phone */}
           <motion.div
@@ -116,8 +121,8 @@ export default function HeroOverviewDog() {
 
         {/* overview */}
         <div className="mt-12 lg:mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
-          {/*left */}
-          <div className='lg:ml-24'>
+          {/* left */}
+          <div className="lg:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
             <p className="mt-1 text-white/90">
               Design a mobile-first app for a local dog grooming service.
@@ -129,7 +134,7 @@ export default function HeroOverviewDog() {
             </p>
           </div>
 
-          {/* rigth */}
+          {/* right */}
           <div className="mt-6 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
             <p className="mt-1 text-white/90">July 2025 – August 2025</p>

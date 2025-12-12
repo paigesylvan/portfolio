@@ -2,29 +2,38 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 export default function HeroOverviewDryCleaner() {
   const prefersReduced = useReducedMotion();
 
-  const screenVariants = {
-    hidden: { opacity: 0, y: 14, filter: "blur(8px)" },
+  const screenVariants = (reduced: boolean): Variants => ({
+    hidden: {
+      opacity: 0,
+      y: reduced ? 0 : 14,
+      filter: reduced ? "blur(0px)" : "blur(8px)",
+    },
     show: {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: prefersReduced ? 0 : 0.7, ease: "easeOut" },
+      transition: reduced
+        ? { duration: 0 }
+        : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
     },
-  };
+  });
 
-  const skillsRow1 = ["INFORMATION ARCHITECTURE", "UI DESIGN", "ACCESSIBILITY", ];
-  const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE WEBSITE", "USABILITY TESTING"];
+  const skillsRow1 = ["INFORMATION ARCHITECTURE", "UI DESIGN", "ACCESSIBILITY"];
+  const skillsRow2 = [
+    "WIREFRAMING",
+    "PROTOTYPING",
+    "RESPONSIVE WEBSITE",
+    "USABILITY TESTING",
+  ];
 
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center px-6  md:py-16 mt-16">
+    <section className="w-screen bg-black text-white flex flex-col justify-center px-6 md:py-16 mt-16">
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
-
-
         <div className="text-center">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
@@ -35,17 +44,18 @@ export default function HeroOverviewDryCleaner() {
           />
         </div>
 
-        <div className="relative  flex items-end justify-center">
-          <div className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[500px] lg:h-[400px]"
+        <div className="relative flex items-end justify-center">
+          <div
+            className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[500px] lg:h-[400px]"
             style={{
-            background: [
-              "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
-              "radial-gradient(800px 400px at 48% 60%, rgba(250,215,170,0.26) 0%, rgba(250,215,170,0.12) 48%, rgba(0,0,0,0) 80%)",  
-              "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
-            ].join(", "),
-            filter: "blur(80px)",
-            opacity: 0.92,
-            mixBlendMode: "screen",
+              background: [
+                "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
+                "radial-gradient(800px 400px at 48% 60%, rgba(250,215,170,0.26) 0%, rgba(250,215,170,0.12) 48%, rgba(0,0,0,0) 80%)",
+                "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
+              ].join(", "),
+              filter: "blur(80px)",
+              opacity: 0.92,
+              mixBlendMode: "screen",
             }}
           />
 
@@ -53,20 +63,19 @@ export default function HeroOverviewDryCleaner() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            variants={screenVariants}
+            variants={screenVariants(!!prefersReduced)}
             transition={{ delay: prefersReduced ? 0 : 0.1 }}
             className="relative"
           >
-        <Image
-          src="/images/project3-images/desktop.png"
-          alt="Dry cleaner homepage on desktop"
-          width={2200}
-          height={1400}
-          priority
-          className="relative z-10 w-[80vw] max-w-[400px] sm:w-[70vw] md:w-[500px] lg:w-[600px] h-auto mx-auto"
-        />
+            <Image
+              src="/images/project3-images/desktop.png"
+              alt="Dry cleaner homepage on desktop"
+              width={2200}
+              height={1400}
+              priority
+              className="relative z-10 w-[80vw] max-w-[400px] sm:w-[70vw] md:w-[500px] lg:w-[600px] h-auto mx-auto"
+            />
           </motion.div>
-
         </div>
 
         {/* overview */}
@@ -75,8 +84,9 @@ export default function HeroOverviewDryCleaner() {
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>
             <p className="mt-1 text-white/90">
-            Design and build the first website for a 30+ year local dry cleaner to clarify
-            services, hours, and trust signals for new and returning customers.
+              Design and build the first website for a 30+ year local dry cleaner to
+              clarify services, hours, and trust signals for new and returning
+              customers.
             </p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#E6D6C3]">ROLE</p>

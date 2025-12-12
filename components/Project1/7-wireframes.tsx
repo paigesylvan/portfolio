@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 type WF = {
   src: string;
@@ -18,17 +18,19 @@ const wireframes: WF[] = [
   { src: "/images/project1-images/wf-6.png", alt: "Wireframe 6" },
 ];
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.5, ease: "easeOut" },
+    transition: reduced
+      ? { duration: 0 }
+      : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
   },
 });
 
@@ -45,11 +47,12 @@ export default function Wireframes() {
         />
 
         <p className="mx-auto mt-3 max-w-[300px] lg:max-w-5xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
-          I began sketching early concepts of the pages.
-          These quick sketches allowed me to explore layouts and content hierarchy.
-           I tested different navigation bar options to see which would enhance usability and identified which 
-           items were most essential to feature. Wireframing helped me establish early structure for core flows; appointment 
-           creation, groomer discovery, and status visibility.
+          I began sketching early concepts of the pages. These quick sketches
+          allowed me to explore layouts and content hierarchy. I tested
+          different navigation bar options to see which would enhance usability
+          and identified which items were most essential to feature. Wireframing
+          helped me establish early structure for core flows; appointment
+          creation, groomer discovery, and status visibility.
         </p>
 
         {/* Wireframes grid */}
@@ -64,7 +67,7 @@ export default function Wireframes() {
           {wireframes.map((wf) => (
             <motion.figure
               key={wf.src}
-              variants={item(prefersReduced)}
+              variants={item(!!prefersReduced)}
               className="rounded-xl bg-white/5 ring-1 ring-white/10 backdrop-blur-md p-2 md:p-3 hover:bg-white/10 transition-all"
             >
               <div

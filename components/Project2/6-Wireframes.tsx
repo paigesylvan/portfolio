@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 type WF = { src: string; alt: string; label?: string };
 
@@ -15,17 +15,19 @@ const wireframes: WF[] = [
   { src: "/images/project2-images/wf2-6.png", alt: "Wireframe 6" },
 ];
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 28 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.6, ease: "easeOut" },
+    transition: reduced
+      ? { duration: 0 }
+      : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
   },
 });
 
@@ -35,16 +37,13 @@ export default function Wireframes() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 sm:px-4 text-white mt-20 lg:mt-12 pb-6">
       <div className="w-full max-w-[800px] mx-auto">
-        <SectionHeader
-          kicker="LOW-FI EXPLORATION"
-          title="Key Wireframes"
-          align="center"
-        />
+        <SectionHeader kicker="LOW-FI EXPLORATION" title="Key Wireframes" align="center" />
 
         <p className="mx-auto mt-2 lg:mt-3 max-w-[310px] lg:max-w-2xl text-center text-white/80 text-xs md:text-md leading-snug">
-          I began with low-fidelity wireframes to explore layouts that reduce overwhelm and guide users quickly toward the right gear. 
-          Since research showed beginners feel unsure where to start, I focused on surfacing curated bundles and trust-building elements 
-          early in the flow. Each frame experimented with ways to balance product discovery and clarity without clutter.
+          I began with low-fidelity wireframes to explore layouts that reduce overwhelm and guide users
+          quickly toward the right gear. Since research showed beginners feel unsure where to start, I
+          focused on surfacing curated bundles and trust-building elements early in the flow. Each frame
+          experimented with ways to balance product discovery and clarity without clutter.
         </p>
 
         {/* Grid, 3 cols on desktop */}
@@ -58,7 +57,7 @@ export default function Wireframes() {
           {wireframes.map((wf) => (
             <motion.figure
               key={wf.src}
-              variants={item(prefersReduced)}
+              variants={item(!!prefersReduced)}
               className="rounded-xl bg-white/5 ring-1 ring-white/10 backdrop-blur-md p-2 md:p-3 hover:bg-white/10 transition"
             >
               <div className="relative mx-auto aspect-[4/5] w-[120px] sm:w-[160px] md:w-[180px] overflow-hidden rounded-lg ring-1 ring-white/10">
@@ -70,6 +69,7 @@ export default function Wireframes() {
                   sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 48vw"
                 />
               </div>
+
               {wf.label && (
                 <figcaption className="mt-2 text-center text-[10px] sm:text-xs text-white/75">
                   {wf.label}

@@ -1,29 +1,38 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type Variants,
+  type Transition,
+} from "framer-motion";
 
-const parent = (stagger = 0.12) => ({
+const parent = (stagger = 0.12): Variants => ({
   hidden: { opacity: 1 },
   show: { opacity: 1, transition: { staggerChildren: stagger } },
 });
 
-const item = (reduced: boolean) => ({
+const item = (reduced: boolean): Variants => ({
   hidden: { opacity: 0, y: reduced ? 0 : 26 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: reduced ? 0 : 0.65, ease: "easeOut" },
+    transition: {
+      duration: reduced ? 0 : 0.65,
+      // TS-safe equivalent of "easeOut"
+      ease: [0, 0, 0.58, 1],
+    } as Transition,
   },
 });
 
 export default function Project3Part3() {
   const prefersReduced = useReducedMotion();
+  const reduced = !!prefersReduced;
 
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-20 mb-0">
       <div className="w-full max-w-[1200px] mx-auto">
-
         <motion.div
           variants={parent()}
           initial="hidden"
@@ -31,9 +40,8 @@ export default function Project3Part3() {
           viewport={{ once: true, amount: 0.25 }}
           className="grid grid-cols-1 gap-6 md:grid-cols-2"
         >
-
           <motion.article
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="h-full rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
                        shadow-[0_16px_60px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
           >
@@ -61,9 +69,8 @@ export default function Project3Part3() {
             </div>
           </motion.article>
 
-
           <motion.article
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="h-full rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 
                        shadow-[0_16px_60px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
           >
@@ -92,7 +99,6 @@ export default function Project3Part3() {
           </motion.article>
         </motion.div>
 
-
         <motion.div
           variants={parent(0.1)}
           initial="hidden"
@@ -100,9 +106,8 @@ export default function Project3Part3() {
           viewport={{ once: true, amount: 0.25 }}
           className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2"
         >
-    
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/[0.05] ring-1 ring-white/10"
           >
             <Image
@@ -115,9 +120,8 @@ export default function Project3Part3() {
             />
           </motion.div>
 
-
           <motion.div
-            variants={item(prefersReduced)}
+            variants={item(reduced)}
             className="rounded-2xl h-[320px] md:h-[360px] overflow-hidden bg-white/[0.05] ring-1 ring-white/10"
           >
             <Image
