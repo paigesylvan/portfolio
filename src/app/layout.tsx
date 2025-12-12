@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../../components/Header";
 import Cursor from "../../components/cursor";
 import Script from "next/script";
+import { Staatliches } from "next/font/google";
 
 export const metadata = {
   title: "Paige Sylvan",
@@ -14,9 +15,16 @@ export const viewport = {
   viewportFit: "cover",
 };
 
+const staatliches = Staatliches({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-staatliches",
+});
+
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-100vh">
+    <html lang="en" className={staatliches.variable}>
       <body className="bg-black text-white antialiased overflow-x-hidden">
         {/* Google Analytics */}
         <Script
