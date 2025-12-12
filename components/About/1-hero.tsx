@@ -115,15 +115,121 @@ export default function AboutHero() {
       <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[9vh]">
         {/* Floating skills */}
         <div className="relative w-full h-[280px] md:h-[320px] mb-4 pointer-events-none">
-          {/* far left top */}
-          <FloatingSkillIcon
-            src="images/skills/2.png"
-            alt="Shopify"
-            index={0}
-            className="top-[20vh] lg:top-[30vh] lg:left-[1%]"
-          />
-          {/* ...all your other FloatingSkillIcon calls stay the same... */}
-        </div>
+  {/* far left top */}
+  <FloatingSkillIcon
+    src="images/skills/2.png"
+    alt="Shopify"
+    index={0}
+    className="top-[20vh] lg:top-[30vh] lg:left-[1%]"
+  />
+
+  {/* mid-left top */}
+  <FloatingSkillIcon
+    src="images/skills/1.png"
+    alt="Canva"
+    index={1}
+    className="top-12 left-2 lg:top-[17vh] lg:left-[18%]"
+  />
+
+  {/* left of center */}
+  <FloatingSkillIcon
+    src="images/skills/3.png"
+    alt="Adobe AE"
+    index={2}
+    className="top-[20vh] lg:top-[10vh] left-[30%]"
+  />
+
+  {/* center top */}
+  <FloatingSkillIcon
+    src="images/skills/5.png"
+    alt="Figma"
+    index={3}
+    className="top-8 lg:top-[12vh] left-[45%] -translate-x-1/2"
+  />
+
+  {/* right of center */}
+  <FloatingSkillIcon
+    src="images/skills/13.png"
+    alt="VS Code"
+    index={4}
+    className="top-24 right-[16%] lg:top-[10vh] lg:right-[32%]"
+  />
+
+  {/* mid-right top */}
+  <FloatingSkillIcon
+    src="images/skills/7.png"
+    alt="Next.js"
+    index={5}
+    className="right-[30%] top-[20vh] lg:top-[38vh] lg:right-[20%]"
+  />
+
+  {/* far right top */}
+  <FloatingSkillIcon
+    src="images/skills/6.png"
+    alt="React"
+    index={6}
+    className="top-[16vh] lg:top-[30vh] right-[1%]"
+  />
+
+  {/* LEFT SIDE CASCADE */}
+  <FloatingSkillIcon
+    src="images/skills/4.png"
+    alt="Google Analytics"
+    index={7}
+    className="top-24 lg:top-[37vh] left-[16%]"
+  />
+
+  <FloatingSkillIcon
+    src="images/skills/10.png"
+    alt="Tailwind.css"
+    index={8}
+    className="top-[49vh] left-[8%] lg:top-[50vh] lg:left-[5%]"
+  />
+
+  <FloatingSkillIcon
+    src="images/skills/9.png"
+    alt="Sass.css"
+    index={9}
+    className="top-[60vh] lg:top-[65vh] lg:left-[10%]"
+  />
+
+  {/* RIGHT SIDE CASCADE */}
+  <FloatingSkillIcon
+    src="images/skills/8.png"
+    alt="Javascript"
+    index={10}
+    className="top-[49vh] right-[15%] lg:top-[45vh] lg:right-[1%]"
+  />
+
+  <FloatingSkillIcon
+    src="images/skills/11.png"
+    alt="CSS"
+    index={11}
+    className="top-[55vh] right-1 lg:top-[55vh] lg:right-[16%]"
+  />
+
+  <FloatingSkillIcon
+    src="images/skills/12.png"
+    alt="HTML"
+    index={12}
+    className="top-[28vh] lg:top-[67vh] right-[5%]"
+  />
+
+  <FloatingSkillIcon
+    src="images/skills/14.png"
+    alt="Github"
+    index={13}
+    className="top-[1vh] lg:top-[15vh] right-[12%]"
+  />
+
+  <FloatingSkillIcon
+    src="images/skills/15.png"
+    alt="Vercel"
+    index={14}
+    className="left-[20%] lg:top-[16vh] lg:left-[2%]"
+  />
+</div>
+
 
         {/* Text */}
         <h1 className="mt-2 md:text-4xl">Hi, I’m Paige!</h1>
