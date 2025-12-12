@@ -90,8 +90,8 @@ export default function Skills() {
               /> */}
 
               {/* Card content */}
-              <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-12">
-                <div className="mb-4 flex justify-center md:justify-start lg:pl-12">
+              <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-16">
+                <div className="mb-4 flex justify-center md:justify-start ">
                   <Image
                     src={s.gif}
                     alt={s.alt}
