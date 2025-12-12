@@ -11,7 +11,7 @@ type Props = {
 
 export default function Hero({
   title = "PAIGE SYLVAN",
-  subtitle = "I design experiences that balance clarity, usability, and beauty. Driven by the process of turning an idea into something real.",
+  subtitle = "Designing experiences that balance clarity, usability, and beauty. Driven by the process of turning an idea into something real.",
   kicker = "",
   minHeight,
 }: Props) {
@@ -46,12 +46,12 @@ export default function Hero({
 
             <h1
               id="hero-title"
-              className="mt-2 text-5xl lg:text-7xl tracking-[0.1em]"
+              className="mt-2 text-5xl lg:text-7xl tracking-[0.07em]"
             >
               {title}
             </h1>
 
-            <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[500px] mx-auto mb-36 leading-snug text-left">
+            <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[400px] mx-auto mb-36 leading-snug text-left">
               {subtitle}
             </p>
           </div>
