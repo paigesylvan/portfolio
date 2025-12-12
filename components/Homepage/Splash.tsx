@@ -46,12 +46,12 @@ export default function Hero({
 
             <h1
               id="hero-title"
-              className="mt-2 text-5xl lg:text-8xl font-staat tracking-[0.1em]"
+              className="mt-2 text-5xl lg:text-8xl tracking-[0.1em]"
             >
               {title}
             </h1>
 
-            <p className="mt-8 text-white/95 text-[14px] md:text-[25px] px-4 md:px-12 lg:px-0 max-w-[500px] mx-auto mb-36 font-staat text-left">
+            <p className="mt-8 text-white/95 text-[14px] md:text-[25px] px-4 md:px-12 lg:px-0 max-w-[500px] mx-auto mb-36  text-left">
               {subtitle}
             </p>
           </div>
