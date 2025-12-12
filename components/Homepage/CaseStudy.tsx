@@ -113,7 +113,6 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-
       className="relative mt-20 overflow-hidden text-white full-bleed scroll-mt-[70vh] md:scroll-mt-40 lg:scroll-mt-[90vh]"
     >
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[22vh] pointer-events-none z-0" />
