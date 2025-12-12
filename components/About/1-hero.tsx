@@ -112,7 +112,7 @@ export default function AboutHero() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[9vh]">
+      <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[11vh]">
         {/* Floating skills */}
         <div className="relative w-full h-[280px] md:h-[320px] mb-4 pointer-events-none">
   {/* far left top */}
