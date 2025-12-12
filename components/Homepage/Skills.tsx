@@ -33,12 +33,12 @@ const skills: Skill[] = [
   },
 ];
 
-const HUES = [
+{/* const HUES = [
   "radial-gradient(520px 360px at 50% 50%, rgba(238,100,160,0.28) 0%, rgba(170,90,255,0.20) 42%, rgba(0,0,0,0) 78%)",
   "radial-gradient(520px 360px at 50% 50%, rgba(0,195,255,0.24) 0%, rgba(80,140,255,0.28) 42%, rgba(0,0,0,0) 78%)",
   "radial-gradient(520px 360px at 50% 50%, rgba(0,210,190,0.24) 0%, rgba(19,78,88,0.40) 42%, rgba(0,0,0,0) 78%)",
 ];
-
+*/}
 export default function Skills() {
   const prefersReduced = useReducedMotion();
 
