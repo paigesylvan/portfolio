@@ -75,7 +75,7 @@ export default function Skills() {
               }}
               className="relative"
             >
-              {/* Blur only on md+ to avoid mobile jank */}
+              {/* Blur only on md+ to avoid mobile jank 
               <div
                 aria-hidden
                 className="
@@ -87,7 +87,7 @@ export default function Skills() {
                   blur-[80px] opacity-90 pointer-events-none
                 "
                 style={{ background: HUES[i % HUES.length] }}
-              />
+              /> */}
 
               {/* Card content */}
               <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0">
