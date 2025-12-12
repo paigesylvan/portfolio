@@ -38,19 +38,26 @@ export default function Hero({
           
           {/* Title + Subtitle */}
           <div>
+            
+          <Image
+  src="/images/homepage-images/Socail.png"
+  alt="Hero image"
+  width={500}
+  height={300}
+/>
             {kicker && (
               <p className="text-[10px] tracking-[0.22em] text-white/90">
                 {kicker}
               </p>
             )}
-
+{/* 
             <h1
               id="hero-title"
               className="mt-2 text-5xl lg:text-7xl tracking-[0.07em] font-bold"
             >
               {title}
             </h1>
-
+*/}
             <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-36 leading-snug text-left">
               {subtitle}
             </p>

@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-4 lg:top-10 z-50">
       <div className="mx-auto w-[92%] md:w-[85%]">
-        <div className="flex items-center justify-between rounded-full  ring-1 ring-gray-400 backdrop-blur-sm px-5 py-1 lg:py-3  lg:px-12">
+        <div className="flex items-center justify-between rounded-full  ring-1 ring-gray-800 backdrop-blur-sm px-5 py-1 lg:py-3  lg:px-12">
 
           <Link
             href="/"
