@@ -102,11 +102,11 @@ export default function Skills() {
                   />
                 </div>
 
-                <h3 className="mb-2 lg:mb-3 text-base md:text-lg font-semibold">
+                <h3 className="mb-2 lg:mb-3 text-[13px] md:text-[14px] font-semibold">
                   {s.title}
                 </h3>
 
-                <p className="text-white/80 leading-snug text-[14px] md:text-[15px] px-8 md:px-0 lg:pr-36">
+                <p className="text-white/80 leading-snug text-[11px] md:text-[12px] px-8 ">
                   {s.body}
                 </p>
               </div>

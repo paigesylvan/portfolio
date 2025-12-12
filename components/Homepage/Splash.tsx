@@ -82,15 +82,11 @@ export default function Hero({
               Product Designer & UX/UI Developer
             </h2>
 
-            <p className="text-white/85 leading-relaxed text-[14px] md:text-[15px]">
+            <p className="text-white/85  text-[11px] md:text-[12px]">
               I design clean, intuitive interfaces and build responsive,
               user-centered products with modern front-end tools. I blend UX
               strategy, visual design, and development experience to turn
               complex problems into simple, functional experiences.
-            </p>
-
-            <p className="text-[11px] uppercase tracking-wide text-white/60">
-              Open to: Full-time Product Designer or UX/UI roles • Wisconsin • Remote-friendly
             </p>
 
             <Link
