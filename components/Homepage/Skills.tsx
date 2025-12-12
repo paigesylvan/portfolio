@@ -33,12 +33,12 @@ const skills: Skill[] = [
   },
 ];
 
-{/* const HUES = [
+const HUES = [
   "radial-gradient(520px 360px at 50% 50%, rgba(238,100,160,0.28) 0%, rgba(170,90,255,0.20) 42%, rgba(0,0,0,0) 78%)",
   "radial-gradient(520px 360px at 50% 50%, rgba(0,195,255,0.24) 0%, rgba(80,140,255,0.28) 42%, rgba(0,0,0,0) 78%)",
   "radial-gradient(520px 360px at 50% 50%, rgba(0,210,190,0.24) 0%, rgba(19,78,88,0.40) 42%, rgba(0,0,0,0) 78%)",
 ];
-*/}
+
 export default function Skills() {
   const prefersReduced = useReducedMotion();
 
@@ -75,7 +75,7 @@ export default function Skills() {
               }}
               className="relative"
             >
-              {/* Blur only on md+ to avoid mobile jank 
+              {/* Blur only on md+ to avoid mobile jank */}
               <div
                 aria-hidden
                 className="
@@ -87,7 +87,7 @@ export default function Skills() {
                   blur-[80px] opacity-90 pointer-events-none
                 "
                 style={{ background: HUES[i % HUES.length] }}
-              /> */}
+              /> 
 
               {/* Card content */}
               <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-16">
