@@ -45,7 +45,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative  lg:py-32 overflow-hidden bg-black text-white lg:mb-20"
+      className="relative  overflow-hidden bg-black text-white lg:mb-20"
     >
       {/* Soft global vignette */}
       <div
