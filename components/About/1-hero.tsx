@@ -20,13 +20,13 @@ const SKILLS: SkillIcon[] = [
   { src: "/images/skills/14.png", alt: "GitHub", className: "right-[6%] top-[18%] lg:right-[10%] lg:top-[18%]" },
 
   // side drops (subtle “wrap” around laptop)
-  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[8%] top-[56%] lg:left-[2%] lg:top-[44%]" },
+  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[8%] top-[70%] lg:left-[1%] lg:top-[44%]" },
   { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[20%] top-[62%] lg:left-[3%] lg:top-[68%]" },
-  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[2%] lg:top-[78%]" },
+  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[0%] lg:top-[78%]" },
 
-  { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[10%] top-[70%] lg:right-[12%] lg:top-[78%]" },
-  { src: "/images/skills/11.png", alt: "CSS", className: "right-[20%] top-[62%] lg:right-[20%] lg:top-[68%]" },
-  { src: "/images/skills/12.png", alt: "HTML", className: "right-[8%] top-[42%] lg:right-[12%] lg:top-[44%]" },
+  { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[10%] top-[70%] lg:right-[2%] lg:top-[78%]" },
+  { src: "/images/skills/11.png", alt: "CSS", className: "right-[20%] top-[62%] lg:right-[5%] lg:top-[68%]" },
+  { src: "/images/skills/12.png", alt: "HTML", className: "right-[8%] top-[42%] lg:right-[3%] lg:top-[44%]" },
 ];
 
 const floatTransition: Transition = {
