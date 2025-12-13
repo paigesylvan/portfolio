@@ -412,7 +412,7 @@ function TimelineRow({
       {/* Mobile Dot */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-[6px] top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
+        className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
       >
         <div
           className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
