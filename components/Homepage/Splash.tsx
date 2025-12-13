@@ -40,7 +40,7 @@ export default function Hero({
           <div>
             
           <Image
-  src="/images/homepage-images/Socail.png"
+  src="/images/homepage-images/Social.png"
   alt="Hero image"
   width={500}
   height={300}
