@@ -502,7 +502,7 @@ function TimelineRow({
 
               {/* small “chip” for consistency */}
               {item.subheading && (
-                <span className="pb-4 hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
+                <span className="mb-4 hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
                   {item.subheading}
                 </span>
               )}
