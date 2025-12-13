@@ -131,7 +131,7 @@ function FloatingSkill({
         <motion.span
           variants={{ rest: { opacity: 0, y: 4 }, hover: { opacity: 1, y: 0 } }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className=" text-white text-[8px] md:text-[9px] tracking-[0.12em] pointer-events-none"
+          className="text-white text-[8px] md:text-[9px] tracking-[0.12em] pointer-events-none"
         >
           {alt}
         </motion.span>
@@ -188,9 +188,6 @@ export default function AboutHeroLaptop() {
           {/* RIGHT: laptop + arch */}
           <div className="lg:col-span-7">
             <div className="relative mx-auto w-full max-w-[720px]">
-              {/* glass panel */}
-              <div className="absolute " />
-
               {/* center glow behind laptop */}
               <div
                 aria-hidden
@@ -208,8 +205,8 @@ export default function AboutHeroLaptop() {
 
               <div className="relative rounded-[28px] p-6 md:p-10">
                 {/* stage */}
-                <div className="relative h-[520px] md:h-[560px]">
-                  {/* laptop */}
+                <div className="relative h-[520px] md:h-[560px] overflow-visible">
+                  {/* laptop (moved up) */}
                   <div className="absolute inset-x-0 bottom-10 md:bottom-16 flex justify-center">
                     <div className="relative w-[520px] max-w-[90%]">
                       <LaptopOutline className="w-full h-auto drop-shadow-[0_28px_70px_rgba(0,0,0,0.65)]" />
@@ -218,7 +215,7 @@ export default function AboutHeroLaptop() {
                   </div>
 
                   {/* floating skills around in an arch */}
-                  <div className="absolute inset-0">
+                  <div className="absolute inset-0 overflow-visible">
                     {SKILLS.map((s, idx) => (
                       <FloatingSkill
                         key={s.alt}
