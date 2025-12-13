@@ -10,7 +10,7 @@ export default function AboutFinalSection() {
     <section className="relative isolate w-full overflow-hidden text-white">
       {/* Background hues */}
       <div
-        className="absolute inset-0 -z-20 pointer-events-none"
+        className="absolute inset-0 -z-20 pointer-events-none opacity-55"
         style={{
           background: [
             "radial-gradient(1400px 720px at 52% 105%, rgba(70,70,160,0.34) 0%, rgba(70,70,160,0.20) 40%, rgba(70,70,160,0.06) 68%, rgba(70,70,160,0) 90%)",
