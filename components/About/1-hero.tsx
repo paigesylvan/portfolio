@@ -118,13 +118,13 @@ function FloatingSkill({
         transition={{ type: "spring", stiffness: 180, damping: 14 }}
         className="flex flex-col items-center"
       >
-        <div className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+        <div className="flex h-11 w-11 md:h-14 md:w-14 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
           <Image
             src={src}
             alt={alt}
             width={96}
             height={96}
-            className="h-9 w-9 md:h-11 md:w-11 object-contain"
+            className="h-9 w-9 md:h-12 md:w-12 object-contain"
           />
         </div>
 

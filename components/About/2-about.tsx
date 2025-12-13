@@ -47,7 +47,6 @@ export default function AboutGallery() {
               className="relative group aspect-square rounded-full overflow-hidden
                         bg-white/[0.04]
                          shadow-[0_12px_40px_rgba(0,0,0,0.45)]
-                         border border-white/40
                         ring-4 ring-inset ring-white
                          "
             >
