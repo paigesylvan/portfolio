@@ -11,7 +11,7 @@ type SkillIcon = {
 };
 
 const SKILLS: SkillIcon[] = [
-  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[6%] top-[18%] lg:left-[0%] lg:top-[16%]" },
+  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[6%] top-[18%] lg:left-[3%] lg:top-[18%]" },
   { src: "/images/skills/1.png", alt: "Canva", className: "left-[18%] top-[8%] lg:left-[22%] lg:top-[8%]" },
   { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[3%] lg:left-[36%] lg:top-[18%]" },
   { src: "/images/skills/5.png", alt: "Figma", className: "left-1/2 -translate-x-1/2 top-[1%] lg:top-[6%]" },
@@ -21,8 +21,8 @@ const SKILLS: SkillIcon[] = [
 
   // side drops (subtle “wrap” around laptop)
   { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[8%] top-[70%] lg:left-[-6%] lg:top-[30%]" },
-  { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[20%] top-[62%] lg:left-[3%] lg:top-[52%]" },
-  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[0%] lg:top-[68%]" },
+  { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[20%] top-[62%] lg:left-[3%] lg:top-[47%]" },
+  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[0%] lg:top-[58%]" },
 
   { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[10%] top-[70%] lg:right-[-4%] lg:top-[60%]" },
   { src: "/images/skills/11.png", alt: "CSS", className: "right-[20%] top-[62%] lg:right-[5%] lg:top-[48%]" },
