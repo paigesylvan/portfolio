@@ -36,15 +36,15 @@ const skills: Skill[] = [
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-// subtle per-card hues (kept tasteful)
+// purple → blue → green (subtle, inspired by your outline glow)
 const CARD_HUES = [
-  "radial-gradient(420px 260px at 30% 20%, rgba(245,60,160,0.22) 0%, rgba(245,60,160,0.10) 45%, rgba(0,0,0,0) 75%)",
-  "radial-gradient(420px 260px at 30% 20%, rgba(0,196,255,0.20) 0%, rgba(0,196,255,0.09) 45%, rgba(0,0,0,0) 75%)",
-  "radial-gradient(420px 260px at 30% 20%, rgba(0,210,190,0.18) 0%, rgba(0,210,190,0.08) 45%, rgba(0,0,0,0) 75%)",
+  "radial-gradient(520px 300px at 20% 15%, rgba(160,110,255,0.28) 0%, rgba(160,110,255,0.14) 42%, rgba(0,0,0,0) 75%)",
+  "radial-gradient(520px 300px at 20% 15%, rgba(80,170,255,0.26) 0%, rgba(80,170,255,0.12) 42%, rgba(0,0,0,0) 75%)",
+  "radial-gradient(520px 300px at 20% 15%, rgba(0,210,190,0.24) 0%, rgba(0,210,190,0.10) 42%, rgba(0,0,0,0) 75%)",
 ];
 
 export default function Skills() {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = useReducedMotion() ?? false;
 
   return (
     <section
@@ -119,7 +119,7 @@ export default function Skills() {
                     {s.body}
                   </p>
 
-                  {/* tiny “divider” that feels premium */}
+                  {/* tiny divider */}
                   <div className="mt-6 h-px w-full bg-gradient-to-r from-white/0 via-white/14 to-white/0" />
                 </div>
               </motion.article>
