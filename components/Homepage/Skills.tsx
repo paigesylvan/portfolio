@@ -55,34 +55,6 @@ export default function Skills() {
         pb-28 lg:pb-44
       "
     >
-      {/* top fade-in so the section feels like it belongs */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-20 z-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.0) 100%)",
-        }}
-      />
-
-      {/* ✅ Bottom hue: pushed BELOW the section + taller + softer fade so it won't look cropped */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 -bottom-24 z-0 h-[60vh] opacity-85"
-        style={{
-          backgroundImage: [
-            "radial-gradient(1400px 620px at 18% 88%, rgba(245,60,160,0.20) 0%, rgba(245,60,160,0.10) 40%, rgba(0,0,0,0) 76%)",
-            "radial-gradient(1400px 620px at 55% 92%, rgba(0,196,255,0.16) 0%, rgba(0,196,255,0.08) 42%, rgba(0,0,0,0) 78%)",
-            "radial-gradient(1400px 620px at 88% 88%, rgba(0,210,190,0.14) 0%, rgba(0,210,190,0.07) 44%, rgba(0,0,0,0) 80%)",
-          ].join(", "),
-          filter: "blur(90px)",
-          mixBlendMode: "screen",
-          WebkitMaskImage:
-            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 28%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0) 88%)",
-          maskImage:
-            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 28%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0) 88%)",
-        }}
-      />
 
       {/* subtle vignette so the center content pops */}
       <div
