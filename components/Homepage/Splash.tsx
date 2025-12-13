@@ -10,7 +10,6 @@ type Props = {
 };
 
 export default function Hero({
-  title = "PAIGE SYLVAN",
   subtitle = "Designing experiences that balance clarity, usability, and beauty. Driven by the process of turning an idea into something real.",
   minHeight,
 }: Props) {
@@ -35,7 +34,6 @@ export default function Hero({
       <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[18vh] md:mt-[24vh] lg:mt-[27vh]">
         <div className="flex flex-col items-center text-center gap-10">
           
-          {/* Title + Subtitle */}
           <div>
             
           <Image
@@ -45,15 +43,7 @@ export default function Hero({
             height={300}
           />
 
-{/* 
-            <h1
-              id="hero-title"
-              className="mt-2 text-5xl lg:text-7xl tracking-[0.07em] font-bold"
-            >
-              {title}
-            </h1>
-*/}
-            <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
+            <p className="mt-2 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
               {subtitle}
             </p>
           </div>
