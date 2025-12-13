@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -33,99 +34,80 @@ const skills: Skill[] = [
   },
 ];
 
-const HUES = [
-  "radial-gradient(520px 360px at 50% 50%, rgba(238,100,160,0.28) 0%, rgba(170,90,255,0.20) 42%, rgba(0,0,0,0) 78%)",
-  "radial-gradient(520px 360px at 50% 50%, rgba(0,195,255,0.24) 0%, rgba(80,140,255,0.28) 42%, rgba(0,0,0,0) 78%)",
-  "radial-gradient(520px 360px at 50% 50%, rgba(0,210,190,0.24) 0%, rgba(19,78,88,0.40) 42%, rgba(0,0,0,0) 78%)",
-];
-
 export default function Skills() {
   const prefersReduced = useReducedMotion();
 
   return (
     <section
       id="skills"
-      className="relative  overflow-hidden bg-black text-white lg:py-32"
+      className="relative overflow-hidden bg-black text-white py-16 lg:py-32"
     >
-      {/* Soft global vignette 
+      {/* subtle bottom hue that fades (not cut off) */}
       <div
-        className="absolute inset-0 -z-10 pointer-events-none"
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[40vh] opacity-80"
         style={{
-          background:
-            "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 26%, rgba(0,0,0,0.6) 52%, rgba(0,0,0,0) 100%)",
+          backgroundImage: [
+            "radial-gradient(1200px 520px at 20% 110%, rgba(245,60,160,0.22) 0%, rgba(245,60,160,0.10) 40%, rgba(0,0,0,0) 72%)",
+            "radial-gradient(1100px 520px at 55% 115%, rgba(0,196,255,0.18) 0%, rgba(0,196,255,0.08) 42%, rgba(0,0,0,0) 74%)",
+            "radial-gradient(1000px 520px at 90% 110%, rgba(0,210,190,0.16) 0%, rgba(0,210,190,0.07) 44%, rgba(0,0,0,0) 76%)",
+          ].join(", "),
+          filter: "blur(70px)",
+          mixBlendMode: "screen",
+          // fade the hue upward so it "flows" into the page
+          WebkitMaskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0) 70%)",
+          maskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0) 70%)",
         }}
       />
-*/}
 
-<div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[100vh] pointer-events-none z-0" />
-      <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
-      <div
-        className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
-        aria-hidden
-      />
-      <div
-        className="vignette-soft absolute inset-0 pointer-events-none"
-        aria-hidden
-      />
+      {/* content layer */}
+      <div className="relative z-10">
+        <h2 className="mb-10 lg:mb-16 text-center text-[12px] tracking-[0.22em] text-white/60">
+          SKILLS
+        </h2>
 
+        <div className="mx-auto w-full md:w-[60%]">
+          <div className="grid gap-12 md:gap-10 md:grid-cols-3 text-center md:text-left">
+            {skills.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={prefersReduced ? false : { opacity: 0, y: 24 }}
+                whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                  duration: prefersReduced ? 0 : 0.5,
+                  // ✅ framer-motion expects an easing function/array, not "easeOut" string (new TS strictness)
+                  ease: [0.22, 1, 0.36, 1],
+                  delay: prefersReduced ? 0 : i * 0.06,
+                }}
+                className="relative"
+              >
+                {/* Card content */}
+                <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-16">
+                  <div className="mb-4 flex justify-center md:justify-start">
+                    <Image
+                      src={s.gif}
+                      alt={s.alt}
+                      width={100}
+                      height={100}
+                      unoptimized
+                      className="h-14 w-18 md:h-20 md:w-24 object-contain opacity-90"
+                    />
+                  </div>
 
-      <h2 className="mb-10 lg:mb-16 text-center text-[12px] tracking-[0.22em] text-white/60">
-        SKILLS
-      </h2>
+                  <h3 className="mb-2 lg:mb-3 text-[13px] md:text-[14px] font-semibold">
+                    {s.title}
+                  </h3>
 
-      <div className="mx-auto w-full md:w-[60%] ">
-        <div className="grid gap-12 md:gap-10 md:grid-cols-3 text-center md:text-left">
-          {skills.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={prefersReduced ? false : { opacity: 0, y: 24 }}
-              whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{
-                duration: 0.5,
-                ease: "easeOut",
-                delay: prefersReduced ? 0 : i * 0.06,
-              }}
-              className="relative"
-            >
-              {/* Blur only on md+ to avoid mobile jank 
-              <div
-                aria-hidden
-                className="
-                  hidden md:block
-                  absolute left-1/2 top-1/2
-                  -translate-x-1/2 -translate-y-1/2
-                  md:-translate-x-[60%] lg:-translate-x-[70%]
-                  z-0 w-[420px] h-[180px]
-                  blur-[80px] opacity-90 pointer-events-none
-                "
-                style={{ background: HUES[i % HUES.length] }}
-              /> 
-*/}
-
-              {/* Card content */}
-              <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-16">
-                <div className="mb-4 flex justify-center md:justify-start ">
-                  <Image
-                    src={s.gif}
-                    alt={s.alt}
-                    width={100}
-                    height={100}
-                    unoptimized
-                    className="h-14 w-18 md:h-20 md:w-24 object-contain opacity-90"
-                  />
+                  <p className="text-white/80 leading-snug text-[11px] md:text-[12px] pr-24">
+                    {s.body}
+                  </p>
                 </div>
-
-                <h3 className="mb-2 lg:mb-3 text-[13px] md:text-[14px] font-semibold">
-                  {s.title}
-                </h3>
-
-                <p className="text-white/80 leading-snug text-[11px] md:text-[12px] pr-24">
-                  {s.body}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
