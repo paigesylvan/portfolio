@@ -36,10 +36,9 @@ const skills: Skill[] = [
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-// purple → blue → green (subtle, inspired by your outline glow)
 const CARD_HUES = [
   "radial-gradient(520px 300px at 20% 15%, rgba(160,110,255,0.28) 0%, rgba(160,110,255,0.14) 42%, rgba(0,0,0,0) 75%)",
-  "radial-gradient(520px 300px at 20% 15%, rgba(80,170,255,0.26) 0%, rgba(80,170,255,0.12) 42%, rgba(0,0,0,0) 75%)",
+  "radial-gradient(520px 300px at 20% 15%, rgba(70,120,255,0.22) 0%, rgba(70,120,255,0.11) 42%, rgba(0,0,0,0) 75%)",
   "radial-gradient(520px 300px at 20% 15%, rgba(0,210,190,0.24) 0%, rgba(0,210,190,0.10) 42%, rgba(0,0,0,0) 75%)",
 ];
 
@@ -52,7 +51,7 @@ export default function Skills() {
       className="
         relative overflow-hidden bg-black text-white
         py-16 lg:py-28
-        pb-28 lg:pb-44
+        pb-28 lg:pb-36
       "
     >
       <div className="relative z-10">
@@ -118,9 +117,6 @@ export default function Skills() {
                   <p className="mt-4 text-white/80 leading-snug text-[12px] md:text-[13px]">
                     {s.body}
                   </p>
-
-                  {/* tiny divider */}
-                  <div className="mt-6 h-px w-full bg-gradient-to-r from-white/0 via-white/14 to-white/0" />
                 </div>
               </motion.article>
             ))}
