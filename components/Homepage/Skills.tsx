@@ -47,7 +47,7 @@ export default function Skills() {
       id="skills"
       className="relative  overflow-hidden bg-black text-white lg:py-32"
     >
-      {/* Soft global vignette */}
+      {/* Soft global vignette 
       <div
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
@@ -55,7 +55,15 @@ export default function Skills() {
             "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 26%, rgba(0,0,0,0.6) 52%, rgba(0,0,0,0) 100%)",
         }}
       />
-            <div
+*/}
+
+<div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[100vh] pointer-events-none z-0" />
+      <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
+      <div
+        className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
+        aria-hidden
+      />
+      <div
         className="vignette-soft absolute inset-0 pointer-events-none"
         aria-hidden
       />
@@ -80,7 +88,7 @@ export default function Skills() {
               }}
               className="relative"
             >
-              {/* Blur only on md+ to avoid mobile jank */}
+              {/* Blur only on md+ to avoid mobile jank 
               <div
                 aria-hidden
                 className="
@@ -93,6 +101,7 @@ export default function Skills() {
                 "
                 style={{ background: HUES[i % HUES.length] }}
               /> 
+*/}
 
               {/* Card content */}
               <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-16">
