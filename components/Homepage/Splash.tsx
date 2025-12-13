@@ -12,7 +12,6 @@ type Props = {
 export default function Hero({
   title = "PAIGE SYLVAN",
   subtitle = "Designing experiences that balance clarity, usability, and beauty. Driven by the process of turning an idea into something real.",
-  kicker = "",
   minHeight,
 }: Props) {
   return (
@@ -22,7 +21,7 @@ export default function Hero({
       style={minHeight ? { minHeight } : undefined}
     >
       {/* Aurora background */}
-      <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[70vh] pointer-events-none z-0" />
+      <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[40vh] pointer-events-none z-0" />
       <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
       <div
         className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
@@ -40,16 +39,12 @@ export default function Hero({
           <div>
             
           <Image
-  src="/images/homepage-images/Social.png"
-  alt="Hero image"
-  width={500}
-  height={300}
-/>
-            {kicker && (
-              <p className="text-[10px] tracking-[0.22em] text-white/90">
-                {kicker}
-              </p>
-            )}
+            src="/images/homepage-images/Social.png"
+            alt="Hero image"
+            width={500}
+            height={300}
+          />
+
 {/* 
             <h1
               id="hero-title"
