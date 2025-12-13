@@ -147,77 +147,93 @@ export default function CaseStudies() {
                         margin: "0px 0px -10% 0px",
                       },
                     })}
-                    className="case-card group md:transform-gpu md:will-change-transform"
+                    className="
+                      case-card group
+                      md:min-h-[380px] lg:min-h-[420px]
+                      md:flex md:items-stretch
+                      md:transform-gpu md:will-change-transform
+                    "
                   >
-                    <div className="grid items-center gap-6 md:grid-cols-12">
+                    <div className="grid gap-6 md:grid-cols-12 md:items-stretch w-full">
                       {/* image */}
                       <ImageWrapComp
                         {...(shouldAnimate && { variants: imageWrap })}
                         className="md:col-span-5"
                       >
-                        <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
-                          <div className="relative">
+                        <div className="h-full flex items-center justify-center">
+                          <div
+                            className="
+                              relative w-full
+                              max-w-[240px] md:max-w-[320px]
+                              h-[210px] md:h-[320px]
+                              flex items-center justify-center
+                            "
+                          >
                             <Image
                               src={s.image}
                               alt={s.imageAlt}
-                              width={600}
-                              height={450}
-                              sizes="(min-width: 768px) 300px, 220px"
-                              className="h-[180px] w-auto md:h-[300px] object-contain"
+                              width={700}
+                              height={700}
+                              sizes="(min-width: 768px) 320px, 240px"
+                              className="h-full w-full object-contain"
                               priority={idx === 0}
                             />
-                            <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+                            <div className="pointer-events-none absolute inset-x-6 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
                           </div>
                         </div>
                       </ImageWrapComp>
 
                       {/* text */}
                       <div className="md:col-span-7 lg:pl-12 pl-4">
-                        <PieceComp
-                          {...(shouldAnimate && { variants: piece })}
-                          className="mb-3 flex flex-wrap gap-1 lg:gap-2"
-                        >
-                          {s.tags.map((t) => (
-                            <span key={t} className="chip">
-                              {t}
-                            </span>
-                          ))}
-                        </PieceComp>
+                        <div className="h-full flex flex-col justify-between">
+                          <div>
+                            <PieceComp
+                              {...(shouldAnimate && { variants: piece })}
+                              className="mb-3 flex flex-wrap gap-1 lg:gap-2"
+                            >
+                              {s.tags.map((t) => (
+                                <span key={t} className="chip">
+                                  {t}
+                                </span>
+                              ))}
+                            </PieceComp>
 
-                        <TitleComp
-                          {...(shouldAnimate && { variants: piece })}
-                          className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
-                        >
-                          {s.title}
-                        </TitleComp>
+                            <TitleComp
+                              {...(shouldAnimate && { variants: piece })}
+                              className="lg:w-[90%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
+                            >
+                              {s.title}
+                            </TitleComp>
 
-                        <TextComp
-                          {...(shouldAnimate && { variants: piece })}
-                          className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight"
-                        >
-                          {s.subtitle}
-                        </TextComp>
+                            <TextComp
+                              {...(shouldAnimate && { variants: piece })}
+                              className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight"
+                            >
+                              {s.subtitle}
+                            </TextComp>
+                          </div>
 
-                        <PieceComp {...(shouldAnimate && { variants: piece })}>
-                          <Link href={s.slug} className="cta-btn group mt-6">
-                            <span>{s.cta ?? "View Case Study"}</span>
-                            <span className="cta-icon">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="w-3.5 h-3.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                              </svg>
-                            </span>
-                          </Link>
-                        </PieceComp>
+                          <PieceComp {...(shouldAnimate && { variants: piece })}>
+                            <Link href={s.slug} className="cta-btn group mt-6">
+                              <span>{s.cta ?? "View Case Study"}</span>
+                              <span className="cta-icon">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="w-3.5 h-3.5"
+                                >
+                                  <path d="M5 12h14" />
+                                  <path d="m12 5 7 7-7 7" />
+                                </svg>
+                              </span>
+                            </Link>
+                          </PieceComp>
+                        </div>
                       </div>
                     </div>
                   </ArticleComp>
