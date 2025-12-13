@@ -55,20 +55,8 @@ export default function Skills() {
         pb-28 lg:pb-44
       "
     >
-
-      {/* subtle vignette so the center content pops */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(120% 80% at 50% 40%, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.9) 100%)",
-        }}
-      />
-
-      {/* content layer */}
       <div className="relative z-10">
-        <h2 className="mb-10 lg:mb-14 text-center text-[12px] tracking-[0.22em] text-white/60">
+        <h2 className="mb-10 text-center text-[12px] tracking-[0.22em] text-white/60">
           SKILLS
         </h2>
 
