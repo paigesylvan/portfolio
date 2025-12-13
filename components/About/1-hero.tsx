@@ -20,9 +20,9 @@ const SKILLS: SkillIcon[] = [
   { src: "/images/skills/14.png", alt: "GitHub", className: "right-[6%] top-[18%] lg:right-[10%] lg:top-[18%]" },
 
   // side drops (subtle “wrap” around laptop)
-  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[8%] top-[42%] lg:left-[12%] lg:top-[44%]" },
-  { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[20%] top-[62%] lg:left-[20%] lg:top-[68%]" },
-  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[12%] lg:top-[78%]" },
+  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[8%] top-[56%] lg:left-[12%] lg:top-[44%]" },
+  { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[20%] top-[62%] lg:left-[10%] lg:top-[68%]" },
+  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[7%] lg:top-[78%]" },
 
   { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[10%] top-[70%] lg:right-[12%] lg:top-[78%]" },
   { src: "/images/skills/11.png", alt: "CSS", className: "right-[20%] top-[62%] lg:right-[20%] lg:top-[68%]" },
@@ -118,7 +118,7 @@ function FloatingSkill({
         transition={{ type: "spring", stiffness: 180, damping: 14 }}
         className="flex flex-col items-center"
       >
-        <div className="flex h-14 w-14 md:h-13 md:w-13 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+        <div className="flex h-12 w-12 md:h-13 md:w-13 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
           <Image
             src={src}
             alt={alt}
@@ -131,7 +131,7 @@ function FloatingSkill({
         <motion.span
           variants={{ rest: { opacity: 0, y: 4 }, hover: { opacity: 1, y: 0 } }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-3 text-white text-[10px] md:text-[11px] tracking-[0.14em] pointer-events-none"
+          className="mt-1 text-white text-[8px] md:text-[10px] tracking-[0.14em] pointer-events-none"
         >
           {alt}
         </motion.span>
