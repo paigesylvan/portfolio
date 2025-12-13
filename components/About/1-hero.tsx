@@ -1,19 +1,33 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion, type Transition, useReducedMotion } from "framer-motion";
 
-const items = [
-  { src: "/images/about-images/about-1.JPG", label: "Exploring new places; China 2018" },
-  { src: "/images/about-images/about-2.jpeg", label: "Enjoy baking fun things for the holidays" },
-  { src: "/images/about-images/about-3.jpeg", label: "Milwaukee Bucks fan & 50/50 raffle winner" },
-  { src: "/images/about-images/about-4.jpeg", label: "A new gardening hobby this summer" },
-  { src: "/images/about-images/about-5.jpeg", label: "Love crafting for others" },
-  { src: "/images/about-images/about-6.png", label: "Going on adventures with my dog, Sadie" },
-];
+type SkillIcon = {
+  src: string;
+  alt: string;
+  // positioning classes (mobile first, then lg overrides)
+  className: string;
+};
 
-const easeOut = [0.22, 1, 0.36, 1] as const;
+const SKILLS: SkillIcon[] = [
+  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[6%] top-[18%] lg:left-[10%] lg:top-[18%]" },
+  { src: "/images/skills/1.png", alt: "Canva", className: "left-[18%] top-[8%] lg:left-[22%] lg:top-[6%]" },
+  { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[3%] lg:left-[36%] lg:top-[0%]" },
+  { src: "/images/skills/5.png", alt: "Figma", className: "left-1/2 -translate-x-1/2 top-[1%] lg:top-[-2%]" },
+  { src: "/images/skills/13.png", alt: "VS Code", className: "right-[33%] top-[3%] lg:right-[36%] lg:top-[0%]" },
+  { src: "/images/skills/7.png", alt: "Next.js", className: "right-[18%] top-[8%] lg:right-[22%] lg:top-[6%]" },
+  { src: "/images/skills/14.png", alt: "GitHub", className: "right-[6%] top-[18%] lg:right-[10%] lg:top-[18%]" },
+
+  // side drops (subtle “wrap” around laptop)
+  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[8%] top-[42%] lg:left-[12%] lg:top-[44%]" },
+  { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[20%] top-[62%] lg:left-[20%] lg:top-[68%]" },
+  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[10%] top-[70%] lg:left-[12%] lg:top-[78%]" },
+
+  { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[10%] top-[70%] lg:right-[12%] lg:top-[78%]" },
+  { src: "/images/skills/11.png", alt: "CSS", className: "right-[20%] top-[62%] lg:right-[20%] lg:top-[68%]" },
+  { src: "/images/skills/12.png", alt: "HTML", className: "right-[8%] top-[42%] lg:right-[12%] lg:top-[44%]" },
+];
 
 const floatTransition: Transition = {
   duration: 5,
@@ -22,63 +36,63 @@ const floatTransition: Transition = {
   ease: [0.42, 0, 0.58, 1],
 };
 
-function LaptopOutline() {
+function LaptopOutline({ className = "" }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 900 650"
-      aria-hidden
-      className="h-full w-full"
+      className={className}
+      viewBox="0 0 900 620"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
     >
-      {/* Screen */}
+      {/* screen */}
       <rect
         x="170"
         y="70"
         width="560"
-        height="380"
-        rx="28"
-        stroke="rgba(255,255,255,0.82)"
+        height="360"
+        rx="26"
+        stroke="rgba(255,255,255,0.9)"
         strokeWidth="6"
       />
-      {/* Inner screen line */}
+      {/* inner bezel */}
       <rect
-        x="198"
-        y="98"
-        width="504"
-        height="324"
+        x="200"
+        y="100"
+        width="500"
+        height="300"
         rx="18"
-        stroke="rgba(255,255,255,0.28)"
+        stroke="rgba(255,255,255,0.25)"
         strokeWidth="4"
       />
-
-      {/* Base */}
+      {/* base */}
       <path
-        d="M120 500H780"
-        stroke="rgba(255,255,255,0.80)"
-        strokeWidth="10"
+        d="M120 470H780"
+        stroke="rgba(255,255,255,0.9)"
+        strokeWidth="6"
         strokeLinecap="round"
       />
       <path
-        d="M210 500C240 560 660 560 690 500"
-        stroke="rgba(255,255,255,0.80)"
-        strokeWidth="10"
-        strokeLinecap="round"
+        d="M150 470L210 540H690L750 470"
+        stroke="rgba(255,255,255,0.9)"
+        strokeWidth="6"
+        strokeLinejoin="round"
       />
-      {/* Trackpad hint */}
+      {/* trackpad hint */}
       <rect
         x="395"
-        y="520"
+        y="500"
         width="110"
-        height="26"
+        height="22"
         rx="10"
-        stroke="rgba(255,255,255,0.22)"
+        stroke="rgba(255,255,255,0.25)"
         strokeWidth="4"
       />
     </svg>
   );
 }
 
-function FloatingSkillIcon({
+function FloatingSkill({
   src,
   alt,
   index,
@@ -89,13 +103,13 @@ function FloatingSkillIcon({
   index: number;
   className: string;
 }) {
-  const prefersReduced = useReducedMotion();
+  const reduce = useReducedMotion();
 
   return (
     <motion.div
       className={`absolute ${className}`}
-      animate={prefersReduced ? undefined : { y: [-6, 6] }}
-      transition={{ ...floatTransition, delay: index * 0.16 }}
+      animate={reduce ? undefined : { y: [-6, 6] }}
+      transition={{ ...floatTransition, delay: index * 0.14 }}
       initial="rest"
       whileHover="hover"
     >
@@ -110,14 +124,14 @@ function FloatingSkillIcon({
             alt={alt}
             width={96}
             height={96}
-            className="h-10 w-10 md:h-14 md:w-14 object-contain"
+            className="h-9 w-9 md:h-12 md:w-12 object-contain"
           />
         </div>
 
         <motion.span
           variants={{ rest: { opacity: 0, y: 4 }, hover: { opacity: 1, y: 0 } }}
-          transition={{ duration: 0.45, ease: easeOut }}
-          className="mt-3 text-white text-[10px] md:text-xs tracking-[0.14em] pointer-events-none"
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-3 text-white text-[10px] md:text-[11px] tracking-[0.14em] pointer-events-none"
         >
           {alt}
         </motion.span>
@@ -126,14 +140,10 @@ function FloatingSkillIcon({
   );
 }
 
-export default function AboutHero() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const handleToggle = (index: number) =>
-    setActiveIndex((prev) => (prev === index ? null : index));
-
+export default function AboutHeroLaptop() {
   return (
     <section className="relative isolate overflow-hidden bg-black text-white full-bleed">
-      {/* Background glow */}
+      {/* background glow (consistent with your homepage vibe) */}
       <div
         className="absolute inset-0 pointer-events-none -z-10"
         style={{
@@ -148,11 +158,10 @@ export default function AboutHero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pt-[14vh] pb-24">
-        {/* Top: two-column */}
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pt-[12vh] pb-24">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          {/* LEFT */}
-          <div className="lg:col-span-6">
+          {/* LEFT: copy */}
+          <div className="lg:col-span-5">
             <p className="text-[11px] tracking-[0.22em] text-white/60">ABOUT</p>
 
             <h1 className="mt-4 text-4xl md:text-6xl font-semibold leading-[1.05]">
@@ -160,8 +169,8 @@ export default function AboutHero() {
             </h1>
 
             <p className="mt-4 text-white/80 text-[13px] md:text-[14px] leading-snug max-w-[52ch]">
-              A designer who blends creativity and logic — with a background in development and UX
-              design to craft experiences that are beautiful and built to work in the real world.
+              I design and build digital experiences for web applications — blending UX strategy,
+              visual polish, and front-end execution to make complex things feel effortless.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -176,123 +185,53 @@ export default function AboutHero() {
             </div>
           </div>
 
-          {/* RIGHT: laptop highlight */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="relative w-[340px] md:w-[460px]">
-              {/* glass frame */}
-              <div className="absolute -inset-4 rounded-[30px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
+          {/* RIGHT: laptop + arch */}
+          <div className="lg:col-span-7">
+            <div className="relative mx-auto w-full max-w-[720px]">
+              {/* glass panel */}
+              <div className="absolute -inset-4 rounded-[28px] bg-white/[0.03] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
 
-              {/* laptop container */}
-              <div className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden">
-                {/* internal hue */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-90"
-                  style={{
-                    backgroundImage: [
-                      "radial-gradient(520px 320px at 30% 20%, rgba(170,90,255,0.28) 0%, rgba(170,90,255,0.12) 46%, rgba(0,0,0,0) 76%)",
-                      "radial-gradient(560px 340px at 70% 30%, rgba(0,196,255,0.18) 0%, rgba(0,196,255,0.08) 46%, rgba(0,0,0,0) 78%)",
-                      "radial-gradient(620px 360px at 55% 70%, rgba(0,210,190,0.12) 0%, rgba(0,210,190,0.05) 48%, rgba(0,0,0,0) 80%)",
-                    ].join(", "),
-                    filter: "blur(38px)",
-                    mixBlendMode: "screen",
-                  }}
-                />
+              {/* center glow behind laptop */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-[28px]"
+                style={{
+                  backgroundImage: [
+                    "radial-gradient(560px 420px at 50% 55%, rgba(0,196,255,0.20) 0%, rgba(0,196,255,0.08) 45%, rgba(0,0,0,0) 75%)",
+                    "radial-gradient(560px 420px at 45% 50%, rgba(170,90,255,0.18) 0%, rgba(170,90,255,0.07) 50%, rgba(0,0,0,0) 78%)",
+                  ].join(", "),
+                  filter: "blur(70px)",
+                  opacity: 0.9,
+                  mixBlendMode: "screen",
+                }}
+              />
 
-                {/* outline */}
-                <div className="relative p-6 md:p-8">
-                  <div className="relative aspect-[900/650] w-full">
-                    <div className="absolute inset-0 opacity-[0.95] drop-shadow-[0_0_24px_rgba(170,90,255,0.28)]">
-                      <LaptopOutline />
+              <div className="relative rounded-[28px] p-6 md:p-10">
+                {/* stage */}
+                <div className="relative h-[520px] md:h-[560px]">
+                  {/* laptop */}
+                  <div className="absolute inset-x-0 bottom-0 flex justify-center">
+                    <div className="relative w-[520px] max-w-[90%]">
+                      <LaptopOutline className="w-full h-auto drop-shadow-[0_28px_70px_rgba(0,0,0,0.65)]" />
+                      <div className="pointer-events-none absolute inset-x-16 -bottom-3 h-8 rounded-full bg-black/70 blur-xl" />
                     </div>
+                  </div>
 
-                    {/* tiny “screen glow” */}
-                    <div
-                      aria-hidden
-                      className="absolute left-[22%] top-[16%] h-[52%] w-[56%] rounded-[18px]"
-                      style={{
-                        background:
-                          "radial-gradient(420px 260px at 40% 35%, rgba(170,90,255,0.18) 0%, rgba(0,196,255,0.10) 45%, rgba(0,0,0,0) 75%)",
-                        filter: "blur(18px)",
-                        opacity: 0.9,
-                      }}
-                    />
+                  {/* floating skills around in an arch */}
+                  <div className="absolute inset-0">
+                    {SKILLS.map((s, idx) => (
+                      <FloatingSkill
+                        key={s.alt}
+                        src={s.src}
+                        alt={s.alt}
+                        index={idx}
+                        className={s.className}
+                      />
+                    ))}
                   </div>
                 </div>
-
-                <div className="pointer-events-none absolute inset-x-10 -bottom-3 h-6 rounded-full bg-black/70 blur-lg" />
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Floating skills ARCH around laptop */}
-        <div className="relative mt-14 h-[340px] md:h-[380px] overflow-hidden">
-          {/* Top arch */}
-          <FloatingSkillIcon src="/images/skills/5.png" alt="Figma" index={0} className="top-[6%] left-1/2 -translate-x-1/2" />
-          <FloatingSkillIcon src="/images/skills/13.png" alt="VS Code" index={1} className="top-[12%] left-[64%]" />
-          <FloatingSkillIcon src="/images/skills/3.png" alt="Adobe AE" index={2} className="top-[12%] left-[30%]" />
-          <FloatingSkillIcon src="/images/skills/14.png" alt="Github" index={3} className="top-[20%] left-[78%]" />
-          <FloatingSkillIcon src="/images/skills/1.png" alt="Canva" index={4} className="top-[20%] left-[16%]" />
-
-          {/* Side “wrap” */}
-          <FloatingSkillIcon src="/images/skills/6.png" alt="React" index={5} className="top-[44%] left-[86%]" />
-          <FloatingSkillIcon src="/images/skills/7.png" alt="Next.js" index={6} className="top-[44%] left-[6%]" />
-
-          {/* Bottom sides */}
-          <FloatingSkillIcon src="/images/skills/10.png" alt="Tailwind.css" index={7} className="top-[66%] left-[18%]" />
-          <FloatingSkillIcon src="/images/skills/4.png" alt="Google Analytics" index={8} className="top-[66%] left-[72%]" />
-          <FloatingSkillIcon src="/images/skills/12.png" alt="HTML" index={9} className="top-[82%] left-[34%]" />
-          <FloatingSkillIcon src="/images/skills/11.png" alt="CSS" index={10} className="top-[82%] left-[58%]" />
-
-          {/* fade so icons hand off cleanly */}
-          <div
-            aria-hidden
-            className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,1) 100%)",
-            }}
-          />
-        </div>
-
-        {/* Gallery */}
-        <div className="mt-28 md:mt-32">
-          <p className="text-center text-[11px] tracking-[0.22em] text-white/60">
-            BEYOND THE SCREEN
-          </p>
-          <h2 className="mt-3 text-center text-3xl md:text-5xl font-bold">
-            Life Outside of Design
-          </h2>
-
-          <div className="mt-12 grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-            {items.map((item, index) => (
-              <button
-                type="button"
-                key={index}
-                onClick={() => setActiveIndex((prev) => (prev === index ? null : index))}
-                className="rounded-full relative group aspect-square overflow-hidden border border-white/10 bg-white/5"
-                aria-label={item.label}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.label}
-                  fill
-                  className="object-cover transition-all duration-300 group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75"
-                />
-                <div
-                  className={`
-                    absolute inset-0 flex items-center justify-center px-2 text-center
-                    text-[9px] xs:text-xs sm:text-sm md:text-base font-medium
-                    transition-opacity duration-300
-                    ${activeIndex === index ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
-                    bg-black/40 backdrop-blur-sm
-                  `}
-                >
-                  {item.label}
-                </div>
-              </button>
-            ))}
           </div>
         </div>
       </div>
