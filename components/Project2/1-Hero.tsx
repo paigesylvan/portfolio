@@ -71,7 +71,7 @@ export default function HeroOverviewCamping() {
             <div className="mt-2 space-y-2">
 
               <div className="flex flex-wrap justify-start gap-1.5 md:gap-2">
-                {["RESEARCH", "USER FLOWS", "USABILITY TESTING", "SKETCHING"].map((t) => (
+                {["Research", "User Flows", "Usability Testing", "Sketching"].map((t) => (
                   <span
                     key={t}
                     className="rounded-lg border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
@@ -82,7 +82,7 @@ export default function HeroOverviewCamping() {
               </div>
 
               <div className="flex flex-wrap justify-start gap-1.5 md:gap-2">
-                {["WIREFRAMING", "PROTOTYPING", "RESPONSIVE DESIGN", "UI CREATION"].map((t) => (
+                {["Wireframing", "Prototyping", "Responsive Design", "UI Creation"].map((t) => (
                   <span
                     key={t}
                     className="rounded-lg border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"

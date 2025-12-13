@@ -38,7 +38,7 @@ const studies: Study[] = [
     title: "How Thoughtful UX Design Increases Engagement for First-Time Campers",
     subtitle:
       "A responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear",
-    tags: ["UX-UI", "USER FLOW", "USABILITY TESTING"],
+    tags: ["UX-UI", "User Flow", "Usability Testing"],
     image: "/images/homepage-images/camping-laptop.png",
     imageAlt: "Camping site on laptop",
     cta: "View Case Study",
@@ -48,7 +48,7 @@ const studies: Study[] = [
     title: "How Clear Design Improves User Trust for a Local Dry Cleaners",
     subtitle:
       "Designed and coded a responsive homepage that simplifies service discovery and builds confidence for a local dry cleaning business.",
-    tags: ["VS CODE", "REACT", "RESPONSIVE DESIGN"],
+    tags: ["VS Code", "React", "Responsive Design"],
     image: "/images/homepage-images/cleaners-desktop.png",
     imageAlt: "Dry cleaner site on desktop",
     cta: "View Case Study",

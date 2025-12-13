@@ -23,13 +23,8 @@ export default function HeroOverviewDryCleaner() {
     },
   });
 
-  const skillsRow1 = ["INFORMATION ARCHITECTURE", "UI DESIGN", "ACCESSIBILITY"];
-  const skillsRow2 = [
-    "WIREFRAMING",
-    "PROTOTYPING",
-    "RESPONSIVE WEBSITE",
-    "USABILITY TESTING",
-  ];
+  const skillsRow1 = ["Information Architecture", "UI Design", "Accessibility"];
+  const skillsRow2 = ["Wireframing", "Prototyping", "Responsive Website", "Usability Testing", ];
 
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center px-6 md:py-16 mt-16">

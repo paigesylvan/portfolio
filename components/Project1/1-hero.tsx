@@ -26,8 +26,8 @@ export default function HeroOverviewDog() {
     },
   };
 
-  const skillsRow1 = ["UX RESEARCH", "UI CREATION", "USER FLOWS", "USABILITY STUDY"];
-  const skillsRow2 = ["WIREFRAMING", "PROTOTYPING", "RESPONSIVE DESIGN"];
+  const skillsRow1 = ["UX Research", "UI Creation", "User Flows", "Usability Study"];
+  const skillsRow2 = ["Wireframing", "Prototyping", "Responsive Design"];
 
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-12 lg:mt-[50px]">
