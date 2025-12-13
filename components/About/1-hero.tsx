@@ -12,8 +12,8 @@ type SkillIcon = {
 
 const SKILLS: SkillIcon[] = [
   { src: "/images/skills/2.png", alt: "Shopify", className: "left-[6%] top-[18%] lg:left-[10%] lg:top-[18%]" },
-  { src: "/images/skills/1.png", alt: "Canva", className: "left-[18%] top-[8%] lg:left-[22%] lg:top-[6%]" },
-  { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[3%] lg:left-[36%] lg:top-[0%]" },
+  { src: "/images/skills/1.png", alt: "Canva", className: "left-[18%] top-[8%] lg:left-[22%] lg:top-[26%]" },
+  { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[3%] lg:left-[36%] lg:top-[20%]" },
   { src: "/images/skills/5.png", alt: "Figma", className: "left-1/2 -translate-x-1/2 top-[1%] lg:top-[12%]" },
   { src: "/images/skills/13.png", alt: "VS Code", className: "right-[33%] top-[3%] lg:right-[36%] lg:top-[13%]" },
   { src: "/images/skills/7.png", alt: "Next.js", className: "right-[18%] top-[8%] lg:right-[22%] lg:top-[16%]" },
@@ -210,7 +210,7 @@ export default function AboutHeroLaptop() {
                 {/* stage */}
                 <div className="relative h-[520px] md:h-[560px]">
                   {/* laptop */}
-                  <div className="absolute inset-x-0 bottom-0 flex justify-center">
+                  <div className="absolute inset-x-0 bottom-10 md:bottom-14 flex justify-center">
                     <div className="relative w-[520px] max-w-[90%]">
                       <LaptopOutline className="w-full h-auto drop-shadow-[0_28px_70px_rgba(0,0,0,0.65)]" />
                       <div className="pointer-events-none absolute inset-x-16 -bottom-3 h-8 rounded-full bg-black/70 blur-xl" />
