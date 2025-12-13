@@ -72,9 +72,7 @@ export default function TimelineAbout() {
     const rect = containerRef.current.getBoundingClientRect();
 
     const hostRect =
-      host === document.documentElement
-        ? { top: 0 }
-        : host.getBoundingClientRect();
+      host === document.documentElement ? { top: 0 } : host.getBoundingClientRect();
 
     const absTop = hostScrollTop + (rect.top - hostRect.top);
 
@@ -121,9 +119,7 @@ export default function TimelineAbout() {
 
     const compute = () => {
       const viewportCenter =
-        host === document.documentElement
-          ? window.innerHeight / 2
-          : host.clientHeight / 2;
+        host === document.documentElement ? window.innerHeight / 2 : host.clientHeight / 2;
 
       const hostScrollTop =
         host === document.documentElement ? window.scrollY : host.scrollTop;
@@ -132,7 +128,10 @@ export default function TimelineAbout() {
 
       const capLen = Math.max(
         0,
-        Math.min(containerHeight * 0.4, (lineEndPx ?? containerHeight) - startOffset)
+        Math.min(
+          containerHeight * 0.4,
+          (lineEndPx ?? containerHeight) - startOffset
+        )
       );
 
       let nextTop = 0;
@@ -229,12 +228,8 @@ export default function TimelineAbout() {
   return (
     <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36">
       <div className="text-center relative">
-        <p className="text-[11px] tracking-[0.22em] text-white/60">
-          THE PATH SO FAR
-        </p>
-        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">
-          My Journey
-        </h2>
+        <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
+        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">My Journey</h2>
       </div>
 
       <div ref={containerRef} className="relative mx-auto w-full max-w-[1400px]">
@@ -251,10 +246,7 @@ export default function TimelineAbout() {
         {/* Desktop Spine */}
         <div
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block z-20 mix-blend-normal"
-          style={{
-            top: "100px",
-            height: lineEndPx ? `${lineEndPx - 80}px` : "100%",
-          }}
+          style={{ top: "100px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
         />
         <div
           className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block z-30 mix-blend-normal"
@@ -423,9 +415,7 @@ function TimelineRow({
         className="pointer-events-none absolute left-[6px] top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
       >
         <div
-          className={`h-3.5 w-3.5 rounded-full ${
-            dotFilled ? "bg-white" : "bg-transparent"
-          }`}
+          className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
         />
       </div>
 
@@ -435,9 +425,7 @@ function TimelineRow({
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] hidden md:flex items-center justify-center"
       >
         <div
-          className={`h-3.5 w-3.5 rounded-full ${
-            dotFilled ? "bg-white" : "bg-transparent"
-          }`}
+          className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
         />
       </div>
 
@@ -477,6 +465,7 @@ function TimelineRow({
             />
           </div>
 
+          {/* bottom “shadow” to anchor it */}
           <div className="pointer-events-none absolute inset-x-12 -bottom-3 h-6 rounded-full bg-black/70 blur-xl" />
         </div>
       </div>
@@ -495,6 +484,7 @@ function TimelineRow({
             p-6 md:p-8
           "
         >
+          {/* tiny top sheen */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-70"
@@ -505,15 +495,24 @@ function TimelineRow({
           />
 
           <div className="relative">
-            <h3 className="text-2xl md:text-3xl font-semibold tracking-[0.01em]">
-              {item.heading}
-            </h3>
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="text-2xl md:text-3xl font-semibold tracking-[0.01em]">
+                {item.heading}
+              </h3>
 
-            {/* ✅ chip moved UNDER the title */}
+              {/* small “chip” for consistency */}
+              {item.subheading && (
+                <span className="hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
+                  {item.subheading}
+                </span>
+              )}
+            </div>
+
+            {/* on mobile keep subheading readable */}
             {item.subheading && (
-              <span className="mt-3 inline-flex w-fit rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
+              <p className="md:hidden text-white/60 text-[12px] mt-2 tracking-[0.06em]">
                 {item.subheading}
-              </span>
+              </p>
             )}
 
             <p className="mt-4 text-white/80 leading-relaxed text-[13px] md:text-[14px]">
