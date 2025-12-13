@@ -55,6 +55,11 @@ export default function Skills() {
             "radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 26%, rgba(0,0,0,0.6) 52%, rgba(0,0,0,0) 100%)",
         }}
       />
+            <div
+        className="vignette-soft absolute inset-0 pointer-events-none"
+        aria-hidden
+      />
+
 
       <h2 className="mb-10 lg:mb-16 text-center text-[12px] tracking-[0.22em] text-white/60">
         SKILLS
