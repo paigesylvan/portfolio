@@ -34,78 +34,135 @@ const skills: Skill[] = [
   },
 ];
 
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
+// subtle per-card hues (kept tasteful)
+const CARD_HUES = [
+  "radial-gradient(420px 260px at 30% 20%, rgba(245,60,160,0.22) 0%, rgba(245,60,160,0.10) 45%, rgba(0,0,0,0) 75%)",
+  "radial-gradient(420px 260px at 30% 20%, rgba(0,196,255,0.20) 0%, rgba(0,196,255,0.09) 45%, rgba(0,0,0,0) 75%)",
+  "radial-gradient(420px 260px at 30% 20%, rgba(0,210,190,0.18) 0%, rgba(0,210,190,0.08) 45%, rgba(0,0,0,0) 75%)",
+];
+
 export default function Skills() {
   const prefersReduced = useReducedMotion();
 
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-black text-white py-16 lg:py-32"
+      className="
+        relative overflow-hidden bg-black text-white
+        py-16 lg:py-28
+        pb-28 lg:pb-44
+      "
     >
-      {/* subtle bottom hue that fades (not cut off) */}
+      {/* top fade-in so the section feels like it belongs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[40vh] opacity-80"
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 z-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.0) 100%)",
+        }}
+      />
+
+      {/* ✅ Bottom hue: pushed BELOW the section + taller + softer fade so it won't look cropped */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 -bottom-24 z-0 h-[60vh] opacity-85"
         style={{
           backgroundImage: [
-            "radial-gradient(1200px 520px at 20% 110%, rgba(245,60,160,0.22) 0%, rgba(245,60,160,0.10) 40%, rgba(0,0,0,0) 72%)",
-            "radial-gradient(1100px 520px at 55% 115%, rgba(0,196,255,0.18) 0%, rgba(0,196,255,0.08) 42%, rgba(0,0,0,0) 74%)",
-            "radial-gradient(1000px 520px at 90% 110%, rgba(0,210,190,0.16) 0%, rgba(0,210,190,0.07) 44%, rgba(0,0,0,0) 76%)",
+            "radial-gradient(1400px 620px at 18% 88%, rgba(245,60,160,0.20) 0%, rgba(245,60,160,0.10) 40%, rgba(0,0,0,0) 76%)",
+            "radial-gradient(1400px 620px at 55% 92%, rgba(0,196,255,0.16) 0%, rgba(0,196,255,0.08) 42%, rgba(0,0,0,0) 78%)",
+            "radial-gradient(1400px 620px at 88% 88%, rgba(0,210,190,0.14) 0%, rgba(0,210,190,0.07) 44%, rgba(0,0,0,0) 80%)",
           ].join(", "),
-          filter: "blur(70px)",
+          filter: "blur(90px)",
           mixBlendMode: "screen",
-          // fade the hue upward so it "flows" into the page
           WebkitMaskImage:
-            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0) 70%)",
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 28%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0) 88%)",
           maskImage:
-            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0) 70%)",
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 28%, rgba(0,0,0,0.55) 52%, rgba(0,0,0,0) 88%)",
+        }}
+      />
+
+      {/* subtle vignette so the center content pops */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(120% 80% at 50% 40%, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.9) 100%)",
         }}
       />
 
       {/* content layer */}
       <div className="relative z-10">
-        <h2 className="mb-10 lg:mb-16 text-center text-[12px] tracking-[0.22em] text-white/60">
+        <h2 className="mb-10 lg:mb-14 text-center text-[12px] tracking-[0.22em] text-white/60">
           SKILLS
         </h2>
 
-        <div className="mx-auto w-full md:w-[60%]">
-          <div className="grid gap-12 md:gap-10 md:grid-cols-3 text-center md:text-left">
+        <div className="mx-auto w-full max-w-[1100px] px-6">
+          <div className="grid gap-5 md:grid-cols-3">
             {skills.map((s, i) => (
-              <motion.div
+              <motion.article
                 key={s.title}
-                initial={prefersReduced ? false : { opacity: 0, y: 24 }}
+                initial={prefersReduced ? false : { opacity: 0, y: 18 }}
                 whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{
-                  duration: prefersReduced ? 0 : 0.5,
-                  // ✅ framer-motion expects an easing function/array, not "easeOut" string (new TS strictness)
-                  ease: [0.22, 1, 0.36, 1],
+                  duration: prefersReduced ? 0 : 0.55,
+                  ease: easeOut,
                   delay: prefersReduced ? 0 : i * 0.06,
                 }}
-                className="relative"
+                className="
+                  group relative overflow-hidden rounded-3xl
+                  border border-white/10 ring-1 ring-inset ring-white/10
+                  bg-white/[0.05] backdrop-blur-md
+                  shadow-[0_10px_40px_rgba(0,0,0,0.40)]
+                  transition-all duration-300
+                  hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
+                  hover:-translate-y-1
+                "
               >
-                {/* Card content */}
-                <div className="relative z-10 px-4 pb-4 md:px-0 md:pb-8 lg:pb-0 lg:ml-16">
-                  <div className="mb-4 flex justify-center md:justify-start">
-                    <Image
-                      src={s.gif}
-                      alt={s.alt}
-                      width={100}
-                      height={100}
-                      unoptimized
-                      className="h-14 w-18 md:h-20 md:w-24 object-contain opacity-90"
-                    />
+                {/* per-card hue */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    backgroundImage: CARD_HUES[i % CARD_HUES.length],
+                    filter: "blur(60px)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 85%)",
+                    maskImage:
+                      "linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 85%)",
+                  }}
+                />
+
+                <div className="relative z-10 p-6 md:p-7">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.06] ring-1 ring-inset ring-white/10">
+                      <Image
+                        src={s.gif}
+                        alt={s.alt}
+                        width={96}
+                        height={96}
+                        unoptimized
+                        className="h-10 w-10 object-contain opacity-90"
+                      />
+                    </div>
+
+                    <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
+                      {s.title}
+                    </h3>
                   </div>
 
-                  <h3 className="mb-2 lg:mb-3 text-[13px] md:text-[14px] font-semibold">
-                    {s.title}
-                  </h3>
-
-                  <p className="text-white/80 leading-snug text-[11px] md:text-[12px] pr-24">
+                  <p className="mt-4 text-white/80 leading-snug text-[12px] md:text-[13px]">
                     {s.body}
                   </p>
+
+                  {/* tiny “divider” that feels premium */}
+                  <div className="mt-6 h-px w-full bg-gradient-to-r from-white/0 via-white/14 to-white/0" />
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
