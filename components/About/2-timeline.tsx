@@ -412,7 +412,7 @@ function TimelineRow({
       {/* Mobile Dot */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
+        className="pointer-events-none absolute top-1/2 pl-[1px] -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
       >
         <div
           className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
@@ -475,7 +475,7 @@ function TimelineRow({
             border border-white/10 ring-1 ring-inset ring-white/10
             bg-white/[0.05] backdrop-blur-md
             shadow-[0_12px_50px_rgba(0,0,0,0.45)]
-            p-6 md:p-8
+            p-2 md:p-8
           "
         >
           {/* tiny top sheen */}
@@ -509,7 +509,7 @@ function TimelineRow({
               </p>
             )}
 
-            <p className="mt-4 text-white/80 leading-relaxed text-[13px] md:text-[14px]">
+            <p className=" mt-1 lg:mt-4 text-white/80 leading-relaxed text-[13px] md:text-[14px]">
               {item.body}
             </p>
 
