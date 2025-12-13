@@ -28,7 +28,7 @@ const studies: Study[] = [
       "How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming",
     subtitle:
       "A responsive grooming app designed to ease booking anxiety with empathetic UX and streamlined flows.",
-    tags: ["UX RESEARCH", "UI CREATION", "PROTOTYPING"],
+    tags: ["UX Research", "UI Creation", "Prototyping"],
     image: "/images/homepage-images/dog-phone.png",
     imageAlt: "Dog grooming app on phone",
     cta: "View Case Study",
