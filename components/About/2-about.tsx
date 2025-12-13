@@ -45,7 +45,7 @@ export default function AboutGallery() {
                 ease: [0.22, 1, 0.36, 1],
               }}
               className="relative group aspect-square rounded-full overflow-hidden
-                         border border-white bg-white/[0.04]
+                         border-spacing-2 border-white bg-white/[0.04]
                          shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
             >
               <Image
