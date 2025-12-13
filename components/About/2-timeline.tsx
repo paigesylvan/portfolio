@@ -218,8 +218,8 @@ export default function TimelineAbout() {
     {
       images: ["/images/about-images/2025-1.png"],
       imageAlt: "2025",
-      heading: "Present Day",
-      subheading: "Product Design + UX/UI Design",
+      heading: "Present",
+      subheading: "Product Design + UX/UI",
       body:
         "From my experience at my internship I discovered my true interest, which I realize correlated into everything I have been led to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course to solidify my skills and polish two project case studies.",
     },
@@ -432,13 +432,7 @@ function TimelineRow({
       {/* IMAGE GLASS CARD */}
       <div className="md:col-span-5">
         <div
-          className="
-            group relative overflow-hidden rounded-3xl
-            border border-white/10 ring-1 ring-inset ring-white/10
-            bg-white/[0.05] backdrop-blur-md
-            shadow-[0_12px_50px_rgba(0,0,0,0.45)]
-          "
-        >
+          className="group relative overflow-hidden rounded-3xl">
           {/* subtle hover hue */}
           <div
             aria-hidden
