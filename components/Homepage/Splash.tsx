@@ -82,21 +82,12 @@ export default function Hero({
                   →
                 </span>
               </Link>
-
-              <Link
-                href="/#case-studies"
-                className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-[13px]
-                           text-white/85 border border-white/10 bg-white/[0.04]
-                           hover:bg-white/[0.08] transition-all duration-300"
-              >
-                View Case Studies
-              </Link>
             </div>
           </div>
 
           {/* RIGHT: headshot */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end relative md:mt-10 lg:mt-16">
-            <div className="relative w-[330px] md:w-[400px]">
+            <div className="relative w-[330px] md:w-[380px]">
               <div className="absolute -inset-4 rounded-[28px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
 
               <Image
