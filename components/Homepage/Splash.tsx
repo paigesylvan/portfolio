@@ -21,7 +21,7 @@ export default function Hero({
       style={minHeight ? { minHeight } : undefined}
     >
       {/* Aurora background */}
-      <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[40vh] pointer-events-none z-0" />
+      <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[100vh] pointer-events-none z-0" />
       <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
       <div
         className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-60"
