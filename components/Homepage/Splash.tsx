@@ -49,7 +49,7 @@ export default function Hero({
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[1090px] px-6 pt-24 pb-20 md:pt-28 lg:pt-32">
+      <div className="relative z-10 mx-auto max-w-[1000] lg:max-w-[1090px] px-6 pt-24 pb-20 md:pt-28 lg:pt-32">
         <div className="grid items-center gap-14 lg:grid-cols-12">
           {/* LEFT: text */}
           <div className="lg:col-span-6 text-center lg:text-left">
