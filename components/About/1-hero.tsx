@@ -11,12 +11,12 @@ type SkillIcon = {
 };
 
 const SKILLS: SkillIcon[] = [
-  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[6%] top-[18%] lg:left-[9%] lg:top-[26%]" },
+  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[6%] top-[18%] lg:left-[0%] lg:top-[16%]" },
   { src: "/images/skills/1.png", alt: "Canva", className: "left-[18%] top-[8%] lg:left-[22%] lg:top-[8%]" },
   { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[3%] lg:left-[36%] lg:top-[18%]" },
   { src: "/images/skills/5.png", alt: "Figma", className: "left-1/2 -translate-x-1/2 top-[1%] lg:top-[6%]" },
   { src: "/images/skills/13.png", alt: "VS Code", className: "right-[33%] top-[3%] lg:right-[33%] lg:top-[17%]" },
-  { src: "/images/skills/7.png", alt: "Next.js", className: "right-[18%] top-[8%] lg:right-[22%] lg:top-[9%]" },
+  { src: "/images/skills/7.png", alt: "Next.js", className: "right-[18%] top-[8%] lg:right-[15%] lg:top-[9%]" },
   { src: "/images/skills/14.png", alt: "GitHub", className: "right-[6%] top-[18%] lg:right-[10%] lg:top-[28%]" },
 
   // side drops (subtle “wrap” around laptop)
@@ -26,7 +26,7 @@ const SKILLS: SkillIcon[] = [
 
   { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[10%] top-[70%] lg:right-[-4%] lg:top-[68%]" },
   { src: "/images/skills/11.png", alt: "CSS", className: "right-[20%] top-[62%] lg:right-[5%] lg:top-[58%]" },
-  { src: "/images/skills/12.png", alt: "HTML", className: "right-[8%] top-[42%] lg:right-[0%] lg:top-[44%]" },
+  { src: "/images/skills/12.png", alt: "HTML", className: "right-[8%] top-[42%] lg:right-[-5%] lg:top-[44%]" },
 ];
 
 const floatTransition: Transition = {
@@ -131,7 +131,7 @@ function FloatingSkill({
         <motion.span
           variants={{ rest: { opacity: 0, y: 4 }, hover: { opacity: 1, y: 0 } }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-1 text-white text-[8px] md:text-[9px] tracking-[0.14em] pointer-events-none"
+          className=" text-white text-[8px] md:text-[9px] tracking-[0.12em] pointer-events-none"
         >
           {alt}
         </motion.span>
