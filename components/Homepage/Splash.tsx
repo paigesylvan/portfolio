@@ -11,7 +11,7 @@ type Props = {
 
 export default function Hero({
   title = "Product Designer & UX/UI Developer",
-  kicker = "ABOUT ME",
+  kicker = "PAIGE SYLVAN",
   subtitle = "I design clean, intuitive interfaces and build responsive, user-centered products with modern front-end tools. I blend UX strategy, visual design, and development experience to turn complex problems into simple, functional experiences.",
   minHeight,
 }: Props) {
@@ -66,17 +66,7 @@ export default function Hero({
               {subtitle}
             </p>
 
-            {/* Small “Social” accent (optional) */}
-            <div className="mt-6 flex justify-center lg:justify-start">
-              <Image
-                src="/images/homepage-images/Social.png"
-                alt="Social proof"
-                width={420}
-                height={220}
-                className="opacity-90"
-                priority
-              />
-            </div>
+
 
             <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3 justify-center lg:justify-start">
               <Link
