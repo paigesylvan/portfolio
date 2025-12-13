@@ -31,7 +31,7 @@ export default function AboutFinalSection() {
           {/* Left Text */}
           <div className="md:col-span-7">
             <h3 className="text-[11px] tracking-[0.25em] text-white/60">CURRENTLY SEEKING</h3>
-            <p className="mt-3 text-white/90 text-lg md:text-xl leading-relaxed max-w-[640px]">
+            <p className="mt-3 text-white/90 text-lg md:text-xl leading-relaxed max-w-[640px] ml-12 lg:ml-0">
             Now excited to join a team as a Product Designer or UX/UI Designer;
             contributing meaningful design work while continuing to learn, grow, and collaborate.
             </p>
