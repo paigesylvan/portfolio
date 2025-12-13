@@ -24,6 +24,8 @@ const ACTIVE_BAND_PX = 100;
 const clamp = (v: number, min: number, max: number) =>
   Math.max(min, Math.min(v, max));
 
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
 export default function TimelineAbout() {
   const prefersReduced = useReducedMotion() ?? false;
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +46,7 @@ export default function TimelineAbout() {
   const [containerHeight, setContainerHeight] = useState(0);
   const [segmentTop, setSegmentTop] = useState(0);
   const [segmentLen, setSegmentLen] = useState(0);
-  const [startOffset, setStartOffset] = useState(100); 
+  const [startOffset, setStartOffset] = useState(100);
 
   useLayoutEffect(() => {
     const mq = window.matchMedia("(max-width: 767.98px)");
@@ -93,7 +95,7 @@ export default function TimelineAbout() {
 
     const onResize = () => measure();
     const onScrollAny = () => measure();
-    
+
     window.addEventListener("resize", onResize, { passive: true });
     window.addEventListener("scroll", onScrollAny, { passive: true });
 
@@ -224,14 +226,13 @@ export default function TimelineAbout() {
   ];
 
   return (
-    <section className="relative isolate px-6 bg-black text-white ">
+    <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36">
       <div className="text-center relative">
         <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
-        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-24">My Journey</h2>
+        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">My Journey</h2>
       </div>
 
       <div ref={containerRef} className="relative mx-auto w-full max-w-[1400px]">
-
         {/* Mobile Spine */}
         <div
           className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden z-20 mix-blend-normal"
@@ -253,7 +254,7 @@ export default function TimelineAbout() {
         />
 
         {/* Timeline items */}
-        <div className="space-y-24 relative z-10">
+        <div className="space-y-20 md:space-y-24 relative z-10">
           {items.map((it, i) => (
             <TimelineRow
               key={i}
@@ -271,7 +272,6 @@ export default function TimelineAbout() {
     </section>
   );
 }
-
 
 function TimelineRow({
   item,
@@ -324,9 +324,9 @@ function TimelineRow({
     if (!el) return;
 
     const calc = () => {
-      const rect = el.getBoundingClientRect(); 
-      const vpCenter = getHostRectTop() + getHostClientHeight() / 2; 
-      const rowCenter = rect.top + rect.height / 2; 
+      const rect = el.getBoundingClientRect();
+      const vpCenter = getHostRectTop() + getHostClientHeight() / 2;
+      const rowCenter = rect.top + rect.height / 2;
       setIsActive(Math.abs(rowCenter - vpCenter) <= ACTIVE_BAND_PX);
     };
 
@@ -365,7 +365,7 @@ function TimelineRow({
     if (!el) return;
 
     const update = () => {
-      const rect = el.getBoundingClientRect(); // viewport coords
+      const rect = el.getBoundingClientRect();
       const rowCenterAbs =
         getHostScrollTop() + (rect.top - getHostRectTop()) + rect.height / 2;
 
@@ -403,64 +403,125 @@ function TimelineRow({
     <motion.div
       data-timeline-row
       ref={rowRef}
-      initial={{ opacity: 0, y: prefersReduced ? 0 : 28 }}
+      initial={{ opacity: 0, y: prefersReduced ? 0 : 22 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: prefersReduced ? 0 : 0.6, ease: "easeOut" }}
+      transition={{ duration: prefersReduced ? 0 : 0.6, ease: easeOut }}
       viewport={{ once: false, amount: 0.25 }}
       className="relative grid items-center gap-6 md:gap-8 md:grid-cols-12 pl-8 md:pl-0"
     >
-      
-      {/* Mobile Dots */}
+      {/* Mobile Dot */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center mix-blend-normal"
+        className="pointer-events-none absolute left-[6px] top-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
       >
         <div
-          className={`h-3.5 w-3.5 rounded-full ${
-            dotFilled ? "bg-white" : "bg-transparent"
-          }`}
+          className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
         />
       </div>
 
-      {/* Desktop Dots */}
+      {/* Desktop Dot */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] hidden md:flex items-center justify-center mix-blend-normal"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] hidden md:flex items-center justify-center"
       >
         <div
-          className={`h-3.5 w-3.5 rounded-full ${
-            dotFilled ? "bg-white" : "bg-transparent"
-          }`}
+          className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
         />
       </div>
 
-      {/* Image */}
+      {/* IMAGE GLASS CARD */}
       <div className="md:col-span-5">
-        <div className="relative w-full h-[220px] sm:h-[260px] md:h-[420px] overflow-hidden rounded-xl">
-        <Image
-  src={item.images[0] ?? "/images/placeholder.png"}
-  alt={item.imageAlt}
-  fill
-  sizes="(min-width: 768px) 600px, 100vw"
-  className="object-contain"
-  priority={priority}
-/>
+        <div
+          className="
+            group relative overflow-hidden rounded-3xl
+            border border-white/10 ring-1 ring-inset ring-white/10
+            bg-white/[0.05] backdrop-blur-md
+            shadow-[0_12px_50px_rgba(0,0,0,0.45)]
+          "
+        >
+          {/* subtle hover hue */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{
+              backgroundImage:
+                "radial-gradient(520px 320px at 25% 20%, rgba(0,196,255,0.18) 0%, rgba(170,90,255,0.12) 45%, rgba(0,0,0,0) 75%)",
+              filter: "blur(60px)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0) 85%)",
+              maskImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0) 85%)",
+            }}
+          />
 
+          <div className="relative w-full h-[220px] sm:h-[260px] md:h-[380px]">
+            <Image
+              src={currentSrc}
+              alt={item.imageAlt}
+              fill
+              sizes="(min-width: 768px) 560px, 100vw"
+              className="object-contain p-6 md:p-8"
+              priority={priority}
+            />
+          </div>
+
+          {/* bottom “shadow” to anchor it */}
+          <div className="pointer-events-none absolute inset-x-12 -bottom-3 h-6 rounded-full bg-black/70 blur-xl" />
         </div>
       </div>
 
       {/* Spacer for desktop */}
       <div className="hidden md:block md:col-span-2" />
 
-      {/* Text */}
-      <div className="md:col-span-5 max-w-[350px]">
-        <h3 className="text-2xl md:text-3xl font-semibold">{item.heading}</h3>
-        {item.subheading && (
-          <p className="text-white/60 text-sm md:text-base mt-1 mb-2 italic">
-            {item.subheading}
-          </p>
-        )}
-        <p className="mt-3 text-white/80 leading-relaxed">{item.body}</p>
+      {/* TEXT GLASS CARD */}
+      <div className="md:col-span-5">
+        <div
+          className="
+            relative overflow-hidden rounded-3xl
+            border border-white/10 ring-1 ring-inset ring-white/10
+            bg-white/[0.05] backdrop-blur-md
+            shadow-[0_12px_50px_rgba(0,0,0,0.45)]
+            p-6 md:p-8
+          "
+        >
+          {/* tiny top sheen */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-70"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0))",
+            }}
+          />
+
+          <div className="relative">
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="text-2xl md:text-3xl font-semibold tracking-[0.01em]">
+                {item.heading}
+              </h3>
+
+              {/* small “chip” for consistency */}
+              {item.subheading && (
+                <span className="hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
+                  {item.subheading}
+                </span>
+              )}
+            </div>
+
+            {/* on mobile keep subheading readable */}
+            {item.subheading && (
+              <p className="md:hidden text-white/60 text-[12px] mt-2 tracking-[0.06em]">
+                {item.subheading}
+              </p>
+            )}
+
+            <p className="mt-4 text-white/80 leading-relaxed text-[13px] md:text-[14px]">
+              {item.body}
+            </p>
+
+            <div className="mt-6 h-px w-full bg-gradient-to-r from-white/0 via-white/14 to-white/0" />
+          </div>
+        </div>
       </div>
     </motion.div>
   );
