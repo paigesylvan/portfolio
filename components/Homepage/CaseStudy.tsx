@@ -225,6 +225,23 @@ export default function CaseStudies() {
           </div>
         </MotionConfig>
       </LazyMotion>
+
+      <div
+        className="absolute inset-0 -z-20 pointer-events-none"
+        style={{
+          background: [
+            "radial-gradient(1400px 720px at 52% 105%, rgba(70,70,160,0.34) 0%, rgba(70,70,160,0.20) 40%, rgba(70,70,160,0.06) 68%, rgba(70,70,160,0) 90%)",
+            "radial-gradient(1200px 620px at 103% 102%, rgba(0,196,255,0.34) 0%, rgba(0,196,255,0.16) 42%, rgba(0,196,255,0.06) 68%, rgba(0,196,255,0) 88%)",
+            "radial-gradient(1100px 600px at 86% 96%, rgba(0,210,190,0.28) 0%, rgba(0,210,190,0.14) 44%, rgba(0,0,0,0) 90%)",
+            "radial-gradient(1200px 620px at -6% 104%, rgba(170,90,255,0.28) 0%, rgba(170,90,255,0.14) 44%, rgba(170,90,255,0.05) 70%, rgba(0,0,0,0) 90%)",
+          ].join(", "),
+          mixBlendMode: "screen",
+          WebkitMaskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.55) 48%, rgba(0,0,0,0) 72%)",
+          maskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.55) 48%, rgba(0,0,0,0) 72%)",
+        }}
+      />
     </section>
   );
 }
