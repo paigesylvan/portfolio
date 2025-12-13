@@ -14,13 +14,14 @@ const items = [
   { src: "/images/about-images/about-6.png", label: "Going on adventures with my dog, Sadie" },
 ];
 
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
 // ✅ Type-safe transition for Framer Motion
 const floatTransition: Transition = {
   duration: 5,
   repeat: Infinity,
   repeatType: "reverse",
-  // cubic-bezier equivalent of easeInOut
-  ease: [0.42, 0, 0.58, 1],
+  ease: [0.42, 0, 0.58, 1], // easeInOut
 };
 
 function FloatingSkillIcon({
@@ -36,8 +37,7 @@ function FloatingSkillIcon({
 }) {
   return (
     <motion.div
-      className={`absolute flex flex-col items-center justify-center
-        ${className} pointer-events-auto`}
+      className={`absolute flex flex-col items-center justify-center ${className} pointer-events-auto`}
       animate={{ y: [-6, 6] }}
       transition={{ ...floatTransition, delay: index * 0.18 }}
       initial="rest"
@@ -47,21 +47,18 @@ function FloatingSkillIcon({
       <motion.div
         variants={{
           rest: { scale: 1 },
-          hover: { scale: 1.15 },
+          hover: { scale: 1.12 },
         }}
         transition={{ type: "spring", stiffness: 180, damping: 12 }}
         className="relative flex items-center justify-center"
       >
         {/* circle + icon */}
-        <div
-          className="flex h-14 w-14 md:h-24 md:w-24 items-center justify-center
-          rounded-full bg-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] relative"
-        >
+        <div className="flex h-14 w-14 md:h-24 md:w-24 items-center justify-center rounded-full bg-white shadow-[0_18px_45px_rgba(0,0,0,0.45)] relative">
           <Image
             src={src}
             alt={alt}
-            width={60}
-            height={60}
+            width={96}
+            height={96}
             className="h-14 w-14 md:h-24 md:w-24 object-contain transition-all duration-500"
           />
         </div>
@@ -73,7 +70,7 @@ function FloatingSkillIcon({
           rest: { opacity: 0, y: 4 },
           hover: { opacity: 1, y: 0 },
         }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
+        transition={{ duration: 0.45, ease: easeOut }}
         className="text-white text-[10px] md:text-xs mt-4 pointer-events-none tracking-[0.12em]"
       >
         {alt}
@@ -112,133 +109,150 @@ export default function AboutHero() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[12vh]">
-        {/* Floating skills */}
-        <div className="relative w-full h-[280px] md:h-[320px] mb-4 pointer-events-none">
-  {/* far left top */}
-  <FloatingSkillIcon
-    src="images/skills/2.png"
-    alt="Shopify"
-    index={0}
-    className="top-[20vh] lg:top-[30vh] lg:left-[1%]"
-  />
+      <div className="relative z-10 mx-auto w-full max-w-[1300px] text-center mt-[11vh]">
+        {/* Floating skills (CAPPED + FADE) */}
+        <div
+          className="
+            relative w-full
+            h-[360px] md:h-[420px]
+            mb-32
+            pointer-events-none
+            overflow-hidden
+          "
+        >
+          {/* far left top */}
+          <FloatingSkillIcon
+            src="/images/skills/2.png"
+            alt="Shopify"
+            index={0}
+            className="top-[18%] lg:top-[26%] left-[2%]"
+          />
 
-  {/* mid-left top */}
-  <FloatingSkillIcon
-    src="images/skills/1.png"
-    alt="Canva"
-    index={1}
-    className="top-12 left-2 lg:top-[17vh] lg:left-[18%]"
-  />
+          {/* mid-left top */}
+          <FloatingSkillIcon
+            src="/images/skills/1.png"
+            alt="Canva"
+            index={1}
+            className="top-[10%] left-[12%] lg:top-[14%] lg:left-[18%]"
+          />
 
-  {/* left of center */}
-  <FloatingSkillIcon
-    src="images/skills/3.png"
-    alt="Adobe AE"
-    index={2}
-    className="top-[20vh] lg:top-[10vh] left-[30%]"
-  />
+          {/* left of center */}
+          <FloatingSkillIcon
+            src="/images/skills/3.png"
+            alt="Adobe AE"
+            index={2}
+            className="top-[18%] left-[28%] lg:top-[12%] lg:left-[30%]"
+          />
 
-  {/* center top */}
-  <FloatingSkillIcon
-    src="images/skills/5.png"
-    alt="Figma"
-    index={3}
-    className="top-8 lg:top-[12vh] left-[45%] -translate-x-1/2"
-  />
+          {/* center top */}
+          <FloatingSkillIcon
+            src="/images/skills/5.png"
+            alt="Figma"
+            index={3}
+            className="top-[8%] left-[50%] -translate-x-1/2 lg:top-[12%]"
+          />
 
-  {/* right of center */}
-  <FloatingSkillIcon
-    src="images/skills/13.png"
-    alt="VS Code"
-    index={4}
-    className="top-24 right-[16%] lg:top-[10vh] lg:right-[32%]"
-  />
+          {/* right of center */}
+          <FloatingSkillIcon
+            src="/images/skills/13.png"
+            alt="VS Code"
+            index={4}
+            className="top-[16%] right-[22%] lg:top-[12%] lg:right-[32%]"
+          />
 
-  {/* mid-right top */}
-  <FloatingSkillIcon
-    src="images/skills/7.png"
-    alt="Next.js"
-    index={5}
-    className="right-[30%] top-[20vh] lg:top-[38vh] lg:right-[20%]"
-  />
+          {/* mid-right top */}
+          <FloatingSkillIcon
+            src="/images/skills/7.png"
+            alt="Next.js"
+            index={5}
+            className="top-[26%] right-[28%] lg:top-[34%] lg:right-[20%]"
+          />
 
-  {/* far right top */}
-  <FloatingSkillIcon
-    src="images/skills/6.png"
-    alt="React"
-    index={6}
-    className="top-[16vh] lg:top-[30vh] right-[1%]"
-  />
+          {/* far right top */}
+          <FloatingSkillIcon
+            src="/images/skills/6.png"
+            alt="React"
+            index={6}
+            className="top-[20%] right-[3%] lg:top-[26%] lg:right-[1%]"
+          />
 
-  {/* LEFT SIDE CASCADE */}
-  <FloatingSkillIcon
-    src="images/skills/4.png"
-    alt="Google Analytics"
-    index={7}
-    className="top-24 lg:top-[37vh] left-[16%]"
-  />
+          {/* LEFT SIDE CASCADE (kept inside container via %) */}
+          <FloatingSkillIcon
+            src="/images/skills/4.png"
+            alt="Google Analytics"
+            index={7}
+            className="top-[34%] left-[18%] lg:top-[46%] lg:left-[14%]"
+          />
 
-  <FloatingSkillIcon
-    src="images/skills/10.png"
-    alt="Tailwind.css"
-    index={8}
-    className="top-[49vh] left-[8%] lg:top-[50vh] lg:left-[5%]"
-  />
+          <FloatingSkillIcon
+            src="/images/skills/10.png"
+            alt="Tailwind.css"
+            index={8}
+            className="top-[62%] left-[8%] lg:top-[70%] lg:left-[6%]"
+          />
 
-  <FloatingSkillIcon
-    src="images/skills/9.png"
-    alt="Sass.css"
-    index={9}
-    className="top-[60vh] lg:top-[65vh] lg:left-[10%]"
-  />
+          <FloatingSkillIcon
+            src="/images/skills/9.png"
+            alt="Sass.css"
+            index={9}
+            className="top-[74%] left-[14%] lg:top-[78%] lg:left-[10%]"
+          />
 
-  {/* RIGHT SIDE CASCADE */}
-  <FloatingSkillIcon
-    src="images/skills/8.png"
-    alt="Javascript"
-    index={10}
-    className="top-[49vh] right-[15%] lg:top-[45vh] lg:right-[1%]"
-  />
+          {/* RIGHT SIDE CASCADE (kept inside container via %) */}
+          <FloatingSkillIcon
+            src="/images/skills/8.png"
+            alt="Javascript"
+            index={10}
+            className="top-[60%] right-[14%] lg:top-[66%] lg:right-[6%]"
+          />
 
-  <FloatingSkillIcon
-    src="images/skills/11.png"
-    alt="CSS"
-    index={11}
-    className="top-[55vh] right-1 lg:top-[55vh] lg:right-[16%]"
-  />
+          <FloatingSkillIcon
+            src="/images/skills/11.png"
+            alt="CSS"
+            index={11}
+            className="top-[70%] right-[2%] lg:top-[74%] lg:right-[16%]"
+          />
 
-  <FloatingSkillIcon
-    src="images/skills/12.png"
-    alt="HTML"
-    index={12}
-    className="top-[28vh] lg:top-[67vh] right-[5%]"
-  />
+          <FloatingSkillIcon
+            src="/images/skills/12.png"
+            alt="HTML"
+            index={12}
+            className="top-[44%] right-[6%] lg:top-[78%] lg:right-[8%]"
+          />
 
-  <FloatingSkillIcon
-    src="images/skills/14.png"
-    alt="Github"
-    index={13}
-    className="top-[1vh] lg:top-[15vh] right-[12%]"
-  />
+          <FloatingSkillIcon
+            src="/images/skills/14.png"
+            alt="Github"
+            index={13}
+            className="top-[6%] right-[14%] lg:top-[16%] lg:right-[12%]"
+          />
 
-  <FloatingSkillIcon
-    src="images/skills/15.png"
-    alt="Vercel"
-    index={14}
-    className="left-[20%] lg:top-[16vh] lg:left-[2%]"
-  />
-</div>
+          <FloatingSkillIcon
+            src="/images/skills/15.png"
+            alt="Vercel"
+            index={14}
+            className="top-[22%] left-[6%] lg:top-[18%] lg:left-[2%]"
+          />
 
+          {/* bottom fade mask (so icons flow out cleanly) */}
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-32 z-10 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,1) 100%)",
+            }}
+          />
+        </div>
 
         {/* Text */}
         <h1 className="mt-2 md:text-4xl">Hi, I’m Paige!</h1>
 
-        <h1 className="mt-8 text-lg lg:text-xl font-semibold leading-tight">
+        <h2 className="mt-8 text-lg lg:text-xl font-semibold leading-tight">
           A designer who blends creativity and logic.
-        </h1>
+        </h2>
 
-        <p className="text-white/80 max-w-[500px] mx-auto text-[14px] md:text-[15px] leading-snug pt-1 pb-[13vh]">
+        <p className="text-white/80 max-w-[500px] mx-auto text-[14px] md:text-[15px] leading-snug pt-1 pb-20">
           My background in development and UX design helps me craft experiences
           that are not only beautiful but built to work in the real world.
         </p>
@@ -257,7 +271,7 @@ export default function AboutHero() {
         </div>
 
         {/* Gallery grid */}
-        <div className="mx-auto w-full mt-36">
+        <div className="mx-auto w-full mt-48 md:mt-56">
           <div className="text-center relative">
             <p className="text-[11px] tracking-[0.22em] text-white/60">
               BEYOND THE SCREEN
@@ -277,14 +291,12 @@ export default function AboutHero() {
                   src={item.src}
                   alt={item.label}
                   fill
-                  className="object-cover transition-all duration-300
-                    group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75
-                  "
+                  className="object-cover transition-all duration-300 group-hover:blur-sm group-hover:scale-105 group-hover:brightness-75"
                 />
                 <div
                   className="
                     absolute inset-0 flex items-center justify-center px-2 text-center
-                    text-[9px] xs:text-xs sm:text-sm md:text-base font-medium 
+                    text-[9px] xs:text-xs sm:text-sm md:text-base font-medium
                     transition-opacity duration-300
                     opacity-0 group-hover:opacity-100
                     bg-black/40 backdrop-blur-sm
