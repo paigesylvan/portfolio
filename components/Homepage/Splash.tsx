@@ -95,7 +95,7 @@ export default function Hero({
           </div>
 
           {/* RIGHT: headshot */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+          <div className="lg:col-span-6 flex justify-center lg:justify-end relative md:mt-10 lg:mt-16">
             <div className="relative w-[330px] md:w-[400px]">
               <div className="absolute -inset-4 rounded-[28px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
 

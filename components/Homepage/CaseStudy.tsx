@@ -116,7 +116,7 @@ export default function CaseStudies() {
       className="relative mt-20 overflow-hidden text-white full-bleed bg-black scroll-mt-[70vh] md:scroll-mt-40 lg:scroll-mt-[90vh]"
     >
       {/* 🔮 Bottom aurora / hue */}
-      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-10" />
+      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
 
       {/* Content layer */}
       <div className="relative z-10 pb-36 lg:pb-48">
