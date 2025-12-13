@@ -44,9 +44,9 @@ export default function AboutGallery() {
                 delay: idx * 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative group aspect-square rounded-full overflow-hidden
-                         border-spacing-2 border-white bg-white/[0.04]
-                         shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
+              className="pointer-events-none absolute inset-0 rounded-full
+              ring-1 ring-white/30
+              shadow-[0_0_0_1px_rgba(255,255,255,0.35)]"
             >
               <Image
                 src={item.src}
