@@ -40,7 +40,7 @@ export default function Hero({
             width={500}
             height={300}
           />
-            <p className=" text-blue text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
+            <p className="text-blue-700 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
               {subtitle}
             </p>
 
