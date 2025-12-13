@@ -48,7 +48,7 @@ export default function AboutGallery() {
                         bg-white/[0.04]
                          shadow-[0_12px_40px_rgba(0,0,0,0.45)]
                          border border-white/40
-                        ring-1 ring-inset ring-white/20
+                        ring-4 ring-inset ring-white
                          "
             >
               <Image
