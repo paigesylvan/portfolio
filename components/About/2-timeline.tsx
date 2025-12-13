@@ -460,7 +460,7 @@ function TimelineRow({
               alt={item.imageAlt}
               fill
               sizes="(min-width: 768px) 560px, 100vw"
-              className="object-contain p-6 md:p-8"
+              className="object-contain"
               priority={priority}
             />
           </div>
@@ -477,7 +477,7 @@ function TimelineRow({
       <div className="md:col-span-5">
         <div
           className="
-            relative overflow-hidden rounded-3xl
+            relative overflow-hidden rounded-3xl max-w-2xl
             border border-white/10 ring-1 ring-inset ring-white/10
             bg-white/[0.05] backdrop-blur-md
             shadow-[0_12px_50px_rgba(0,0,0,0.45)]
@@ -502,7 +502,7 @@ function TimelineRow({
 
               {/* small “chip” for consistency */}
               {item.subheading && (
-                <span className="hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
+                <span className="pb-1 hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
                   {item.subheading}
                 </span>
               )}
