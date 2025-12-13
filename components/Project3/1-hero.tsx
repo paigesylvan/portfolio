@@ -115,7 +115,7 @@ export default function HeroOverviewDryCleaner() {
                 {skillsRow2.map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
+                    className="rounded-xl border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
                   >
                     {t}
                   </span>

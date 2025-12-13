@@ -74,7 +74,7 @@ export default function HeroOverviewCamping() {
                 {["Research", "User Flows", "Usability Testing", "Sketching"].map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
+                    className="rounded-xl border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
                   >
                     {t}
                   </span>
@@ -85,7 +85,7 @@ export default function HeroOverviewCamping() {
                 {["Wireframing", "Prototyping", "Responsive Design", "UI Creation"].map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
+                    className="rounded-xl border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
                   >
                     {t}
                   </span>

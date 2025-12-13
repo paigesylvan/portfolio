@@ -149,7 +149,7 @@ export default function HeroOverviewDog() {
                 {skillsRow1.map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
+                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
                   >
                     {t}
                   </span>
@@ -159,7 +159,7 @@ export default function HeroOverviewDog() {
                 {skillsRow2.map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
+                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
                   >
                     {t}
                   </span>

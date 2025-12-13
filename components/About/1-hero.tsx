@@ -158,7 +158,7 @@ export default function AboutHeroLaptop() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pt-[12vh] pb-24">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pt-[12vh]">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           {/* LEFT: copy */}
           <div className="lg:col-span-5">
