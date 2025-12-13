@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, type Transition, useReducedMotion } from "framer-motion";
-import PaigeOutlineTrace from "../outline";
 
 const items = [
   { src: "/images/about-images/about-1.JPG", label: "Exploring new places; China 2018" },
@@ -16,13 +15,68 @@ const items = [
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-// ✅ Type-safe transition for Framer Motion (no string ease)
 const floatTransition: Transition = {
   duration: 5,
   repeat: Infinity,
   repeatType: "reverse",
   ease: [0.42, 0, 0.58, 1],
 };
+
+function LaptopOutline() {
+  return (
+    <svg
+      viewBox="0 0 900 650"
+      aria-hidden
+      className="h-full w-full"
+      fill="none"
+    >
+      {/* Screen */}
+      <rect
+        x="170"
+        y="70"
+        width="560"
+        height="380"
+        rx="28"
+        stroke="rgba(255,255,255,0.82)"
+        strokeWidth="6"
+      />
+      {/* Inner screen line */}
+      <rect
+        x="198"
+        y="98"
+        width="504"
+        height="324"
+        rx="18"
+        stroke="rgba(255,255,255,0.28)"
+        strokeWidth="4"
+      />
+
+      {/* Base */}
+      <path
+        d="M120 500H780"
+        stroke="rgba(255,255,255,0.80)"
+        strokeWidth="10"
+        strokeLinecap="round"
+      />
+      <path
+        d="M210 500C240 560 660 560 690 500"
+        stroke="rgba(255,255,255,0.80)"
+        strokeWidth="10"
+        strokeLinecap="round"
+      />
+      {/* Trackpad hint */}
+      <rect
+        x="395"
+        y="520"
+        width="110"
+        height="26"
+        rx="10"
+        stroke="rgba(255,255,255,0.22)"
+        strokeWidth="4"
+      />
+    </svg>
+  );
+}
 
 function FloatingSkillIcon({
   src,
@@ -39,24 +93,24 @@ function FloatingSkillIcon({
 
   return (
     <motion.div
-      className={`absolute ${className} pointer-events-auto`}
+      className={`absolute ${className}`}
       animate={prefersReduced ? undefined : { y: [-6, 6] }}
-      transition={{ ...floatTransition, delay: index * 0.18 }}
+      transition={{ ...floatTransition, delay: index * 0.16 }}
       initial="rest"
       whileHover="hover"
     >
       <motion.div
         variants={{ rest: { scale: 1 }, hover: { scale: 1.12 } }}
         transition={{ type: "spring", stiffness: 180, damping: 14 }}
-        className="relative flex flex-col items-center justify-center"
+        className="flex flex-col items-center"
       >
-        <div className="flex h-14 w-14 md:h-24 md:w-24 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+        <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
           <Image
             src={src}
             alt={alt}
             width={96}
             height={96}
-            className="h-10 w-10 md:h-16 md:w-16 object-contain"
+            className="h-10 w-10 md:h-14 md:w-14 object-contain"
           />
         </div>
 
@@ -94,29 +148,10 @@ export default function AboutHero() {
         }}
       />
 
-      {/* subtle bottom hue so the section feels finished */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[32vh] opacity-70"
-        style={{
-          backgroundImage: [
-            "radial-gradient(1100px 520px at 20% 120%, rgba(245,60,160,0.16) 0%, rgba(245,60,160,0.06) 42%, rgba(0,0,0,0) 74%)",
-            "radial-gradient(1200px 520px at 55% 125%, rgba(0,196,255,0.14) 0%, rgba(0,196,255,0.06) 44%, rgba(0,0,0,0) 76%)",
-            "radial-gradient(1100px 520px at 88% 120%, rgba(0,210,190,0.12) 0%, rgba(0,210,190,0.05) 46%, rgba(0,0,0,0) 78%)",
-          ].join(", "),
-          filter: "blur(70px)",
-          mixBlendMode: "screen",
-          WebkitMaskImage:
-            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0) 75%)",
-          maskImage:
-            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0) 75%)",
-        }}
-      />
-
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pt-[14vh] pb-24">
-        {/* Top: two-column (matches homepage) */}
+        {/* Top: two-column */}
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          {/* LEFT: copy */}
+          {/* LEFT */}
           <div className="lg:col-span-6">
             <p className="text-[11px] tracking-[0.22em] text-white/60">ABOUT</p>
 
@@ -141,73 +176,87 @@ export default function AboutHero() {
             </div>
           </div>
 
-          {/* RIGHT: headshot (homepage glass style) */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end relative lg:mt-8">
-            <div className="relative w-[330px] md:w-[420px]">
-              <div className="absolute -inset-4 rounded-[28px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
+          {/* RIGHT: laptop highlight */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+            <div className="relative w-[340px] md:w-[460px]">
+              {/* glass frame */}
+              <div className="absolute -inset-4 rounded-[30px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
 
-              <Image
-                src="/images/homepage-images/paige-headshot.png"
-                alt="Paige Sylvan headshot"
-                width={500}
-                height={520}
-                className="relative rounded-3xl object-cover w-full"
-                priority
-                sizes="(min-width: 1024px) 420px, 330px"
-              />
+              {/* laptop container */}
+              <div className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden">
+                {/* internal hue */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-90"
+                  style={{
+                    backgroundImage: [
+                      "radial-gradient(520px 320px at 30% 20%, rgba(170,90,255,0.28) 0%, rgba(170,90,255,0.12) 46%, rgba(0,0,0,0) 76%)",
+                      "radial-gradient(560px 340px at 70% 30%, rgba(0,196,255,0.18) 0%, rgba(0,196,255,0.08) 46%, rgba(0,0,0,0) 78%)",
+                      "radial-gradient(620px 360px at 55% 70%, rgba(0,210,190,0.12) 0%, rgba(0,210,190,0.05) 48%, rgba(0,0,0,0) 80%)",
+                    ].join(", "),
+                    filter: "blur(38px)",
+                    mixBlendMode: "screen",
+                  }}
+                />
 
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <PaigeOutlineTrace />
+                {/* outline */}
+                <div className="relative p-6 md:p-8">
+                  <div className="relative aspect-[900/650] w-full">
+                    <div className="absolute inset-0 opacity-[0.95] drop-shadow-[0_0_24px_rgba(170,90,255,0.28)]">
+                      <LaptopOutline />
+                    </div>
+
+                    {/* tiny “screen glow” */}
+                    <div
+                      aria-hidden
+                      className="absolute left-[22%] top-[16%] h-[52%] w-[56%] rounded-[18px]"
+                      style={{
+                        background:
+                          "radial-gradient(420px 260px at 40% 35%, rgba(170,90,255,0.18) 0%, rgba(0,196,255,0.10) 45%, rgba(0,0,0,0) 75%)",
+                        filter: "blur(18px)",
+                        opacity: 0.9,
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="pointer-events-none absolute inset-x-10 -bottom-3 h-6 rounded-full bg-black/70 blur-lg" />
               </div>
-
-              <div className="pointer-events-none absolute inset-x-10 -bottom-3 h-6 rounded-full bg-black/70 blur-lg" />
             </div>
           </div>
         </div>
 
-        {/* Floating skills layer (CAPPED + fade so it never overlaps the gallery) */}
-        <div
-          className="
-            relative mt-12
-            h-[360px] md:h-[420px]
-            overflow-hidden
-          "
-        >
-          {/* arc / row (switched from vh -> % so it’s stable inside this container) */}
-          <FloatingSkillIcon src="/images/skills/2.png" alt="Shopify" index={0} className="top-[18%] left-[2%] lg:top-[28%] lg:left-[1%]" />
-          <FloatingSkillIcon src="/images/skills/1.png" alt="Canva" index={1} className="top-[10%] left-[12%] lg:top-[16%] lg:left-[18%]" />
-          <FloatingSkillIcon src="/images/skills/3.png" alt="Adobe AE" index={2} className="top-[18%] left-[28%] lg:top-[10%] lg:left-[30%]" />
-          <FloatingSkillIcon src="/images/skills/5.png" alt="Figma" index={3} className="top-[8%] left-[50%] -translate-x-1/2 lg:top-[12%]" />
-          <FloatingSkillIcon src="/images/skills/13.png" alt="VS Code" index={4} className="top-[16%] right-[22%] lg:top-[10%] lg:right-[32%]" />
-          <FloatingSkillIcon src="/images/skills/7.png" alt="Next.js" index={5} className="top-[26%] right-[28%] lg:top-[36%] lg:right-[20%]" />
-          <FloatingSkillIcon src="/images/skills/6.png" alt="React" index={6} className="top-[20%] right-[3%] lg:top-[28%] lg:right-[1%]" />
+        {/* Floating skills ARCH around laptop */}
+        <div className="relative mt-14 h-[340px] md:h-[380px] overflow-hidden">
+          {/* Top arch */}
+          <FloatingSkillIcon src="/images/skills/5.png" alt="Figma" index={0} className="top-[6%] left-1/2 -translate-x-1/2" />
+          <FloatingSkillIcon src="/images/skills/13.png" alt="VS Code" index={1} className="top-[12%] left-[64%]" />
+          <FloatingSkillIcon src="/images/skills/3.png" alt="Adobe AE" index={2} className="top-[12%] left-[30%]" />
+          <FloatingSkillIcon src="/images/skills/14.png" alt="Github" index={3} className="top-[20%] left-[78%]" />
+          <FloatingSkillIcon src="/images/skills/1.png" alt="Canva" index={4} className="top-[20%] left-[16%]" />
 
-          {/* left cascade */}
-          <FloatingSkillIcon src="/images/skills/4.png" alt="Google Analytics" index={7} className="top-[36%] left-[16%] lg:top-[48%] lg:left-[16%]" />
-          <FloatingSkillIcon src="/images/skills/10.png" alt="Tailwind.css" index={8} className="top-[66%] left-[6%] lg:top-[70%] lg:left-[5%]" />
-          <FloatingSkillIcon src="/images/skills/9.png" alt="Sass.css" index={9} className="top-[78%] left-[12%] lg:top-[80%] lg:left-[10%]" />
+          {/* Side “wrap” */}
+          <FloatingSkillIcon src="/images/skills/6.png" alt="React" index={5} className="top-[44%] left-[86%]" />
+          <FloatingSkillIcon src="/images/skills/7.png" alt="Next.js" index={6} className="top-[44%] left-[6%]" />
 
-          {/* right cascade */}
-          <FloatingSkillIcon src="/images/skills/8.png" alt="Javascript" index={10} className="top-[64%] right-[12%] lg:top-[64%] lg:right-[1%]" />
-          <FloatingSkillIcon src="/images/skills/11.png" alt="CSS" index={11} className="top-[76%] right-[2%] lg:top-[74%] lg:right-[16%]" />
-          <FloatingSkillIcon src="/images/skills/12.png" alt="HTML" index={12} className="top-[46%] right-[6%] lg:top-[82%] lg:right-[5%]" />
+          {/* Bottom sides */}
+          <FloatingSkillIcon src="/images/skills/10.png" alt="Tailwind.css" index={7} className="top-[66%] left-[18%]" />
+          <FloatingSkillIcon src="/images/skills/4.png" alt="Google Analytics" index={8} className="top-[66%] left-[72%]" />
+          <FloatingSkillIcon src="/images/skills/12.png" alt="HTML" index={9} className="top-[82%] left-[34%]" />
+          <FloatingSkillIcon src="/images/skills/11.png" alt="CSS" index={10} className="top-[82%] left-[58%]" />
 
-          {/* little extras */}
-          <FloatingSkillIcon src="/images/skills/14.png" alt="Github" index={13} className="top-[6%] right-[14%] lg:top-[15%] lg:right-[12%]" />
-          <FloatingSkillIcon src="/images/skills/15.png" alt="Vercel" index={14} className="top-[22%] left-[6%] lg:top-[16%] lg:left-[2%]" />
-
-          {/* bottom fade so icons hand off cleanly */}
+          {/* fade so icons hand off cleanly */}
           <div
             aria-hidden
-            className="absolute inset-x-0 bottom-0 h-28 pointer-events-none"
+            className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,1) 100%)",
+                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,1) 100%)",
             }}
           />
         </div>
 
-        {/* Gallery grid */}
+        {/* Gallery */}
         <div className="mt-28 md:mt-32">
           <p className="text-center text-[11px] tracking-[0.22em] text-white/60">
             BEYOND THE SCREEN
@@ -221,7 +270,7 @@ export default function AboutHero() {
               <button
                 type="button"
                 key={index}
-                onClick={() => handleToggle(index)}
+                onClick={() => setActiveIndex((prev) => (prev === index ? null : index))}
                 className="rounded-full relative group aspect-square overflow-hidden border border-white/10 bg-white/5"
                 aria-label={item.label}
               >
