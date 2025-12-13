@@ -118,13 +118,13 @@ function FloatingSkill({
         transition={{ type: "spring", stiffness: 180, damping: 14 }}
         className="flex flex-col items-center"
       >
-        <div className="flex h-14 w-14 md:h-20 md:w-20 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+        <div className="flex h-14 w-14 md:h-13 md:w-13 items-center justify-center rounded-full bg-white/[0.92] ring-1 ring-black/10 shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
           <Image
             src={src}
             alt={alt}
             width={96}
             height={96}
-            className="h-9 w-9 md:h-12 md:w-12 object-contain"
+            className="h-9 w-9 md:h-10 md:w-10 object-contain"
           />
         </div>
 
@@ -168,7 +168,7 @@ export default function AboutHeroLaptop() {
               Hi, I’m Paige.
             </h1>
 
-            <p className="mt-4 text-white/80 text-[13px] md:text-[14px] leading-snug max-w-[52ch]">
+            <p className="mt-4 text-white/80 text-[13px] md:text-[14px] leading-snug max-w-5xl">
               I design and build digital experiences for web applications — blending UX strategy,
               visual polish, and front-end execution to make complex things feel effortless.
             </p>
