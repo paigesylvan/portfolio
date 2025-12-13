@@ -189,7 +189,7 @@ export default function AboutHeroLaptop() {
           <div className="lg:col-span-7">
             <div className="relative mx-auto w-full max-w-[720px]">
               {/* glass panel */}
-              <div className="absolute -inset-4 rounded-[28px] bg-white/[0.03] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
+              <div className="absolute " />
 
               {/* center glow behind laptop */}
               <div
