@@ -53,7 +53,7 @@ export default function Hero({
               {title}
             </h1>
 */}
-            <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-36 leading-snug text-left">
+            <p className="mt-8 text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
               {subtitle}
             </p>
           </div>
