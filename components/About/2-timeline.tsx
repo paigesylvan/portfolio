@@ -490,7 +490,7 @@ function TimelineRow({
 
           <div className="relative">
             <div className="flex items-baseline justify-between lg:gap-4">
-              <h3 className="text-2xl md:text-3xl font-semibold tracking-[0.01em]">
+              <h3 className=" mt-2 text-2xl md:text-3xl font-semibold tracking-[0.01em]">
                 {item.heading}
               </h3>
 
@@ -509,7 +509,7 @@ function TimelineRow({
               </p>
             )}
 
-            <p className=" mt-1 lg:mt-4 text-white/80 leading-relaxed text-[13px] md:text-[14px]">
+            <p className=" mt-1 lg:mt-4 text-white/80 lg:leading-relaxed text-[13px] md:text-[14px]">
               {item.body}
             </p>
 

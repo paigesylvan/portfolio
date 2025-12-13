@@ -207,7 +207,7 @@ export default function AboutHeroLaptop() {
                 {/* stage */}
                 <div className="relative h-[520px] md:h-[560px] overflow-visible">
                   {/* laptop (moved up) */}
-                  <div className="absolute inset-x-0 bottom-10 md:bottom-16 flex justify-center">
+                  <div className="absolute inset-x-0 bottom-24 md:bottom-16 flex justify-center">
                     <div className="relative w-[520px] max-w-[90%]">
                       <LaptopOutline className="w-full h-auto drop-shadow-[0_28px_70px_rgba(0,0,0,0.65)]" />
                       <div className="pointer-events-none absolute inset-x-16 -bottom-3 h-8 rounded-full bg-black/70 blur-xl" />
