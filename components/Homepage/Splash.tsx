@@ -21,7 +21,7 @@ export default function Hero({
     >
       {/* Aurora background */}
       <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[100vh] pointer-events-none z-0" />
-      <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
+      <div className="fade-black absolute inset-x-0 bottom-0 pointer-events-none -z-10" />
       <div
         className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
         aria-hidden
@@ -61,8 +61,8 @@ export default function Hero({
           </div>
 
           {/* About block */}
-          <div className="max-w-[520px] mx-auto flex flex-col items-center gap-4">
-            <p className="mb-4 text-center text-[11px] tracking-[0.22em] text-white/60">
+          <div className="max-w-[520px] mx-auto flex flex-col items-center gap-4 mt-4">
+            <p className=" mb-4 text-center text-[11px] tracking-[0.22em] text-white/60">
               ABOUT ME
             </p>
 
