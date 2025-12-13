@@ -23,7 +23,7 @@ export default function Hero({
       <div className="aurora-top absolute left-1/2 top-0 -translate-x-1/2 w-screen h-[100vh] pointer-events-none z-0" />
       <div className="fade-black absolute inset-x-0 top-[36vh] bottom-0 pointer-events-none -z-10" />
       <div
-        className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-60"
+        className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-30"
         aria-hidden
       />
       <div
@@ -31,22 +31,18 @@ export default function Hero({
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[18vh] md:mt-[24vh] lg:mt-[27vh]">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-20 mt-[18vh] md:mt-[24vh] ">
         <div className="flex flex-col items-center text-center ">
-          
-          <div>
-            
+        
           <Image
             src="/images/homepage-images/Social.png"
             alt="Hero image"
             width={500}
             height={300}
           />
-
-            <p className=" text-white/95 text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
+            <p className=" text-blue text-[14px] md:text-[15px] px-4 md:px-12 lg:px-0 max-w-[450px] mx-auto mb-12 leading-snug text-left">
               {subtitle}
             </p>
-          </div>
 
           {/* Image + Outline */}
           <div className="relative mx-auto w-[350px] md:w-[420px]">
