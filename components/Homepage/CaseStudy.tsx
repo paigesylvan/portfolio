@@ -120,7 +120,7 @@ export default function CaseStudies() {
 
       {/* Content layer */}
       <div className="relative z-10 pb-36 lg:pb-48">
-        <h2 className="ml-[200px] text-left mb-10 text-[11px] tracking-[0.22em] text-white/60">
+        <h2 className="ml-[300px] text-left mb-10 text-[11px] tracking-[0.22em] text-white/60">
           CASE STUDIES
         </h2>
 
