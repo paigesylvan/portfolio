@@ -82,7 +82,7 @@ export default function HeroOverviewDryCleaner() {
         {/* overview */}
         <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
-          <div className="md:ml-24">
+          <div className="">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>
             <p className="mt-[2px] text-white/90">
               Design and build the first website for a 30+ year local dry cleaner
