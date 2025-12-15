@@ -97,18 +97,14 @@ export default function CaseStudies() {
     <section
       id="case-studies"
       className="
-        relative w-full overflow-hidden bg-black text-white
-        py-16 lg:py-24
-        scroll-mt-28 md:scroll-mt-40
+      relative bg-black text-white overflow-hidden
+      full-bleed
+      py-16 lg:py-24
+      scroll-mt-28 md:scroll-mt-40
       "
     >
       {/* aurora */}
-      <div className="    cs-aurora-bottom
-    pointer-events-none
-    absolute inset-x-0 bottom-0
-    h-[32vh]
-    z-0
-    opacity-60" />
+      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[32vh] pointer-events-none z-0 opacity-60" />
 
       {/* ✅ same container rules as Skills */}
       <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6">
