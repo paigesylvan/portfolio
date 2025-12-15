@@ -73,7 +73,7 @@ export default function Skills() {
                   delay: prefersReduced ? 0 : i * 0.06,
                 }}
                 className="
-                  group relative overflow-hidden rounded-8xl
+                  group relative overflow-hidden rounded-3xl
                   border border-white/10 ring-1 ring-inset ring-white/10
                   bg-white/[0.05] backdrop-blur-md
                   shadow-[0_10px_40px_rgba(0,0,0,0.40)]
@@ -98,7 +98,7 @@ export default function Skills() {
 
                 <div className="relative z-10 p-6 md:p-7">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.06] ring-1 ring-inset ring-white/10">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06] ring-1 ring-inset ring-white/10">
                       <Image
                         src={s.gif}
                         alt={s.alt}
