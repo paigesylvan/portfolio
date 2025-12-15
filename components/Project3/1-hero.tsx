@@ -39,7 +39,7 @@ export default function HeroOverviewDryCleaner() {
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
             title="How Clear Design Improves User Trust for a Local Dry Cleaner"
-            align="center"
+            align="left"
             kickerClassName="text-[7px] md:text-xs text-[#E6D6C3]"
             titleClassName="text-sm md:text-2xl lg:text-3xl mt-2"
           />
