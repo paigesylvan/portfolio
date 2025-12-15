@@ -10,15 +10,15 @@ type SkillIcon = {
 };
 
 const SKILLS: SkillIcon[] = [
-  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[9%] top-[10%] lg:left-[6%] lg:top-[10%]" },
+  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[7%] top-[13%] lg:left-[6%] lg:top-[10%]" },
   { src: "/images/skills/1.png", alt: "Canva", className: "left-[29%] top-[10%] lg:left-[22%] lg:top-[8%]" },
   { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[23%] lg:left-[36%] lg:top-[17%]" },
   { src: "/images/skills/5.png", alt: "Figma", className: "left-1/2 -translate-x-1/2 top-[5%] lg:top-[6%]" },
   { src: "/images/skills/13.png", alt: "VS Code", className: "right-[33%] top-[24%] lg:right-[28%] lg:top-[17%]" },
   { src: "/images/skills/7.png", alt: "Next.js", className: "right-[18%] top-[12%] lg:right-[11%] lg:top-[9%]" },
-  { src: "/images/skills/14.png", alt: "GitHub", className: "right-[-5%] top-[13%] lg:right-[-3%] lg:top-[15%]" },
+  { src: "/images/skills/14.png", alt: "GitHub", className: "right-[-5%] top-[23%] lg:right-[-3%] lg:top-[15%]" },
 
-  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[-7%] top-[25%] lg:left-[-8%] lg:top-[26%]" },
+  { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[-10%] top-[25%] lg:left-[-8%] lg:top-[26%]" },
   { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[0%] top-[35%] lg:left-[4%] lg:top-[40%]" },
   { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[-5%] top-[48%] lg:left-[0%] lg:top-[58%]" },
 
