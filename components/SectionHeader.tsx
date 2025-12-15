@@ -11,7 +11,7 @@ export default function SectionHeader({
 }: {
   kicker?: string;
   title: string;
-  align?: "left" | "center" | "right";
+  align?: "left" ;
   titleClassName?: string;
   kickerClassName?: string;
 }) {
