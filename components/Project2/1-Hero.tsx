@@ -46,16 +46,16 @@ export default function HeroOverviewCamping() {
         </div>
 
         {/* overview */}
-        <div className="mt-8 grid md:grid-cols-2 md:gap-6 md:items-start text-[11px] md:text-[12px] leading-snug">
+        <div className="mt-8 grid md:grid-cols-2 md:gap-6 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
           <div>
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">PROJECT</p>
-            <p className="mt-1 text-white/90">
+            <p className="mt-[2px] text-white/90">
               Design a responsive website for a camping e-commerce experience.
             </p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-emerald-400">ROLE</p>
-            <p className="mt-1 text-white/90">
+            <p className="mt-[2px] text-white/90">
               UX/UI Designer, Researcher, Visual Designer, Usability Tester
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function HeroOverviewCamping() {
           {/* right */}
           <div className="mt-5 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">DURATION</p>
-            <p className="mt-1 text-white/90">May 2025 – July 2025</p>
+            <p className="mt-[2px] text-white/90">May 2025 – July 2025</p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-emerald-400">
               UX/UI SKILLSETS LEVERAGED
@@ -74,7 +74,7 @@ export default function HeroOverviewCamping() {
                 {["Research", "User Flows", "Usability Testing", "Sketching"].map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
+                    className="rounded-xl border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[12px] md:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
                   >
                     {t}
                   </span>
@@ -86,7 +86,7 @@ export default function HeroOverviewCamping() {
                   (t) => (
                     <span
                       key={t}
-                      className="rounded-xl border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
+                      className="rounded-xl border border-emerald-400/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[12px] md:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-emerald-400/10"
                     >
                       {t}
                     </span>

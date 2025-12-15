@@ -80,18 +80,18 @@ export default function HeroOverviewDryCleaner() {
         </div>
 
         {/* overview */}
-        <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
+        <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>
-            <p className="mt-1 text-white/90">
+            <p className="mt-[2px] text-white/90">
               Design and build the first website for a 30+ year local dry cleaner
               to clarify services, hours, and trust signals for new and returning
               customers.
             </p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#E6D6C3]">ROLE</p>
-            <p className="mt-1 text-white/90">
+            <p className="mt-[2px] text-white/90">
               UX/UI Designer, Researcher, Front-End Developer, Usability Tester
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function HeroOverviewDryCleaner() {
           {/* right */}
           <div className="mt-6 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">DURATION</p>
-            <p className="mt-1 text-white/90">June 2025 – August 2025</p>
+            <p className="mt-[2px] text-white/90">June 2025 – August 2025</p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#E6D6C3]">
               UX/UI SKILLSETS LEVERAGED
@@ -110,7 +110,7 @@ export default function HeroOverviewDryCleaner() {
                 {skillsRow1.map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
+                    className="rounded-xl border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[12px] md:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
                   >
                     {t}
                   </span>
@@ -120,7 +120,7 @@ export default function HeroOverviewDryCleaner() {
                 {skillsRow2.map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
+                    className="rounded-xl border border-[#E6D6C3]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[12px] md:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#E6D6C3]/10"
                   >
                     {t}
                   </span>

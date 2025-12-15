@@ -11,7 +11,7 @@ export default function OverviewDryCleaner() {
             </p>
             <h3 className="mt-3 text-3xl font-semibold">Quick Cleaners</h3>
 
-            <div className="mt-6 space-y-5 text-white/85 leading-tight text-xs lg:text-lg">
+            <div className="mt-6 space-y-5 text-white/85 leading-tight text-[12px] md:text-[13px]">
             <p>
               Quick Cleaners in Pewaukee, Wisconsin has been in the dry cleaning industry for
               over 30 years, but had no online presence. Through competitive research, I found
@@ -24,7 +24,7 @@ export default function OverviewDryCleaner() {
               From interviews with the owner and employees, I learned that customers primarily
               care about services, turnaround expectations and how to
               contact the shop. The challenge was to design a site that feels warm, modern,
-              and easy to navigate—even for first-time visitors.
+              and easy to navigate, even for first-time visitors.
             </p>
 
             <p className="text-white/70">

@@ -12,7 +12,7 @@ export default function HighlightsDryCleaner() {
           {/* Left */}
           <div className="md:col-span-5 flex justify-center">
             <div className="w-full max-w-[320px] md:max-w-[360px] flex flex-col items-center">
-              <div className="w-full rounded-[32px] bg-white/[0.03] p-3 ring-1 ring-white/10 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
+
                 <Image
                   src="/images/project3-images/phone-hero.png"
                   alt="Quick Cleaners mobile hero"
@@ -21,7 +21,7 @@ export default function HighlightsDryCleaner() {
                   className="w-full h-auto rounded-[26px]"
                   priority
                 />
-              </div>
+
 
               <Link
                 href="https://www.quickcleanersandlaundry.com"
@@ -98,7 +98,7 @@ export default function HighlightsDryCleaner() {
               <p className="text-[11px] tracking-[0.22em] accent-text">
                 DEVELOPMENT HIGHLIGHTS
               </p>
-              <ul className="mt-3 list-disc space-y-1.5 pl-4 text-white/85 text-[13px] md:text-sm">
+              <ul className="mt-3 list-disc space-y-1.5 pl-4 text-white/85 text-[12px] md:text-[13px]">
                 <li>Semantic HTML, JavaScript, and Tailwind CSS for a responsive, accessible layout</li>
                 <li>Mobile-first structure and compressed assets for fast load times</li>
                 <li>Integrated Google Analytics 4 to track real user behavior</li>
@@ -109,7 +109,7 @@ export default function HighlightsDryCleaner() {
             {/* Card 3 */}
             <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
               <p className="text-[11px] tracking-[0.22em] accent-text">OUTCOME</p>
-              <p className="mt-3 text-white/85 text-[13px] md:text-sm">
+              <p className="mt-3 text-white/85 text-[12px] md:text-[13px]">
                 After launch, the site began receiving consistent traffic from both direct visits and organic Google search.
                 Google Analytics 4 shows users exploring multiple sections (services, hours, and contact) in a single visit,
                 validating that the structure and content are easy to navigate for new customers.
