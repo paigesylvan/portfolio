@@ -226,50 +226,56 @@ export default function TimelineAbout() {
   ];
 
   return (
-    <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36 ">
-      <div className='max-w-[1000px]'>     
-      <div className="text-left relative">
-        <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
-        <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">My Journey</h2>
-      </div>
-
-      <div ref={containerRef} className="relative mx-auto w-full max-w-[1400px]">
-        {/* Mobile Spine */}
-        <div
-          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden z-20 mix-blend-normal"
-          style={{ top: 0, height: lineEndPx ? `${lineEndPx}px` : "100%" }}
-        />
-        <div
-          className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white md:hidden z-[60] mix-blend-normal"
-          style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
-        />
-
-        {/* Desktop Spine */}
-        <div
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block z-20 mix-blend-normal"
-          style={{ top: "100px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
-        />
-        <div
-          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block z-30 mix-blend-normal"
-          style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
-        />
-
-        {/* Timeline items */}
-        <div className="space-y-20 md:space-y-24 relative z-10">
-          {items.map((it, i) => (
-            <TimelineRow
-              key={i}
-              item={it}
-              prefersReduced={prefersReduced}
-              containerTopAbs={containerTopAbs}
-              segmentTop={segmentTop}
-              segmentLen={segmentLen}
-              scrollHost={scrollHost}
-              priority={i === 0}
-            />
-          ))}
+    <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36">
+      {/* ✅ Center + constrain whole component */}
+      <div className="mx-auto w-full max-w-[1000px]">
+        <div className="text-left relative">
+          <p className="text-[11px] tracking-[0.22em] text-white/60">
+            THE PATH SO FAR
+          </p>
+          <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">
+            My Journey
+          </h2>
         </div>
-      </div>
+
+        {/* ✅ Was max-w-[1400px] */}
+        <div ref={containerRef} className="relative mx-auto w-full max-w-[1000px]">
+          {/* Mobile Spine */}
+          <div
+            className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden z-20 mix-blend-normal"
+            style={{ top: 0, height: lineEndPx ? `${lineEndPx}px` : "100%" }}
+          />
+          <div
+            className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white md:hidden z-[60] mix-blend-normal"
+            style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
+          />
+
+          {/* Desktop Spine */}
+          <div
+            className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white/15 hidden md:block z-20 mix-blend-normal"
+            style={{ top: "100px", height: lineEndPx ? `${lineEndPx - 80}px` : "100%" }}
+          />
+          <div
+            className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[3px] rounded-full bg-white hidden md:block z-30 mix-blend-normal"
+            style={{ top: `${segmentTop}px`, height: `${segmentLen}px` }}
+          />
+
+          {/* Timeline items */}
+          <div className="space-y-20 md:space-y-24 relative z-10">
+            {items.map((it, i) => (
+              <TimelineRow
+                key={i}
+                item={it}
+                prefersReduced={prefersReduced}
+                containerTopAbs={containerTopAbs}
+                segmentTop={segmentTop}
+                segmentLen={segmentLen}
+                scrollHost={scrollHost}
+                priority={i === 0}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -417,7 +423,9 @@ function TimelineRow({
         className="pointer-events-none absolute top-1/2 pl-[2px] -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] md:hidden flex items-center justify-center"
       >
         <div
-          className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
+          className={`h-3.5 w-3.5 rounded-full ${
+            dotFilled ? "bg-white" : "bg-transparent"
+          }`}
         />
       </div>
 
@@ -427,15 +435,15 @@ function TimelineRow({
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full bg-black/70 ring-1 ring-white/25 z-[70] hidden md:flex items-center justify-center"
       >
         <div
-          className={`h-3.5 w-3.5 rounded-full ${dotFilled ? "bg-white" : "bg-transparent"}`}
+          className={`h-3.5 w-3.5 rounded-full ${
+            dotFilled ? "bg-white" : "bg-transparent"
+          }`}
         />
       </div>
 
       {/* IMAGE GLASS CARD */}
       <div className="md:col-span-5">
-        <div
-          className="group relative overflow-hidden rounded-3xl">
-          {/* subtle hover hue */}
+        <div className="group relative overflow-hidden rounded-3xl">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -461,12 +469,10 @@ function TimelineRow({
             />
           </div>
 
-          {/* bottom “shadow” to anchor it */}
           <div className="pointer-events-none absolute inset-x-12 -bottom-3 h-6 rounded-full bg-black/70 blur-xl" />
         </div>
       </div>
 
-      {/* Spacer for desktop */}
       <div className="hidden md:block md:col-span-2" />
 
       {/* TEXT GLASS CARD */}
@@ -480,7 +486,6 @@ function TimelineRow({
             px-6 md:p-8
           "
         >
-          {/* tiny top sheen */}
           <div
             aria-hidden
             className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-70"
@@ -492,11 +497,10 @@ function TimelineRow({
 
           <div className="relative">
             <div className="flex items-baseline justify-between lg:gap-4">
-              <h3 className=" mt-2 text-2xl md:text-3xl font-semibold tracking-[0.01em]">
+              <h3 className="mt-2 text-2xl md:text-3xl font-semibold tracking-[0.01em]">
                 {item.heading}
               </h3>
 
-              {/* small “chip” for consistency */}
               {item.subheading && (
                 <span className="mb-4 hidden md:inline-flex rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.14em] text-white/80">
                   {item.subheading}
@@ -504,14 +508,13 @@ function TimelineRow({
               )}
             </div>
 
-            {/* on mobile keep subheading readable */}
             {item.subheading && (
               <p className="md:hidden text-white/60 text-[12px] mt-2 tracking-[0.06em]">
                 {item.subheading}
               </p>
             )}
 
-            <p className=" mt-1 lg:mt-4 text-white/80 lg:leading-relaxed text-[13px] md:text-[14px]">
+            <p className="mt-1 lg:mt-4 text-white/80 lg:leading-relaxed text-[13px] md:text-[14px]">
               {item.body}
             </p>
 
