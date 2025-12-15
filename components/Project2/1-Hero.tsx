@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 export default function HeroOverviewCamping() {
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14 lg:mt-[50px]">
-      <div className="w-[1000px] ">
+      <div className="max-w-[1000px] ">
 
           <SectionHeader
             kicker="RESPONSIVE WEBSITE DESIGN"

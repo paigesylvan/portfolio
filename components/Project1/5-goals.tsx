@@ -92,7 +92,7 @@ export default function Goals() {
         />
 
         {/* Intro blurb */}
-        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3 max-w-4xl text-left text-white/80 leading-tight">
+        <p className="hidden sm:block text-xs sm:text-sm md:text-base mx-auto mt-3  text-left text-white/80 leading-tight">
           From my research, I identified key focus areas from user needs to guide
           my UI design decisions. These findings highlight the need for a
           digital experience that builds trust, simplifies decisions, and
