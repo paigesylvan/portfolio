@@ -226,7 +226,8 @@ export default function TimelineAbout() {
   ];
 
   return (
-    <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36 max-w-[1000px]">
+    <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36 ">
+      <div className='max-w-[1000px]'>     
       <div className="text-left relative">
         <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
         <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">My Journey</h2>
@@ -268,6 +269,7 @@ export default function TimelineAbout() {
             />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
