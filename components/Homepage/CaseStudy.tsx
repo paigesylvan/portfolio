@@ -97,129 +97,126 @@ export default function CaseStudies() {
     <section
       id="case-studies"
       className="
-        relative mt-20 overflow-hidden bg-black text-white
+        relative w-full overflow-hidden bg-black text-white
         py-16 lg:py-24
         scroll-mt-28 md:scroll-mt-40
       "
     >
-      {/* Bottom aurora / hue */}
+      {/* aurora */}
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
 
-      <div className="relative z-10">
-        {/* ✅ same container width/padding as Skills */}
-        <div className="mx-auto w-full max-w-[1100px] px-6">
-          <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
-            CASE STUDIES
-          </h2>
+      {/* ✅ same container rules as Skills */}
+      <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6">
+        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
+          CASE STUDIES
+        </h2>
 
-          <LazyMotion features={domAnimation}>
-            <MotionConfig reducedMotion="user">
-              {/* ✅ ONE COLUMN (stacked) */}
-              <div className="space-y-5 md:space-y-6">
-                {studies.map((s, idx) => {
-                  const ArticleComp = shouldAnimate ? m.article : "article";
-                  const ImageWrapComp = shouldAnimate ? m.div : "div";
-                  const PieceComp = shouldAnimate ? m.div : "div";
-                  const TitleComp = shouldAnimate ? m.h3 : "h3";
-                  const TextComp = shouldAnimate ? m.p : "p";
+        <LazyMotion features={domAnimation}>
+          <MotionConfig reducedMotion="user">
+            {/* ✅ stacked column, each card fills container width */}
+            <div className="space-y-5 md:space-y-6">
+              {studies.map((s, idx) => {
+                const ArticleComp = shouldAnimate ? m.article : "article";
+                const ImageWrapComp = shouldAnimate ? m.div : "div";
+                const PieceComp = shouldAnimate ? m.div : "div";
+                const TitleComp = shouldAnimate ? m.h3 : "h3";
+                const TextComp = shouldAnimate ? m.p : "p";
 
-                  return (
-                    <ArticleComp
-                      key={s.slug}
-                      {...(shouldAnimate && {
-                        variants: card,
-                        initial: "hidden",
-                        whileInView: "show",
-                        viewport: { once: true, amount: 0.3 },
-                      })}
-                      className="
-                        case-card group
-                        rounded-3xl
-                        border border-white/10 ring-1 ring-inset ring-white/10
-                        bg-white/[0.04] backdrop-blur-md
-                        shadow-[0_18px_70px_rgba(0,0,0,0.45)]
-                        px-5 sm:px-7 py-6 sm:py-7
-                      "
-                    >
-                      {/* ✅ image left + text right, like before */}
-                      <div className="grid items-center gap-6 md:grid-cols-12">
-                        {/* image */}
-                        <ImageWrapComp
-                          {...(shouldAnimate && { variants: imageWrap })}
-                          className="md:col-span-5"
-                        >
-                          <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
-                            <div className="relative">
-                              <Image
-                                src={s.image}
-                                alt={s.imageAlt}
-                                width={700}
-                                height={520}
-                                sizes="(min-width: 768px) 300px, 220px"
-                                className="h-[180px] w-auto md:h-[300px] object-contain"
-                                priority={idx === 0}
-                              />
-                              <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
-                            </div>
+                return (
+                  <ArticleComp
+                    key={s.slug}
+                    {...(shouldAnimate && {
+                      variants: card,
+                      initial: "hidden",
+                      whileInView: "show",
+                      viewport: { once: true, amount: 0.3 },
+                    })}
+                    className="
+                      w-full
+                      rounded-3xl
+                      border border-white/10 ring-1 ring-inset ring-white/10
+                      bg-white/[0.04] backdrop-blur-md
+                      shadow-[0_18px_70px_rgba(0,0,0,0.45)]
+                      px-5 sm:px-7 py-6 sm:py-7
+                    "
+                  >
+                    <div className="grid items-center gap-6 md:grid-cols-12">
+                      {/* image (left) */}
+                      <ImageWrapComp
+                        {...(shouldAnimate && { variants: imageWrap })}
+                        className="md:col-span-5"
+                      >
+                        <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
+                          <div className="relative">
+                            <Image
+                              src={s.image}
+                              alt={s.imageAlt}
+                              width={700}
+                              height={520}
+                              sizes="(min-width: 768px) 300px, 220px"
+                              className="h-[180px] w-auto md:h-[300px] object-contain"
+                              priority={idx === 0}
+                            />
+                            <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
                           </div>
-                        </ImageWrapComp>
-
-                        {/* text */}
-                        <div className="md:col-span-7 md:pl-8 lg:pl-12">
-                          <PieceComp
-                            {...(shouldAnimate && { variants: piece })}
-                            className="mb-3 flex flex-wrap gap-1.5 lg:gap-2"
-                          >
-                            {s.tags.map((t) => (
-                              <span key={t} className="chip">
-                                {t}
-                              </span>
-                            ))}
-                          </PieceComp>
-
-                          <TitleComp
-                            {...(shouldAnimate && { variants: piece })}
-                            className="font-bold leading-tight text-[16px] md:text-[20px] lg:w-[92%]"
-                          >
-                            {s.title}
-                          </TitleComp>
-
-                          <TextComp
-                            {...(shouldAnimate && { variants: piece })}
-                            className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
-                          >
-                            {s.subtitle}
-                          </TextComp>
-
-                          <PieceComp {...(shouldAnimate && { variants: piece })}>
-                            <Link href={s.slug} className="cta-btn group mt-6">
-                              <span>{s.cta ?? "View Case Study"}</span>
-                              <span className="cta-icon">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="w-3.5 h-3.5"
-                                >
-                                  <path d="M5 12h14" />
-                                  <path d="m12 5 7 7-7 7" />
-                                </svg>
-                              </span>
-                            </Link>
-                          </PieceComp>
                         </div>
+                      </ImageWrapComp>
+
+                      {/* text (right) */}
+                      <div className="md:col-span-7 md:pl-8 lg:pl-12">
+                        <PieceComp
+                          {...(shouldAnimate && { variants: piece })}
+                          className="mb-3 flex flex-wrap gap-1.5 lg:gap-2"
+                        >
+                          {s.tags.map((t) => (
+                            <span key={t} className="chip">
+                              {t}
+                            </span>
+                          ))}
+                        </PieceComp>
+
+                        <TitleComp
+                          {...(shouldAnimate && { variants: piece })}
+                          className="font-bold leading-tight text-[16px] md:text-[20px] lg:w-[92%]"
+                        >
+                          {s.title}
+                        </TitleComp>
+
+                        <TextComp
+                          {...(shouldAnimate && { variants: piece })}
+                          className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
+                        >
+                          {s.subtitle}
+                        </TextComp>
+
+                        <PieceComp {...(shouldAnimate && { variants: piece })}>
+                          <Link href={s.slug} className="cta-btn group mt-6">
+                            <span>{s.cta ?? "View Case Study"}</span>
+                            <span className="cta-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-3.5 h-3.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                              </svg>
+                            </span>
+                          </Link>
+                        </PieceComp>
                       </div>
-                    </ArticleComp>
-                  );
-                })}
-              </div>
-            </MotionConfig>
-          </LazyMotion>
-        </div>
+                    </div>
+                  </ArticleComp>
+                );
+              })}
+            </div>
+          </MotionConfig>
+        </LazyMotion>
       </div>
     </section>
   );
