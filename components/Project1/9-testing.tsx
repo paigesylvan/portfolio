@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 export default function Testing() {
   return (
     <section className="flex flex-col justify-center px-4 md:px-4 text-white py-8 md:py-10 mt-20 md:mt-48 mb-8 lg:mb-0">
-      <div className=" mx-auto w-full max-w-[900px] text-center">
+      <div className=" w-[900px] text-center">
         {/* Header + copy (constrained to 900px) */}
         <div className=" ">
           <SectionHeader
