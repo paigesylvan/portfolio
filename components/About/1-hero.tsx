@@ -6,23 +6,21 @@ import { motion, type Transition, useReducedMotion } from "framer-motion";
 type SkillIcon = {
   src: string;
   alt: string;
-  // positioning classes (mobile first, then lg overrides)
   className: string;
 };
 
 const SKILLS: SkillIcon[] = [
-  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[5%] top-[15%] lg:left-[6%] lg:top-[10%]" },
+  { src: "/images/skills/2.png", alt: "Shopify", className: "left-[9%] top-[18%] lg:left-[6%] lg:top-[10%]" },
   { src: "/images/skills/1.png", alt: "Canva", className: "left-[25%] top-[10%] lg:left-[22%] lg:top-[8%]" },
   { src: "/images/skills/3.png", alt: "Adobe AE", className: "left-[33%] top-[23%] lg:left-[36%] lg:top-[17%]" },
   { src: "/images/skills/5.png", alt: "Figma", className: "left-1/2 -translate-x-1/2 top-[8%] lg:top-[6%]" },
   { src: "/images/skills/13.png", alt: "VS Code", className: "right-[33%] top-[24%] lg:right-[28%] lg:top-[17%]" },
   { src: "/images/skills/7.png", alt: "Next.js", className: "right-[18%] top-[10%] lg:right-[11%] lg:top-[9%]" },
-  { src: "/images/skills/14.png", alt: "GitHub", className: "right-[2%] top-[18%] lg:right-[-3%] lg:top-[15%]" },
+  { src: "/images/skills/14.png", alt: "GitHub", className: "right-[5%] top-[20%] lg:right-[-3%] lg:top-[15%]" },
 
-  // side drops (subtle “wrap” around laptop)
   { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[-10%] top-[28%] lg:left-[-8%] lg:top-[26%]" },
   { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[0%] top-[40%] lg:left-[4%] lg:top-[40%]" },
-  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[-5%] top-[50%] lg:left-[0%] lg:top-[58%]" },
+  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[-6%] top-[55%] lg:left-[0%] lg:top-[58%]" },
 
   { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[-7%] top-[30%] lg:right-[-4%] lg:top-[60%]" },
   { src: "/images/skills/11.png", alt: "CSS", className: "right-[0%] top-[43%] lg:right-[5%] lg:top-[40%]" },
@@ -143,7 +141,7 @@ function FloatingSkill({
 export default function AboutHeroLaptop() {
   return (
     <section className="relative isolate overflow-hidden bg-black text-white full-bleed">
-      {/* background glow (consistent with your homepage vibe) */}
+      {/* background glow  */}
       <div
         className="absolute inset-0 pointer-events-none -z-10"
         style={{
@@ -160,7 +158,7 @@ export default function AboutHeroLaptop() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 pt-[20vh] lg:pt-[12vh]">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          {/* LEFT: copy */}
+          {/* LEFT */}
           <div className="lg:col-span-5">
             <p className="text-[11px] tracking-[0.22em] text-white/60">ABOUT</p>
 
@@ -206,7 +204,7 @@ export default function AboutHeroLaptop() {
               <div className="relative rounded-[28px] p-6 md:p-10">
                 {/* stage */}
                 <div className="relative h-[520px] md:h-[560px] overflow-visible">
-                  {/* laptop (moved up) */}
+                  {/* laptop  */}
                   <div className="absolute inset-x-0 bottom-36 md:bottom-16 flex justify-center">
                     <div className="relative w-[520px] max-w-[90%]">
                       <LaptopOutline className="w-full h-auto drop-shadow-[0_28px_70px_rgba(0,0,0,0.65)]" />
