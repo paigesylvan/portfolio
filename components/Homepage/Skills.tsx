@@ -54,8 +54,8 @@ export default function Skills() {
         pb-28 lg:pb-36
       "
     >
-      <div className="relative z-10 lg:max-w-[1100px]">
-        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
+      <div className="relative z-10 ">
+        <h2 className="lg:ml-12 mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
           SKILLS
         </h2>
 
