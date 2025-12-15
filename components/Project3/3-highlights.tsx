@@ -12,16 +12,14 @@ export default function HighlightsDryCleaner() {
           {/* Left */}
           <div className="md:col-span-5 flex justify-center">
             <div className="w-full max-w-[320px] md:max-w-[360px] flex flex-col items-center">
-
-                <Image
-                  src="/images/project3-images/phone-hero.png"
-                  alt="Quick Cleaners mobile hero"
-                  width={900}
-                  height={1800}
-                  className="w-full h-auto rounded-[26px]"
-                  priority
-                />
-
+              <Image
+                src="/images/project3-images/phone-hero.png"
+                alt="Quick Cleaners mobile hero"
+                width={900}
+                height={1800}
+                className="w-full h-auto rounded-[26px]"
+                priority
+              />
 
               <Link
                 href="https://www.quickcleanersandlaundry.com"
@@ -60,59 +58,33 @@ export default function HighlightsDryCleaner() {
             {/* Card 1 */}
             <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
               <p className="text-[11px] tracking-[0.22em] accent-text">
-                DESIGN DECISIONS
+                DEVELOPMENT HIGHLIGHTS
               </p>
-
-              <div className="mt-3 space-y-3 text-white/85">
-                <div>
-                  <p className="font-semibold text-white text-[13px] md:text-sm">
-                    Responsive Layout:
-                  </p>
-                  <p className="text-[13px] md:text-sm">
-                    Mobile-first browsing with scroll-triggered card flip effects.
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-semibold text-white text-[13px] md:text-sm">
-                    Service Cards:
-                  </p>
-                  <p className="text-[13px] md:text-sm">
-                    Clear service descriptions without pricing due to competitive industry.
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-semibold text-white text-[13px] md:text-sm">
-                    Trust Signals:
-                  </p>
-                  <p className="text-[13px] md:text-sm">
-                    Showcased owner’s story to build familiarity and credibility.
-                  </p>
-                </div>
-              </div>
+              <ul className="mt-3 list-disc space-y-1.5 pl-4 text-white/85 text-[12px] md:text-[13px]">
+                <li>
+                  Semantic HTML, JavaScript, and Tailwind CSS for a responsive,
+                  accessible layout
+                </li>
+                <li>
+                  Mobile-first structure and compressed assets for fast load times
+                </li>
+                <li>Integrated Google Analytics 4 to track real user behavior</li>
+                <li>
+                  Basic on-page SEO (titles, meta descriptions, local keywords) to
+                  support Google search visibility
+                </li>
+              </ul>
             </div>
 
             {/* Card 2 */}
             <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
-              <p className="text-[11px] tracking-[0.22em] accent-text">
-                DEVELOPMENT HIGHLIGHTS
-              </p>
-              <ul className="mt-3 list-disc space-y-1.5 pl-4 text-white/85 text-[12px] md:text-[13px]">
-                <li>Semantic HTML, JavaScript, and Tailwind CSS for a responsive, accessible layout</li>
-                <li>Mobile-first structure and compressed assets for fast load times</li>
-                <li>Integrated Google Analytics 4 to track real user behavior</li>
-                <li>Basic on-page SEO (titles, meta descriptions, local keywords) to support Google search visibility</li>
-              </ul>
-            </div>
-
-            {/* Card 3 */}
-            <div className="rounded-2xl bg-white/[0.05] backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
               <p className="text-[11px] tracking-[0.22em] accent-text">OUTCOME</p>
               <p className="mt-3 text-white/85 text-[12px] md:text-[13px]">
-                After launch, the site began receiving consistent traffic from both direct visits and organic Google search.
-                Google Analytics 4 shows users exploring multiple sections (services, hours, and contact) in a single visit,
-                validating that the structure and content are easy to navigate for new customers.
+                After launch, the site began receiving consistent traffic from both
+                direct visits and organic Google search. Google Analytics 4 shows
+                users exploring multiple sections (services, hours, and contact) in
+                a single visit, validating that the structure and content are easy
+                to navigate for new customers.
               </p>
             </div>
           </div>
@@ -124,7 +96,7 @@ export default function HighlightsDryCleaner() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="mt-14 flex justify-center"
+          className="mt-12 flex justify-center"
         >
           <Link
             href="/experience"
