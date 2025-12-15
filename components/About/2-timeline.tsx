@@ -475,7 +475,7 @@ function TimelineRow({
             border border-white/10 ring-1 ring-inset ring-white/10
             bg-white/[0.05] backdrop-blur-md
             shadow-[0_12px_50px_rgba(0,0,0,0.45)]
-            px-6 md:p-8 mx-4 lg:mx-0
+            px-6 md:p-8 mx-1 lg:mx-0
           "
         >
           {/* tiny top sheen */}
