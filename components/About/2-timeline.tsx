@@ -226,9 +226,8 @@ export default function TimelineAbout() {
   ];
 
   return (
-    <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36">
-      {/* ✅ Center + constrain whole component */}
-      <div className="mx-auto w-full max-w-[1000px]">
+    <section className="relative isolate bg-black text-white pb-28 md:pb-36 px-4 md:px-6">
+      <div className="mx-auto w-full max-w-[1000px]]">
         <div className="text-left relative">
           <p className="text-[11px] tracking-[0.22em] text-white/60">
             THE PATH SO FAR
@@ -238,7 +237,7 @@ export default function TimelineAbout() {
           </h2>
         </div>
 
-        {/* ✅ Was max-w-[1400px] */}
+
         <div ref={containerRef} className="relative mx-auto w-full max-w-[1000px]">
           {/* Mobile Spine */}
           <div
