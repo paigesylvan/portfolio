@@ -5,6 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function UsersSection() {
   return (
+    <div className="mx-aut lg:mt-12">
 
 <div className="w-full max-w-[1000px] mx-auto lg:mt-12">
 <SectionHeader
@@ -45,5 +46,6 @@ export default function UsersSection() {
           View Full Image
         </a>
       </div>
+    </div>
   );
 }
