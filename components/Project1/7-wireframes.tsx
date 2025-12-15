@@ -41,7 +41,7 @@ export default function Wireframes() {
     <section className="flex flex-col justify-center text-white py-10 md:py-14 mt-12 lg:mt-0">
       <div className="mx-auto w-full max-w-[900px] lg:mt-12 px-4 md:px-6">
         {/* Copy column (constrains kicker/title/body width) */}
-        <div className="mx-auto w-full max-w-[560px]">
+        <div className="mx-auto w-full max-w-[900px]">
           <SectionHeader
             kicker="LOW-FI EXPLORATION"
             title="Key Wireframes"
