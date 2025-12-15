@@ -128,7 +128,7 @@ export default function ResearchInsights() {
 
         {/* ✅ Donuts — evenly spaced across width */}
         <div className="mb-10">
-          <div className="flex justify-between items-start">
+          <div className="grid grid-cols-3 items-start justify-items-center gap-x-10 md:gap-x-16">
             <Donut
               percent={67}
               captionTop="of U.S. households"
