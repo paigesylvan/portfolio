@@ -3,7 +3,13 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LazyMotion, domAnimation, MotionConfig, m, useReducedMotion } from "framer-motion";
+import {
+  LazyMotion,
+  domAnimation,
+  MotionConfig,
+  m,
+  useReducedMotion,
+} from "framer-motion";
 
 type Study = {
   slug: string;
@@ -87,7 +93,7 @@ export default function CaseStudies() {
       "
     >
       <div className="relative z-10">
-        {/* SAME container + padding style as Skills */}
+        {/* same container feel as Skills */}
         <div className="mx-auto w-full max-w-[1100px] px-6">
           <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
             CASE STUDIES
@@ -95,8 +101,8 @@ export default function CaseStudies() {
 
           <LazyMotion features={domAnimation}>
             <MotionConfig reducedMotion="user">
-              {/* SAME grid behavior as Skills (3-up desktop, stacked mobile) */}
-              <div className="grid gap-5 md:grid-cols-3">
+              {/* ✅ single centered column */}
+              <div className="flex flex-col items-center gap-5">
                 {studies.map((s, i) => {
                   const ArticleComp = shouldAnimate ? m.article : "article";
 
@@ -108,20 +114,24 @@ export default function CaseStudies() {
                         initial: "hidden",
                         whileInView: "show",
                         viewport: { once: true, amount: 0.25 },
-                        transition: { duration: 0.55, ease: easeOut, delay: i * 0.06 },
+                        transition: {
+                          duration: 0.55,
+                          ease: easeOut,
+                          delay: i * 0.06,
+                        },
                       })}
                       className="
-                      group relative overflow-hidden rounded-3xl
-                      border border-white/10 ring-1 ring-inset ring-white/10
-                      bg-white/[0.05] backdrop-blur-md
-                      shadow-[0_10px_40px_rgba(0,0,0,0.40)]
-                      transition-all duration-300
-                      hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
-                      hover:-translate-y-1
-                      flex flex-col
-                    
-                      w-full
-                      max-w-[380px]   
+                        group relative overflow-hidden rounded-3xl
+                        border border-white/10 ring-1 ring-inset ring-white/10
+                        bg-white/[0.05] backdrop-blur-md
+                        shadow-[0_10px_40px_rgba(0,0,0,0.40)]
+                        transition-all duration-300
+                        hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
+                        hover:-translate-y-1
+                        flex flex-col
+
+                        w-full
+                        max-w-[380px]   /* ✅ same width as Skills cards */
                       "
                     >
                       <div className="p-6 md:p-7 flex flex-col h-full">
@@ -134,7 +144,7 @@ export default function CaseStudies() {
                           ))}
                         </div>
 
-                        {/* ✅ Title in SAME spot as Skill title */}
+                        {/* ✅ title matches Skills title position/style */}
                         <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
                           {s.title}
                         </h3>
@@ -146,7 +156,7 @@ export default function CaseStudies() {
                             alt={s.imageAlt}
                             width={520}
                             height={380}
-                            sizes="(min-width: 768px) 33vw, 90vw"
+                            sizes="(min-width: 768px) 380px, 90vw"
                             className="h-[150px] md:h-[170px] w-auto object-contain opacity-95"
                             priority={i === 0}
                           />
@@ -157,7 +167,7 @@ export default function CaseStudies() {
                           {s.subtitle}
                         </p>
 
-                        {/* CTA pinned to bottom (same “feel” as Skills consistency) */}
+                        {/* CTA pinned bottom */}
                         <div className="mt-auto pt-5">
                           <Link href={s.slug} className="cta-btn group">
                             <span>{s.cta ?? "View Case Study"}</span>
