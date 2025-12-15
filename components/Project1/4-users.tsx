@@ -6,13 +6,16 @@ import SectionHeader from "../SectionHeader";
 export default function UsersSection() {
   return (
     <div className="mx-auto w-[92%] md:w-[70%] lg:mt-12">
+
       <SectionHeader
         kicker="USER PERSONAS"
         title="Who's Behind the Experience"
         align="center"
+        kickerClassName="ml-24"
+        titleClassName="ml-24"
       />
 
-      <p className="mx-auto mt-4 max-w-[300px] lg:max-w-4xl text-center text-white/80 text-xs lg:text-base">
+      <p className="mx-auto mt-4 max-w-[300px] lg:max-w-4xl text-left text-white/80 text-xs lg:text-base">
         After research, my next step was to understand the user.
         Based on market insights, I developed four user personas to
         align design choices with the diverse needs and challenges
