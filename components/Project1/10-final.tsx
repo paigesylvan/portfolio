@@ -7,15 +7,18 @@ import { motion } from "framer-motion";
 export default function FinalDesign() {
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-24 lg:mt-18 mb-8 lg:mb-0">
-      <div className="max-w-[1100px] w-full mx-auto text-center md:text-left">
-
-        <SectionHeader kicker="PROJECT OUTCOME" title="Final Design" align="center" />
-
+      <div className="mx-auto w-full max-w-[1100px] md:text-left">
         {/* video first on mobile, 2-col on desktop */}
-        <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-center">
+        <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-start">
+          {/* LEFT: header + copy (no border/card) */}
+          <div className="text-center md:text-left">
+            <SectionHeader
+              kicker="PROJECT OUTCOME"
+              title="Final Design"
+              align="left"
+            />
 
-          <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] max-w-[380px] mx-auto md:mx-0">
-            <p className="text-white/85 leading-tight text-[11px] md:text-[16px]">
+            <p className="mt-4 text-white/85 leading-tight text-[11px] md:text-[16px] max-w-[560px] mx-auto md:mx-0">
               Iterative testing refined the booking experience, strengthened multi-dog
               support, and increased trust through clearer groomer profiles, messaging,
               and appointment status updates. A key design challenge was balancing
@@ -69,8 +72,8 @@ export default function FinalDesign() {
             </Link>
           </div>
 
-                    {/* Video column  */}
-                    <div className="flex justify-center">
+          {/* RIGHT: video */}
+          <div className="flex justify-center md:justify-end">
             <div className="rounded-2xl overflow-hidden">
               <video
                 src="/images/project1-images/final-design.mp4"
@@ -84,36 +87,34 @@ export default function FinalDesign() {
               />
             </div>
           </div>
-          
         </div>
 
+        {/* Next case study */}
         <motion.div
-  className="mt-20 md:mt-24 mb-6 text-center"
-  initial={{ opacity: 0, y: 16 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.5 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
->
-  <Link
-    href="/projects/camping"
-    prefetch={false}
-    className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#7FB2FF] hover:text-white/20 transition-all duration-300"
-  >
-    <span>Next Case Study</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-      className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-  </Link>
-</motion.div>
-
-
+          className="mt-20 md:mt-24 mb-6 text-center"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Link
+            href="/projects/camping"
+            prefetch={false}
+            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#7FB2FF] hover:text-white/20 transition-all duration-300"
+          >
+            <span>Next Case Study</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
