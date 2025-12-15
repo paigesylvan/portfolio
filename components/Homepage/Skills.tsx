@@ -73,7 +73,7 @@ export default function Skills() {
                   delay: prefersReduced ? 0 : i * 0.06,
                 }}
                 className="
-                  group relative overflow-hidden rounded-3xl
+                  group relative overflow-hidden rounded-8xl
                   border border-white/10 ring-1 ring-inset ring-white/10
                   bg-white/[0.05] backdrop-blur-md
                   shadow-[0_10px_40px_rgba(0,0,0,0.40)]
