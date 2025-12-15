@@ -32,13 +32,13 @@ export default function HeroOverviewDog() {
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-12 lg:mt-[50px]">
       <div className="mx-auto w-full max-w-[1000px] px-4 md:px-6">
-        <div className="text-center">
+        <div className="lg:ml-24">
           <SectionHeader
             kicker="MOBILE APPLICATION"
             title="How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming"
             align="left"
             kickerClassName="text-[7px] md:text-xs text-[#9DC0FF]"
-            titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
+            titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mt-2"
           />
         </div>
 
