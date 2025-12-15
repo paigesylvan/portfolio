@@ -55,7 +55,7 @@ export default function Skills() {
       "
     >
       <div className="relative z-10">
-        <h2 className="mb-10 text-center text-[12px] tracking-[0.22em] text-white/60">
+        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
           SKILLS
         </h2>
 
