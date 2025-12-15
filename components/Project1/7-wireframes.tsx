@@ -48,7 +48,7 @@ export default function Wireframes() {
             align="left"
           />
 
-          <p className="mt-3 text-left text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
+          <p className="mt-3 text-left text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 ">
             I began sketching early concepts of the pages. These quick sketches
             allowed me to explore layouts and content hierarchy. I tested
             different navigation bar options to see which would enhance usability

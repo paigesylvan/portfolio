@@ -15,7 +15,7 @@ export default function Testing() {
         />
 
         {/* Copy block */}
-        <div className="mx-auto mt-4 max-w-[720px] text-left">
+        <div className="mx-auto mt-4 text-left">
           <p className="text-[10px] md:text-base text-white/75 leading-snug">
             After developing low-fidelity prototypes, I conducted a moderated
             usability test with a participant representative of the target user.

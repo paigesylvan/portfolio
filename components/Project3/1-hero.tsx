@@ -19,16 +19,22 @@ export default function HeroOverviewDryCleaner() {
       filter: "blur(0px)",
       transition: reduced
         ? { duration: 0 }
-        : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
+        : { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
     },
   });
 
   const skillsRow1 = ["Information Architecture", "UI Design", "Accessibility"];
-  const skillsRow2 = ["Wireframing", "Prototyping", "Responsive Website", "Usability Testing", ];
+  const skillsRow2 = [
+    "Wireframing",
+    "Prototyping",
+    "Responsive Website",
+    "Usability Testing",
+  ];
 
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center md:py-16 mt-16 sm:pl-1">
-      <div className="max-w-[1000px]">
+    <section className="bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-16 px-4 md:px-6">
+      {/* ✅ centered container */}
+      <div className="mx-auto w-full max-w-[1000px]">
         <div className="text-left">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
@@ -60,7 +66,7 @@ export default function HeroOverviewDryCleaner() {
             viewport={{ once: true, amount: 0.25 }}
             variants={screenVariants(!!prefersReduced)}
             transition={{ delay: prefersReduced ? 0 : 0.1 }}
-            className="relative"
+            className="relative w-full"
           >
             <Image
               src="/images/project3-images/desktop.png"
@@ -79,8 +85,8 @@ export default function HeroOverviewDryCleaner() {
           <div className="md:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#E6D6C3]">PROJECT</p>
             <p className="mt-1 text-white/90">
-              Design and build the first website for a 30+ year local dry cleaner to
-              clarify services, hours, and trust signals for new and returning
+              Design and build the first website for a 30+ year local dry cleaner
+              to clarify services, hours, and trust signals for new and returning
               customers.
             </p>
 
@@ -99,7 +105,6 @@ export default function HeroOverviewDryCleaner() {
               UX/UI SKILLSETS LEVERAGED
             </p>
 
-            {/* Skills */}
             <div className="mt-2 space-y-2">
               <div className="flex flex-wrap gap-1.5 md:gap-2">
                 {skillsRow1.map((t) => (
