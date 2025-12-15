@@ -18,7 +18,7 @@ export default function FinalDesign() {
               align="left"
             />
 
-            <p className="mt-4 text-white/85 leading-tight text-[11px] md:text-[16px] max-w-[560px] mx-auto md:mx-0">
+            <p className="text-left mt-4 text-white/85 leading-tight text-[11px] md:text-[16px] text-left mx-auto md:mx-0">
               Iterative testing refined the booking experience, strengthened multi-dog
               support, and increased trust through clearer groomer profiles, messaging,
               and appointment status updates. A key design challenge was balancing

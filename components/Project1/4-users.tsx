@@ -16,7 +16,7 @@ export default function UsersSection() {
 </div>
 
 
-      <p className="mx-auto mt-4  text-left text-white/80 text-xs lg:text-base">
+      <p className="mt-4  text-left text-white/80 text-xs lg:text-base">
         After research, my next step was to understand the user.
         Based on market insights, I developed four user personas to
         align design choices with the diverse needs and challenges

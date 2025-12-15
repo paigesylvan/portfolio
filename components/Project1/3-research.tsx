@@ -109,11 +109,14 @@ export default function ResearchInsights() {
 
   return (
     <div className="mx-auto lg:w-[82%] max-w-[1000px] lg:mt-8">
+      <div className='sm:pl-1'>
       <SectionHeader
         kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"
         align="center"
       />
+
+      </div>
 
       {/* Desktop: side-by-side*/}
       <div
