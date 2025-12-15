@@ -20,10 +20,10 @@ const SKILLS: SkillIcon[] = [
 
   { src: "/images/skills/4.png", alt: "Google Analytics", className: "left-[-10%] top-[20%] lg:left-[-8%] lg:top-[26%]" },
   { src: "/images/skills/10.png", alt: "Tailwind.css", className: "left-[-3%] top-[35%] lg:left-[4%] lg:top-[40%]" },
-  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[-2%] top-[52%] lg:left-[0%] lg:top-[58%]" },
+  { src: "/images/skills/9.png", alt: "Sass.css", className: "left-[-2%] top-[48%] lg:left-[0%] lg:top-[58%]" },
 
   { src: "/images/skills/8.png", alt: "JavaScript", className: "right-[3%] top-[24%] lg:right-[-4%] lg:top-[60%]" },
-  { src: "/images/skills/11.png", alt: "CSS", className: "right-[-5%] top-[30%] lg:right-[5%] lg:top-[40%]" },
+  { src: "/images/skills/11.png", alt: "CSS", className: "right-[-5%] top-[37%] lg:right-[5%] lg:top-[40%]" },
   { src: "/images/skills/12.png", alt: "HTML", className: "right-[-7%] top-[53%] lg:right-[-10%] lg:top-[37%]" },
 ];
 
