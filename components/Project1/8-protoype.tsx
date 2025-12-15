@@ -39,10 +39,10 @@ export default function Prototype() {
                 />
               </div>
             </div>
-            <p className="mt-3 text-[11px] tracking-[0.18em] text-[#7FB2FF] uppercase text-center">
+            <p className="mt-3 tracking-[0.18em] uppercase text-center text-[10px] md:text-[11px] text-[#7FB2FF] font-semibold">
               ONBOARDING FLOW
             </p>
-            <p className="mt-1 text-xs md:text-sm text-white/70 max-w-[320px] text-center">
+            <p className="mt-1 text-[10px] md:text-base text-white/70 max-w-[320px] text-center">
               Tested new-user introduction, account setup, and pet profile creation.
             </p>
           </div>
@@ -62,10 +62,10 @@ export default function Prototype() {
     </div>
   </div>
 
-  <p className="mt-3 text-[11px] tracking-[0.18em] text-[#7FB2FF] uppercase text-center">
+  <p className="mt-3 tracking-[0.18em] uppercase text-center text-[10px] md:text-[11px] text-[#7FB2FF] font-semibold">
     BOOKING APPOINTMENT FLOW
   </p>
-  <p className="mt-1 text-xs md:text-sm text-white/70 max-w-[360px] text-center mb-24 lg:mb-0">
+  <p className="mt-1 text-[10px] md:text-base text-white/70 max-w-[360px] text-center mb-24 lg:mb-0">
     Tested service selection, scheduling, and confirmation steps.
   </p>
 </div>

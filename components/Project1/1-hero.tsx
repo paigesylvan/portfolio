@@ -124,12 +124,12 @@ export default function HeroOverviewDog() {
           {/* left */}
           <div className="lg:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
-            <p className="mt-1 text-white/90">
+            <p className="mt-[2px] text-white/90">
               Design a mobile-first app for a local dog grooming service.
             </p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#9DC0FF]">ROLE</p>
-            <p className="mt-1 text-white/90">
+            <p className="mt-[2px] text-white/90">
               UX/UI Designer, Researcher, Visual Designer, Usability Tester
             </p>
           </div>
@@ -137,7 +137,7 @@ export default function HeroOverviewDog() {
           {/* right */}
           <div className="mt-6 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
-            <p className="mt-1 text-white/90">July 2025 – August 2025</p>
+            <p className="mt-[2px] text-white/90">July 2025 – August 2025</p>
 
             <p className="mt-3 text-[9px] tracking-[0.22em] text-[#9DC0FF]">
               UX/UI SKILLSETS LEVERAGED

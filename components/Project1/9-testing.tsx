@@ -113,7 +113,7 @@ export default function Testing() {
               <p className="mt-2 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
                 {card.title}
               </p>
-              <p className="mt-1 text-[12px] md:text-[13px] text-white/70 text-center leading-tight">
+              <p className="mt-1 text-[10px] md:text-base text-white/70 text-center leading-tight">
                 {card.desc}
               </p>
             </div>
