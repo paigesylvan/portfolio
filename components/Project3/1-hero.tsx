@@ -28,14 +28,14 @@ export default function HeroOverviewDryCleaner() {
 
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center px-6 md:py-16 mt-16">
-      <div className="mx-auto w-full max-w-[1100px] px-4 md:px-6">
-        <div className="text-center">
+      <div className="mx-auto w-full max-w-[1000px] px-4 md:px-6">
+        <div className="text-left">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
             title="How Clear Design Improves User Trust for a Local Dry Cleaner"
             align="center"
             kickerClassName="text-[7px] md:text-xs text-[#E6D6C3]"
-            titleClassName="text-sm md:text-2xl lg:text-3xl max-w-[300px] lg:max-w-[600px] mx-auto mt-2"
+            titleClassName="text-sm md:text-2xl lg:text-3xl mt-2"
           />
         </div>
 

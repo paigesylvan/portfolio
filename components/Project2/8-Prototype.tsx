@@ -7,7 +7,7 @@ import SectionHeader from "../SectionHeader";
 export default function PrototypesCamping() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white mt-24 lg:mt-0">
-      <div className="w-full max-w-[1100px] mx-auto">
+      <div className="w-full max-w-[1000px] mx-auto">
         <SectionHeader
           kicker="LOW FIDELITY PROTOTYPES"
           title="Core Experience Screens"

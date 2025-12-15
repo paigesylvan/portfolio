@@ -7,7 +7,7 @@ import SectionHeader from "../SectionHeader";
 export default function BeginnerFlow() {
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-4 md:px-6 text-white">
-      <div className="w-full max-w-[900px] mx-auto">
+      <div className="w-full max-w-[1000px] mx-auto">
       <SectionHeader
           kicker="LOW FIDELITY PROTOTYPES"
           title="Turning Complexity into Clarity "
@@ -15,7 +15,7 @@ export default function BeginnerFlow() {
         />
 
         <div className="mb-6 md:mb-8 flex justify-center">
-          <p className="mt-3 max-w-3xl mx-auto text-white/85 text-xs sm:text-sm md:text-md leading-snug lg:leading-relaxed text-center">
+          <p className="mt-3 max-w-3xl mx-auto text-white/85 text-xs sm:text-sm md:text-md leading-snug lg:leading-relaxed text-left">
           After my user research, my goal was to simplify the layout, curating gear selections,
           and clearly communicating value. Every design choice, from the streamlined bundle
           presentation to the guided add-on options, was made to reduce decision fatigue and build

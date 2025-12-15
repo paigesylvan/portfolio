@@ -67,7 +67,7 @@ export default function KeyInsights() {
       <div className="w-full max-w-[1000px] mx-auto">
         <SectionHeader kicker="KEY INSIGHTS" title="Findings From Research" align="center" />
 
-        <p className="text-center text-[10px] sm:text-sm md:text-md text-white/70 leading-snug max-w-[300px] lg:max-w-[780px] mx-auto mt-3">
+        <p className="text-left text-[10px] sm:text-sm md:text-md text-white/70 leading-snug mx-auto mt-3">
           User journeys and mind mapping helped identify where first-time campers
           felt uncertain or overwhelmed. These methods revealed core pain points
           and guided the design goals shown below, ensuring design decisions are

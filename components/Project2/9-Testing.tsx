@@ -39,7 +39,7 @@ export default function TestingIterationCamping() {
 
   return (
     <section className="flex flex-col items-center justify-center px-3 md:px-6 text-white mt-24 lg:mt-0 pb-10">
-      <div className="mx-auto w-full max-w-[850px]">
+      <div className="mx-auto w-full max-w-[1000px]">
         <SectionHeader
           kicker="TESTING & ITERATION"
           title="How I validated and refined the experience"
