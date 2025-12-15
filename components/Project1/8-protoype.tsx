@@ -51,7 +51,7 @@ export default function Prototype() {
 {/* Booking flow */}
 <div className="flex flex-col items-center md:col-span-2 w-full max-w-[720px] md:max-w-none mx-auto">
   <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
-    <div className="relative w-full aspect-[16/7] sm:aspect-[16/8] md:aspect-[3/2] overflow-hidden rounded-xl">
+    <div className="relative w-full h-[200px] sm:h-[240px] md:h-[280px] overflow-hidden rounded-xl">
       <Image
         src="/images/project1-images/prototype-2.png"
         alt="Low fidelity booking prototype flow"
