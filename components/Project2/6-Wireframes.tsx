@@ -39,7 +39,7 @@ export default function Wireframes() {
       <div className="w-[1000px] mx-auto">
         <SectionHeader kicker="LOW-FI EXPLORATION" title="Key Wireframes" align="center" />
 
-        <p className="mx-auto mt-2 lg:mt-3 max-w-[310px] lg:max-w-2xl text-center text-white/80 text-xs md:text-md leading-snug">
+        <p className="mx-auto mt-2 lg:mt-3 text-left text-white/80 text-xs md:text-md leading-snug">
           I began with low-fidelity wireframes to explore layouts that reduce overwhelm and guide users
           quickly toward the right gear. Since research showed beginners feel unsure where to start, I
           focused on surfacing curated bundles and trust-building elements early in the flow. Each frame

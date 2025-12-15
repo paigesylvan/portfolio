@@ -84,7 +84,7 @@ export default function Goals() {
 
   return (
     <section className="mt-12 md:mt-24 flex flex-col items-center justify-center px-3 md:px-6 text-white pb-8 md:pb-16">
-      <div className="w-full max-w-[900px] mx-auto">
+      <div className="w-full max-w-[1000px] mx-auto">
         <SectionHeader
           kicker="DEFINING THE DESIGN "
           title="6 UX Findings and Design Goals"

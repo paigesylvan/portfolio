@@ -7,7 +7,7 @@ export default function UsersSection() {
   return (
     <div className="mx-auto w-[92%] md:w-[70%] lg:mt-12">
 
-<div className="w-full max-w-[900px] mx-auto lg:mt-12">
+<div className="w-full max-w-[1000px] mx-auto lg:mt-12">
 <SectionHeader
         kicker="USER PERSONAS"
         title="Who's Behind the Experience"

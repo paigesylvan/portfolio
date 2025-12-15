@@ -23,7 +23,7 @@ export default function Iterations() {
   const prefersReduced = (useReducedMotion() ?? false); 
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white mt-20 mb-12 md:pb-10">
+    <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white mt-36 mb-12 md:pb-10">
       <div className="mx-auto w-full max-w-[780px] md:max-w-[1000px]">
         <SectionHeader
           kicker="FINDINGS → REFINEMENTS"

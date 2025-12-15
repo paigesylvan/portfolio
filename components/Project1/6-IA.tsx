@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 export default function IA() {
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-10 md:py-14">
-      <div className="w-full max-w-[900px] mx-auto">
+      <div className="w-full max-w-[1000px] mx-auto">
         {/* header */}
         <SectionHeader
           kicker="INFORMATION ARCHITECTURE"

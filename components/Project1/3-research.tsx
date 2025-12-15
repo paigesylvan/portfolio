@@ -108,7 +108,7 @@ export default function ResearchInsights() {
   const donutStroke = isSmall ? 8 : 9;
 
   return (
-    <div className="mx-auto lg:w-[82%] max-w-[900px] lg:mt-8">
+    <div className="mx-auto lg:w-[82%] max-w-[1000px] lg:mt-8">
       <SectionHeader
         kicker="MARKET RESEARCH"
         title="Exploring the Grooming Space"

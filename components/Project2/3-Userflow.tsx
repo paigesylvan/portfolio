@@ -13,7 +13,7 @@ export default function UserFlow() {
           align="center"
         />
 
-        <p className="text-xs md:text-sm lg:text-md mx-auto mt-2 lg:mt-4 max-w-[300px] lg:max-w-6xl text-center text-white/80 leading-snug md:leading-normal pb-6">
+        <p className="text-xs md:text-sm lg:text-md mx-auto mt-2 lg:mt-4 text-center text-white/80 leading-snug md:leading-normal pb-6">
           To better understand the user decision-making process while on a store website, I created a user journey map.
           This helped identify moments of confusion and stress across the shopping experience, as
           well as opportunities to simplify decision-making with clear guidance.

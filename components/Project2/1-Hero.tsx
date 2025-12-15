@@ -6,17 +6,16 @@ import SectionHeader from "../SectionHeader";
 export default function HeroOverviewCamping() {
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14 lg:mt-[50px]">
-      <div className="mx-auto w-full max-w-[950px] px-4 md:px-6">
+      <div className="w-[1000px] ">
 
-        <div className="text-center">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE DESIGN"
             title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
-            align="center"
+            align="left"
             kickerClassName="text-[7px] md:text-xs text-emerald-400"
-            titleClassName="text-sm md:text-xl lg:text-2xl max-w-[600px] mx-auto mt-2"
+            titleClassName="text-sm md:text-xl lg:text-2xl mx-auto mt-2"
           />
-        </div>
+
 
         <div className="relative mt-6 md:mt-8 flex items-end justify-center">
           <div className="absolute inset-0 z-1 pointer-events-none
