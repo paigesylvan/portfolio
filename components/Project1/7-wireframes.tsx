@@ -38,7 +38,7 @@ export default function Wireframes() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-10 md:py-14 mt-12 lg:mt-0">
+    <section className="flex flex-col items-center justify-center text-white py-10 md:py-14 mt-12 lg:mt-0">
         <div className="w-full max-w-[900px] mx-auto lg:mt-12">
         <SectionHeader
           kicker="LOW-FI EXPLORATION"
@@ -55,7 +55,7 @@ export default function Wireframes() {
           helped me establish early structure for core flows; appointment
           creation, groomer discovery, and status visibility.
         </p>
-
+        </div>
         {/* Wireframes grid */}
         <motion.div
           className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 justify-items-center"
@@ -94,7 +94,7 @@ export default function Wireframes() {
         <p className="mt-6 text-center text-[10px] md:text-[11px] text-[#7FB2FF] font-semibold tracking-wide">
           Homepage Wireframes
         </p>
-      </div>
+     
     </section>
   );
 }

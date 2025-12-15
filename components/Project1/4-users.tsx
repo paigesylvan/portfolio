@@ -24,7 +24,7 @@ export default function UsersSection() {
       </p>
 
       {/* Image + Button */}
-      <div className="flex flex-col items-center justify-center mt-6 md:mt-10 lg:ml-4">
+      <div className="flex flex-col items-center justify-center mt-6 md:mt-10 ">
         <Image
           src="/images/project1-images/dog-bg.png"
           alt="User personas"
