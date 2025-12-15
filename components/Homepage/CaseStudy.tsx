@@ -55,7 +55,6 @@ const studies: Study[] = [
   },
 ];
 
-// detect mobile
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -84,20 +83,30 @@ export default function CaseStudies() {
     },
   };
 
+  const piece = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: easeOut } },
+  };
+
+  const imageWrap = {
+    hidden: { opacity: 0, y: 10, scale: 0.985 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: easeOut } },
+  };
+
   return (
     <section
       id="case-studies"
       className="
-        relative overflow-hidden bg-black text-white
+        relative mt-20 overflow-hidden bg-black text-white
         py-16 lg:py-24
         scroll-mt-28 md:scroll-mt-40
       "
     >
       {/* Bottom aurora / hue */}
-      <div className="cs-aurora-bottom pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[28vh] opacity-30" />
+      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
 
       <div className="relative z-10">
-        {/* ✅ same container as Skills */}
+        {/* ✅ same container width/padding as Skills */}
         <div className="mx-auto w-full max-w-[1100px] px-6">
           <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
             CASE STUDIES
@@ -105,10 +114,14 @@ export default function CaseStudies() {
 
           <LazyMotion features={domAnimation}>
             <MotionConfig reducedMotion="user">
-              {/* ✅ same grid as Skills: 1 col mobile, 3 cols desktop */}
-              <div className="grid gap-5 md:grid-cols-3">
-                {studies.map((s, i) => {
+              {/* ✅ ONE COLUMN (stacked) */}
+              <div className="space-y-5 md:space-y-6">
+                {studies.map((s, idx) => {
                   const ArticleComp = shouldAnimate ? m.article : "article";
+                  const ImageWrapComp = shouldAnimate ? m.div : "div";
+                  const PieceComp = shouldAnimate ? m.div : "div";
+                  const TitleComp = shouldAnimate ? m.h3 : "h3";
+                  const TextComp = shouldAnimate ? m.p : "p";
 
                   return (
                     <ArticleComp
@@ -117,58 +130,69 @@ export default function CaseStudies() {
                         variants: card,
                         initial: "hidden",
                         whileInView: "show",
-                        viewport: { once: true, amount: 0.25 },
-                        transition: {
-                          duration: 0.55,
-                          ease: easeOut,
-                          delay: i * 0.06,
-                        },
+                        viewport: { once: true, amount: 0.3 },
                       })}
                       className="
-                        group relative overflow-hidden rounded-3xl
+                        case-card group
+                        rounded-3xl
                         border border-white/10 ring-1 ring-inset ring-white/10
-                        bg-white/[0.05] backdrop-blur-md
-                        shadow-[0_10px_40px_rgba(0,0,0,0.40)]
-                        transition-all duration-300
-                        hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
-                        hover:-translate-y-1
+                        bg-white/[0.04] backdrop-blur-md
+                        shadow-[0_18px_70px_rgba(0,0,0,0.45)]
+                        px-5 sm:px-7 py-6 sm:py-7
                       "
                     >
-                      <div className="p-6 md:p-7">
-                        {/* tags */}
-                        <div className="mb-3 flex flex-wrap gap-1.5">
-                          {s.tags.map((t) => (
-                            <span key={t} className="chip">
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* ✅ image left / text right */}
-                        <div className="grid grid-cols-[110px_1fr] gap-4 items-center">
-                          <div className="flex justify-center">
-                            <Image
-                              src={s.image}
-                              alt={s.imageAlt}
-                              width={420}
-                              height={320}
-                              sizes="(min-width: 768px) 160px, 120px"
-                              className="h-[120px] w-auto object-contain opacity-95"
-                              priority={i === 0}
-                            />
+                      {/* ✅ image left + text right, like before */}
+                      <div className="grid items-center gap-6 md:grid-cols-12">
+                        {/* image */}
+                        <ImageWrapComp
+                          {...(shouldAnimate && { variants: imageWrap })}
+                          className="md:col-span-5"
+                        >
+                          <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
+                            <div className="relative">
+                              <Image
+                                src={s.image}
+                                alt={s.imageAlt}
+                                width={700}
+                                height={520}
+                                sizes="(min-width: 768px) 300px, 220px"
+                                className="h-[180px] w-auto md:h-[300px] object-contain"
+                                priority={idx === 0}
+                              />
+                              <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+                            </div>
                           </div>
+                        </ImageWrapComp>
 
-                          <div>
-                            {/* title like Skills */}
-                            <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
-                              {s.title}
-                            </h3>
+                        {/* text */}
+                        <div className="md:col-span-7 md:pl-8 lg:pl-12">
+                          <PieceComp
+                            {...(shouldAnimate && { variants: piece })}
+                            className="mb-3 flex flex-wrap gap-1.5 lg:gap-2"
+                          >
+                            {s.tags.map((t) => (
+                              <span key={t} className="chip">
+                                {t}
+                              </span>
+                            ))}
+                          </PieceComp>
 
-                            <p className="mt-2 text-white/80 leading-snug text-[12px] md:text-[13px]">
-                              {s.subtitle}
-                            </p>
+                          <TitleComp
+                            {...(shouldAnimate && { variants: piece })}
+                            className="font-bold leading-tight text-[16px] md:text-[20px] lg:w-[92%]"
+                          >
+                            {s.title}
+                          </TitleComp>
 
-                            <Link href={s.slug} className="cta-btn group mt-4 inline-flex">
+                          <TextComp
+                            {...(shouldAnimate && { variants: piece })}
+                            className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
+                          >
+                            {s.subtitle}
+                          </TextComp>
+
+                          <PieceComp {...(shouldAnimate && { variants: piece })}>
+                            <Link href={s.slug} className="cta-btn group mt-6">
                               <span>{s.cta ?? "View Case Study"}</span>
                               <span className="cta-icon">
                                 <svg
@@ -186,7 +210,7 @@ export default function CaseStudies() {
                                 </svg>
                               </span>
                             </Link>
-                          </div>
+                          </PieceComp>
                         </div>
                       </div>
                     </ArticleComp>
