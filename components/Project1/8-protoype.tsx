@@ -7,11 +7,11 @@ export default function Prototype() {
   return (
     <section className="flex flex-col justify-center text-white mt-24 md:mt-0">
 
-        <div className="max-w-[900px] text-center mb-2">
+        <div className="max-w-[900px] mb-2">
           <SectionHeader
             kicker="LOW FIDELITY TESTING"
             title="Prototypes"
-            align="center"
+            align="left"
           />
 
           <p className="mt-3 text-left text-xs md:text-base text-white/85 leading-snug md:leading-normal">
