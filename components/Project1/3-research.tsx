@@ -77,7 +77,11 @@ function Donut({
               ? { strokeDashoffset: targetOffset }
               : { strokeDashoffset: c }
           }
-          transition={{ duration: prefersReduced ? 0 : duration, ease: "easeOut", delay }}
+          transition={{
+            duration: prefersReduced ? 0 : duration,
+            ease: "easeOut",
+            delay,
+          }}
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
         />
         <text
@@ -92,10 +96,10 @@ function Donut({
         </text>
       </svg>
 
-      <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight mx-auto">
+      <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight">
         {captionTop}
       </p>
-      <p className="text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight mx-auto">
+      <p className="text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight">
         {label}
       </p>
     </div>
@@ -108,96 +112,74 @@ export default function ResearchInsights() {
   const donutStroke = isSmall ? 8 : 9;
 
   return (
-    <div className="mx-auto lg:w-[82%] max-w-[1000px] lg:mt-8">
-      <div className='sm:pl-1'>
-      <SectionHeader
-        kicker="MARKET RESEARCH"
-        title="Exploring the Grooming Space"
-        align="center"
-      />
+    <section className="px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[1000px] lg:mt-8">
+        <div className="text-center">
+          <SectionHeader
+            kicker="MARKET RESEARCH"
+            title="Exploring the Grooming Space"
+            align="center"
+          />
+        </div>
 
-      </div>
+        {/* Desktop: side-by-side */}
+        <div className="mt-8 lg:mt-16 flex flex-col md:flex-row md:items-stretch">
+          {/* left */}
+          <div className="md:basis-[58%] md:flex md:flex-col">
+            <div className="h-full rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] w-full">
+              <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-2.5">
+                Market Insights
+              </h3>
 
-      {/* Desktop: side-by-side*/}
-      <div
-        className="
-          mt-8 lg:mt-16 
-          flex flex-col md:flex-row
-          md:items-stretch 
-        "
-      >
-        {/* left */}
-        <div className=" md:basis-[58%] md:flex md:flex-col md:h-auto">
-          <div
-            className="
-            h-full rounded-3xl bg-[#111]/80 backdrop-blur-md 
-            ring-1 ring-white/10 
-            p-5 md:p-6 
-            shadow-[0_20px_80px_rgba(0,0,0,0.45)]
-            max-w-[90%] sm:max-w-[70%] md:max-w-none mx-auto
-            "
-          >
-            <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-2.5">
-              Market Insights
-            </h3>
+              <p className="text-white/80 text-[12px] lg:text-[13px]">
+                I conducted secondary research by analyzing app reviews, service
+                provider websites, and pet-care forums to learn how dog grooming
+                digital experiences feel to users today. Through my research I found:
+              </p>
 
-            <p className="text-white/80 text-xs lg:text-base">
-              I conducted secondary research by analyzing app reviews, service
-              provider websites, and pet-care forums to learn how dog grooming
-              digital experiences feel to users today. Through my research I found:
-            </p>
+              <ul className="mt-3 lg:mt-4 space-y-1 text-white/70 text-[12px] lg:text-[13px]">
+                <li>• There’s a gap in user-friendly grooming apps overall.</li>
+                <li>• Many groomers rely on outdated websites and phone calls to book appointments.</li>
+                <li>• First-time users are seeking reassurance their dog will be treated with care.</li>
+                <li>• Users worry about timing, delays, and unexpected changes.</li>
+              </ul>
 
-            <ul className="mt-3 lg:mt-4 space-y-1 text-white/70 text-xs lg:text-base">
-              <li>• There’s a gap in user-friendly grooming apps overall.</li>
-              <li>• Many groomers rely on outdated websites and phone calls to book appointments.</li>
-              <li>• First-time users are seeking reassurance their dog will be treated with care.</li>
-              <li>• Users worry about timing, delays, and unexpected changes.</li>
-            </ul>
+              <p className="mt-5 lg:mt-8 text-white/90 leading-relaxed text-[12px] lg:text-[13px]">
+                <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
+                Trust, transparency, and clear communication matter as much as convenience.
+              </p>
+            </div>
+          </div>
 
-            <p className="mt-5 lg:mt-8 text-white/90 leading-relaxed text-xs lg:text-base">
-              <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
-              Trust, transparency, and clear communication matter as much as convenience.
-            </p>
+          {/* right */}
+          <div className="md:basis-[42%] flex md:flex-col justify-center gap-5 lg:gap-6 mt-10 md:mt-0">
+            <Donut
+              percent={67}
+              captionTop="of U.S. households"
+              label={"own at least one dog"}
+              delay={0.0}
+              size={donutSize}
+              stroke={donutStroke}
+            />
+            <Donut
+              percent={73}
+              captionTop="of pet owners prefer"
+              label={"scheduling appointments\nonline"}
+              delay={0.12}
+              size={donutSize}
+              stroke={donutStroke}
+            />
+            <Donut
+              percent={45}
+              captionTop="of pet owners find it"
+              label={"challenging to schedule\ngrooming services"}
+              delay={0.24}
+              size={donutSize}
+              stroke={donutStroke}
+            />
           </div>
         </div>
-
-        {/* right*/}
-        <div
-          className="
-            md:basis-[42%]
-            md:h-auto
-            flex md:flex-col
-            justify-center
-            gap-5 lg:gap-6
-            mt-10 md:mt-0
-          "
-        >
-          <Donut
-            percent={67}
-            captionTop="of U.S. households"
-            label={"own at least one dog"}
-            delay={0.0}
-            size={donutSize}
-            stroke={donutStroke}
-          />
-          <Donut
-            percent={73}
-            captionTop="of pet owners prefer"
-            label={"scheduling appointments\nonline"}
-            delay={0.12}
-            size={donutSize}
-            stroke={donutStroke}
-          />
-          <Donut
-            percent={45}
-            captionTop="of pet owners find it"
-            label={"challenging to schedule\ngrooming services"}
-            delay={0.24}
-            size={donutSize}
-            stroke={donutStroke}
-          />
-        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -120,7 +120,7 @@ export default function HeroOverviewDog() {
         </div>
 
         {/* overview */}
-        <div className="mt-12 lg:mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[11px] md:text-[12px] leading-snug">
+        <div className="mt-12 lg:mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
           <div className="lg:ml-24">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
@@ -149,7 +149,7 @@ export default function HeroOverviewDog() {
                 {skillsRow1.map((t) => (
                   <span
                     key={t}
-                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[8px] md:text-[10px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
+                    className="rounded-xl border border-[#9DC0FF]/20 bg-white/[0.05] px-2 py-0.5 md:px-2.5 md:py-1 text-[12px] md:text-[13px] tracking-wide text-white/95 ring-1 ring-inset ring-[#9DC0FF]/10"
                   >
                     {t}
                   </span>

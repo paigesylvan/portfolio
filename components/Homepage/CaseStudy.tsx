@@ -193,7 +193,7 @@ export default function CaseStudies() {
 
                         <TextComp
                           {...(shouldAnimate && { variants: piece })}
-                          className="mt-2 max-w-prose text-[13px] text-white/70 leading-tight"
+                          className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
                         >
                           {s.subtitle}
                         </TextComp>

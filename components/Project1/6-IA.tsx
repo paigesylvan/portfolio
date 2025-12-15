@@ -15,7 +15,7 @@ export default function IA() {
         />
 
         {/* intro */}
-        <p className=" mt-3 text-left text-white/75 text-[10px] md:text-base leading-snug md:leading-snug">
+        <p className=" mt-3 text-left text-white/75 text-[12px] lg:text-[13px] leading-snug md:leading-snug">
           My focus was to make information easily accessible with clear navigation for effortless booking and browsing. The site map helps ensure that the structure of the app consistently addresses user needs uncovered in my research. 
         </p>
 
