@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function Prototype() {
   return (
-    <section className="flex flex-col justify-center text-white mt-24 md:mt-0 max-w-[1000px]">
+    <section className="flex flex-col justify-center text-white mt-24 md:mt-0 max-w-[900px]">
 
         <div className="">
           <SectionHeader
