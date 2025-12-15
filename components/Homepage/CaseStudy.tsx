@@ -55,6 +55,7 @@ const studies: Study[] = [
   },
 ];
 
+// detect mobile
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -87,13 +88,16 @@ export default function CaseStudies() {
     <section
       id="case-studies"
       className="
-        relative bg-black text-white overflow-hidden
+        relative overflow-hidden bg-black text-white
         py-16 lg:py-24
-        w-screen left-1/2 -translate-x-1/2
+        scroll-mt-28 md:scroll-mt-40
       "
     >
+      {/* Bottom aurora / hue */}
+      <div className="cs-aurora-bottom pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[28vh] opacity-30" />
+
       <div className="relative z-10">
-        {/* same container feel as Skills */}
+        {/* ✅ same container as Skills */}
         <div className="mx-auto w-full max-w-[1100px] px-6">
           <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
             CASE STUDIES
@@ -101,8 +105,8 @@ export default function CaseStudies() {
 
           <LazyMotion features={domAnimation}>
             <MotionConfig reducedMotion="user">
-              {/* ✅ single centered column */}
-              <div className="flex flex-col items-center gap-5">
+              {/* ✅ same grid as Skills: 1 col mobile, 3 cols desktop */}
+              <div className="grid gap-5 md:grid-cols-3">
                 {studies.map((s, i) => {
                   const ArticleComp = shouldAnimate ? m.article : "article";
 
@@ -128,14 +132,10 @@ export default function CaseStudies() {
                         transition-all duration-300
                         hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
                         hover:-translate-y-1
-                        flex flex-col
-
-                        w-full
-                        max-w-[380px]   /* ✅ same width as Skills cards */
                       "
                     >
-                      <div className="p-6 md:p-7 flex flex-col h-full">
-                        {/* tags row */}
+                      <div className="p-6 md:p-7">
+                        {/* tags */}
                         <div className="mb-3 flex flex-wrap gap-1.5">
                           {s.tags.map((t) => (
                             <span key={t} className="chip">
@@ -144,49 +144,49 @@ export default function CaseStudies() {
                           ))}
                         </div>
 
-                        {/* ✅ title matches Skills title position/style */}
-                        <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
-                          {s.title}
-                        </h3>
+                        {/* ✅ image left / text right */}
+                        <div className="grid grid-cols-[110px_1fr] gap-4 items-center">
+                          <div className="flex justify-center">
+                            <Image
+                              src={s.image}
+                              alt={s.imageAlt}
+                              width={420}
+                              height={320}
+                              sizes="(min-width: 768px) 160px, 120px"
+                              className="h-[120px] w-auto object-contain opacity-95"
+                              priority={i === 0}
+                            />
+                          </div>
 
-                        {/* image */}
-                        <div className="mt-4 flex justify-center">
-                          <Image
-                            src={s.image}
-                            alt={s.imageAlt}
-                            width={520}
-                            height={380}
-                            sizes="(min-width: 768px) 380px, 90vw"
-                            className="h-[150px] md:h-[170px] w-auto object-contain opacity-95"
-                            priority={i === 0}
-                          />
-                        </div>
+                          <div>
+                            {/* title like Skills */}
+                            <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
+                              {s.title}
+                            </h3>
 
-                        {/* subtitle */}
-                        <p className="mt-4 text-white/80 leading-snug text-[12px] md:text-[13px]">
-                          {s.subtitle}
-                        </p>
+                            <p className="mt-2 text-white/80 leading-snug text-[12px] md:text-[13px]">
+                              {s.subtitle}
+                            </p>
 
-                        {/* CTA pinned bottom */}
-                        <div className="mt-auto pt-5">
-                          <Link href={s.slug} className="cta-btn group">
-                            <span>{s.cta ?? "View Case Study"}</span>
-                            <span className="cta-icon">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="w-3.5 h-3.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                              </svg>
-                            </span>
-                          </Link>
+                            <Link href={s.slug} className="cta-btn group mt-4 inline-flex">
+                              <span>{s.cta ?? "View Case Study"}</span>
+                              <span className="cta-icon">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="w-3.5 h-3.5"
+                                >
+                                  <path d="M5 12h14" />
+                                  <path d="m12 5 7 7-7 7" />
+                                </svg>
+                              </span>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </ArticleComp>
