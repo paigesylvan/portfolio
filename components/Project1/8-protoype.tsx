@@ -7,7 +7,7 @@ export default function Prototype() {
   return (
     <section className="flex flex-col justify-center text-white mt-24 md:mt-0 max-w-[1000px]">
 
-        <div className="lg:ml-[100px]">
+        <div className="">
           <SectionHeader
             kicker="LOW FIDELITY TESTING"
             title="Prototypes"
