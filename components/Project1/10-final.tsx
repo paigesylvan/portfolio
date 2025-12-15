@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function FinalDesign() {
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-24 lg:mt-18 mb-8 lg:mb-0">
-      <div className="mx-auto w-full max-w-[1100px] md:text-left">
+      <div className="max-w-[900px] md:text-left">
         {/* video first on mobile, 2-col on desktop */}
         <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-start">
           {/* LEFT: header + copy (no border/card) */}
