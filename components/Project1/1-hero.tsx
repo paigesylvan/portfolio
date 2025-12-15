@@ -36,7 +36,7 @@ export default function HeroOverviewDog() {
           <SectionHeader
             kicker="MOBILE APPLICATION"
             title="How Emotionally Intelligent Design Improves Booking Confidence for Dog Grooming"
-            align="center"
+            align="left"
             kickerClassName="text-[7px] md:text-xs text-[#9DC0FF]"
             titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mx-auto mt-2"
           />
