@@ -30,7 +30,7 @@ const item = (reduced: boolean): Variants => ({
     y: 0,
     transition: reduced
       ? { duration: 0 }
-      : { duration: 0.5, ease: [0.22, 1, 0.36, 1] }, // ✅ typed easing
+      : { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
   },
 });
 
@@ -38,24 +38,26 @@ export default function Wireframes() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center text-white py-10 md:py-14 mt-12 lg:mt-0">
-        <div className="w-full max-w-[900px] mx-auto lg:mt-12">
-        <SectionHeader
-          kicker="LOW-FI EXPLORATION"
-          title="Key Wireframes"
-          align="center"
-        />
-        
+    <section className="flex flex-col justify-center text-white py-10 md:py-14 mt-12 lg:mt-0">
+      <div className="mx-auto w-full max-w-[900px] lg:mt-12 px-4 md:px-6">
+        {/* Copy column (constrains kicker/title/body width) */}
+        <div className="mx-auto w-full max-w-[560px]">
+          <SectionHeader
+            kicker="LOW-FI EXPLORATION"
+            title="Key Wireframes"
+            align="left"
+          />
 
-        <p className="mx-auto mt-3  text-left text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
-          I began sketching early concepts of the pages. These quick sketches
-          allowed me to explore layouts and content hierarchy. I tested
-          different navigation bar options to see which would enhance usability
-          and identified which items were most essential to feature. Wireframing
-          helped me establish early structure for core flows; appointment
-          creation, groomer discovery, and status visibility.
-        </p>
+          <p className="mt-3 text-left text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
+            I began sketching early concepts of the pages. These quick sketches
+            allowed me to explore layouts and content hierarchy. I tested
+            different navigation bar options to see which would enhance usability
+            and identified which items were most essential to feature. Wireframing
+            helped me establish early structure for core flows; appointment
+            creation, groomer discovery, and status visibility.
+          </p>
         </div>
+
         {/* Wireframes grid */}
         <motion.div
           className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 justify-items-center"
@@ -94,7 +96,7 @@ export default function Wireframes() {
         <p className="mt-6 text-center text-[10px] md:text-[11px] text-[#7FB2FF] font-semibold tracking-wide">
           Homepage Wireframes
         </p>
-     
+      </div>
     </section>
   );
 }
