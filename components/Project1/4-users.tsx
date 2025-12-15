@@ -5,13 +5,15 @@ import SectionHeader from "../SectionHeader";
 
 export default function UsersSection() {
   return (
-    <div className="w-full max-w-[900px] mx-auto lg:mt-12">
-
-      <SectionHeader
+    <div className=" lg:mt-12">
+<div className="w-full max-w-[900px] mx-auto ">
+<SectionHeader
         kicker="USER PERSONAS"
         title="Who's Behind the Experience"
         align="center"
       />
+</div>
+
 
       <p className="mx-auto mt-4 max-w-[300px] lg:max-w-4xl text-left text-white/80 text-xs lg:text-base">
         After research, my next step was to understand the user.
