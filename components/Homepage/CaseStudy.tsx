@@ -114,22 +114,28 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="relative mt-20 overflow-hidden text-white full-bleed bg-black scroll-mt-[70vh] md:scroll-mt-40 lg:scroll-mt-[90vh]"
+      className="
+        relative bg-black text-white
+        overflow-hidden
+        py-16 lg:py-24
+        scroll-mt-28 md:scroll-mt-40
+      "
     >
-      {/* 🔮 Bottom aurora / hue */}
+      {/* Bottom aurora / hue */}
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
 
       {/* Content layer */}
-      <div className="relative z-10 pb-36 lg:pb-48">
-        {/* ✅ Centered container for header + list */}
-        <div className="mx-auto w-full max-w-[1100px] px-6 sm:px-6">
+      <div className="relative z-10">
+        {/* ✅ centered + padded container */}
+        <div className="mx-auto w-full max-w-[1100px] px-6 sm:px-8">
+          {/* ✅ NO hard-coded margin-left */}
           <h2 className="mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
             CASE STUDIES
           </h2>
 
           <LazyMotion features={domAnimation}>
             <MotionConfig reducedMotion="user">
-              <div className="space-y-10 lg:space-y-16">
+              <div className="space-y-10 lg:space-y-16 pb-20 lg:pb-28">
                 {studies.map((s, idx) => {
                   const ArticleComp = shouldAnimate ? m.article : "article";
                   const ImageWrapComp = shouldAnimate ? m.div : "div";
@@ -150,7 +156,14 @@ export default function CaseStudies() {
                           margin: "0px 0px -10% 0px",
                         },
                       })}
-                      className="case-card group md:transform-gpu md:will-change-transform"
+                      className="
+                        case-card group
+                        rounded-3xl
+                        border border-white/10 ring-1 ring-inset ring-white/10
+                        bg-white/[0.04] backdrop-blur-md
+                        shadow-[0_18px_70px_rgba(0,0,0,0.45)]
+                        px-5 sm:px-7 py-6 sm:py-7
+                      "
                     >
                       <div className="grid items-center gap-6 md:grid-cols-12">
                         {/* image */}
@@ -158,15 +171,15 @@ export default function CaseStudies() {
                           {...(shouldAnimate && { variants: imageWrap })}
                           className="md:col-span-5"
                         >
-                          <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
+                          <div className="mx-auto max-w-[240px] md:max-w-[320px] flex justify-center">
                             <div className="relative">
                               <Image
                                 src={s.image}
                                 alt={s.imageAlt}
-                                width={600}
-                                height={450}
-                                sizes="(min-width: 768px) 300px, 220px"
-                                className="h-[180px] w-auto md:h-[300px] object-contain"
+                                width={700}
+                                height={520}
+                                sizes="(min-width: 768px) 320px, 240px"
+                                className="h-[190px] w-auto md:h-[320px] object-contain"
                                 priority={idx === 0}
                               />
                               <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
@@ -175,10 +188,10 @@ export default function CaseStudies() {
                         </ImageWrapComp>
 
                         {/* text */}
-                        <div className="md:col-span-7 lg:pl-12 pl-0">
+                        <div className="md:col-span-7 md:pl-8 lg:pl-12">
                           <PieceComp
                             {...(shouldAnimate && { variants: piece })}
-                            className="mb-3 flex flex-wrap gap-1 lg:gap-2"
+                            className="mb-3 flex flex-wrap gap-1.5 lg:gap-2"
                           >
                             {s.tags.map((t) => (
                               <span key={t} className="chip">
@@ -189,7 +202,7 @@ export default function CaseStudies() {
 
                           <TitleComp
                             {...(shouldAnimate && { variants: piece })}
-                            className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
+                            className="font-bold leading-tight text-[16px] md:text-[20px] lg:w-[92%]"
                           >
                             {s.title}
                           </TitleComp>
