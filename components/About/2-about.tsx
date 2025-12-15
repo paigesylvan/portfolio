@@ -20,7 +20,7 @@ const ITEMS: AboutItem[] = [
 export default function AboutGallery() {
   return (
     <section className="relative bg-black text-white full-bleed">
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 py-28">
+      <div className="relative z-10 mx-auto max-w-[1200px] px-6 pb-28">
         {/* section header */}
         <div className="text-left mb-16">
           <p className="text-[11px] tracking-[0.22em] text-white/60">
