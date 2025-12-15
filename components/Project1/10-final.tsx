@@ -13,21 +13,6 @@ export default function FinalDesign() {
 
         {/* video first on mobile, 2-col on desktop */}
         <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-center">
-          {/* Video column  */}
-          <div className="flex justify-center">
-            <div className="rounded-2xl overflow-hidden">
-              <video
-                src="/images/project1-images/final-design.mp4"
-                width={420}
-                height={860}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="h-auto w-[200px] sm:w-[240px] md:w-[320px] rounded-xl object-contain"
-              />
-            </div>
-          </div>
 
           <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] max-w-[380px] mx-auto md:mx-0">
             <p className="text-white/85 leading-tight text-[11px] md:text-[16px]">
@@ -83,6 +68,23 @@ export default function FinalDesign() {
               </span>
             </Link>
           </div>
+
+                    {/* Video column  */}
+                    <div className="flex justify-center">
+            <div className="rounded-2xl overflow-hidden">
+              <video
+                src="/images/project1-images/final-design.mp4"
+                width={420}
+                height={860}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-auto w-[200px] sm:w-[240px] md:w-[320px] rounded-xl object-contain"
+              />
+            </div>
+          </div>
+          
         </div>
 
         <motion.div
