@@ -15,7 +15,7 @@ export default function Prototype() {
             align="center"
           />
 
-          <p className="mx-auto mt-3 text-left text-xs md:text-base text-white/85 leading-snug md:leading-normal max-w-[900px]">
+          <p className="mt-3 text-left text-xs md:text-base text-white/85 leading-snug md:leading-normal">
             After exploring different page layouts, I refined my wireframes into
             low-fidelity prototypes. Connecting the pages helped validate
             navigation, booking flows, and onboarding interactions before moving
