@@ -111,15 +111,17 @@ export default function CaseStudies() {
                         transition: { duration: 0.55, ease: easeOut, delay: i * 0.06 },
                       })}
                       className="
-                        group relative overflow-hidden rounded-3xl
-                        border border-white/10 ring-1 ring-inset ring-white/10
-                        bg-white/[0.05] backdrop-blur-md
-                        shadow-[0_10px_40px_rgba(0,0,0,0.40)]
-                        transition-all duration-300
-                        hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
-                        hover:-translate-y-1
-                        flex flex-col
-                        min-h-[320px] md:min-h-[380px]
+                      group relative overflow-hidden rounded-3xl
+                      border border-white/10 ring-1 ring-inset ring-white/10
+                      bg-white/[0.05] backdrop-blur-md
+                      shadow-[0_10px_40px_rgba(0,0,0,0.40)]
+                      transition-all duration-300
+                      hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
+                      hover:-translate-y-1
+                      flex flex-col
+                    
+                      w-full
+                      max-w-[380px]   
                       "
                     >
                       <div className="p-6 md:p-7 flex flex-col h-full">
