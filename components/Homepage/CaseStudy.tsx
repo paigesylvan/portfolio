@@ -35,7 +35,8 @@ const studies: Study[] = [
   },
   {
     slug: "/projects/camping",
-    title: "How Thoughtful UX Design Increases Engagement for First-Time Campers",
+    title:
+      "How Thoughtful UX Design Increases Engagement for First-Time Campers",
     subtitle:
       "A responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear",
     tags: ["UX-UI", "User Flow", "Usability Testing"],
@@ -120,112 +121,115 @@ export default function CaseStudies() {
 
       {/* Content layer */}
       <div className="relative z-10 pb-36 lg:pb-48">
-        <h2 className="ml-[355px] text-left mb-10 text-[11px] tracking-[0.22em] text-white/60">
-          CASE STUDIES
-        </h2>
+        {/* ✅ Centered container for header + list */}
+        <div className="mx-auto w-full max-w-[1100px] px-6 sm:px-6">
+          <h2 className="mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
+            CASE STUDIES
+          </h2>
 
-        <LazyMotion features={domAnimation}>
-          <MotionConfig reducedMotion="user">
-            <div className="space-y-10 lg:space-y-16">
-              {studies.map((s, idx) => {
-                const ArticleComp = shouldAnimate ? m.article : "article";
-                const ImageWrapComp = shouldAnimate ? m.div : "div";
-                const PieceComp = shouldAnimate ? m.div : "div";
-                const TitleComp = shouldAnimate ? m.h3 : "h3";
-                const TextComp = shouldAnimate ? m.p : "p";
+          <LazyMotion features={domAnimation}>
+            <MotionConfig reducedMotion="user">
+              <div className="space-y-10 lg:space-y-16">
+                {studies.map((s, idx) => {
+                  const ArticleComp = shouldAnimate ? m.article : "article";
+                  const ImageWrapComp = shouldAnimate ? m.div : "div";
+                  const PieceComp = shouldAnimate ? m.div : "div";
+                  const TitleComp = shouldAnimate ? m.h3 : "h3";
+                  const TextComp = shouldAnimate ? m.p : "p";
 
-                return (
-                  <ArticleComp
-                    key={s.slug}
-                    {...(shouldAnimate && {
-                      variants: card,
-                      initial: "hidden",
-                      whileInView: "show",
-                      viewport: {
-                        once: true,
-                        amount: 0.35,
-                        margin: "0px 0px -10% 0px",
-                      },
-                    })}
-                    className="case-card group md:transform-gpu md:will-change-transform"
-                  >
-                    <div className="grid items-center gap-6 md:grid-cols-12">
-                      {/* image */}
-                      <ImageWrapComp
-                        {...(shouldAnimate && { variants: imageWrap })}
-                        className="md:col-span-5"
-                      >
-                        <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
-                          <div className="relative">
-                            <Image
-                              src={s.image}
-                              alt={s.imageAlt}
-                              width={600}
-                              height={450}
-                              sizes="(min-width: 768px) 300px, 220px"
-                              className="h-[180px] w-auto md:h-[300px] object-contain"
-                              priority={idx === 0}
-                            />
-                            <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+                  return (
+                    <ArticleComp
+                      key={s.slug}
+                      {...(shouldAnimate && {
+                        variants: card,
+                        initial: "hidden",
+                        whileInView: "show",
+                        viewport: {
+                          once: true,
+                          amount: 0.35,
+                          margin: "0px 0px -10% 0px",
+                        },
+                      })}
+                      className="case-card group md:transform-gpu md:will-change-transform"
+                    >
+                      <div className="grid items-center gap-6 md:grid-cols-12">
+                        {/* image */}
+                        <ImageWrapComp
+                          {...(shouldAnimate && { variants: imageWrap })}
+                          className="md:col-span-5"
+                        >
+                          <div className="mx-auto max-w-[220px] md:max-w-[300px] flex justify-center">
+                            <div className="relative">
+                              <Image
+                                src={s.image}
+                                alt={s.imageAlt}
+                                width={600}
+                                height={450}
+                                sizes="(min-width: 768px) 300px, 220px"
+                                className="h-[180px] w-auto md:h-[300px] object-contain"
+                                priority={idx === 0}
+                              />
+                              <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
+                            </div>
                           </div>
+                        </ImageWrapComp>
+
+                        {/* text */}
+                        <div className="md:col-span-7 lg:pl-12 pl-0">
+                          <PieceComp
+                            {...(shouldAnimate && { variants: piece })}
+                            className="mb-3 flex flex-wrap gap-1 lg:gap-2"
+                          >
+                            {s.tags.map((t) => (
+                              <span key={t} className="chip">
+                                {t}
+                              </span>
+                            ))}
+                          </PieceComp>
+
+                          <TitleComp
+                            {...(shouldAnimate && { variants: piece })}
+                            className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
+                          >
+                            {s.title}
+                          </TitleComp>
+
+                          <TextComp
+                            {...(shouldAnimate && { variants: piece })}
+                            className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
+                          >
+                            {s.subtitle}
+                          </TextComp>
+
+                          <PieceComp {...(shouldAnimate && { variants: piece })}>
+                            <Link href={s.slug} className="cta-btn group mt-6">
+                              <span>{s.cta ?? "View Case Study"}</span>
+                              <span className="cta-icon">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="w-3.5 h-3.5"
+                                >
+                                  <path d="M5 12h14" />
+                                  <path d="m12 5 7 7-7 7" />
+                                </svg>
+                              </span>
+                            </Link>
+                          </PieceComp>
                         </div>
-                      </ImageWrapComp>
-
-                      {/* text */}
-                      <div className="md:col-span-7 lg:pl-12 pl-4">
-                        <PieceComp
-                          {...(shouldAnimate && { variants: piece })}
-                          className="mb-3 flex flex-wrap gap-1 lg:gap-2"
-                        >
-                          {s.tags.map((t) => (
-                            <span key={t} className="chip">
-                              {t}
-                            </span>
-                          ))}
-                        </PieceComp>
-
-                        <TitleComp
-                          {...(shouldAnimate && { variants: piece })}
-                          className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
-                        >
-                          {s.title}
-                        </TitleComp>
-
-                        <TextComp
-                          {...(shouldAnimate && { variants: piece })}
-                          className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
-                        >
-                          {s.subtitle}
-                        </TextComp>
-
-                        <PieceComp {...(shouldAnimate && { variants: piece })}>
-                          <Link href={s.slug} className="cta-btn group mt-6">
-                            <span>{s.cta ?? "View Case Study"}</span>
-                            <span className="cta-icon">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="w-3.5 h-3.5"
-                              >
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                              </svg>
-                            </span>
-                          </Link>
-                        </PieceComp>
                       </div>
-                    </div>
-                  </ArticleComp>
-                );
-              })}
-            </div>
-          </MotionConfig>
-        </LazyMotion>
+                    </ArticleComp>
+                  );
+                })}
+              </div>
+            </MotionConfig>
+          </LazyMotion>
+        </div>
       </div>
     </section>
   );
