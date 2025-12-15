@@ -227,7 +227,7 @@ export default function TimelineAbout() {
 
   return (
     <section className="relative isolate px-6 bg-black text-white pb-28 md:pb-36">
-      <div className="text-center relative">
+      <div className="text-left relative">
         <p className="text-[11px] tracking-[0.22em] text-white/60">THE PATH SO FAR</p>
         <h2 className="mt-2 text-3xl md:text-5xl font-bold mb-16 md:mb-24">My Journey</h2>
       </div>
@@ -475,7 +475,7 @@ function TimelineRow({
             border border-white/10 ring-1 ring-inset ring-white/10
             bg-white/[0.05] backdrop-blur-md
             shadow-[0_12px_50px_rgba(0,0,0,0.45)]
-            px-6 md:p-8 mx-1 lg:mx-0
+            px-6 md:p-8
           "
         >
           {/* tiny top sheen */}
