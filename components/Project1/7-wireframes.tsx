@@ -39,14 +39,14 @@ export default function Wireframes() {
 
   return (
     <section className="flex flex-col items-center justify-center px-4 md:px-4 text-white py-10 md:py-14 mt-12 lg:mt-0">
-      <div className="w-full max-w-6xl mx-auto">
+      <div className="w-full max-w-[1000px] mx-auto">
         <SectionHeader
           kicker="LOW-FI EXPLORATION"
           title="Key Wireframes"
           align="center"
         />
 
-        <p className="mx-auto mt-3 max-w-[300px] lg:max-w-5xl text-center text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
+        <p className="mx-auto mt-3 max-w-[300px] lg:max-w-5xl text-left text-white/75 text-[10px] md:text-base leading-snug md:leading-snug mb-4 lg:mb-0">
           I began sketching early concepts of the pages. These quick sketches
           allowed me to explore layouts and content hierarchy. I tested
           different navigation bar options to see which would enhance usability

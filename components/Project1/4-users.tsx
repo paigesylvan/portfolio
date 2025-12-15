@@ -11,8 +11,6 @@ export default function UsersSection() {
         kicker="USER PERSONAS"
         title="Who's Behind the Experience"
         align="center"
-        kickerClassName="ml-24"
-        titleClassName="ml-24"
       />
 
       <p className="mx-auto mt-4 max-w-[300px] lg:max-w-4xl text-left text-white/80 text-xs lg:text-base">
