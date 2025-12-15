@@ -15,7 +15,7 @@ export default function Testing() {
             align="center"
           />
 
-          <div className="mx-auto mt-3 max-w-[620px] text-left">
+          <div className="mx-auto mt-3 text-left">
             <p className="text-[10px] md:text-base text-white/75 leading-snug md:leading-snug">
               After developing low-fidelity prototypes, I conducted a moderated usability test with a participant
               representative of the target user. They completed key booking tasks using a think-aloud protocol,
