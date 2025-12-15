@@ -1,26 +1,38 @@
 "use client";
 
-type Props = {
-  kicker: string;
-  title: string;
-  align?: "left" | "center";
-  kickerClassName?: string;
-  titleClassName?: string;
-  className?: string;
-};
+import React from "react";
 
 export default function SectionHeader({
   kicker,
   title,
   align = "left",
-  kickerClassName = "",
   titleClassName = "",
-  className = "",
-}: Props) {
+  kickerClassName = "",
+}: {
+  kicker?: string;
+  title: string;
+  align?: "left" | "center" | "right";
+  titleClassName?: string;
+  kickerClassName?: string;
+}) {
   return (
-    <div className={`w-full ${align === "center" ? "text-center" : "text-left"} ${className}`}>
-      <p className={`tracking-[0.22em] text-white/60 ${kickerClassName}`}>{kicker}</p>
-      <h2 className={`mt-2 font-semibold leading-tight ${titleClassName}`}>{title}</h2>
-    </div>
+    <header className={`text-${align}`}>
+      {kicker && (
+        <p
+          className={`text-left accent-text uppercase tracking-[0.12em] ${
+            kickerClassName || "text-[10px] lg:text-xs"
+          }`}
+        >
+          {kicker}
+        </p>
+      )}
+      <h2
+        className={`text-left font-semibold leading-tight lg:mt-2 text-white ${
+          titleClassName || "text-xl md:text-3xl"
+        }`}
+      >
+        {title}
+      </h2>
+    </header>
   );
 }
