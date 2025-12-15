@@ -35,8 +35,7 @@ const studies: Study[] = [
   },
   {
     slug: "/projects/camping",
-    title:
-      "How Thoughtful UX Design Increases Engagement for First-Time Campers",
+    title: "How Thoughtful UX Design Increases Engagement for First-Time Campers",
     subtitle:
       "A responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear",
     tags: ["UX-UI", "User Flow", "Usability Testing"],
@@ -56,17 +55,14 @@ const studies: Study[] = [
   },
 ];
 
-// detect mobile
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < breakpoint);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, [breakpoint]);
-
   return isMobile;
 }
 
@@ -94,41 +90,30 @@ export default function CaseStudies() {
 
   const piece = {
     hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.45, ease: easeOut },
-    },
+    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: easeOut } },
   };
 
   const imageWrap = {
     hidden: { opacity: 0, y: 10, scale: 0.985 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.5, ease: easeOut },
-    },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: easeOut } },
   };
 
   return (
     <section
       id="case-studies"
       className="
-        relative bg-black text-white
-        overflow-hidden
+        relative bg-black text-white overflow-hidden
         py-16 lg:py-24
         scroll-mt-28 md:scroll-mt-40
+        w-screen left-1/2 -translate-x-1/2
       "
     >
       {/* Bottom aurora / hue */}
       <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
 
-      {/* Content layer */}
       <div className="relative z-10">
-        {/* ✅ centered + padded container */}
-        <div className="mx-auto w-full max-w-[1100px] px-6 sm:px-8">
-          {/* ✅ NO hard-coded margin-left */}
+        {/* Inner centered + padded container */}
+        <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-8">
           <h2 className="mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
             CASE STUDIES
           </h2>
@@ -150,11 +135,7 @@ export default function CaseStudies() {
                         variants: card,
                         initial: "hidden",
                         whileInView: "show",
-                        viewport: {
-                          once: true,
-                          amount: 0.35,
-                          margin: "0px 0px -10% 0px",
-                        },
+                        viewport: { once: true, amount: 0.35, margin: "0px 0px -10% 0px" },
                       })}
                       className="
                         case-card group
