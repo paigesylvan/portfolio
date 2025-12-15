@@ -45,7 +45,10 @@ function Donut({
   const inView = useInView(ref, { amount: 0.35, once: true });
 
   return (
-    <div ref={ref} className="flex flex-col items-center text-center">
+    <div
+      ref={ref}
+      className="flex flex-col items-center text-center min-w-[120px]"
+    >
       <svg
         width={size}
         height={size}
@@ -114,73 +117,68 @@ export default function ResearchInsights() {
   return (
     <section className="px-4 sm:px-6">
       <div className="mx-auto w-full max-w-[1000px] lg:mt-8">
-        <div className="text-center">
+        {/* Header */}
+        <div className="text-left mb-10">
           <SectionHeader
             kicker="MARKET RESEARCH"
             title="Exploring the Grooming Space"
-            align="center"
+            align="left"
           />
         </div>
 
-        {/* ✅ Donuts row on top */}
-        <div className="mt-8 lg:mt-10 flex flex-wrap items-start justify-center gap-5 lg:gap-8">
-          <Donut
-            percent={67}
-            captionTop="of U.S. households"
-            label={"own at least one dog"}
-            delay={0.0}
-            size={donutSize}
-            stroke={donutStroke}
-          />
-          <Donut
-            percent={73}
-            captionTop="of pet owners prefer"
-            label={"scheduling appointments\nonline"}
-            delay={0.12}
-            size={donutSize}
-            stroke={donutStroke}
-          />
-          <Donut
-            percent={45}
-            captionTop="of pet owners find it"
-            label={"challenging to schedule\ngrooming services"}
-            delay={0.24}
-            size={donutSize}
-            stroke={donutStroke}
-          />
-        </div>
-
-        {/* ✅ Text content underneath */}
-        <div className="mt-10 lg:mt-12">
-          <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-5 md:p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] w-full">
-            <h3 className="text-xl md:text-3xl text-white mb-2 lg:mb-2.5">
-              Market Insights
-            </h3>
-
-            <p className="text-white/80 text-[12px] lg:text-[13px] leading-snug">
-              I conducted secondary research by analyzing app reviews, service
-              provider websites, and pet-care forums to learn how dog grooming
-              digital experiences feel to users today. Through my research I found:
-            </p>
-
-            <ul className="mt-3 lg:mt-4 space-y-1 text-white/70 text-[12px] lg:text-[13px]">
-              <li>• There’s a gap in user-friendly grooming apps overall.</li>
-              <li className="leading-snug">
-                • Many groomers rely on outdated websites and phone calls to book appointments.
-              </li>
-              <li className="leading-snug">
-                • First-time users are seeking reassurance their dog will be treated with care.
-              </li>
-              <li>• Users worry about timing, delays, and unexpected changes.</li>
-            </ul>
-
-            <p className="mt-5 lg:mt-8 text-white/90 leading-relaxed text-[12px] lg:text-[13px]">
-              <span className="font-semibold leading-snug text-[#9DC0FF]">
-                Key takeaway:
-              </span>{" "}
-              Trust, transparency, and clear communication matter as much as convenience.
-            </p>
+        {/* ✅ Donuts — evenly spaced across width */}
+        <div className="mb-10">
+          <div className="flex justify-between items-start">
+            <Donut
+              percent={67}
+              captionTop="of U.S. households"
+              label={"own at least one dog"}
+              delay={0}
+              size={donutSize}
+              stroke={donutStroke}
+            />
+            <Donut
+              percent={73}
+              captionTop="of pet owners prefer"
+              label={"scheduling appointments\nonline"}
+              delay={0.12}
+              size={donutSize}
+              stroke={donutStroke}
+            />
+            <Donut
+              percent={45}
+              captionTop="of pet owners find it"
+              label={"challenging to schedule\ngrooming services"}
+              delay={0.24}
+              size={donutSize}
+              stroke={donutStroke}
+            />
           </div>
+        </div>
+
+        {/* Content card */}
+        <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-6 md:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+          <h3 className="text-xl md:text-3xl text-white mb-2">
+            Market Insights
+          </h3>
+
+          <p className="text-white/80 text-[12px] lg:text-[13px] leading-snug">
+            I conducted secondary research by analyzing app reviews, service
+            provider websites, and pet-care forums to learn how dog grooming
+            digital experiences feel to users today. Through my research I found:
+          </p>
+
+          <ul className="mt-4 space-y-1 text-white/70 text-[12px] lg:text-[13px]">
+            <li>• There’s a gap in user-friendly grooming apps overall.</li>
+            <li>• Many groomers rely on outdated websites and phone calls.</li>
+            <li>• First-time users seek reassurance their dog will be treated with care.</li>
+            <li>• Users worry about timing, delays, and unexpected changes.</li>
+          </ul>
+
+          <p className="mt-6 text-white/90 text-[12px] lg:text-[13px]">
+            <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
+            Trust, transparency, and clear communication matter as much as convenience.
+          </p>
         </div>
       </div>
     </section>
