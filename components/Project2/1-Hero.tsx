@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function HeroOverviewCamping() {
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14 lg:mt-[50px]">
+    <section className="w-screen bg-black text-white flex flex-col justify-center py-10 md:py-14 lg:mt-[50px] pl-1">
       <div className="max-w-[1000px] ">
 
           <SectionHeader

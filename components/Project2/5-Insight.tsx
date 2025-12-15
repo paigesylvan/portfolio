@@ -79,7 +79,7 @@ export default function KeyInsights() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-12 lg:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
+          className="mt-12 lg:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 justify-items-center"
         >
           {insights.map((i) => (
             <motion.div

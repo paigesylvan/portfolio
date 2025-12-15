@@ -36,7 +36,7 @@ export default function Wireframes() {
 
   return (
     <section className="flex min-h-[100svh] flex-col items-center justify-center px-3 sm:px-4 text-white mt-20 lg:mt-12 pb-6">
-      <div className="w-[1000px] mx-auto">
+      <div className="max-w-[1000px] mx-auto">
         <SectionHeader kicker="LOW-FI EXPLORATION" title="Key Wireframes" align="center" />
 
         <p className="mx-auto mt-2 lg:mt-3 text-left text-white/80 text-xs md:text-md leading-snug">

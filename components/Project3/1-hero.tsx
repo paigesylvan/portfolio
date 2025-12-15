@@ -27,7 +27,7 @@ export default function HeroOverviewDryCleaner() {
   const skillsRow2 = ["Wireframing", "Prototyping", "Responsive Website", "Usability Testing", ];
 
   return (
-    <section className="w-screen bg-black text-white flex flex-col justify-center md:py-16 mt-16">
+    <section className="w-screen bg-black text-white flex flex-col justify-center md:py-16 mt-16 sm:pl-1">
       <div className="max-w-[1000px]">
         <div className="text-left">
           <SectionHeader
