@@ -103,7 +103,12 @@ export default function CaseStudies() {
       "
     >
       {/* aurora */}
-      <div className="    cs-aurora-bottom pointer-events-none absolute bottom-0 h-[32vh] w-screen z-0 opacity-30" />
+      <div className="    cs-aurora-bottom
+    pointer-events-none
+    absolute inset-x-0 bottom-0
+    h-[32vh]
+    z-0
+    opacity-60" />
 
       {/* ✅ same container rules as Skills */}
       <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6">
