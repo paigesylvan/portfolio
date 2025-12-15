@@ -191,7 +191,7 @@ export default function AboutHeroLaptop() {
               {/* center glow behind laptop */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-[28px] bottom-12"
+                className="pointer-events-none absolute inset-0 rounded-[28px] mb-36"
                 style={{
                   backgroundImage: [
                     "radial-gradient(560px 420px at 50% 55%, rgba(0,196,255,0.20) 0%, rgba(0,196,255,0.08) 45%, rgba(0,0,0,0) 75%)",
