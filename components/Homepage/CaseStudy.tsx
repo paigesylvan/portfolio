@@ -3,13 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  LazyMotion,
-  domAnimation,
-  MotionConfig,
-  m,
-  useReducedMotion,
-} from "framer-motion";
+import { LazyMotion, domAnimation, MotionConfig, m, useReducedMotion } from "framer-motion";
 
 type Study = {
   slug: string;
@@ -79,23 +73,8 @@ export default function CaseStudies() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: easeOut,
-        staggerChildren: 0.06,
-        when: "beforeChildren",
-      },
+      transition: { duration: 0.5, ease: easeOut },
     },
-  };
-
-  const piece = {
-    hidden: { opacity: 0, y: 10 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: easeOut } },
-  };
-
-  const imageWrap = {
-    hidden: { opacity: 0, y: 10, scale: 0.985 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: easeOut } },
   };
 
   return (
@@ -104,29 +83,22 @@ export default function CaseStudies() {
       className="
         relative bg-black text-white overflow-hidden
         py-16 lg:py-24
-        scroll-mt-28 md:scroll-mt-40
         w-screen left-1/2 -translate-x-1/2
       "
     >
-      {/* Bottom aurora / hue */}
-      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
-
       <div className="relative z-10">
-        {/* Inner centered + padded container */}
-        <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-8">
-          <h2 className="mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
+        {/* SAME container + padding style as Skills */}
+        <div className="mx-auto w-full max-w-[1100px] px-6">
+          <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
             CASE STUDIES
           </h2>
 
           <LazyMotion features={domAnimation}>
             <MotionConfig reducedMotion="user">
-              <div className="space-y-10 lg:space-y-16 pb-20 lg:pb-28">
-                {studies.map((s, idx) => {
+              {/* SAME grid behavior as Skills (3-up desktop, stacked mobile) */}
+              <div className="grid gap-5 md:grid-cols-3">
+                {studies.map((s, i) => {
                   const ArticleComp = shouldAnimate ? m.article : "article";
-                  const ImageWrapComp = shouldAnimate ? m.div : "div";
-                  const PieceComp = shouldAnimate ? m.div : "div";
-                  const TitleComp = shouldAnimate ? m.h3 : "h3";
-                  const TextComp = shouldAnimate ? m.p : "p";
 
                   return (
                     <ArticleComp
@@ -135,86 +107,74 @@ export default function CaseStudies() {
                         variants: card,
                         initial: "hidden",
                         whileInView: "show",
-                        viewport: { once: true, amount: 0.35, margin: "0px 0px -10% 0px" },
+                        viewport: { once: true, amount: 0.25 },
+                        transition: { duration: 0.55, ease: easeOut, delay: i * 0.06 },
                       })}
                       className="
-                        case-card group
-                        rounded-3xl
+                        group relative overflow-hidden rounded-3xl
                         border border-white/10 ring-1 ring-inset ring-white/10
-                        bg-white/[0.04] backdrop-blur-md
-                        shadow-[0_18px_70px_rgba(0,0,0,0.45)]
-                        px-5 sm:px-7 py-6 sm:py-7
+                        bg-white/[0.05] backdrop-blur-md
+                        shadow-[0_10px_40px_rgba(0,0,0,0.40)]
+                        transition-all duration-300
+                        hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
+                        hover:-translate-y-1
+                        flex flex-col
+                        min-h-[320px] md:min-h-[380px]
                       "
                     >
-                      <div className="grid items-center gap-6 md:grid-cols-12">
+                      <div className="p-6 md:p-7 flex flex-col h-full">
+                        {/* tags row */}
+                        <div className="mb-3 flex flex-wrap gap-1.5">
+                          {s.tags.map((t) => (
+                            <span key={t} className="chip">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* ✅ Title in SAME spot as Skill title */}
+                        <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
+                          {s.title}
+                        </h3>
+
                         {/* image */}
-                        <ImageWrapComp
-                          {...(shouldAnimate && { variants: imageWrap })}
-                          className="md:col-span-5"
-                        >
-                          <div className="mx-auto max-w-[240px] md:max-w-[320px] flex justify-center">
-                            <div className="relative">
-                              <Image
-                                src={s.image}
-                                alt={s.imageAlt}
-                                width={700}
-                                height={520}
-                                sizes="(min-width: 768px) 320px, 240px"
-                                className="h-[190px] w-auto md:h-[320px] object-contain"
-                                priority={idx === 0}
-                              />
-                              <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
-                            </div>
-                          </div>
-                        </ImageWrapComp>
+                        <div className="mt-4 flex justify-center">
+                          <Image
+                            src={s.image}
+                            alt={s.imageAlt}
+                            width={520}
+                            height={380}
+                            sizes="(min-width: 768px) 33vw, 90vw"
+                            className="h-[150px] md:h-[170px] w-auto object-contain opacity-95"
+                            priority={i === 0}
+                          />
+                        </div>
 
-                        {/* text */}
-                        <div className="md:col-span-7 md:pl-8 lg:pl-12">
-                          <PieceComp
-                            {...(shouldAnimate && { variants: piece })}
-                            className="mb-3 flex flex-wrap gap-1.5 lg:gap-2"
-                          >
-                            {s.tags.map((t) => (
-                              <span key={t} className="chip">
-                                {t}
-                              </span>
-                            ))}
-                          </PieceComp>
+                        {/* subtitle */}
+                        <p className="mt-4 text-white/80 leading-snug text-[12px] md:text-[13px]">
+                          {s.subtitle}
+                        </p>
 
-                          <TitleComp
-                            {...(shouldAnimate && { variants: piece })}
-                            className="font-bold leading-tight text-[16px] md:text-[20px] lg:w-[92%]"
-                          >
-                            {s.title}
-                          </TitleComp>
-
-                          <TextComp
-                            {...(shouldAnimate && { variants: piece })}
-                            className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
-                          >
-                            {s.subtitle}
-                          </TextComp>
-
-                          <PieceComp {...(shouldAnimate && { variants: piece })}>
-                            <Link href={s.slug} className="cta-btn group mt-6">
-                              <span>{s.cta ?? "View Case Study"}</span>
-                              <span className="cta-icon">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="w-3.5 h-3.5"
-                                >
-                                  <path d="M5 12h14" />
-                                  <path d="m12 5 7 7-7 7" />
-                                </svg>
-                              </span>
-                            </Link>
-                          </PieceComp>
+                        {/* CTA pinned to bottom (same “feel” as Skills consistency) */}
+                        <div className="mt-auto pt-5">
+                          <Link href={s.slug} className="cta-btn group">
+                            <span>{s.cta ?? "View Case Study"}</span>
+                            <span className="cta-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="w-3.5 h-3.5"
+                              >
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                              </svg>
+                            </span>
+                          </Link>
                         </div>
                       </div>
                     </ArticleComp>
