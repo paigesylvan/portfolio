@@ -104,11 +104,11 @@ export default function CaseStudies() {
       "
     >
       {/* aurora */}
-      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[32vh] pointer-events-none z-0 opacity-60" />
+      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[24vh] pointer-events-none z-0 opacity-60 pt-12" />
 
       {/* ✅ same container rules as Skills */}
       <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6">
-        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
+        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60 lg:pl-1">
           CASE STUDIES
         </h2>
 
