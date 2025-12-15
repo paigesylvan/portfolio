@@ -70,21 +70,21 @@ export default function TestingIterationCamping() {
               <div>
                 <MiniImage src="/images/project2-images/clarity.png" alt="Clarity" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Clarity</h4>
-                <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
+                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Do users quickly grasp what the site offers?
                 </p>
               </div>
               <div>
                 <MiniImage src="/images/project2-images/navigation.png" alt="Navigation" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Navigation</h4>
-                <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
+                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Can users move from discovery to purchase without friction?
                 </p>
               </div>
               <div>
                 <MiniImage src="/images/project2-images/confidence.png" alt="Confidence" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Confidence</h4>
-                <p className="mt-1 text-[12px] text-white/70 leading-snug mb-8 lg:mb-0">
+                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0">
                   Do tighter bundles + clear copy raise purchase confidence?
                 </p>
               </div>
@@ -102,18 +102,18 @@ export default function TestingIterationCamping() {
             <h3 className="text-base md:text-lg font-semibold text-white mt-2">
               Moderated Usability Testing
             </h3>
-            <p className="mt-2 text-[12px] text-white/75 leading-snug">
+            <p className="mt-2 text-[12px] md:text-[13px] text-white/75 leading-snug">
               I ran a{" "}
               <span className="font-semibold text-[#00C67C]">moderated usability test</span>{" "}
               with one participant. During the session, I:
             </p>
-            <ul className="mt-2 space-y-1 list-disc pl-4 text-white/75 text-[12px] leading-snug">
+            <ul className="mt-2 space-y-1 list-disc pl-4 text-white/75 text-[12px] md:text-[13px] leading-snug">
               <li>Gave realistic tasks (e.g., find and add the Starter Bundle).</li>
               <li>Observed navigation and moments of hesitation/confidence.</li>
               <li>Recorded the click path and qualitative impressions.</li>
               <li>Asked follow-ups to understand reasoning behind choices.</li>
             </ul>
-            <p className="mt-2 text-[12px] text-white/70 leading-snug">
+            <p className="mt-2 text-[12px] md:text-[13px] text-white/70 leading-snug">
               Even with a single participant, the test revealed how a first-time
               visitor interprets the homepage and moves through the flow.
             </p>
@@ -139,11 +139,11 @@ export default function TestingIterationCamping() {
             <h3 className="text-base md:text-lg font-semibold text-white mt-2">
               Key Design Adjustments
             </h3>
-            <ul className="mt-2 space-y-1 list-disc pl-4 text-white/75 text-[12px] leading-snug">
+            <ul className="mt-2 space-y-1 list-disc pl-4 text-white/75 text-[12px] md:text-[13px] leading-snug">
               <li>Elevated the Starter Bundle on the homepage with clearer context.</li>
               <li>Simplified checkout copy and item details to reassure purchases.</li>
             </ul>
-            <p className="mt-2 text-[12px] text-white/70 leading-snug">
+            <p className="mt-2 text-[12px] md:text-[13px] text-white/70 leading-snug">
               These changes balanced simplicity and trust. Clear explanations +
               streamlined selection increased confidence to complete a purchase.
             </p>
@@ -166,7 +166,7 @@ export default function TestingIterationCamping() {
                 <p className="text-[10px] tracking-[0.22em] text-[#00C67C] font-semibold">
                   CLARITY
                 </p>
-                <ul className="mt-1 space-y-0.5 list-disc pl-4 text-white/70 text-[12px] leading-snug">
+                <ul className="mt-1 space-y-0.5 list-disc pl-4 text-white/70 text-[12px] md:text-[13px] leading-snug">
                   <li>Homepage conveyed intent clearly.</li>
                   <li>Users understood the Starter Bundle quickly.</li>
                 </ul>
@@ -175,7 +175,7 @@ export default function TestingIterationCamping() {
                 <p className="text-[9px] tracking-[0.22em] text-[#00C67C] font-semibold">
                   NAVIGATION
                 </p>
-                <ul className="mt-1 space-y-0.5 list-disc pl-4 text-white/70 text-[12px] leading-snug">
+                <ul className="mt-1 space-y-0.5 list-disc pl-4 text-white/70 text-[12px] md:text-[13px] leading-snug">
                   <li>Starter Bundle felt like a natural entry point.</li>
                   <li>Some hesitation at checkout—wanted reassurance.</li>
                 </ul>
@@ -184,7 +184,7 @@ export default function TestingIterationCamping() {
                 <p className="text-[9px] tracking-[0.22em] text-[#00C67C] font-semibold">
                   CONFIDENCE
                 </p>
-                <ul className="mt-1 space-y-0.5 list-disc pl-4 text-white/70 text-[12px] leading-snug">
+                <ul className="mt-1 space-y-0.5 list-disc pl-4 text-white/70 text-[12px] md:text-[13px] leading-snug">
                   <li>Fewer options reduced decision fatigue.</li>
                   <li>Needed supportive copy for bundles.</li>
                 </ul>

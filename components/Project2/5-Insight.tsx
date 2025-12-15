@@ -67,7 +67,7 @@ export default function KeyInsights() {
       <div className="w-full max-w-[1000px] mx-auto">
         <SectionHeader kicker="KEY INSIGHTS" title="Findings From Research" align="center" />
 
-        <p className="text-left text-[10px] sm:text-sm md:text-md text-white/70 leading-snug mx-auto mt-3">
+        <p className="text-left text-[12px] md:text-[13px] text-white/70 leading-snug mx-auto mt-3">
           User journeys and mind mapping helped identify where first-time campers
           felt uncertain or overwhelmed. These methods revealed core pain points
           and guided the design goals shown below, ensuring design decisions are
@@ -105,17 +105,17 @@ export default function KeyInsights() {
                 <h3 className="text-sm sm:text-base md:text-md font-semibold">
                   {i.title}
                 </h3>
-                <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-white/80 leading-snug">
+                <p className="mt-2 sm:mt-3 text-[10px] md:text-[11px] text-white/80 leading-snug">
                   {i.body}
                 </p>
               </div>
 
               <div className="mt-4 sm:mt-6">
                 <div className="h-px w-10 sm:w-8 mx-auto bg-emerald-400/40" />
-                <p className="mt-3 text-[10px] tracking-[0.22em] text-emerald-300/90">
+                <p className="mt-3 text-[10px] tracking-[0.22em] text-emerald-300/90 font-semibold">
                   DESIGN GOAL
                 </p>
-                <p className="mt-2 text-xs sm:text-sm leading-snug text-emerald-200/95">
+                <p className="mt-2 text-[10px] md:text-[11px] leading-snug text-emerald-200/95">
                   {i.goal}
                 </p>
               </div>

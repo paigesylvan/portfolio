@@ -37,7 +37,7 @@ export default function OutcomeCamping() {
               <h3 className="text-sm md:text-base font-semibold">
                 What improved after testing
               </h3>
-              <ul className="mt-3 space-y-3 text-[10px] sm:text-[11px] leading-snug text-white/85">
+              <ul className="mt-3 space-y-3 text-[12px] md:text-[13px] leading-snug text-white/85">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <p>
@@ -73,11 +73,11 @@ export default function OutcomeCamping() {
             {/* Next Steps bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
               <h4 className="text-xs md:text-sm font-semibold">Next steps</h4>
-              <p className="mt-2 text-[10px] sm:text-[11px] leading-snug text-white/85">
+              <p className="mt-2 text-[12px] md:text-[13px] leading-snug text-white/85">
                 Opportunities remain to continue improving confidence and clarity:
               </p>
 
-              <ul className="mt-4 space-y-4 text-[10px] sm:text-[11px] text-white/80 leading-snug">
+              <ul className="mt-4 space-y-4 text-[12px] md:text-[13px] text-white/80 leading-snug">
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
                   <div>

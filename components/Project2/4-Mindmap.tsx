@@ -13,7 +13,7 @@ export default function MindMap() {
           align="center"
         />
 
-        <p className="mx-auto mt-2 lg:mt-4  text-white/85 leading-snug md:leading-normal text-xs md:text-sm lg:text-md">
+        <p className="mx-auto mt-2 lg:mt-4  text-white/85 leading-snug text-[12px] md:text-[13px]">
           After mapping the user journey, I created a mind map to explore how different user goals,
           pain points, and personas could translate into the website’s needs and features.
           This helped visualize the relationships between problems and possible solutions,

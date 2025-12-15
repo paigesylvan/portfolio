@@ -15,7 +15,7 @@ export default function BeginnerFlow() {
         />
 
         <div className="mb-6 md:mb-8 flex justify-center">
-          <p className="mt-3 mx-auto text-white/85 text-xs sm:text-sm md:text-md leading-snug lg:leading-relaxed text-left">
+          <p className="mt-3 mx-auto text-white/85 text-[12px] md:text-[13px] leading-snug lg:leading-relaxed text-left">
           After my user research, my goal was to simplify the layout, curating gear selections,
           and clearly communicating value. Every design choice, from the streamlined bundle
           presentation to the guided add-on options, was made to reduce decision fatigue and build
