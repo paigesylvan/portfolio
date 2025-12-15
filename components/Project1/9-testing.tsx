@@ -27,7 +27,7 @@ export default function Testing() {
           </p>
 
           <h4 className="mt-4 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF]">
-            Positive signals
+            POSITIVE SIGNALS
           </h4>
           <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug">
             <li>The booking flow was straightforward.</li>
@@ -35,7 +35,7 @@ export default function Testing() {
           </ul>
 
           <h4 className="mt-4 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF]">
-            Identified friction
+            IDENTIFIED FRICTION
           </h4>
           <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug">
             <li>Appointment status was unclear after booking.</li>
@@ -44,7 +44,7 @@ export default function Testing() {
           </ul>
 
           <h4 className="mt-4 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF]">
-            Design adjustments based on insights
+            DESIGN ADJUSTMENTS BASED ON INSIGHTS
           </h4>
           <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug">
             <li>
@@ -110,10 +110,10 @@ export default function Testing() {
                 />
               </div>
 
-              <p className="mt-2 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
+              <p className="mt-2 text-[10px] md:text-[11px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
                 {card.title}
               </p>
-              <p className="mt-1 text-[10px] md:text-base text-white/70 text-center leading-tight">
+              <p className="mt-1 text-[9px] md:text-[10px] text-white/70 text-center leading-tight">
                 {card.desc}
               </p>
             </div>

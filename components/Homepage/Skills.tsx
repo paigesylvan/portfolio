@@ -52,7 +52,7 @@ export default function Skills() {
     >
       {/* ✅ one centered container controls header + cards */}
       <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
-        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
+        <h2 className="ml-4 mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
           SKILLS
         </h2>
 

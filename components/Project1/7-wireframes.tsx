@@ -76,7 +76,7 @@ export default function Wireframes() {
         </motion.div>
 
         <p className="mt-6 tracking-[0.18em] uppercase text-center text-[10px] md:text-[11px] text-[#7FB2FF] font-semibold">
-          Homepage Wireframes
+          HOMEPAGE WIREFRAMES
         </p>
       </div>
     </section>
