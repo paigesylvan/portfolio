@@ -6,7 +6,7 @@ import SectionHeader from "../SectionHeader";
 export default function Prototype() {
   return (
     <section className="flex min-h-[100svh] flex-col justify-center text-white mt-24 md:mt-0">
-      <div className="mx-auto w-full max-w-[1200px] px-4 md:px-6">
+      <div className="px-4 md:px-6">
         {/* Header + copy (constrained to 900px) */}
         <div className="mx-auto w-full max-w-[900px] text-center mb-2">
           <SectionHeader
@@ -24,7 +24,7 @@ export default function Prototype() {
         </div>
 
         {/* Two prototypes */}
-        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
+        <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start max-w-[1200px] ">
           {/* Onboarding flow */}
           <div className="flex flex-col items-center md:col-span-1">
             <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
