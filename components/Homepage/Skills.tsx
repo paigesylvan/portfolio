@@ -48,79 +48,71 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="
-        relative overflow-hidden bg-black text-white
-        py-16 lg:py-28
-        pb-28 lg:pb-36
-      "
+      className="relative overflow-hidden bg-black text-white py-16 lg:py-28 pb-28 lg:pb-36"
     >
-      <div className="relative z-10 ">
-        <h2 className="ml-0 lg:ml-[40px] mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
+      {/* ✅ one centered container controls header + cards */}
+      <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
+        <h2 className="mb-10 text-left text-[12px] tracking-[0.22em] text-white/60">
           SKILLS
         </h2>
 
-        <div className="mx-auto w-full max-w-[1100px] px-6">
-          <div className="grid gap-5 md:grid-cols-3">
-            {skills.map((s, i) => (
-              <motion.article
-                key={s.title}
-                initial={prefersReduced ? false : { opacity: 0, y: 18 }}
-                whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{
-                  duration: prefersReduced ? 0 : 0.55,
-                  ease: easeOut,
-                  delay: prefersReduced ? 0 : i * 0.06,
+        <div className="grid gap-5 md:grid-cols-3">
+          {skills.map((s, i) => (
+            <motion.article
+              key={s.title}
+              initial={prefersReduced ? false : { opacity: 0, y: 18 }}
+              whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{
+                duration: prefersReduced ? 0 : 0.55,
+                ease: easeOut,
+                delay: prefersReduced ? 0 : i * 0.06,
+              }}
+              className="group relative overflow-hidden rounded-3xl
+                         border border-white/10 ring-1 ring-inset ring-white/10
+                         bg-white/[0.05] backdrop-blur-md
+                         shadow-[0_10px_40px_rgba(0,0,0,0.40)]
+                         transition-all duration-300
+                         hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
+                         hover:-translate-y-1"
+            >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  backgroundImage: CARD_HUES[i % CARD_HUES.length],
+                  filter: "blur(60px)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 85%)",
+                  maskImage:
+                    "linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 85%)",
                 }}
-                className="
-                  group relative overflow-hidden rounded-3xl
-                  border border-white/10 ring-1 ring-inset ring-white/10
-                  bg-white/[0.05] backdrop-blur-md
-                  shadow-[0_10px_40px_rgba(0,0,0,0.40)]
-                  transition-all duration-300
-                  hover:bg-white/[0.08] hover:shadow-[0_18px_60px_rgba(0,0,0,0.55)]
-                  hover:-translate-y-1
-                "
-              >
-                {/* per-card hue */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    backgroundImage: CARD_HUES[i % CARD_HUES.length],
-                    filter: "blur(60px)",
-                    WebkitMaskImage:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 85%)",
-                    maskImage:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 85%)",
-                  }}
-                />
+              />
 
-                <div className="relative z-10 p-6 md:p-7">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06] ring-1 ring-inset ring-white/10">
-                      <Image
-                        src={s.gif}
-                        alt={s.alt}
-                        width={96}
-                        height={96}
-                        unoptimized
-                        className="h-10 w-10 object-contain opacity-90"
-                      />
-                    </div>
-
-                    <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
-                      {s.title}
-                    </h3>
+              <div className="relative z-10 p-6 md:p-7">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06] ring-1 ring-inset ring-white/10">
+                    <Image
+                      src={s.gif}
+                      alt={s.alt}
+                      width={96}
+                      height={96}
+                      unoptimized
+                      className="h-10 w-10 object-contain opacity-90"
+                    />
                   </div>
 
-                  <p className="mt-4 text-white/80 leading-snug text-[12px] md:text-[13px]">
-                    {s.body}
-                  </p>
+                  <h3 className="text-[14px] md:text-[15px] font-semibold tracking-[0.01em]">
+                    {s.title}
+                  </h3>
                 </div>
-              </motion.article>
-            ))}
-          </div>
+
+                <p className="mt-4 text-white/80 leading-snug text-[12px] md:text-[13px]">
+                  {s.body}
+                </p>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

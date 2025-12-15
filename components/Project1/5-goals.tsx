@@ -92,7 +92,7 @@ export default function Goals() {
         />
 
         {/* Intro blurb */}
-        <p className=" text-[12px] lg:text-[13px] mx-auto mt-3  text-left text-white/80 leading-tight">
+        <p className=" text-[12px] lg:text-[13px] mx-auto mt-3  text-left text-white/80 leading-snug">
           From my research, I identified key focus areas from user needs to guide
           my UI design decisions. These findings highlight the need for a
           digital experience that builds trust, simplifies decisions, and

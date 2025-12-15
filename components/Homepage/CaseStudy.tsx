@@ -37,7 +37,7 @@ const studies: Study[] = [
     slug: "/projects/camping",
     title: "How Thoughtful UX Design Increases Engagement for First-Time Campers",
     subtitle:
-      "A responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear",
+      "A responsive website with thoughtful UI design, clear information architecture, and a poetic brand voice to help first-time campers feel guided and confident while shopping for camping gear.",
     tags: ["UX-UI", "User Flow", "Usability Testing"],
     image: "/images/homepage-images/camping-laptop.png",
     imageAlt: "Camping site on laptop",
@@ -45,7 +45,7 @@ const studies: Study[] = [
   },
   {
     slug: "/projects/cleaners",
-    title: "How Clear Design Improves User Trust for a Local Dry Cleaners",
+    title: "How Clear Design Improves User Trust for a Local Dry Cleaner",
     subtitle:
       "Designed and coded a responsive homepage that simplifies service discovery and builds confidence for a local dry cleaning business.",
     tags: ["VS Code", "React", "Responsive Design"],
@@ -113,29 +113,32 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="relative mt-20 overflow-hidden text-white full-bleed bg-black scroll-mt-[70vh] md:scroll-mt-40 lg:scroll-mt-[90vh]"
+      className="relative mt-20 overflow-hidden bg-black text-white scroll-mt-[70vh] md:scroll-mt-40 lg:scroll-mt-[90vh]"
     >
-      {/* 🔮 Bottom aurora / hue */}
-      <div className="cs-aurora-bottom absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30" />
+      {/* bottom aurora */}
+      <div className="absolute inset-x-0 bottom-0 h-[28vh] pointer-events-none z-0 opacity-30 cs-aurora-bottom" />
 
-      {/* Content layer */}
       <div className="relative z-10 pb-36 lg:pb-48">
-        <h2 className="ml-[355px] text-left mb-10 text-[11px] tracking-[0.22em] text-white/60">
-          CASE STUDIES
-        </h2>
+        {/* ✅ Header aligned with content */}
+        <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
+          <h2 className="mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
+            CASE STUDIES
+          </h2>
+        </div>
 
         <LazyMotion features={domAnimation}>
           <MotionConfig reducedMotion="user">
-            <div className="space-y-10 lg:space-y-16">
+            {/* ✅ Cards container */}
+            <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6 space-y-10 lg:space-y-16">
               {studies.map((s, idx) => {
-                const ArticleComp = shouldAnimate ? m.article : "article";
-                const ImageWrapComp = shouldAnimate ? m.div : "div";
-                const PieceComp = shouldAnimate ? m.div : "div";
-                const TitleComp = shouldAnimate ? m.h3 : "h3";
-                const TextComp = shouldAnimate ? m.p : "p";
+                const Article = shouldAnimate ? m.article : "article";
+                const ImageWrap = shouldAnimate ? m.div : "div";
+                const Piece = shouldAnimate ? m.div : "div";
+                const Title = shouldAnimate ? m.h3 : "h3";
+                const Text = shouldAnimate ? m.p : "p";
 
                 return (
-                  <ArticleComp
+                  <Article
                     key={s.slug}
                     {...(shouldAnimate && {
                       variants: card,
@@ -147,11 +150,11 @@ export default function CaseStudies() {
                         margin: "0px 0px -10% 0px",
                       },
                     })}
-                    className="case-card group md:transform-gpu md:will-change-transform"
+                    className="case-card group"
                   >
                     <div className="grid items-center gap-6 md:grid-cols-12">
                       {/* image */}
-                      <ImageWrapComp
+                      <ImageWrap
                         {...(shouldAnimate && { variants: imageWrap })}
                         className="md:col-span-5"
                       >
@@ -169,11 +172,11 @@ export default function CaseStudies() {
                             <div className="pointer-events-none absolute inset-x-4 -bottom-2 h-4 rounded-full bg-black/60 blur-md" />
                           </div>
                         </div>
-                      </ImageWrapComp>
+                      </ImageWrap>
 
                       {/* text */}
-                      <div className="md:col-span-7 lg:pl-12 pl-4">
-                        <PieceComp
+                      <div className="md:col-span-7 pl-2 sm:pl-4 md:pl-10">
+                        <Piece
                           {...(shouldAnimate && { variants: piece })}
                           className="mb-3 flex flex-wrap gap-1 lg:gap-2"
                         >
@@ -182,23 +185,23 @@ export default function CaseStudies() {
                               {t}
                             </span>
                           ))}
-                        </PieceComp>
+                        </Piece>
 
-                        <TitleComp
+                        <Title
                           {...(shouldAnimate && { variants: piece })}
-                          className="lg:w-[85%] py-1 lg:py-4 font-bold leading-tight text-[16px] md:text-[20px]"
+                          className="font-bold leading-tight text-[16px] md:text-[20px] lg:w-[85%]"
                         >
                           {s.title}
-                        </TitleComp>
+                        </Title>
 
-                        <TextComp
+                        <Text
                           {...(shouldAnimate && { variants: piece })}
                           className="mt-2 max-w-prose text-[12px] md:text-[13px] text-white/70 leading-tight"
                         >
                           {s.subtitle}
-                        </TextComp>
+                        </Text>
 
-                        <PieceComp {...(shouldAnimate && { variants: piece })}>
+                        <Piece {...(shouldAnimate && { variants: piece })}>
                           <Link href={s.slug} className="cta-btn group mt-6">
                             <span>{s.cta ?? "View Case Study"}</span>
                             <span className="cta-icon">
@@ -217,10 +220,10 @@ export default function CaseStudies() {
                               </svg>
                             </span>
                           </Link>
-                        </PieceComp>
+                        </Piece>
                       </div>
                     </div>
-                  </ArticleComp>
+                  </Article>
                 );
               })}
             </div>

@@ -135,7 +135,7 @@ export default function HeroOverviewDog() {
           </div>
 
           {/* right */}
-          <div className="mt-6 md:mt-0">
+          <div className="mt-4 md:mt-0">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">DURATION</p>
             <p className="mt-[2px] text-white/90">July 2025 – August 2025</p>
 

@@ -131,7 +131,7 @@ export default function ResearchInsights() {
                 Market Insights
               </h3>
 
-              <p className="text-white/80 text-[12px] lg:text-[13px]">
+              <p className="text-white/80 text-[12px] lg:text-[13px] leading-snug">
                 I conducted secondary research by analyzing app reviews, service
                 provider websites, and pet-care forums to learn how dog grooming
                 digital experiences feel to users today. Through my research I found:
@@ -139,13 +139,13 @@ export default function ResearchInsights() {
 
               <ul className="mt-3 lg:mt-4 space-y-1 text-white/70 text-[12px] lg:text-[13px]">
                 <li>• There’s a gap in user-friendly grooming apps overall.</li>
-                <li>• Many groomers rely on outdated websites and phone calls to book appointments.</li>
-                <li>• First-time users are seeking reassurance their dog will be treated with care.</li>
+                <li className="leading-snug">• Many groomers rely on outdated websites and phone calls to book appointments.</li>
+                <li className="leading-snug">• First-time users are seeking reassurance their dog will be treated with care.</li>
                 <li>• Users worry about timing, delays, and unexpected changes.</li>
               </ul>
 
               <p className="mt-5 lg:mt-8 text-white/90 leading-relaxed text-[12px] lg:text-[13px]">
-                <span className="font-semibold text-[#9DC0FF]">Key takeaway:</span>{" "}
+                <span className="font-semibold leading-snug text-[#9DC0FF]">Key takeaway:</span>{" "}
                 Trust, transparency, and clear communication matter as much as convenience.
               </p>
             </div>
