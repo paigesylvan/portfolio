@@ -5,9 +5,9 @@ import SectionHeader from "../SectionHeader";
 
 export default function Prototype() {
   return (
-    <section className="flex min-h-[100svh] flex-col justify-center px-4 md:px-6 text-white mt-24 md:mt-0">
-      <div className="mx-auto w-full max-w-[1000px]">
-        
+    <section className="flex min-h-[100svh] flex-col justify-center text-white mt-24 md:mt-0">
+      <div className="mx-auto w-full max-w-[1200px] px-4 md:px-6">
+        {/* Header + copy (constrained to 900px) */}
         <div className="mx-auto w-full max-w-[900px] text-center mb-2">
           <SectionHeader
             kicker="LOW FIDELITY TESTING"
