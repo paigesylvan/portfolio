@@ -11,7 +11,7 @@ export default function SectionHeader({
 }: {
   kicker?: string;
   title: string;
-  align?: "left" ;
+  align?: "left" | "center" | "right";
   titleClassName?: string;
   kickerClassName?: string;
 }) {
@@ -19,7 +19,7 @@ export default function SectionHeader({
     <header className={`text-${align}`}>
       {kicker && (
         <p
-          className={`accent-text uppercase tracking-[0.12em] ${
+          className={`text-left accent-text uppercase tracking-[0.12em] ${
             kickerClassName || "text-[10px] lg:text-xs"
           }`}
         >
@@ -27,7 +27,7 @@ export default function SectionHeader({
         </p>
       )}
       <h2
-        className={`font-semibold leading-tight lg:mt-2 text-white ${
+        className={`text-left font-semibold leading-tight lg:mt-2 text-white ${
           titleClassName || "text-xl md:text-3xl"
         }`}
       >
