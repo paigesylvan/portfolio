@@ -48,25 +48,28 @@ export default function Prototype() {
           </div>
 
           {/* Booking flow */}
-          <div className="flex flex-col items-center md:col-span-2 w-full max-w-[720px] md:max-w-none mx-auto">
-            <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
-              <div className="relative w-full aspect-[3/2] md:h-[340px] overflow-hidden rounded-xl">
-                <Image
-                  src="/images/project1-images/prototype-2.png"
-                  alt="Low fidelity booking prototype flow"
-                  fill
-                  className="object-contain"
-                  sizes="(min-width: 1024px) 600px, 90vw"
-                />
-              </div>
-            </div>
-            <p className="mt-3 text-[11px] tracking-[0.18em] text-[#7FB2FF] uppercase text-center">
-              BOOKING APPOINTMENT FLOW
-            </p>
-            <p className="mt-1 text-xs md:text-sm text-white/70 max-w-[360px] text-center mb-24 lg:mb-0">
-              Tested service selection, scheduling, and confirmation steps.
-            </p>
-          </div>
+{/* Booking flow */}
+<div className="flex flex-col items-center md:col-span-2 w-full max-w-[720px] md:max-w-none mx-auto">
+  <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.03] p-2 shadow-[0_30px_100px_rgba(0,0,0,0.45)] w-full">
+    <div className="relative w-full aspect-[16/7] sm:aspect-[16/8] md:aspect-[3/2] overflow-hidden rounded-xl">
+      <Image
+        src="/images/project1-images/prototype-2.png"
+        alt="Low fidelity booking prototype flow"
+        fill
+        className="object-contain"
+        sizes="(min-width: 1024px) 600px, 90vw"
+      />
+    </div>
+  </div>
+
+  <p className="mt-3 text-[11px] tracking-[0.18em] text-[#7FB2FF] uppercase text-center">
+    BOOKING APPOINTMENT FLOW
+  </p>
+  <p className="mt-1 text-xs md:text-sm text-white/70 max-w-[360px] text-center mb-24 lg:mb-0">
+    Tested service selection, scheduling, and confirmation steps.
+  </p>
+</div>
+
         </div>
       </div>
     </section>

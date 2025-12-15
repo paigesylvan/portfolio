@@ -16,7 +16,7 @@ export default function Testing() {
 
         {/* Copy block */}
         <div className="mx-auto mt-4 text-left">
-          <p className="text-[10px] md:text-base text-white/75 leading-snug">
+          <p className="text-[12px] md:text-[13px] text-white/75 leading-snug">
             After developing low-fidelity prototypes, I conducted a moderated
             usability test with a participant representative of the target user.
             They completed key booking tasks using a think-aloud protocol,
@@ -26,7 +26,7 @@ export default function Testing() {
             confidence in booking.
           </p>
 
-          <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
+          <h4 className="mt-4 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF]">
             Positive signals
           </h4>
           <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug">
@@ -34,7 +34,7 @@ export default function Testing() {
             <li>Scheduling for multiple dogs was perceived as valuable and intuitive.</li>
           </ul>
 
-          <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
+          <h4 className="mt-4 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF]">
             Identified friction
           </h4>
           <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug">
@@ -43,7 +43,7 @@ export default function Testing() {
             <li>Service information and messaging were not easily discoverable.</li>
           </ul>
 
-          <h4 className="mt-4 text-[10px] md:text-sm font-semibold text-[#7FB2FF]">
+          <h4 className="mt-4 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF]">
             Design adjustments based on insights
           </h4>
           <ul className="mt-1 list-disc pl-5 text-[10px] md:text-base text-white/70 leading-snug">
@@ -110,10 +110,10 @@ export default function Testing() {
                 />
               </div>
 
-              <p className="mt-2 text-[9px] md:text-[10px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
+              <p className="mt-2 text-[12px] md:text-[13px] font-semibold text-[#7FB2FF] uppercase tracking-wide">
                 {card.title}
               </p>
-              <p className="mt-1 text-[8px] md:text-[9px] text-white/70 text-center leading-tight">
+              <p className="mt-1 text-[12px] md:text-[13px] text-white/70 text-center leading-tight">
                 {card.desc}
               </p>
             </div>
