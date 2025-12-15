@@ -121,7 +121,7 @@ export default function CaseStudies() {
       <div className="relative z-10 pb-36 lg:pb-48">
         {/* ✅ Header aligned with content */}
         <div className="mx-auto w-full max-w-[1100px] px-4 sm:px-6">
-          <h2 className="mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
+          <h2 className="ml-4 lg:ml-0 mb-10 text-left text-[11px] tracking-[0.22em] text-white/60">
             CASE STUDIES
           </h2>
         </div>
