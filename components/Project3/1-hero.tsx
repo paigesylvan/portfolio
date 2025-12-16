@@ -74,10 +74,11 @@ export default function HeroOverviewDryCleaner() {
               width={2200}
               height={1400}
               priority
-              className="relative z-10 w-[80vw] max-w-[400px] sm:w-[70vw] md:w-[500px] lg:w-[600px] h-auto mx-auto"
+              className="relative z-10 w-[80vw] max-w-[600px] h-auto mx-auto"
             />
           </motion.div>
         </div>
+
 
         {/* overview */}
         <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[12px] md:text-[13px] leading-snug">
