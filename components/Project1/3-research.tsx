@@ -110,21 +110,21 @@ export default function ResearchInsights() {
 
         {/* Donuts */}
         <div className="mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 items-start justify-items-center gap-y-10 md:gap-y-0 gap-x-6 lg:gap-x-10 py-2 lg:py-6">
+          <div className="mx-auto grid w-fit grid-cols-3 gap-x-6 lg:gap-x-8 py-6">
             <Donut
               percent={67}
               captionTop="of U.S. households"
               label={"own at least one dog"}
               delay={0}
-              size={80}
-              stroke={9}
+              size={120}
+              stroke={10}
             />
             <Donut
               percent={73}
               captionTop="of pet owners prefer"
               label={"scheduling appointments\nonline"}
               delay={0.12}
-              size={96}   // slightly bigger center
+              size={120}   
               stroke={10}
             />
             <Donut
@@ -132,8 +132,8 @@ export default function ResearchInsights() {
               captionTop="of pet owners find it"
               label={"challenging to schedule\ngrooming services"}
               delay={0.24}
-              size={80}
-              stroke={9}
+              size={120}
+              stroke={10}
             />
           </div>
         </div>
