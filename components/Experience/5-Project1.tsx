@@ -145,7 +145,7 @@ export default function Project1() {
               </div>
 
               {b.body && (
-                <p className="mt-3 text-white/80 leading-snug">{b.body}</p>
+                <p className="mt-3 text-white/80 leading-snug text-[12px] lg:text-[13px] ">{b.body}</p>
               )}
 
               {b.bullets && (
