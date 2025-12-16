@@ -34,7 +34,7 @@ export default function HeroOverviewDryCleaner() {
   return (
     <section className="bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-16 px-4 md:px-6">
       {/* ✅ centered container */}
-      <div className="mx-auto w-full max-w-[1200px]">
+      <div className="mx-auto w-full max-w-[1210px]">
         <div className="text-left lg:ml-[85px]">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
