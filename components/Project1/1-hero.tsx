@@ -122,7 +122,7 @@ export default function HeroOverviewDog() {
         {/* overview */}
         <div className="mt-12 lg:mt-10 grid md:grid-cols-2 md:gap-8 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
-          <div className="lg:ml-24">
+          <div className="lg:ml-26">
             <p className="text-[9px] tracking-[0.22em] text-[#9DC0FF]">PROJECT</p>
             <p className="mt-[2px] text-white/90">
               Design a mobile-first app for a local dog grooming service.
