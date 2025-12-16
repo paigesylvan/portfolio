@@ -10,7 +10,7 @@ export default function FinalDesign() {
       <div className="max-w-[1000px] md:text-left">
         {/* video first on mobile, 2-col on desktop */}
         <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-start">
-          {/* LEFT: header + copy (no border/card) */}
+          {/* LEFT: header + copy */}
           <div className="text-center md:text-left">
             <SectionHeader
               kicker="PROJECT OUTCOME"
@@ -18,7 +18,7 @@ export default function FinalDesign() {
               align="left"
             />
 
-            <p className="text-left mt-4 text-white/85 leading-tight text-[12px] md:text-[13px]  mx-auto md:mx-0">
+            <p className="text-left mt-4 text-white/85 leading-tight text-[12px] md:text-[13px] mx-auto md:mx-0">
               Iterative testing refined the booking experience, strengthened multi-dog
               support, and increased trust through clearer groomer profiles, messaging,
               and appointment status updates. A key design challenge was balancing
@@ -28,14 +28,15 @@ export default function FinalDesign() {
               process.
             </p>
 
+            {/* DESKTOP CTA */}
             <Link
               href="https://www.figma.com/proto/1fKLri7C8IZINRq3tWhYIV/Pampered-Paws?node-id=1-503&t=MTdqUvYwpWVoXLwk-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A503"
               target="_blank"
               rel="noopener noreferrer"
               className="
-                group relative mt-5 md:mt-7 inline-flex items-center gap-2 md:gap-3
-                rounded-full px-4 py-2.5 md:px-6 md:py-3 font-medium text-white
-                text-[12px] md:text-[14px]
+                hidden md:inline-flex
+                group relative mt-5 md:mt-7 items-center gap-3
+                rounded-full px-6 py-3 font-medium text-white text-[14px]
                 bg-white/[0.06] backdrop-blur-md
                 shadow-[0_4px_12px_rgba(0,0,0,0.3)]
                 border border-white/10
@@ -45,35 +46,14 @@ export default function FinalDesign() {
               "
             >
               <span>View Prototype</span>
-              <span
-                className="
-                  flex items-center justify-center
-                  w-5 h-5 md:w-7 md:h-7 rounded-full
-                  bg-white/10
-                  transition-all duration-300
-                  group-hover:bg-white/30
-                  group-hover:translate-x-1
-                "
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-3 h-3 md:w-4 md:h-4"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/10 transition-all duration-300 group-hover:bg-white/30 group-hover:translate-x-1">
+                ➜
               </span>
             </Link>
           </div>
 
           {/* RIGHT: video */}
-          <div className="flex justify-center md:justify-end">
+          <div className="flex flex-col items-center md:items-end">
             <div className="rounded-2xl overflow-hidden">
               <video
                 src="/images/project1-images/final-design.mp4"
@@ -86,6 +66,29 @@ export default function FinalDesign() {
                 className="h-auto w-[200px] sm:w-[240px] md:w-[320px] rounded-xl object-contain"
               />
             </div>
+
+            {/* MOBILE CTA */}
+            <Link
+              href="https://www.figma.com/proto/1fKLri7C8IZINRq3tWhYIV/Pampered-Paws?node-id=1-503&t=MTdqUvYwpWVoXLwk-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A503"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                md:hidden
+                group relative mt-5 inline-flex items-center gap-2
+                rounded-full px-5 py-2.5 font-medium text-white text-[12px]
+                bg-white/[0.06] backdrop-blur-md
+                shadow-[0_4px_12px_rgba(0,0,0,0.3)]
+                border border-white/10
+                transition-all duration-300
+                hover:bg-white/[0.15] hover:shadow-[0_6px_20px_rgba(0,0,0,0.45)]
+                focus-visible:ring-2 focus-visible:ring-white/40
+              "
+            >
+              <span>View Prototype</span>
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 transition-all duration-300 group-hover:bg-white/30 group-hover:translate-x-1">
+                ➜
+              </span>
+            </Link>
           </div>
         </div>
 

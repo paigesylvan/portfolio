@@ -41,7 +41,7 @@ export default function HeroOverviewCamping() {
             alt="ELMNT camping website homepage mockup"
             width={1000}
             height={650}
-            className="relative z-10 w-[600px] h-auto rounded-2xl"
+            className="relative z-10 w-[300px] lg:w-[500px] h-auto rounded-2xl"
             priority
           />
         </div>
