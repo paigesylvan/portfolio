@@ -10,7 +10,7 @@ export default function HeroOverviewDryCleaner() {
   const screenVariants = (reduced: boolean): Variants => ({
     hidden: {
       opacity: 0,
-      y: reduced ? 0 : 14,
+      y: reduced ? 0 : 28, // a bit more like your other hero
       filter: reduced ? "blur(0px)" : "blur(8px)",
     },
     show: {
@@ -19,7 +19,7 @@ export default function HeroOverviewDryCleaner() {
       filter: "blur(0px)",
       transition: reduced
         ? { duration: 0 }
-        : { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        : { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
     },
   });
 
@@ -58,18 +58,18 @@ export default function HeroOverviewDryCleaner() {
                 "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
               ].join(", "),
               filter: "blur(99px)",
-              opacity: 0.90,
+              opacity: 0.9,
               mixBlendMode: "screen",
             }}
           />
 
+          {/* ✅ Animate the image-sized wrapper (not a full-width div) */}
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.35 }}
             variants={screenVariants(!!prefersReduced)}
-            transition={{ delay: prefersReduced ? 0 : 0.1 }}
-            className="relative w-full"
+            className="relative z-10 w-[80vw] max-w-[500px] mx-auto"
           >
             <Image
               src="/images/project3-images/desktop.png"
@@ -77,11 +77,10 @@ export default function HeroOverviewDryCleaner() {
               width={2200}
               height={1400}
               priority
-              className="relative z-10 w-[80vw] max-w-[500px] h-auto mx-auto"
+              className="w-full h-auto"
             />
           </motion.div>
         </div>
-
 
         {/* overview */}
         <div className="mt-6 grid md:grid-cols-2 md:gap-8 md:items-start text-[12px] md:text-[13px] leading-snug">
