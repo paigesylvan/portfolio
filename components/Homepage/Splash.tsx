@@ -67,7 +67,7 @@ export default function Hero({
             </p>
 
 
-
+{/* 
             <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3 justify-center lg:justify-start">
               <Link
                 href="/about"
@@ -83,6 +83,7 @@ export default function Hero({
                 </span>
               </Link>
             </div>
+            */}
           </div>
 
           {/* RIGHT: headshot */}
