@@ -1,102 +1,153 @@
 "use client";
 
-import Link from "next/link";
 import SectionHeader from "../SectionHeader";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function FinalDesign() {
+export default function OutcomeCamping() {
   return (
-    <section className="flex flex-col items-center justify-center px-6 text-white mt-24 lg:mt-18 mb-8 lg:mb-0">
-      <div className="w-full max-w-[1000px]">
-        <div className="mt-10 grid md:grid-cols-2 md:gap-12 gap-10 items-start">
-          {/* LEFT: header + copy */}
-          <div className="text-center md:text-left">
-            <SectionHeader kicker="PROJECT OUTCOME" title="Final Design" align="left" />
+    <section className="px-8 md:px-6 text-white mt-12 lg:mt-0">
+      <div className="mx-auto w-full max-w-[900px] py-12 md:py-16">
+        <SectionHeader
+          kicker="OUTCOME & RESULTS"
+          title="A Simpler, More Trustworthy Camping Experience"
+          align="center"
+        />
 
-            <p className="text-left mt-4 text-white/85 leading-tight text-[12px] md:text-[13px] mx-auto md:mx-0">
-              The final product is an intuitive and sleek e-commerce experience designed to help
-              users feel confident while gearing up for the outdoors. Clear navigation, curated bundles,
-              and simplified product details reduce decision fatigue and make selections feel guided rather
-              than overwhelming. Thoughtful information hierarchy and reassuring microcopy support users at
-              every step, while a clean, modern visual style reinforces trust and brand clarity. The result
-              is a shopping experience that transforms uncertainty into excitement, empowering users to explore
-              nature with confidence and the right gear for their adventure.
-            </p>
+        {/* 2-column layout */}
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
+          
+          {/* LEFT — video */}
+          <div className="lg:col-span-6 flex flex-col items-center">
+            <video
+              src="/images/project2-images/elmnt-mobile-demo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster="/images/project2-images/mobile-poster.jpg"
+              className="w-[300px] h-[480px] mt-6"
+            />
 
-            {/* ✅ DESKTOP: button stays below text */}
-            <Link
-              href="YOUR_FIGMA_LINK_HERE"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                hidden md:inline-flex
-                group relative mt-6 items-center gap-3
-                rounded-full px-6 py-3 font-medium text-white text-[14px]
-                bg-white/[0.06] backdrop-blur-md
-                shadow-[0_4px_12px_rgba(0,0,0,0.3)]
-                border border-white/10
-                transition-all duration-300
-                hover:bg-white/[0.15] hover:shadow-[0_6px_20px_rgba(0,0,0,0.45)]
-                focus-visible:ring-2 focus-visible:ring-white/40
-              "
+            {/* ✅ MOBILE: Next Case Study under video */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="mt-8 flex justify-center lg:hidden"
             >
-              <span>View Figma Prototype</span>
-              <span
-                className="
-                  flex items-center justify-center
-                  w-7 h-7 rounded-full bg-white/10
-                  transition-all duration-300
-                  group-hover:bg-white/30
-                  group-hover:translate-x-1
-                "
+              <Link
+                href="/projects/cleaners"
+                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/70 flex items-center gap-2 transition-all"
               >
-                →
-              </span>
-            </Link>
+                Next Case Study
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </Link>
+            </motion.div>
           </div>
 
-          {/* RIGHT: laptop/video */}
-          <div className="flex flex-col items-center md:items-end">
-            <div className="overflow-hidden w-full max-w-[950px] py-6 md:py-0">
-              <video
-                src="/images/project2-images/final-design-desktop.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-auto object-cover"
-              />
+          {/* RIGHT — outcome content */}
+          <div className="lg:col-span-6 mt-6 flex flex-col gap-6">
+            
+            {/* Outcome bubble */}
+            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+              <h3 className="text-sm md:text-base font-semibold">
+                What improved after testing
+              </h3>
+              <ul className="mt-3 space-y-3 text-[12px] md:text-[13px] leading-snug text-white/85">
+                {[
+                  {
+                    title: "Improved clarity",
+                    text:
+                      "Clearer structure between Starter Bundles, Elemental Collections, and Shop All.",
+                  },
+                  {
+                    title: "Smoother navigation",
+                    text:
+                      "Fewer steps and more visible calls-to-action reduce backtracking.",
+                  },
+                  {
+                    title: "Increased confidence",
+                    text:
+                      "Curated bundles and clearer details lower decision fatigue.",
+                  },
+                  {
+                    title: "Cross-platform consistency",
+                    text:
+                      "Mobile and desktop provide the same structured guidance.",
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    <p>
+                      <span className="font-semibold text-white">
+                        {item.title}:
+                      </span>{" "}
+                      {item.text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* ✅ MOBILE: button BELOW the laptop/video */}
-            <Link
-              href="YOUR_FIGMA_LINK_HERE"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                md:hidden
-                group relative mt-6 inline-flex items-center gap-2
-                rounded-full px-5 py-2.5 font-medium text-white text-[12px]
-                bg-white/[0.06] backdrop-blur-md
-                shadow-[0_4px_12px_rgba(0,0,0,0.3)]
-                border border-white/10
-                transition-all duration-300
-                hover:bg-white/[0.15] hover:shadow-[0_6px_20px_rgba(0,0,0,0.45)]
-                focus-visible:ring-2 focus-visible:ring-white/40
-              "
+            {/* Next Steps bubble */}
+            <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+              <h4 className="text-xs md:text-sm font-semibold">Next steps</h4>
+              <p className="mt-2 text-[12px] md:text-[13px] leading-snug text-white/85">
+                Opportunities remain to continue improving confidence and clarity:
+              </p>
+
+              <ul className="mt-4 space-y-4 text-[12px] md:text-[13px] text-white/80 leading-snug">
+                {[
+                  {
+                    title: "Validate with more users",
+                    text:
+                      "Ensure improvements hold true across diverse beginners.",
+                  },
+                  {
+                    title: "Refine product copy",
+                    text:
+                      "Test wording that most effectively reassures new campers.",
+                  },
+                  {
+                    title: "Measure engagement",
+                    text:
+                      "Track which entry points drive confident purchases.",
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-white">{item.title}</p>
+                      <p>{item.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* ✅ DESKTOP: Next Case Study at bottom */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="mt-10 hidden lg:flex justify-center"
             >
-              <span>View Figma Prototype</span>
-              <span
-                className="
-                  flex items-center justify-center
-                  w-6 h-6 rounded-full bg-white/10
-                  transition-all duration-300
-                  group-hover:bg-white/30
-                  group-hover:translate-x-1
-                "
+              <Link
+                href="/projects/cleaners"
+                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/70 flex items-center gap-2 transition-all"
               >
-                →
-              </span>
-            </Link>
+                Next Case Study
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>
