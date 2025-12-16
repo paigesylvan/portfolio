@@ -31,7 +31,7 @@ export default function HeroOverviewDog() {
 
   return (
     <section className="w-screen bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-12 lg:mt-[50px]">
-      <div className="mx-auto w-full max-w-[1280px] px-4 md:px-6">
+      <div className="mx-auto w-full max-w-[1220px] px-4 md:px-0">
         <div className="lg:ml-[85px]">
           <SectionHeader
             kicker="MOBILE APPLICATION"
