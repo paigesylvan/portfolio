@@ -2,21 +2,25 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function HeroOverviewCamping() {
+  const prefersReduced = useReducedMotion();
+
   return (
     <section className="full-bleed bg-black text-white py-10 md:py-14 lg:mt-[50px] mx-auto w-full">
       {/* ✅ Whole section constrained */}
-      <div className="  px-4 md:px-0">
-      <div className='ml-[2px] lg:ml-[370px]'>
-        <SectionHeader
-          kicker="RESPONSIVE WEBSITE DESIGN"
-          title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
-          align="left"
-          kickerClassName="text-[7px] md:text-xs text-emerald-400"
-          titleClassName="text-md md:text-2xl lg:text-3xl w-[650px] mt-2"
-        />
-      </div>
+      <div className="px-4 md:px-0">
+        <div className="ml-[2px] lg:ml-[370px]">
+          <SectionHeader
+            kicker="RESPONSIVE WEBSITE DESIGN"
+            title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
+            align="left"
+            kickerClassName="text-[7px] md:text-xs text-emerald-400"
+            titleClassName="text-md md:text-2xl lg:text-3xl w-[650px] mt-2"
+          />
+        </div>
+
         {/* hero image */}
         <div className="relative mt-6 md:mt-8 flex items-end justify-center">
           <div
@@ -36,20 +40,29 @@ export default function HeroOverviewCamping() {
             }}
           />
 
-          <Image
-            src="/images/project2-images/Camping.png"
-            alt="ELMNT camping website homepage mockup"
-            width={1000}
-            height={650}
-            className="relative z-10 w-[300px] lg:w-[500px] h-auto rounded-2xl py-2"
-            priority
-          />
+          {/* ✅ Laptop slide-in animation */}
+          <motion.div
+            className="relative z-10"
+            initial={prefersReduced ? { opacity: 1 } : { opacity: 0, y: 28 }}
+            whileInView={prefersReduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.75, ease: "easeOut" }}
+          >
+            <Image
+              src="/images/project2-images/Camping.png"
+              alt="ELMNT camping website homepage mockup"
+              width={1000}
+              height={650}
+              className="w-[300px] lg:w-[500px] h-auto rounded-2xl py-2"
+              priority
+            />
+          </motion.div>
         </div>
 
         {/* overview */}
         <div className="mt-8 grid md:grid-cols-2 md:gap-6 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
-          <div className='ml-[2px] lg:ml-[370px]'>
+          <div className="ml-[2px] lg:ml-[370px]">
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">PROJECT</p>
             <p className="mt-[2px] text-white/90">
               Design a responsive website for a camping e-commerce experience.
