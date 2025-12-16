@@ -48,7 +48,7 @@ export default function HeroOverviewDog() {
           <div
             className="absolute inset-0 z-1 pointer-events-none
              left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-             w-[800px] h-[800px]"
+             w-[800px] h-[700px]"
             style={{
               background: [
                 "radial-gradient(400px 300px at 50% 55%, rgba(80,140,255,0.9) 0%, rgba(80,140,255,0.4) 45%, rgba(0,0,0,0) 75%)",
