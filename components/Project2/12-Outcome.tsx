@@ -16,8 +16,8 @@ export default function OutcomeCamping() {
 
         {/* 2-column layout */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
-          {/* left - video */}
-          <div className="lg:col-span-6 flex justify-center">
+          {/* LEFT - video */}
+          <div className="lg:col-span-6 flex flex-col items-center lg:items-center">
             <video
               src="/images/project2-images/elmnt-mobile-demo.mp4"
               autoPlay
@@ -28,9 +28,32 @@ export default function OutcomeCamping() {
               poster="/images/project2-images/mobile-poster.jpg"
               className="w-[300px] h-[480px] mt-6"
             />
+
+            {/* MOBILE: Next Case Study under video */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="mt-8 flex justify-center lg:hidden"
+            >
+              <Link
+                href="/projects/cleaners"
+                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20 flex items-center gap-2 transition-all"
+              >
+                Next Case Study
+                <motion.span
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="inline-block"
+                >
+                  →
+                </motion.span>
+              </Link>
+            </motion.div>
           </div>
 
-          {/* right - outcome */}
+          {/* RIGHT - outcome */}
           <div className="lg:col-span-6 mt-6 flex flex-col gap-6">
             {/* Outcome bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
@@ -101,31 +124,31 @@ export default function OutcomeCamping() {
                 </li>
               </ul>
             </div>
+
+            {/* DESKTOP: Next Case Study stays at bottom */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="mt-10 hidden lg:flex justify-center"
+            >
+              <Link
+                href="/projects/cleaners"
+                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20 flex items-center gap-2 transition-all"
+              >
+                Next Case Study
+                <motion.span
+                  whileHover={{ x: 4 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="inline-block"
+                >
+                  →
+                </motion.span>
+              </Link>
+            </motion.div>
           </div>
         </div>
-
-        {/* next case link */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mt-14 flex justify-center"
-        >
-          <Link
-            href="/projects/cleaners" 
-            className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20  flex items-center gap-2 transition-all"
-          >
-            Next Case Study
-            <motion.span
-              whileHover={{ x: 4 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="inline-block"
-            >
-              →
-            </motion.span>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
