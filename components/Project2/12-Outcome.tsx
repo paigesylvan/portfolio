@@ -30,7 +30,7 @@ export default function OutcomeCamping() {
               className="w-[300px] h-[480px] mt-6"
             />
 
-            {/* ✅ MOBILE: Next Case Study under video */}
+            {/* MOBILE: Next Case Study under video */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -129,9 +129,12 @@ export default function OutcomeCamping() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
 
-            <motion.div
-          className="mt-20 md:mt-24 mb-6 text-center"
+        {/* DESKTOP: Bottom-centered Next Case Study */}
+        <motion.div
+          className="hidden lg:flex justify-center mt-20"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -140,7 +143,7 @@ export default function OutcomeCamping() {
           <Link
             href="/projects/cleaners"
             prefetch={false}
-            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/20 transition-all duration-300"
+            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/60 transition-all duration-300"
           >
             <span>Next Case Study</span>
             <svg
@@ -155,8 +158,6 @@ export default function OutcomeCamping() {
             </svg>
           </Link>
         </motion.div>
-          </div>
-        </div>
       </div>
     </section>
   );
