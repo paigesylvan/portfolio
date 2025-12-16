@@ -47,7 +47,7 @@ function Donut({
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center text-center "
+      className="flex flex-col items-center text-center"
     >
       <svg
         width={size}
@@ -128,7 +128,7 @@ export default function ResearchInsights() {
 
         {/* ✅ Donuts — evenly spaced across width */}
         <div className="mb-10">
-          <div className="grid grid-cols-3 items-start justify-items-center gap-x-12 md:gap-x-14 py-4 lg:py-10">
+          <div className="grid grid-cols-3 items-start justify-items-center gap-x-10 md:gap-x-4 py-4 lg:py-10">
             <Donut
               percent={67}
               captionTop="of U.S. households"
