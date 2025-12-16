@@ -47,7 +47,7 @@ function Donut({
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center text-center min-w-[300px]"
+      className="flex flex-col items-center text-center "
     >
       <svg
         width={size}
