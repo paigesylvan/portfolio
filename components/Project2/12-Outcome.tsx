@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 export default function OutcomeCamping() {
   return (
-    <section className="px-8 md:px-6 text-white mt-12 lg:mt-0">
-      <div className="mx-auto w-full max-w-[900px] py-12 md:py-16">
+    <section className="relative px-8 md:px-6 text-white mt-12 lg:mt-0">
+      <div className="mx-auto w-full max-w-[900px] pt-12 md:pt-16 pb-28">
         <SectionHeader
           kicker="OUTCOME & RESULTS"
           title="A Simpler, More Trustworthy Camping Experience"
@@ -29,25 +29,6 @@ export default function OutcomeCamping() {
               poster="/images/project2-images/mobile-poster.jpg"
               className="w-[300px] h-[480px] mt-6"
             />
-
-            {/* MOBILE: Next Case Study under video */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="mt-8 flex justify-center lg:hidden"
-            >
-              <Link
-                href="/projects/cleaners"
-                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/70 flex items-center gap-2 transition-all"
-              >
-                Next Case Study
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </Link>
-            </motion.div>
           </div>
 
           {/* RIGHT — outcome content */}
@@ -131,34 +112,34 @@ export default function OutcomeCamping() {
             </div>
           </div>
         </div>
-
-        {/* DESKTOP: Bottom-centered Next Case Study */}
-        <motion.div
-          className="hidden lg:flex w-full justify-center mt-20"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <Link
-            href="/projects/cleaners"
-            prefetch={false}
-            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/60 transition-all duration-300"
-          >
-            <span>Next Case Study</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </motion.div>
       </div>
+
+      {/* ABSOLUTE bottom-centered Next Case Study */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full flex justify-center"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <Link
+          href="/projects/cleaners"
+          prefetch={false}
+          className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/60 transition-all duration-300"
+        >
+          <span>Next Case Study</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+      </motion.div>
     </section>
   );
 }
