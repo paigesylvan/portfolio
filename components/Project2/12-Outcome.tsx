@@ -16,8 +16,9 @@ export default function OutcomeCamping() {
 
         {/* 2-column layout */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-0 items-start">
-          {/* LEFT - video */}
-          <div className="lg:col-span-6 flex flex-col items-center lg:items-center">
+          
+          {/* LEFT — video */}
+          <div className="lg:col-span-6 flex flex-col items-center">
             <video
               src="/images/project2-images/elmnt-mobile-demo.mp4"
               autoPlay
@@ -29,67 +30,67 @@ export default function OutcomeCamping() {
               className="w-[300px] h-[480px] mt-6"
             />
 
-            {/* MOBILE: Next Case Study under video */}
+            {/* ✅ MOBILE: Next Case Study under video */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
               className="mt-8 flex justify-center lg:hidden"
             >
               <Link
                 href="/projects/cleaners"
-                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20 flex items-center gap-2 transition-all"
+                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/70 flex items-center gap-2 transition-all"
               >
                 Next Case Study
-                <motion.span
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="inline-block"
-                >
+                <span className="group-hover:translate-x-1 transition-transform">
                   →
-                </motion.span>
+                </span>
               </Link>
             </motion.div>
           </div>
 
-          {/* RIGHT - outcome */}
+          {/* RIGHT — outcome content */}
           <div className="lg:col-span-6 mt-6 flex flex-col gap-6">
+            
             {/* Outcome bubble */}
             <div className="rounded-2xl bg-white/[0.05] ring-1 ring-white/10 p-4 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
               <h3 className="text-sm md:text-base font-semibold">
                 What improved after testing
               </h3>
               <ul className="mt-3 space-y-3 text-[12px] md:text-[13px] leading-snug text-white/85">
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <p>
-                    <span className="font-semibold text-white">Improved clarity:</span>{" "}
-                    Clearer structure between Starter Bundles, Elemental Collections,
-                    and Shop All, reducing confusion.
-                  </p>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <p>
-                    <span className="font-semibold text-white">Smoother navigation:</span>{" "}
-                    Fewer steps and more visible calls-to-action reduce backtracking.
-                  </p>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <p>
-                    <span className="font-semibold text-white">Increased confidence:</span>{" "}
-                    Curated bundles and clearer details lower decision fatigue.
-                  </p>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <p>
-                    <span className="font-semibold text-white">Cross-platform consistency:</span>{" "}
-                    Mobile and desktop provide the same structured guidance.
-                  </p>
-                </li>
+                {[
+                  {
+                    title: "Improved clarity",
+                    text:
+                      "Clearer structure between Starter Bundles, Elemental Collections, and Shop All.",
+                  },
+                  {
+                    title: "Smoother navigation",
+                    text:
+                      "Fewer steps and more visible calls-to-action reduce backtracking.",
+                  },
+                  {
+                    title: "Increased confidence",
+                    text:
+                      "Curated bundles and clearer details lower decision fatigue.",
+                  },
+                  {
+                    title: "Cross-platform consistency",
+                    text:
+                      "Mobile and desktop provide the same structured guidance.",
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    <p>
+                      <span className="font-semibold text-white">
+                        {item.title}:
+                      </span>{" "}
+                      {item.text}
+                    </p>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -101,50 +102,50 @@ export default function OutcomeCamping() {
               </p>
 
               <ul className="mt-4 space-y-4 text-[12px] md:text-[13px] text-white/80 leading-snug">
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <div>
-                    <p className="font-semibold text-white">Validate with more users</p>
-                    <p>Ensure improvements hold true across diverse beginners.</p>
-                  </div>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <div>
-                    <p className="font-semibold text-white">Refine product copy</p>
-                    <p>Test wording that most effectively reassures new campers.</p>
-                  </div>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                  <div>
-                    <p className="font-semibold text-white">Measure engagement</p>
-                    <p>Track which entry points drive confident purchases.</p>
-                  </div>
-                </li>
+                {[
+                  {
+                    title: "Validate with more users",
+                    text:
+                      "Ensure improvements hold true across diverse beginners.",
+                  },
+                  {
+                    title: "Refine product copy",
+                    text:
+                      "Test wording that most effectively reassures new campers.",
+                  },
+                  {
+                    title: "Measure engagement",
+                    text:
+                      "Track which entry points drive confident purchases.",
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                    <div>
+                      <p className="font-semibold text-white">{item.title}</p>
+                      <p>{item.text}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* DESKTOP: Next Case Study stays at bottom */}
+            {/* ✅ DESKTOP: Next Case Study at bottom */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
               className="mt-10 hidden lg:flex justify-center"
             >
               <Link
                 href="/projects/cleaners"
-                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/20 flex items-center gap-2 transition-all"
+                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/70 flex items-center gap-2 transition-all"
               >
                 Next Case Study
-                <motion.span
-                  whileHover={{ x: 4 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="inline-block"
-                >
+                <span className="group-hover:translate-x-1 transition-transform">
                   →
-                </motion.span>
+                </span>
               </Link>
             </motion.div>
           </div>
