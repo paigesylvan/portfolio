@@ -7,13 +7,13 @@ export default function HeroOverviewCamping() {
   return (
     <section className="full-bleed bg-black text-white py-10 md:py-14 lg:mt-[50px] px-0">
       {/* ✅ Whole section constrained */}
-      <div className="mx-auto w-full max-w-[1700px] px-4 md:px-0">
+      <div className="mx-auto w-full max-w-[1300px] px-4 md:px-0">
         <SectionHeader
           kicker="RESPONSIVE WEBSITE DESIGN"
           title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
           align="left"
           kickerClassName="text-[7px] md:text-xs text-emerald-400"
-          titleClassName="text-md md:text-2xl lg:text-3xl max-w-[650px] mt-2"
+          titleClassName="text-md md:text-2xl lg:text-3xl w-[650px] mt-2"
         />
 
         {/* hero image */}
@@ -40,7 +40,7 @@ export default function HeroOverviewCamping() {
             alt="ELMNT camping website homepage mockup"
             width={1000}
             height={650}
-            className="relative z-10 w-full max-w-[600px] h-auto rounded-2xl"
+            className="relative z-10 w-full w-[600px] h-auto rounded-2xl"
             priority
           />
         </div>
