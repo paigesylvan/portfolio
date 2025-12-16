@@ -130,24 +130,31 @@ export default function OutcomeCamping() {
               </ul>
             </div>
 
-            {/* ✅ DESKTOP: Next Case Study at bottom */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="mt-10 hidden lg:flex justify-center"
+          className="mt-20 md:mt-24 mb-6 text-center"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Link
+            href="/projects/cleaners"
+            prefetch={false}
+            className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/20 transition-all duration-300"
+          >
+            <span>Next Case Study</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
             >
-              <Link
-                href="/projects/cleaners"
-                className="group text-[11px] sm:text-sm font-medium text-emerald-400 hover:text-white/70 flex items-center gap-2 transition-all"
-              >
-                Next Case Study
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </Link>
-            </motion.div>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </motion.div>
           </div>
         </div>
       </div>
