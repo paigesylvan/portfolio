@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function HeroOverviewCamping() {
   return (
-    <section className="bg-black text-white py-10 md:py-14 lg:mt-[50px] px-4 md:px-0">
+    <section className="bg-black text-white py-10 md:py-14 lg:mt-[50px] px-4 md:px-0 max-w-[1700px]">
       {/* ✅ Whole section constrained */}
       <div className=" w-full max-w-[1700px]">
         <SectionHeader
