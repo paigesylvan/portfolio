@@ -4,30 +4,31 @@ import SectionHeader from "../SectionHeader";
 
 export default function FinalDesign() {
   return (
-    <section className="flex min-h-[100svh] flex-col items-center justify-center px-6 text-white lg:mt-0">
-      <div className="max-w-[1000px] w-full mx-auto text-center">
+    <section className="w-full bg-black text-white py-16 lg:py-24 px-4 md:px-6">
+      <div className="mx-auto w-full max-w-[1100px]">
+        <SectionHeader kicker="PROJECT OUTCOME" title="Final Design" align="left" />
 
-        <SectionHeader
-          kicker="PROJECT OUTCOME"
-          title="Final Design"
-          align="center"
-        />
+        {/* 1/3 text + 2/3 video on desktop */}
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          {/* TEXT (1/3) */}
+          <div className="lg:col-span-4">
+            <p className="text-white/85 text-[12px] md:text-[13px] leading-snug">
+              The final product is an intuitive and sleek e-commerce experience
+              designed to help users feel confident while gearing up for the
+              outdoors. Clear navigation, curated bundles, and simplified product
+              details reduce decision fatigue and make selections feel guided
+              rather than overwhelming. Thoughtful information hierarchy and
+              reassuring microcopy support users at every step, while a clean,
+              modern visual style reinforces trust and brand clarity. The result
+              is a shopping experience that transforms uncertainty into
+              excitement, empowering users to explore nature with confidence and
+              the right gear for their adventure.
+            </p>
+          </div>
 
-        <div className="flex flex-col-reverse md:flex-col items-center mt-8 gap-6">
-
-          <p className="mx-auto text-left text-white/85 text-[12px] md:text-[13px] leading-snug px-6 lg:px-0">
-            The final product is an intuitive and sleek e-commerce experience designed to help 
-            users feel confident while gearing up for the outdoors. Clear navigation, curated bundles, 
-            and simplified product details reduce decision fatigue and make selections feel guided rather 
-            than overwhelming. Thoughtful information hierarchy and reassuring microcopy support users at 
-            every step, while a clean, modern visual style reinforces trust and brand clarity. The result 
-            is a shopping experience that transforms uncertainty into excitement, empowering users to explore 
-            nature with confidence and the right gear for their adventure.
-          </p>
-
-
-          <div className="flex justify-center w-full">
-            <div className="overflow-hidden max-w-[950px] w-full py-12 lg:py-0">
+          {/* VIDEO (2/3) */}
+          <div className="lg:col-span-8">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-white/10 bg-white/[0.03] shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
               <video
                 src="/images/project2-images/final-design-desktop.mp4"
                 autoPlay

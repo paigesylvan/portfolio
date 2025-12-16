@@ -105,7 +105,7 @@ export default function KeyInsights() {
                 <h3 className="text-sm sm:text-base md:text-md font-semibold">
                   {i.title}
                 </h3>
-                <p className="mt-2 sm:mt-3 text-[10px] md:text-[11px] text-white/80 leading-snug">
+                <p className="mt-2 sm:mt-3 text-[10px] md:text-[11px] text-white/80 leading-snug  px-12 lg:px-0">
                   {i.body}
                 </p>
               </div>

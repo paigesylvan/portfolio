@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function MindMap() {
   return (
-    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white pt-24 md:pt-28">
+    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white pt-20 md:pt-28">
       <div className="max-w-[1000px] w-full mx-auto text-left">
         <SectionHeader
           kicker="MIND MAP"

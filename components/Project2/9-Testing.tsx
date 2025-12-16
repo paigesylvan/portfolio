@@ -70,21 +70,21 @@ export default function TestingIterationCamping() {
               <div>
                 <MiniImage src="/images/project2-images/clarity.png" alt="Clarity" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Clarity</h4>
-                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0">
+                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0 px-12 lg:px-0">
                   Do users quickly grasp what the site offers?
                 </p>
               </div>
               <div>
                 <MiniImage src="/images/project2-images/navigation.png" alt="Navigation" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Navigation</h4>
-                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0">
+                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0 px-12 lg:px-0">
                   Can users move from discovery to purchase without friction?
                 </p>
               </div>
               <div>
                 <MiniImage src="/images/project2-images/confidence.png" alt="Confidence" />
                 <h4 className="font-semibold text-[#00C67C] text-xs">Confidence</h4>
-                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0">
+                <p className="mt-1 text-[12px] md:text-[13px] text-white/70 leading-snug mb-8 lg:mb-0 px-12 lg:px-0">
                   Do tighter bundles + clear copy raise purchase confidence?
                 </p>
               </div>
