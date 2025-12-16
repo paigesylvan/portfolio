@@ -47,7 +47,7 @@ function Donut({
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center text-center min-w-[200px]"
+      className="flex flex-col items-center text-center min-w-[300px]"
     >
       <svg
         width={size}
@@ -99,10 +99,10 @@ function Donut({
         </text>
       </svg>
 
-      <p className="mt-3 text-[8px] md:text-[12px] text-white/70 leading-tight">
+      <p className="mt-3 text-[8px] md:text-[12px] text-white leading-tight">
         {captionTop}
       </p>
-      <p className="text-[8px] md:text-[12px] text-white/70 whitespace-pre-line leading-tight">
+      <p className="text-[8px] md:text-[12px] text-white whitespace-pre-line leading-tight">
         {label}
       </p>
     </div>
