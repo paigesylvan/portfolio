@@ -48,7 +48,7 @@ export default function HeroOverviewCamping() {
         {/* overview */}
         <div className="mt-8 grid md:grid-cols-2 md:gap-6 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
-          <div>
+          <div className='ml-96'>
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">PROJECT</p>
             <p className="mt-[2px] text-white/90">
               Design a responsive website for a camping e-commerce experience.
