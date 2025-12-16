@@ -1,6 +1,7 @@
 "use client";
 
 import SectionHeader from "../SectionHeader";
+import Link from "next/link";
 
 export default function FinalDesign() {
   return (
@@ -24,11 +25,44 @@ export default function FinalDesign() {
               excitement, empowering users to explore nature with confidence and
               the right gear for their adventure.
             </p>
+            <div className="mt-6">
+              <Link
+                href="https://www.figma.com/proto/v3HyYQPBXbfa7hmWQCqBHT/ELMNT?node-id=2-369&t=EqKWEQ2hC4xkfQhz-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group inline-flex items-center gap-2
+                  rounded-full px-5 py-2.5
+                  text-[12px] font-medium text-white
+                  bg-white/[0.06] backdrop-blur-md
+                  border border-white/10
+                  shadow-[0_3px_12px_rgba(0,0,0,0.3)]
+                  transition-all duration-300
+                  hover:bg-white/[0.15]
+                  hover:shadow-[0_5px_18px_rgba(0,0,0,0.45)]
+                  focus-visible:ring-2 focus-visible:ring-white/40
+                "
+              >
+                View Figma Prototype
+                <span
+                  className="
+                    flex items-center justify-center
+                    w-6 h-6 rounded-full
+                    bg-white/10
+                    transition-all duration-300
+                    group-hover:bg-white/30
+                    group-hover:translate-x-1
+                  "
+                >
+                  ➜
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* VIDEO (2/3) */}
           <div className="lg:col-span-8">
-            <div className="overflow-hidden rounded-3xl ring-1 ring-white/10 bg-white/[0.03] shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+            <div className="overflow-hidden ">
               <video
                 src="/images/project2-images/final-design-desktop.mp4"
                 autoPlay

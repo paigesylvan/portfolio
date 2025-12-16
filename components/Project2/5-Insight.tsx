@@ -115,7 +115,7 @@ export default function KeyInsights() {
                 <p className="mt-3 text-[10px] tracking-[0.22em] text-emerald-300/90 font-semibold">
                   DESIGN GOAL
                 </p>
-                <p className="mt-2 text-[10px] md:text-[11px] leading-snug text-emerald-200/95">
+                <p className="mt-2 text-[10px] md:text-[11px] leading-snug text-emerald-200/95 px-9 lg:px-0">
                   {i.goal}
                 </p>
               </div>

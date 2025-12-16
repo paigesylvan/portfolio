@@ -5,7 +5,7 @@ import SectionHeader from "../SectionHeader";
 
 export default function MindMap() {
   return (
-    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white pt-20 md:pt-28">
+    <section className="flex flex-col items-center justify-start px-4 md:px-6 text-white pt-16 md:pt-28">
       <div className="max-w-[1000px] w-full mx-auto text-left">
         <SectionHeader
           kicker="MIND MAP"
@@ -21,7 +21,7 @@ export default function MindMap() {
         </p>
 
         {/* Large Image */}
-        <div className="mt-8 md:mt-12 flex justify-center">
+        <div className="py-8 md:mt-12 flex justify-center">
           <div className="relative w-full max-w-[700px]">
             <Image
               src="/images/project2-images/mindmap.png"
