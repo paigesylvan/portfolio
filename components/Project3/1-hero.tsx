@@ -41,7 +41,7 @@ export default function HeroOverviewDryCleaner() {
             title="How Clear Design Improves User Trust for a Local Dry Cleaner"
             align="left"
             kickerClassName="text-[7px] md:text-xs text-[#E6D6C3]"
-            titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mt-2"
+            titleClassName="text-md md:text-2xl lg:text-3xl max-w-[500px] mt-2"
           />
         </div>
 
