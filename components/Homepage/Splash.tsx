@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import PaigeOutlineTrace from "../outline";
+import { motion, useReducedMotion } from "framer-motion";
 
 type Props = {
   title?: string;
@@ -15,6 +18,8 @@ export default function Hero({
   subtitle = "I design clean, intuitive interfaces and build responsive, user-centered products with modern front-end tools. I blend UX strategy, visual design, and development experience to turn complex problems into simple, functional experiences.",
   minHeight,
 }: Props) {
+  const prefersReduced = useReducedMotion();
+
   return (
     <section
       aria-labelledby="hero-title"
@@ -52,43 +57,66 @@ export default function Hero({
       <div className="relative z-10 mx-auto max-w-[1000] lg:max-w-[1090px] px-6 pt-24 pb-20 md:pt-28 lg:pt-32">
         <div className="grid items-left gap-14 lg:grid-cols-12">
           {/* LEFT: text */}
-          <div className="lg:col-span-6 text-left lg:mt-36">
-            <p className="text-[11px] tracking-[0.22em] text-white/60">{kicker}</p>
+          <motion.div
+            className="lg:col-span-6 text-left lg:mt-36"
+            initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: prefersReduced ? 0 : 0.7, ease: "easeOut" }}
+          >
+            <motion.p
+              className="text-[11px] tracking-[0.22em] text-white/60"
+              initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: prefersReduced ? 0 : 0.5, delay: prefersReduced ? 0 : 0.05 }}
+            >
+              {kicker}
+            </motion.p>
 
-            <h1
+            <motion.h1
               id="hero-title"
               className="mt-3 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[0.01em]"
+              initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: prefersReduced ? 0 : 0.7, ease: "easeOut", delay: prefersReduced ? 0 : 0.08 }}
             >
               {title}
-            </h1>
+            </motion.h1>
 
-            <p className="mt-5 text-white/80 text-[12px] md:text-[13px] leading-snug max-w-[52ch] mx-auto lg:mx-0">
+            <motion.p
+              className="mt-5 text-white/80 text-[12px] md:text-[13px] leading-snug max-w-[52ch] mx-auto lg:mx-0"
+              initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: prefersReduced ? 0 : 0.7, ease: "easeOut", delay: prefersReduced ? 0 : 0.14 }}
+            >
               {subtitle}
-            </p>
+            </motion.p>
 
-
-{/* 
+            {/*
             <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start gap-3 justify-center lg:justify-start">
-              <Link
-                href="/about"
-                className="group inline-flex items-center gap-2 rounded-full px-6 py-2.5 font-medium text-white text-[13px]
-                           bg-white/[0.08] backdrop-blur-md border border-white/15
-                           shadow-[0_3px_12px_rgba(0,0,0,0.35)]
-                           transition-all duration-300 hover:bg-white/[0.16] hover:shadow-[0_6px_20px_rgba(0,0,0,0.55)]
-                           focus-visible:ring-2 focus-visible:ring-white/40"
-              >
-                <span className="tracking-wide">More About Me</span>
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 transition-all duration-300 group-hover:bg-white/30 group-hover:translate-x-1">
-                  →
-                </span>
-              </Link>
+              <Link ...>...</Link>
             </div>
             */}
-          </div>
+          </motion.div>
 
           {/* RIGHT: headshot */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end relative md:mt-10 lg:mt-16 lg:mr-4">
-            <div className="relative w-[330px] md:w-[370px]">
+          <motion.div
+            className="lg:col-span-6 flex justify-center lg:justify-end relative md:mt-10 lg:mt-16 lg:mr-4"
+            initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: prefersReduced ? 0 : 0.8, ease: "easeOut", delay: prefersReduced ? 0 : 0.1 }}
+          >
+            <motion.div
+              className="relative w-[330px] md:w-[370px]"
+              initial={prefersReduced ? { scale: 1 } : { scale: 0.98 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: prefersReduced ? 0 : 0.8, ease: "easeOut" }}
+            >
               <div className="absolute -inset-4 rounded-[28px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
 
               <Image
@@ -101,13 +129,20 @@ export default function Hero({
                 sizes="(min-width: 1024px) 400px, 330px"
               />
 
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              {/* subtle “draw-on” vibe */}
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                initial={prefersReduced ? { opacity: 1 } : { opacity: 0, scale: 0.99 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: prefersReduced ? 0 : 0.9, ease: "easeOut", delay: prefersReduced ? 0 : 0.18 }}
+              >
                 <PaigeOutlineTrace />
-              </div>
+              </motion.div>
 
               <div className="pointer-events-none absolute inset-x-10 -bottom-3 h-6 rounded-full bg-black/70 blur-lg" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
