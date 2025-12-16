@@ -99,7 +99,7 @@ export default function ResearchInsights() {
   return (
     <section className="px-4 sm:px-6">
       {/* wider container so donuts don’t float */}
-      <div className="mx-auto w-full max-w-[1200px] lg:mt-8">
+      <div className="mx-auto w-full max-w-[1000px] lg:mt-8">
         <div className="text-left mb-8">
           <SectionHeader
             kicker="MARKET RESEARCH"
@@ -110,7 +110,7 @@ export default function ResearchInsights() {
 
         {/* Donuts */}
         <div className="mb-8">
-          <div className="mx-auto grid w-fit grid-cols-3 gap-x-6 lg:gap-x-24 py-6">
+          <div className="mx-auto grid w-fit grid-cols-3 gap-x-6 lg:gap-x-[100px] py-6">
             <Donut
               percent={67}
               captionTop="of U.S. households"
