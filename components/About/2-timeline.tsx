@@ -227,7 +227,7 @@ export default function TimelineAbout() {
 
   return (
     <section className="relative isolate bg-black text-white pb-28 md:pb-36 px-4 ">
-      <div className="mx-auto w-full max-w-[1200px]">
+      <div className="mx-auto w-full max-w-[1100px]">
         <div className="text-left relative ">
           <p className="text-[11px] tracking-[0.22em] text-white/60">
             THE PATH SO FAR
@@ -238,7 +238,7 @@ export default function TimelineAbout() {
         </div>
 
 
-        <div ref={containerRef} className="relative mx-auto w-full max-w-[1000px]">
+        <div ref={containerRef} className="relative mx-auto w-full max-w-[1100px]">
           {/* Mobile Spine */}
           <div
             className="pointer-events-none absolute left-3 w-[3px] rounded-full bg-white/15 md:hidden z-20 mix-blend-normal"
