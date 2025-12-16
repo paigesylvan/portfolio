@@ -227,7 +227,7 @@ export default function TimelineAbout() {
 
   return (
     <section className="relative isolate bg-black text-white pb-28 md:pb-36 px-4 ">
-      <div className="mx-auto w-full max-w-[1100px]">
+      <div className="mx-auto w-full max-w-[1110px]">
         <div className="text-left relative ">
           <p className="text-[11px] tracking-[0.22em] text-white/60">
             THE PATH SO FAR

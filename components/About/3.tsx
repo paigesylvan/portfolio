@@ -26,7 +26,7 @@ export default function AboutFinalSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[1100px] px-6 mt-24">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 mt-12 lg:mt-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
           {/* Left Text */}
           <div className="md:col-span-7">
