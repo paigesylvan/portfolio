@@ -47,7 +47,10 @@ export default function HeroOverviewDryCleaner() {
 
         <div className="relative flex items-end justify-center">
           <div
-            className="absolute inset-0 z-1 pointer-events-none left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:h-[400px]"
+            className="absolute inset-0 z-0 pointer-events-none
+            left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+            w-[400px] h-[260px]
+            lg:w-[800px] lg:h-[600px]"
             style={{
               background: [
                 "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
