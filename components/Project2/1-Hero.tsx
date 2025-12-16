@@ -22,14 +22,14 @@ export default function HeroOverviewCamping() {
             className="absolute inset-0 z-0 pointer-events-none
               left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
               w-[400px] h-[260px]
-              lg:w-[600px] lg:h-[400px]"
+              lg:w-[600px] lg:h-[300px]"
             style={{
               background: [
                 "radial-gradient(400px 300px at 50% 55%, rgba(0,255,150,0.85) 0%, rgba(0,255,150,0.38) 45%, rgba(0,0,0,0) 75%)",
                 "radial-gradient(800px 400px at 48% 60%, rgba(80,255,180,0.26) 0%, rgba(80,255,180,0.12) 48%, rgba(0,0,0,0) 80%)",
                 "radial-gradient(500px 400px at 40% 72%, rgba(0,180,120,0.22) 0%, rgba(0,180,120,0.10) 44%, rgba(0,0,0,0) 78%)",
               ].join(", "),
-              filter: "blur(80px)",
+              filter: "blur(20px)",
               opacity: 0.9,
               mixBlendMode: "screen",
             }}

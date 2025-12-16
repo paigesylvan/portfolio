@@ -58,7 +58,7 @@ export default function HeroOverviewDryCleaner() {
                 "radial-gradient(900px 400px at 40% 72%, rgba(220,185,140,0.22) 0%, rgba(220,185,140,0.10) 44%, rgba(0,0,0,0) 78%)",
               ].join(", "),
               filter: "blur(80px)",
-              opacity: 0.92,
+              opacity: 0.20,
               mixBlendMode: "screen",
             }}
           />
