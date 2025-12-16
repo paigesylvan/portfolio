@@ -21,7 +21,7 @@ export default function IA() {
 
         {/* image */}
         <div className="mt-6 md:mt-8 flex flex-col items-center justify-center">
-          <div className="w-full p-1.5 md:p-2 max-w-[620px] md:max-w-[700px]">
+          <div className="w-full p-1.5 md:p-2 max-w-[620px] md:max-w-[900px]">
             <Image
               src="/images/project1-images/ia.png"
               alt="Information Architecture diagram for dog grooming app"
