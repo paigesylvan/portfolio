@@ -22,9 +22,9 @@ export default function FinalDesign() {
               nature with confidence and the right gear for their adventure.
             </p>
 
-            {/* ✅ DESKTOP: button stays below text */}
+            {/* DESKTOP */}
             <Link
-              href="YOUR_FIGMA_LINK_HERE"
+              href="https://www.figma.com/proto/v3HyYQPBXbfa7hmWQCqBHT/ELMNT?node-id=2-369&p=f&t=zbiMKYwlGTMUTF94-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -67,9 +67,9 @@ export default function FinalDesign() {
               />
             </div>
 
-            {/* ✅ MOBILE: button BELOW the laptop/video */}
+            {/* MOBILE */}
             <Link
-              href="YOUR_FIGMA_LINK_HERE"
+              href="https://www.figma.com/proto/v3HyYQPBXbfa7hmWQCqBHT/ELMNT?node-id=2-369&p=f&t=zbiMKYwlGTMUTF94-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
               target="_blank"
               rel="noopener noreferrer"
               className="
