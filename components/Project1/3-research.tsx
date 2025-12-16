@@ -110,7 +110,7 @@ export default function ResearchInsights() {
 
         {/* Donuts */}
         <div className="mb-8">
-          <div className="mx-auto grid w-fit grid-cols-3 gap-x-6 lg:gap-x-[100px] py-6">
+          <div className="mx-auto grid w-fit grid-cols-3 gap-x-6 lg:gap-x-[150px] py-6">
             <Donut
               percent={67}
               captionTop="of U.S. households"
