@@ -15,17 +15,6 @@ type DonutProps = {
   duration?: number;
 };
 
-function useIsSmallScreen() {
-  const [isSmall, setIsSmall] = React.useState(false);
-  React.useEffect(() => {
-    const check = () => setIsSmall(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-  return isSmall;
-}
-
 function Donut({
   percent,
   color = "stroke-[#7FB2FF]",
@@ -45,10 +34,7 @@ function Donut({
   const inView = useInView(ref, { amount: 0.35, once: true });
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col items-center text-center"
-    >
+    <div ref={ref} className="flex flex-col items-center text-center">
       <svg
         width={size}
         height={size}
@@ -99,10 +85,10 @@ function Donut({
         </text>
       </svg>
 
-      <p className="mt-3 text-[8px] md:text-[12px] text-white leading-tight">
+      <p className="mt-3 text-[9px] sm:text-[11px] md:text-[12px] text-white leading-tight">
         {captionTop}
       </p>
-      <p className="text-[8px] md:text-[12px] text-white whitespace-pre-line leading-tight">
+      <p className="text-[9px] sm:text-[11px] md:text-[12px] text-white whitespace-pre-line leading-tight">
         {label}
       </p>
     </div>
@@ -110,15 +96,11 @@ function Donut({
 }
 
 export default function ResearchInsights() {
-  const isSmall = useIsSmallScreen();
-  const donutSize = isSmall ? 56 : 90;
-  const donutStroke = isSmall ? 8 : 9;
-
   return (
     <section className="px-4 sm:px-6">
-      <div className="mx-auto w-full max-w-[1000px] lg:mt-8">
-        {/* Header */}
-        <div className="text-left mb-10">
+      {/* wider container so donuts don’t float */}
+      <div className="mx-auto w-full max-w-[1200px] lg:mt-8">
+        <div className="text-left mb-8">
           <SectionHeader
             kicker="MARKET RESEARCH"
             title="Exploring the Grooming Space"
@@ -126,41 +108,39 @@ export default function ResearchInsights() {
           />
         </div>
 
-        {/* ✅ Donuts — evenly spaced across width */}
-        <div className="mb-10">
-          <div className="grid grid-cols-3 items-start justify-items-center gap-x-10 md:gap-x-4 py-4 lg:py-10">
+        {/* Donuts */}
+        <div className="mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 items-start justify-items-center gap-y-10 md:gap-y-0 gap-x-6 lg:gap-x-10 py-2 lg:py-6">
             <Donut
               percent={67}
               captionTop="of U.S. households"
               label={"own at least one dog"}
               delay={0}
-              size={donutSize}
-              stroke={donutStroke}
+              size={80}
+              stroke={9}
             />
             <Donut
               percent={73}
               captionTop="of pet owners prefer"
               label={"scheduling appointments\nonline"}
               delay={0.12}
-              size={donutSize}
-              stroke={donutStroke}
+              size={96}   // slightly bigger center
+              stroke={10}
             />
             <Donut
               percent={45}
               captionTop="of pet owners find it"
               label={"challenging to schedule\ngrooming services"}
               delay={0.24}
-              size={donutSize}
-              stroke={donutStroke}
+              size={80}
+              stroke={9}
             />
           </div>
         </div>
 
         {/* Content card */}
         <div className="rounded-3xl bg-[#111]/80 backdrop-blur-md ring-1 ring-white/10 p-6 md:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
-          <h3 className="text-xl md:text-3xl text-white mb-2">
-            Market Insights
-          </h3>
+          <h3 className="text-xl md:text-3xl text-white mb-2">Market Insights</h3>
 
           <p className="text-white/80 text-[12px] lg:text-[13px] leading-snug">
             I conducted secondary research by analyzing app reviews, service
