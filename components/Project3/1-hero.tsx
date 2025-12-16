@@ -34,7 +34,7 @@ export default function HeroOverviewDryCleaner() {
   return (
     <section className="bg-black text-white flex flex-col justify-center py-12 md:py-16 mt-16 px-4 md:px-6">
       {/* ✅ centered container */}
-      <div className="mx-auto w-full max-w-[1100px]">
+      <div className="mx-auto w-full max-w-[1090px]">
         <div className="text-left lg:ml-[85px]">
           <SectionHeader
             kicker="RESPONSIVE WEBSITE"
@@ -50,7 +50,7 @@ export default function HeroOverviewDryCleaner() {
             className="absolute inset-0 z-0 pointer-events-none
             left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
             w-[400px] h-[260px]
-            lg:w-[800px] lg:h-[600px]"
+            lg:w-[800px] lg:h-[400px]"
             style={{
               background: [
                 "radial-gradient(400px 300px at 50% 55%, rgba(255,230,200,0.85) 0%, rgba(255,230,200,0.38) 44%, rgba(0,0,0,0) 75%)",
