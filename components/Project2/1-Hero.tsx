@@ -29,7 +29,7 @@ export default function HeroOverviewCamping() {
                 "radial-gradient(800px 400px at 48% 60%, rgba(80,255,180,0.26) 0%, rgba(80,255,180,0.12) 48%, rgba(0,0,0,0) 80%)",
                 "radial-gradient(500px 400px at 40% 72%, rgba(0,180,120,0.22) 0%, rgba(0,180,120,0.10) 44%, rgba(0,0,0,0) 78%)",
               ].join(", "),
-              filter: "blur(90px)",
+              filter: "blur(120px)",
               opacity: 0.9,
               mixBlendMode: "screen",
             }}
