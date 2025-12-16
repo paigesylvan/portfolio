@@ -5,9 +5,9 @@ import SectionHeader from "../SectionHeader";
 
 export default function HeroOverviewCamping() {
   return (
-    <section className="full-bleed bg-black text-white py-10 md:py-14 lg:mt-[50px]">
+    <section className="full-bleed bg-black text-white py-10 md:py-14 lg:mt-[50px] mx-auto w-full">
       {/* ✅ Whole section constrained */}
-      <div className="mx-auto w-full  px-4 md:px-0">
+      <div className="  px-4 md:px-0">
         <SectionHeader
           kicker="RESPONSIVE WEBSITE DESIGN"
           title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
