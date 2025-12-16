@@ -8,9 +8,9 @@ export default function HighlightsDryCleaner() {
   return (
     <section className="w-full bg-black text-white px-4 sm:px-6 py-20 md:py-24 mt-8 lg:mt-12">
       <div className="mx-auto w-full max-w-[1000px]">
-        {/* ✅ Like your reference: left text / right phone */}
+        {/* Main content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-16 items-center">
-          {/* LEFT — header + content */}
+          {/* LEFT */}
           <div className="max-w-[560px]">
             <p className="text-[11px] tracking-[0.22em] accent-text">
               PROJECT OUTCOME
@@ -55,8 +55,8 @@ export default function HighlightsDryCleaner() {
               </p>
             </div>
 
-            {/* CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            {/* Primary CTA only */}
+            <div className="mt-8">
               <Link
                 href="https://www.quickcleanersandlaundry.com"
                 target="_blank"
@@ -86,14 +86,6 @@ export default function HighlightsDryCleaner() {
                   ➜
                 </span>
               </Link>
-
-              <Link
-                href="/experience"
-                className="text-[11px] sm:text-sm font-medium text-[#D6A75E] hover:text-white/70 flex items-center gap-2 transition-all"
-              >
-                View My Experience
-                <span className="inline-block">→</span>
-              </Link>
             </div>
           </div>
 
@@ -117,6 +109,28 @@ export default function HighlightsDryCleaner() {
             </motion.div>
           </div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mt-20 flex justify-center"
+        >
+          <Link
+            href="/experience"
+            className="group text-[11px] sm:text-sm font-medium text-[#D6A75E] hover:text-white/70 flex items-center gap-2 transition-all"
+          >
+            View My Experience
+            <motion.span
+              whileHover={{ x: 4 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="inline-block"
+            >
+              →
+            </motion.span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
