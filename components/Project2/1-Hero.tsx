@@ -37,7 +37,7 @@ export default function HeroOverviewCamping() {
           />
 
           <Image
-            src="/images/project2-images/camping-hero.png"
+            src="/images/project2-images/Camping.png"
             alt="ELMNT camping website homepage mockup"
             width={1000}
             height={650}
