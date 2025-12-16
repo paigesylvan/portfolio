@@ -74,7 +74,7 @@ export default function HeroOverviewDryCleaner() {
               width={2200}
               height={1400}
               priority
-              className="relative z-10 w-[80vw] max-w-[600px] h-auto mx-auto"
+              className="relative z-10 w-[80vw] max-w-[500px] h-auto mx-auto"
             />
           </motion.div>
         </div>
