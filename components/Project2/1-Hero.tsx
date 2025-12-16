@@ -13,7 +13,7 @@ export default function HeroOverviewCamping() {
           title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
           align="left"
           kickerClassName="text-[7px] md:text-xs text-emerald-400"
-          titleClassName="text-sm md:text-xl lg:text-2xl mt-2"
+          titleClassName="text-md md:text-2xl lg:text-3xl max-w-[700px] mt-2"
         />
 
         {/* hero image */}
