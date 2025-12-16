@@ -8,7 +8,7 @@ export default function HeroOverviewCamping() {
     <section className="full-bleed bg-black text-white py-10 md:py-14 lg:mt-[50px] mx-auto w-full">
       {/* ✅ Whole section constrained */}
       <div className="  px-4 md:px-0">
-      <div className='ml-[370px]'>
+      <div className='ml-2 lg:ml-[375px]'>
         <SectionHeader
           kicker="RESPONSIVE WEBSITE DESIGN"
           title="How Thoughtful UX Design Increased Engagement for First-Time Campers"
@@ -49,7 +49,7 @@ export default function HeroOverviewCamping() {
         {/* overview */}
         <div className="mt-8 grid md:grid-cols-2 md:gap-6 md:items-start text-[12px] md:text-[13px] leading-snug">
           {/* left */}
-          <div className='ml-[370px]'>
+          <div className='ml-2 lg:ml-[375px]'>
             <p className="text-[9px] tracking-[0.22em] text-emerald-400">PROJECT</p>
             <p className="mt-[2px] text-white/90">
               Design a responsive website for a camping e-commerce experience.
