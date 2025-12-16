@@ -134,7 +134,7 @@ export default function OutcomeCamping() {
 
         {/* DESKTOP: Bottom-centered Next Case Study */}
         <motion.div
-          className="hidden lg:flex justify-center mt-20"
+          className="hidden lg:flex w-full justify-center mt-20"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
