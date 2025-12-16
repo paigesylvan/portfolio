@@ -114,32 +114,32 @@ export default function OutcomeCamping() {
         </div>
       </div>
 
-      {/* ABSOLUTE bottom-centered Next Case Study */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full flex justify-center"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <Link
-          href="/projects/cleaners"
-          prefetch={false}
-          className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/60 transition-all duration-300"
-        >
-          <span>Next Case Study</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
-      </motion.div>
+{/* ABSOLUTE bottom-centered Next Case Study */}
+<motion.div
+  className="absolute inset-x-0 bottom-8 flex justify-center"
+  initial={{ opacity: 0, y: 16 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, ease: 'easeOut' }}
+>
+  <Link
+    href="/projects/cleaners"
+    className="group inline-flex items-center gap-2 text-[11px] sm:text-sm text-[#00C67C] hover:text-white/60 transition-all"
+  >
+    <span>Next Case Study</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </Link>
+</motion.div>
+
     </section>
   );
 }
