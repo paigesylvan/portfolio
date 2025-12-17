@@ -57,7 +57,7 @@ export default function Outcome() {
         >
           <motion.div
             variants={item(reduced)}
-            className="flex flex-col justify-between text-white/85 text-[15px] leading-snug max-w-[62ch]"
+            className="flex flex-col justify-between text-white/85 text-[12px] lg:text-[13px] leading-snug max-w-[62ch]"
           >
             <div className="space-y-4">
               <p>

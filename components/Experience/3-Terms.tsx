@@ -120,14 +120,14 @@ export default function Terms() {
                   ) : null}
 
                   {/* Body for mobile (inline with title on the right) */}
-                  <p className="mt-1.5 text-[13px] text-white/80 leading-tight sm:hidden">
+                  <p className="mt-1.5 text-[12px]  text-white/80 leading-tight sm:hidden">
                     {t.body}
                   </p>
                 </div>
               </div>
 
               {/* Body for desktop (under the image) */}
-              <p className="hidden sm:block lg:mt-6 text-white/80 leading-snug">
+              <p className="hidden sm:block lg:mt-6 text-white/80 leading-snug text-[13px]">
                 {t.body}
               </p>
             </motion.article>

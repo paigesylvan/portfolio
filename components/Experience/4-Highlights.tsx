@@ -138,7 +138,7 @@ export default function Experience() {
               </div>
 
               <h3 className="mt-5 text-base font-semibold">{h.title}</h3>
-              <p className="mt-3 text-white/80 leading-snug lg:leading-snug">
+              <p className="mt-3 text-white/80 leading-snug text-[12px] lg:text-[13px]">
                 {h.body}
               </p>
             </motion.article>

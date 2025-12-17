@@ -78,7 +78,7 @@ export default function Project3Part1() {
               <h3 className="text-lg font-semibold">Overview</h3>
             </div>
 
-            <p className="mt-4 text-white/85 leading-tight text-sm md:text-base">
+            <p className="mt-4 text-white/85 leading-tight text-[12px] lg:text-[13px]">
               I designed and implemented a complete HMI application in{" "}
               <span className="font-semibold">FactoryTalk View SE</span> for a robotic welding and
               assembly cell. Operators can control cell functions and see real-time status, part
@@ -121,7 +121,7 @@ export default function Project3Part1() {
               <h3 className="text-lg font-semibold">My Role</h3>
             </div>
 
-            <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-sm md:text-base">
+            <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-[12px] lg:text-[13px]">
               <li>
                 Designed and created the HMI application using FactoryTalk View Studio; ensured UI
                 flows aligned with operator tasks.

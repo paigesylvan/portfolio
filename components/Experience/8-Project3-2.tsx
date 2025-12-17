@@ -69,7 +69,7 @@ export default function Project3Part2() {
                 />
                 <h3 className="text-lg font-semibold">Collaboration</h3>
               </div>
-              <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-sm md:text-base">
+              <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-[12px] lg:text-[13px]">
                 <li>
                   Worked closely with Controls Engineers to validate PLC tag accuracy and
                   functionality.
@@ -109,7 +109,7 @@ export default function Project3Part2() {
               <h3 className="text-lg font-semibold">Problem Solving</h3>
             </div>
 
-            <div className="mt-4 text-white/85 leading-tight space-y-3 text-sm md:text-base">
+            <div className="mt-4 text-white/85 leading-tight space-y-3 text-[12px] lg:text-[13px]">
               <p>
                 One of the biggest challenges was designing the conveyor control screen for
                 maintenance and operation modes. Operators needed a clear way to test ten conveyor

@@ -56,7 +56,7 @@ export default function Project3Part3() {
                 />
                 <h3 className="text-lg font-semibold">Problem Solving</h3>
               </div>
-              <p className="mt-4 text-white/85 leading-snug text-sm md:text-base">
+              <p className="mt-4 text-white/85 leading-snug text-[12px] lg:text-[13px]">
                 A major challenge in this project was learning and creating PLC logic to support the
                 recipe functionality. I built logic that allowed operators to save, edit, and delete
                 both pin and plate recipes, then ensured these updates were reflected in the HMI
@@ -85,7 +85,7 @@ export default function Project3Part3() {
                 />
                 <h3 className="text-lg font-semibold">Learning Experience</h3>
               </div>
-              <p className="mt-4 text-white/85 leading-snug text-sm md:text-base">
+              <p className="mt-4 text-white/85 leading-snug text-[12px] lg:text-[13px]">
                 This project let me bridge UI design principles with industrial automation.
                 Following HMI design guidelines reinforced how consistency and clarity are critical
                 for operators. Uploading and organizing the tag database, then binding PLC tags to
