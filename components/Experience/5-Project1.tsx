@@ -82,7 +82,6 @@ const item = (reduced: boolean): Variants => ({
     y: 0,
     transition: {
       duration: reduced ? 0 : 0.6,
-      // TS-safe equivalent of "easeOut"
       ease: [0, 0, 0.58, 1],
     } as Transition,
   },
@@ -95,13 +94,26 @@ export default function Project1() {
   return (
     <section className="flex flex-col items-center justify-center px-6 text-white mt-36 mb-12 lg:mb-0">
       <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
-        <SectionHeader
-          kicker="PROJECT 1"
-          title="Meter Room Project"
-          align="left"
-        />
 
-        <div className="lg:mt-12 flex flex-col items-center">
+        {/* ✅ Mobile: centered header */}
+        <div className="block lg:hidden">
+          <SectionHeader
+            kicker="PROJECT 1"
+            title="Meter Room Project"
+            align="center"
+          />
+        </div>
+
+        {/* ✅ Desktop: left-aligned header */}
+        <div className="hidden lg:block">
+          <SectionHeader
+            kicker="PROJECT 1"
+            title="Meter Room Project"
+            align="left"
+          />
+        </div>
+
+        <div className="mt-6 lg:mt-12 flex flex-col items-center">
           <div className="rounded-2xl ring-1 ring-white/10 bg-white/[0.04] p-2.5 shadow-[0_16px_60px_rgba(0,0,0,0.45)] w-full md:w-[80%]">
             <Image
               src="/images/experience-images/meter-room-hmi.png"
@@ -145,11 +157,13 @@ export default function Project1() {
               </div>
 
               {b.body && (
-                <p className="mt-3 text-white/80 leading-snug text-[12px] lg:text-[13px] ">{b.body}</p>
+                <p className="mt-3 text-white/80 leading-snug text-[12px] lg:text-[13px]">
+                  {b.body}
+                </p>
               )}
 
               {b.bullets && (
-                <ul className="mt-3 space-y-1.5 text-white/80 list-disc pl-[15px] leading-snug text-[12px] lg:text-[13px] ">
+                <ul className="mt-3 space-y-1.5 text-white/80 list-disc pl-[15px] leading-snug text-[12px] lg:text-[13px]">
                   {b.bullets.map((li, i) => (
                     <li key={i}>{li}</li>
                   ))}
