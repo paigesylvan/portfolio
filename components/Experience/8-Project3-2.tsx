@@ -20,7 +20,6 @@ const item = (reduced: boolean): Variants => ({
     y: 0,
     transition: {
       duration: reduced ? 0 : 0.65,
-      // TS-safe equivalent of "easeOut"
       ease: [0, 0, 0.58, 1],
     } as Transition,
   },
@@ -59,16 +58,20 @@ export default function Project3Part2() {
               variants={item(reduced)}
               className="w-full rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
             >
-              <div className="flex items-start gap-4">
+              {/* ✅ Mobile horizontal header with optical alignment */}
+              <div className="flex items-center gap-3 text-left md:gap-4">
                 <Image
                   src="/images/experience-images/collabb.png"
                   alt="Collaboration icon"
                   width={56}
                   height={56}
-                  className="w-12 h-12 object-contain"
+                  className="h-10 w-10 object-contain md:h-12 md:w-12"
                 />
-                <h3 className="text-lg font-semibold">Collaboration</h3>
+                <h3 className="relative top-[1px] text-base font-semibold leading-none md:top-0 md:text-lg">
+                  Collaboration
+                </h3>
               </div>
+
               <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-[12px] lg:text-[13px]">
                 <li>
                   Worked closely with Controls Engineers to validate PLC tag accuracy and
@@ -98,15 +101,18 @@ export default function Project3Part2() {
             variants={item(reduced)}
             className="md:col-span-6 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col"
           >
-            <div className="flex items-start gap-4">
+            {/* ✅ Mobile horizontal header with optical alignment */}
+            <div className="flex items-center gap-3 text-left md:gap-4">
               <Image
                 src="/images/experience-images/solvee.png"
                 alt="Problem solving icon"
                 width={56}
                 height={56}
-                className="w-12 h-12 object-contain"
+                className="h-10 w-10 object-contain md:h-12 md:w-12"
               />
-              <h3 className="text-lg font-semibold">Problem Solving</h3>
+              <h3 className="relative top-[1px] text-base font-semibold leading-none md:top-0 md:text-lg">
+                Problem Solving
+              </h3>
             </div>
 
             <div className="mt-4 text-white/85 leading-tight space-y-3 text-[12px] lg:text-[13px]">

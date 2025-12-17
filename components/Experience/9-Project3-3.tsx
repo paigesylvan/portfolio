@@ -20,7 +20,6 @@ const item = (reduced: boolean): Variants => ({
     y: 0,
     transition: {
       duration: reduced ? 0 : 0.65,
-      // TS-safe equivalent of "easeOut"
       ease: [0, 0, 0.58, 1],
     } as Transition,
   },
@@ -46,16 +45,20 @@ export default function Project3Part3() {
                        shadow-[0_16px_60px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-start gap-4">
+              {/* ✅ Mobile horizontal header, desktop normal */}
+              <div className="flex items-center gap-3 text-left md:gap-4">
                 <Image
                   src="/images/experience-images/solvee.png"
                   alt="Problem solving icon"
                   width={56}
                   height={56}
-                  className="w-12 h-12 object-contain"
+                  className="h-10 w-10 object-contain md:h-12 md:w-12"
                 />
-                <h3 className="text-lg font-semibold">Problem Solving</h3>
+                <h3 className="text-base font-semibold leading-none md:text-lg">
+                  Problem Solving
+                </h3>
               </div>
+
               <p className="mt-4 text-white/85 leading-snug text-[12px] lg:text-[13px]">
                 A major challenge in this project was learning and creating PLC logic to support the
                 recipe functionality. I built logic that allowed operators to save, edit, and delete
@@ -75,16 +78,20 @@ export default function Project3Part3() {
                        shadow-[0_16px_60px_rgba(0,0,0,0.45)] p-5 md:p-6 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-start gap-4">
+              {/* ✅ Mobile horizontal header, desktop normal */}
+              <div className="flex items-center gap-3 text-left md:gap-4">
                 <Image
                   src="/images/experience-images/learn.png"
                   alt="Learning icon"
                   width={56}
                   height={56}
-                  className="w-12 h-12 object-contain"
+                  className="h-10 w-10 object-contain md:h-12 md:w-12"
                 />
-                <h3 className="text-lg font-semibold">Learning Experience</h3>
+                <h3 className="text-base font-semibold leading-none md:text-lg">
+                  Learning Experience
+                </h3>
               </div>
+
               <p className="mt-4 text-white/85 leading-snug text-[12px] lg:text-[13px]">
                 This project let me bridge UI design principles with industrial automation.
                 Following HMI design guidelines reinforced how consistency and clarity are critical
