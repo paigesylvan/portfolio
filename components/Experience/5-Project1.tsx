@@ -95,22 +95,14 @@ export default function Project1() {
     <section className="flex flex-col items-center justify-center px-6 text-white mt-36 mb-12 lg:mb-0">
       <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
 
-        {/* ✅ Mobile: centered header */}
+        {/* Mobile: centered header */}
         <div className="block lg:hidden">
-          <SectionHeader
-            kicker="PROJECT 1"
-            title="Meter Room Project"
-            align="center"
-          />
+          <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="center" />
         </div>
 
-        {/* ✅ Desktop: left-aligned header */}
+        {/* Desktop: left-aligned header */}
         <div className="hidden lg:block">
-          <SectionHeader
-            kicker="PROJECT 1"
-            title="Meter Room Project"
-            align="left"
-          />
+          <SectionHeader kicker="PROJECT 1" title="Meter Room Project" align="left" />
         </div>
 
         <div className="mt-6 lg:mt-12 flex flex-col items-center">
@@ -126,9 +118,7 @@ export default function Project1() {
           </div>
           <p className="mt-2 text-[10px] text-white/60 italic text-center">
             Image of DP Machine Status Screen —{" "}
-            <span className="opacity-80">
-              (red shown due to app being disconnected when saved)
-            </span>
+            <span className="opacity-80">(red shown due to app being disconnected when saved)</span>
           </p>
         </div>
 
@@ -145,15 +135,18 @@ export default function Project1() {
               variants={item(reduced)}
               className="rounded-2xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_16px_60px_rgba(0,0,0,0.45)] px-3 py-6 flex flex-col transition-colors hover:bg-white/[0.10]"
             >
-              <div className="flex flex-col items-center text-center">
+              {/* ✅ Mobile horizontal header, desktop stacked */}
+              <div className="flex items-center gap-3 text-left sm:flex-col sm:items-center sm:gap-0 sm:text-center">
                 <Image
                   src={b.icon}
                   alt={b.alt}
                   width={80}
                   height={80}
-                  className="h-12 w-12 object-contain"
+                  className="h-10 w-10 object-contain sm:h-12 sm:w-12"
                 />
-                <h3 className="mt-3 font-semibold text-base">{b.title}</h3>
+                <h3 className="font-semibold text-base leading-none sm:mt-3">
+                  {b.title}
+                </h3>
               </div>
 
               {b.body && (
