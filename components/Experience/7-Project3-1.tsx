@@ -2,38 +2,93 @@
 
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
-import {
-  motion,
-  useReducedMotion,
-  type Variants,
-  type Transition,
-} from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 const parent = (stagger = 0.12): Variants => ({
-  hidden: { opacity: 1 },
-  show: { opacity: 1, transition: { staggerChildren: stagger } },
+  hidden: {},
+  show: { transition: { staggerChildren: stagger } },
 });
 
 const item = (reduced: boolean): Variants => ({
-  hidden: { opacity: 0, y: reduced ? 0 : 28 },
+  hidden: { opacity: 0, y: reduced ? 0 : 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: reduced ? 0 : 0.7,
-      // TS-safe equivalent of "easeOut"
-      ease: [0, 0, 0.58, 1],
-    } as Transition,
+    transition: reduced
+      ? { duration: 0.01 }
+      : { duration: 0.7, ease: [0, 0, 0.58, 1] },
   },
 });
 
+function Media({
+  src,
+  alt,
+  caption,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+  priority?: boolean;
+}) {
+  return (
+    <figure className="w-full">
+      <div className="relative w-full overflow-hidden rounded-xl ring-1 ring-white/10">
+        <Image
+          src={src}
+          alt={alt}
+          width={1920}
+          height={1280}
+          priority={priority}
+          placeholder="blur"
+          blurDataURL="/images/blur-placeholder.png" // swap to a real tiny placeholder you have
+          sizes="(min-width: 768px) 58vw, 100vw"
+          className="h-auto w-full object-cover"
+        />
+      </div>
+      <figcaption className="mt-2 text-center text-[11px] text-white/60">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function InfoCard({
+  iconSrc,
+  iconAlt,
+  title,
+  children,
+}: {
+  iconSrc: string;
+  iconAlt: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <article className="rounded-3xl bg-white/[0.06] p-5 shadow-[0_20px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10 backdrop-blur-md md:p-6">
+      <header className="flex items-start gap-4">
+        <Image
+          src={iconSrc}
+          alt={iconAlt}
+          width={56}
+          height={56}
+          className="h-12 w-12 object-contain"
+        />
+        <h3 className="text-lg font-semibold">{title}</h3>
+      </header>
+      <div className="mt-4 text-[12px] leading-tight text-white/85 lg:text-[13px]">
+        {children}
+      </div>
+    </article>
+  );
+}
+
 export default function Project3Part1() {
-  const prefersReduced = useReducedMotion();
-  const reduced = !!prefersReduced;
+  const reduced = !!useReducedMotion();
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 text-white mt-16 lg:mt-36 mb-0">
-      <div className="w-full max-w-[1200px] mx-auto">
+    <section className="mt-16 mb-0 flex flex-col items-center justify-center px-4 text-white lg:mt-36">
+      <div className="mx-auto w-full max-w-[1200px]">
         <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="left" />
 
         <motion.div
@@ -41,106 +96,52 @@ export default function Project3Part1() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-8"
+          className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-12"
         >
-          <motion.div
-            variants={item(reduced)}
-            className="order-1 md:order-2 md:col-span-7"
-          >
-            <div className="w-full rounded-xl overflow-hidden">
-              <Image
-                src="/images/experience-images/whiteboard.png"
-                alt="Whiteboard brainstorming"
-                width={1920}
-                height={1280}
-                className="w-full h-auto rounded-xl object-cover"
-                priority
-              />
-            </div>
-            <p className="mt-2 text-[11px] text-white/60 text-center">
-              Brainstorming sessions with Controls Engineer Manager on layout and overview
-              functionality.
-            </p>
+          <motion.div variants={item(reduced)} className="order-1 md:order-2 md:col-span-7">
+            <Media
+              src="/images/experience-images/whiteboard.png"
+              alt="Whiteboard brainstorming"
+              caption="Brainstorming sessions with Controls Engineer Manager on layout and overview functionality."
+              // priority={true} // only if this is above-the-fold and your hero
+            />
           </motion.div>
 
-          <motion.article
-            variants={item(reduced)}
-            className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
-          >
-            <div className="flex items-start gap-4">
-              <Image
-                src="/images/experience-images/overview.png"
-                alt="Overview icon"
-                width={56}
-                height={56}
-                className="w-12 h-12 object-contain"
-              />
-              <h3 className="text-lg font-semibold">Overview</h3>
-            </div>
-
-            <p className="mt-4 text-white/85 leading-tight text-[12px] lg:text-[13px]">
-              I designed and implemented a complete HMI application in{" "}
-              <span className="font-semibold">FactoryTalk View SE</span> for a robotic welding and
-              assembly cell. Operators can control cell functions and see real-time status, part
-              flow, and alarms, all within an interface aligned with the company’s design system.
-              The role blended UI design, user flows, and interaction logic with technical
-              implementation.
-            </p>
-          </motion.article>
-
-          <motion.div
-            variants={item(reduced)}
-            className="order-3 md:order-4 md:col-span-7"
-          >
-            <div className="w-full rounded-xl overflow-hidden">
-              <Image
-                src="/images/experience-images/flagpin-hmi.png"
-                alt="Flag Pin HMI overview screen"
-                width={1920}
-                height={1280}
-                className="w-full h-auto rounded-xl object-cover"
-              />
-            </div>
-            <p className="mt-2 text-[11px] text-white/60 text-center">
-              Final rendition of overview screen.
-            </p>
+          <motion.div variants={item(reduced)} className="order-2 md:order-1 md:col-span-5">
+            <InfoCard
+              iconSrc="/images/experience-images/overview.png"
+              iconAlt="Overview icon"
+              title="Overview"
+            >
+              <p>
+                I designed and implemented a complete HMI application in{" "}
+                <span className="font-semibold">FactoryTalk View SE</span> for a robotic welding and
+                assembly cell. Operators can control cell functions and see real-time status, part
+                flow, and alarms, within an interface aligned to the company’s design system.
+              </p>
+            </InfoCard>
           </motion.div>
 
-          <motion.article
-            variants={item(reduced)}
-            className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
-          >
-            <div className="flex items-start gap-4">
-              <Image
-                src="/images/experience-images/role.png"
-                alt="Role icon"
-                width={56}
-                height={56}
-                className="w-12 h-12 object-contain"
-              />
-              <h3 className="text-lg font-semibold">My Role</h3>
-            </div>
+          <motion.div variants={item(reduced)} className="order-3 md:order-4 md:col-span-7">
+            <Media
+              src="/images/experience-images/flagpin-hmi.png"
+              alt="Flag Pin HMI overview screen"
+              caption="Final rendition of the overview screen."
+            />
+          </motion.div>
 
-            <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-[12px] lg:text-[13px]">
-              <li>
-                Designed and created the HMI application using FactoryTalk View Studio; ensured UI
-                flows aligned with operator tasks.
-              </li>
-              <li>Followed the company HMI design system and guidelines for consistency.</li>
-              <li>Uploaded and organized the tag database.</li>
-              <li>Bound PLC tags to on-screen components (robots, conveyors, workstations, alarms).</li>
-              <li>Reviewed electrical schematics to troubleshoot PLC logic not connecting correctly.</li>
-              <li>
-                Collaborated on “recipe” selection/saving and overall functionality with the
-                engineering team.
-              </li>
-              <li>Created and implemented my own PLC logic where needed.</li>
-              <li>
-                Wrote an overview/explanation of the HMI application for the customer’s Operations
-                Manual.
-              </li>
-            </ul>
-          </motion.article>
+          <motion.div variants={item(reduced)} className="order-4 md:order-3 md:col-span-5">
+            <InfoCard iconSrc="/images/experience-images/role.png" iconAlt="Role icon" title="My Role">
+              <ul className="space-y-2 list-disc pl-5">
+                <li>Designed and built the HMI in FactoryTalk View Studio around operator tasks.</li>
+                <li>Followed the company design system to keep screens consistent and readable.</li>
+                <li>Uploaded and organized the tag database; bound PLC tags to UI components.</li>
+                <li>Reviewed electrical schematics to troubleshoot connectivity and logic issues.</li>
+                <li>Collaborated with engineering on recipe selection/saving and cell behavior.</li>
+                <li>Created PLC logic where needed and documented the interface for the Ops Manual.</li>
+              </ul>
+            </InfoCard>
+          </motion.div>
         </motion.div>
       </div>
     </section>
