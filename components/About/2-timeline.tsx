@@ -221,7 +221,7 @@ export default function TimelineAbout() {
       heading: "Present",
       subheading: "Product Design + UX/UI",
       body:
-        "From my experience at my internship I discovered my true interest, which I realize correlated into everything I have been led to do, was in user experience and user interface. Eagerly, I signed up for Google's Coursera UX/UI design course to solidify my skills and polish two project case studies. With my experience, I design systems, interfaces, and content that help businesses run better, from factory floors to customer-facing websites.",
+        "Through my internship, I clarified my focus on user experience and interface design, work that had already been shaping everything I was building. To deepen that foundation, I completed Google’s UX/UI Design Certificate and refined two end-to-end case studies. Today, I design systems, interfaces, and content that help businesses run better, from factory floors to customer-facing websites.",
     },
   ];
 
