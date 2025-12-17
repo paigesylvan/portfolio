@@ -21,7 +21,6 @@ const item = (reduced: boolean): Variants => ({
     y: 0,
     transition: {
       duration: reduced ? 0 : 0.7,
-      // TS-safe equivalent of "easeOut"
       ease: [0, 0, 0.58, 1],
     } as Transition,
   },
@@ -33,8 +32,16 @@ export default function Project3Part1() {
 
   return (
     <section className="flex flex-col items-center justify-center px-4 text-white mt-16 lg:mt-36 mb-0">
-      <div className="w-full max-w-[1200px] mx-auto">
-        <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="left" />
+      <div className="w-full max-w-[1200px] mx-auto text-sm md:text-base">
+        {/* ✅ Mobile: centered section header */}
+        <div className="block lg:hidden">
+          <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="center" />
+        </div>
+
+        {/* ✅ Desktop: left section header */}
+        <div className="hidden lg:block">
+          <SectionHeader kicker="PROJECT 3" title="Flag Pin Project" align="left" />
+        </div>
 
         <motion.div
           variants={parent()}
@@ -67,15 +74,18 @@ export default function Project3Part1() {
             variants={item(reduced)}
             className="order-2 md:order-1 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
-            <div className="flex items-start gap-4">
+            {/* ✅ Mobile horizontal header, desktop normal */}
+            <div className="flex items-center gap-3 text-left md:gap-4">
               <Image
                 src="/images/experience-images/overview.png"
                 alt="Overview icon"
                 width={56}
                 height={56}
-                className="w-12 h-12 object-contain"
+                className="h-10 w-10 object-contain md:h-12 md:w-12"
               />
-              <h3 className="text-lg font-semibold">Overview</h3>
+              <h3 className="text-base font-semibold leading-none md:text-lg">
+                Overview
+              </h3>
             </div>
 
             <p className="mt-4 text-white/85 leading-tight text-[12px] lg:text-[14px]">
@@ -110,15 +120,18 @@ export default function Project3Part1() {
             variants={item(reduced)}
             className="order-4 md:order-3 md:col-span-5 rounded-3xl bg-white/[0.06] backdrop-blur-md ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] p-5 md:p-6"
           >
-            <div className="flex items-start gap-4">
+            {/* ✅ Mobile horizontal header, desktop normal */}
+            <div className="flex items-center gap-3 text-left md:gap-4">
               <Image
                 src="/images/experience-images/role.png"
                 alt="Role icon"
                 width={56}
                 height={56}
-                className="w-12 h-12 object-contain"
+                className="h-10 w-10 object-contain md:h-12 md:w-12"
               />
-              <h3 className="text-lg font-semibold">My Role</h3>
+              <h3 className="text-base font-semibold leading-none md:text-lg">
+                My Role
+              </h3>
             </div>
 
             <ul className="mt-4 space-y-2 text-white/85 leading-tight list-disc pl-5 text-[12px] lg:text-[14px]">
