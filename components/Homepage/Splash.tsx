@@ -7,14 +7,16 @@ import { motion, useReducedMotion } from "framer-motion";
 
 type Props = {
   title?: string;
+  subhead?: string; // ✅ NEW
   subtitle?: string;
   kicker?: string;
   minHeight?: number | string;
 };
 
 export default function Hero({
-  title = "Product Designer & UX/UI Developer",
+  title = "UX/UI Developer",
   kicker = "PAIGE SYLVAN",
+  subhead = "Designing and building human-centered digital products", // ✅ NEW default
   subtitle = "I design clean, intuitive interfaces and build responsive, user-centered products with modern front-end tools. I blend UX strategy, visual design, and development experience to turn complex problems into simple, functional experiences.",
   minHeight,
 }: Props) {
@@ -32,7 +34,10 @@ export default function Hero({
         className="film-grain absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 z-[1]"
         aria-hidden
       />
-      <div className="vignette-soft absolute inset-0 pointer-events-none z-[1]" aria-hidden />
+      <div
+        className="vignette-soft absolute inset-0 pointer-events-none z-[1]"
+        aria-hidden
+      />
 
       {/* Bottom hue (soft + not cut off) */}
       <div
@@ -59,17 +64,25 @@ export default function Hero({
           {/* LEFT: text */}
           <motion.div
             className="lg:col-span-6 text-left lg:mt-36"
-            initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+            initial={
+              prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }
+            }
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
-            transition={{ duration: prefersReduced ? 0 : 0.7, ease: "easeOut" }}
+            transition={{
+              duration: prefersReduced ? 0 : 0.7,
+              ease: "easeOut",
+            }}
           >
             <motion.p
               className="text-[11px] tracking-[0.22em] text-white/60"
               initial={prefersReduced ? { opacity: 1 } : { opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: prefersReduced ? 0 : 0.5, delay: prefersReduced ? 0 : 0.05 }}
+              transition={{
+                duration: prefersReduced ? 0 : 0.5,
+                delay: prefersReduced ? 0 : 0.05,
+              }}
             >
               {kicker}
             </motion.p>
@@ -80,17 +93,40 @@ export default function Hero({
               initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: prefersReduced ? 0 : 0.7, ease: "easeOut", delay: prefersReduced ? 0 : 0.08 }}
+              transition={{
+                duration: prefersReduced ? 0 : 0.7,
+                ease: "easeOut",
+                delay: prefersReduced ? 0 : 0.08,
+              }}
             >
               {title}
             </motion.h1>
+
+            {/* ✅ NEW subhead */}
+            <motion.p
+              className="mt-3 text-white/85 text-sm md:text-base leading-snug max-w-[56ch] mx-auto lg:mx-0"
+              initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: prefersReduced ? 0 : 0.7,
+                ease: "easeOut",
+                delay: prefersReduced ? 0 : 0.12,
+              }}
+            >
+              {subhead}
+            </motion.p>
 
             <motion.p
               className="mt-5 text-white/80 text-[12px] md:text-[13px] leading-snug max-w-[52ch] mx-auto lg:mx-0"
               initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: prefersReduced ? 0 : 0.7, ease: "easeOut", delay: prefersReduced ? 0 : 0.14 }}
+              transition={{
+                duration: prefersReduced ? 0 : 0.7,
+                ease: "easeOut",
+                delay: prefersReduced ? 0 : 0.16,
+              }}
             >
               {subtitle}
             </motion.p>
@@ -108,14 +144,21 @@ export default function Hero({
             initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: prefersReduced ? 0 : 0.8, ease: "easeOut", delay: prefersReduced ? 0 : 0.1 }}
+            transition={{
+              duration: prefersReduced ? 0 : 0.8,
+              ease: "easeOut",
+              delay: prefersReduced ? 0 : 0.1,
+            }}
           >
             <motion.div
               className="relative w-[330px] md:w-[370px]"
               initial={prefersReduced ? { scale: 1 } : { scale: 0.98 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: prefersReduced ? 0 : 0.8, ease: "easeOut" }}
+              transition={{
+                duration: prefersReduced ? 0 : 0.8,
+                ease: "easeOut",
+              }}
             >
               <div className="absolute -inset-4 rounded-[28px] bg-white/[0.04] ring-1 ring-inset ring-white/10 backdrop-blur-md shadow-[0_24px_90px_rgba(0,0,0,0.55)]" />
 
@@ -135,7 +178,11 @@ export default function Hero({
                 initial={prefersReduced ? { opacity: 1 } : { opacity: 0, scale: 0.99 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: prefersReduced ? 0 : 0.9, ease: "easeOut", delay: prefersReduced ? 0 : 0.18 }}
+                transition={{
+                  duration: prefersReduced ? 0 : 0.9,
+                  ease: "easeOut",
+                  delay: prefersReduced ? 0 : 0.18,
+                }}
               >
                 <PaigeOutlineTrace />
               </motion.div>
