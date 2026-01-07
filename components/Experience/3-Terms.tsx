@@ -38,7 +38,7 @@ const terms: Term[] = [
     title: "Automation Cell",
     subtitle: "",
     body:
-      "A group of machines and robots working together on a specific task (e.g., welding or assembly), coordinated through PLCs and HMIs.",
+      "A group of machines and robots working together on a specific task (e.g., welding or assembly), coordinated through PLCs and displayed on HMIs.",
     image: "/images/experience-images/cell.png",
     alt: "Robotic automation cell",
   },

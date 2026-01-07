@@ -29,15 +29,15 @@ const highlights: Highlight[] = [
   {
     title: "Problem-Solving",
     body:
-      "Troubleshot HMI programming in Ignition Designer to ensure a seamless UI experience.",
+      "Troubleshooted HMI programming in Ignition Designer to ensure a seamless UI experience.",
     still: "/images/experience-images/solve.png",
     gif: "/images/experience-images/solve.gif",
     alt: "Problem solving icon",
   },
   {
-    title: "UI/UX Design in Engineering",
+    title: "UX/UI Design in Engineering",
     body:
-      "Designed an end-to-end HMI in FactoryTalk View SE and deployed to an Allen-Bradley PanelView 5000.",
+      "Designed an end-to-end HMI application in FactoryTalk View SE and deployed to an Allen-Bradley PanelView 5000.",
     still: "/images/experience-images/uiux.png",
     gif: "/images/experience-images/uiux.gif",
     alt: "UI UX icon",
