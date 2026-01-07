@@ -25,7 +25,7 @@ const blocks: Block[] = [
     icon: "/images/experience-images/overview.png",
     alt: "Overview icon",
     body:
-      "Joined during testing to address usability issues in an Ignition HMI app. Ensured 11 screens were accurate and intuitive using Ignition logic, Python scripting, and PLC binding.",
+      "Joined during testing to address usability issues in an Ignition HMI application. Ensured 11 screens were accurate and intuitive using Ignition logic, Python scripting, and PLC binding.",
   },
   {
     key: "role",
