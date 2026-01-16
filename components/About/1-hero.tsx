@@ -167,12 +167,11 @@ export default function AboutHeroLaptop() {
             </h1>
 
             <p className="mt-4 text-white/80 text-[13px] md:text-[14px] leading-snug max-w-3xl">
-              I design and build digital experiences for web applications — blending UX strategy,
-              visual polish, and front-end execution to make complex things feel effortless.
+            I design and build responsive websites and digital tools for marketing, operations, and customer-facing teams. From UI design to front-end development, I focus on clarity, usability, and shipping work that functions in real business environments.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {["UX/UI", "Product Design", "Front-End"].map((t) => (
+              {["Web Design", "Digital Design", "Front-End Development"].map((t) => (
                 <span
                   key={t}
                   className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[10px] tracking-[0.12em] text-white/85"

@@ -14,9 +14,9 @@ type Props = {
 };
 
 export default function Hero({
-  title = "UX/UI Developer",
+  title = "Web & Digital Designer",
   kicker = "PAIGE SYLVAN",
-  subhead = "Designing and building human-centered digital products", // ✅ NEW default
+  subhead = "Designing and building human-centered digital products", 
   subtitle = "I design clean, intuitive interfaces and build responsive, user-centered products with modern front-end tools. I blend UX strategy, visual design, and development experience to turn complex problems into simple, functional experiences.",
   minHeight,
 }: Props) {
