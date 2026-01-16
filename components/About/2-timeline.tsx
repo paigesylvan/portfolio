@@ -219,9 +219,9 @@ export default function TimelineAbout() {
       images: ["/images/about-images/2025-1.png"],
       imageAlt: "2025",
       heading: "Present",
-      subheading: "Product Design + UX/UI",
+      subheading: "Web & Digital Design",
       body:
-        "Through my internship, I clarified my focus on user experience and interface design, work that had already been shaping everything I was building. To deepen that foundation, I completed Google’s UX/UI Design Certificate and refined two end-to-end case studies. Today, I design systems, interfaces, and content that help businesses run better, from factory floors to customer-facing websites.",
+        "I design and build responsive websites and digital tools that support real business needs — from customer-facing websites to internal dashboards and operational workflows. My work spans UI design, front-end development, and applied usability, with a focus on clarity, accessibility, and shipping solutions that actually get used.",
     },
   ];
 
