@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function Hero({
-  title = "Web & Digital Designer",
+  title = "Web & Digital Specialist",
   kicker = "PAIGE SYLVAN",
   subhead = "Designing and building human-centered digital products", 
   subtitle = "I design clean, intuitive interfaces and build responsive, user-centered products with modern front-end tools. I blend UX strategy, visual design, and development experience to turn complex problems into simple, functional experiences.",
