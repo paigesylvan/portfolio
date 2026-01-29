@@ -221,7 +221,7 @@ export default function TimelineAbout() {
       heading: "Present",
       subheading: "Web & Digital Design",
       body:
-        "I design and build responsive websites and digital tools that support real business needs — from customer-facing websites to internal dashboards and operational workflows. My work spans UI design, front-end development, and applied usability, with a focus on clarity, accessibility, and shipping solutions that actually get used.",
+        "I focus on execution-driven web work, owning CMS-based websites, publishing and validating content updates, and improving usability and performance across live digital platforms. My experience spans UI design, front-end development, and visual quality assurance, with an emphasis on accuracy, collaboration, and building digital tools that support real business and user needs.",
     },
   ];
 
