@@ -203,7 +203,7 @@ export default function TimelineAbout() {
       images: ["/images/about-images/2022-1.png"],
       imageAlt: "2022",
       heading: "2022",
-      subheading: "Technical Foundations & Web Development",
+      subheading: "Technical Foundations",
       body:
         "Completed a full-stack bootcamp, building interactive websites from scratch and learning how design choices affect functionality.",
     },
